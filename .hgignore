@@ -1,0 +1,7 @@
+syntax:glob
+bower_components/
+node_modules/
+temp/
+*.iml
+*.iws
+*.ipr

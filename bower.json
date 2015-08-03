@@ -1,0 +1,8 @@
+{
+  "name": "card-collection",
+  "dependencies": {
+    "angular": "1.4.3",
+    "angular-ui-router": "0.2.15",
+    "q": "1.0.1"
+  }
+}
