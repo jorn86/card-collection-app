@@ -1,0 +1,20 @@
+{
+  "cards": [{
+    "name": "Grizzly Bears",
+    "type": "Creature",
+    "setcode": "1E",
+    "mana": "1G"
+  },{
+    "gathererid": 225652,
+    "name": "Lightning Bolt",
+    "type": "Instant",
+    "setcode": "M11",
+    "mana": "R"
+  }, {
+    "name": "Fire // Ice",
+    "type": "Instant",
+    "mana": "1R/1U",
+    "setcode": "IVG",
+    "split": true
+  }]
+}

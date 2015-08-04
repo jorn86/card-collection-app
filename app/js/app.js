@@ -1,15 +1,24 @@
-angular.module('route', [ 'ui.router' ])
+angular.module('route', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
-        $stateProvider.state('deck', {
-            url: '/deck/:id',
-            controller: 'DeckController',
-            templateUrl: 'partials/deck.html'
-        });
+        $stateProvider
+            .state('app', {
+                templateUrl: 'partials/main.html'
+            })
+            .state('app.deck', {
+                url: '/deck/:id',
+                controller: 'DeckController',
+                templateUrl: 'partials/deck.html'
+            })
+            .state('app.inventory', {
+                url: '/inventory',
+                controller: 'InventoryController',
+                templateUrl: 'partials/deck.html'
+            });
     });
 
-angular.module('card-collection',[
+angular.module('card-collection', [
     'route',
     'controllers'
 ]);
