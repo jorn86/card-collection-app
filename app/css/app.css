@@ -1,0 +1,26 @@
+.list {
+    position: absolute;
+    width: 10%;
+    overflow: auto;
+}
+
+.deck {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    overflow: auto;
+}
+
+img.mana {
+    height: 16px;
+}
+img.set {
+    height: 20px;
+}
+
+.footer {
+    position: absolute;
+    top: 95%;
+    font-size: 8px;
+    overflow: auto;
+}
