@@ -1,4 +1,16 @@
 <div>
-    <span>{{deck.name}}</span>
+    <div>{{deck.name}}</div>
+    <form ng-submit="submitAdd()">
+        <label>
+            Add card
+            <live-search
+                id="add-card" type="text"
+                autofocus
+                live-search-callback="searchCallback"
+                live-search-item-template="{{result.name}}"
+                live-search-select-callback="searchSelectCallback"
+                ng-model="cardSearchValue"></live-search>
+        </label>
+    </form>
     <div id="card-grid" ag-grid="gridOptions" class="ag-fresh" style="height: 500px"></div>
 </div>

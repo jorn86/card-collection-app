@@ -1,5 +1,5 @@
-// get, not create (by not passing [])
-angular.module('controllers')
+angular.module('card-app')
+
     .controller('CardListController', function ($scope) {
         var cardNameRenderer = function (params) {
             return '<span class=inlinemtg ' +
@@ -49,7 +49,7 @@ angular.module('controllers')
             return image ? '<img src="' + image + '" class="set">' : '';
         };
 
-        var mapSetCodeToImage = function(setcode, rarity) {
+        var mapSetCodeToImage = function(setcode) {
             var base = 'img/symbols/modern/';
             switch (setcode) {
                 case '1E': return base + 'A - Core Sets/A01 - Pre 6th Fake Symbols/A0101 - Alpha - Common.svg';
@@ -77,8 +77,34 @@ angular.module('controllers')
         };
 
         $scope.updateGrid = function(cards) {
-            $scope.gridOptions.rowData = cards;
+            if (cards) {
+                $scope.gridOptions.rowData = cards;
+            }
             $scope.gridOptions.api.onNewRows();
             inlinemtg.linkcards($('#card-grid'));
-        }
+        };
+
+        $scope.cardSearchValue = '';
+        var searchResult = null;
+        $scope.searchCallback = function(query) {
+            return $scope.datamodel.getInventory().then(function(result) {
+                return result.data.cards;
+            });
+        };
+        $scope.searchSelectCallback = function(result) {
+            searchResult = result.item.name;
+            console.log('select ' + searchResult);
+            return result.item.name;
+        };
+        $scope.submitAdd = function() {
+            console.log('add ' + searchResult);
+            if (!searchResult) {
+                return;
+            }
+
+            $scope.gridOptions.rowData.push({name: searchResult});
+            $scope.updateGrid();
+            document.getElementById('add-card').value = '';
+            searchResult = null;
+        };
     });
