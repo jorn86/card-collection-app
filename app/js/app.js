@@ -1,4 +1,4 @@
-angular.module('route', ['ui.router'])
+angular.module('card-app', ['ui.router', 'LiveSearch', 'angularGrid'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
@@ -17,8 +17,3 @@ angular.module('route', ['ui.router'])
                 templateUrl: 'partials/deck.html'
             });
     });
-
-angular.module('card-collection', [
-    'route',
-    'controllers'
-]);

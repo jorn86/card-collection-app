@@ -1,8 +1,10 @@
-angular.module('controllers', ['angularGrid'])
+angular.module('card-app')
+
     .controller('IndexController', function ($scope, $http, $state) {
         $scope.datamodel = new Datamodel($http);
         $state.go('app');
     })
+
     .controller('DeckListController', function ($scope) {
         $scope.datamodel.getDecks().then(function (result) {
             $scope.decks = result.data.decks;
@@ -14,6 +16,7 @@ angular.module('controllers', ['angularGrid'])
             return !$scope.selectedTag || (deck.tags.indexOf($scope.selectedTag) >= 0);
         };
     })
+
     .controller('DeckController', function ($scope, $stateParams) {
         $scope.datamodel.getDeck($stateParams.id).then(function (result) {
             $scope.deck = result.data;
