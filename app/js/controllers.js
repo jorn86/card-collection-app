@@ -22,8 +22,8 @@ angular.module('card-app')
             $scope.deck = result.data;
             $scope.updateGrid(result.data.cards);
         });
-
     })
+
     .controller('InventoryController', function ($scope) {
         $scope.datamodel.getInventory().then(function (result) {
             $scope.deck = { name: 'Inventory' };

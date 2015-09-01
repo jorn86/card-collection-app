@@ -17,7 +17,7 @@ angular.module('card-app')
 
             if (params.data && params.data.split) {
                 var split = mana.indexOf('/');
-                return manaRenderer({value: mana.slice(0, split)}) + '/' + manaRenderer({value: mana.slice(split + 1, mana.length)});
+                return manaRenderer({value: mana.slice(0, split)}) + ' / ' + manaRenderer({value: mana.slice(split + 1, mana.length)});
             }
 
             var symbols = [];
@@ -54,25 +54,43 @@ angular.module('card-app')
             switch (setcode) {
                 case '1E': return base + 'A - Core Sets/A01 - Pre 6th Fake Symbols/A0101 - Alpha - Common.svg';
                 case 'M11': return base + 'A - Core Sets/A03 - Magic 20xx/A0305 - Magic 2011 - Common.svg';
+                case 'FS': return base + 'B - Expert Level Expansion Sets/B13 - Time Spiral Block/B1310 - Future Sight - Rare.svg';
             }
+        };
+
+        var cardTypeRenderer = function(params) {
+            if (params.data.subtype) {
+                return params.data.type + ' &mdash; ' + params.data.subtype;
+            }
+            return params.data.type;
+        };
+
+        var nameComparator = function(first, second, firstData, secondData) {
+            return firstData.data.name.localeCompare(secondData.data.name);
         };
 
         $scope.gridOptions = {
             columnDefs: [{
                 headerName: 'Name',
-                cellRenderer: cardNameRenderer
+                cellRenderer: cardNameRenderer,
+                comparator: nameComparator,
+                width: 300
             }, {
                 headerName: 'Type',
-                field: 'type'
+                cellRenderer: cardTypeRenderer,
+                width: 300
             }, {
                 headerName: 'Set',
                 field: 'setcode',
-                cellRenderer: setRenderer
+                cellRenderer: setRenderer,
+                width: 50
             }, {
                 headerName: 'Cost',
                 field: 'mana',
-                cellRenderer: manaRenderer
+                cellRenderer: manaRenderer,
+                width: 100
             }],
+            enableSorting:true,
             rowData: []
         };
 

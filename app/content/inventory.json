@@ -2,12 +2,14 @@
   "cards": [{
     "name": "Grizzly Bears",
     "type": "Creature",
+    "subtype": "Bear",
     "setcode": "1E",
     "mana": "1G"
   },{
     "gathererid": 225652,
     "name": "Lightning Bolt",
     "type": "Instant",
+    "subtype": "Arcane",
     "setcode": "M11",
     "mana": "R"
   }, {
@@ -16,5 +18,12 @@
     "mana": "1R/1U",
     "setcode": "IVG",
     "split": true
+  }, {
+    "gathererid": 136194,
+    "name": "Jhoira of the Ghitu",
+    "type": "Legendary Creature",
+    "subtype": "Human Wizard",
+    "setcode": "FS",
+    "mana": "1UR"
   }]
 }
