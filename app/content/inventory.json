@@ -4,26 +4,30 @@
     "type": "Creature",
     "subtype": "Bear",
     "setcode": "1E",
-    "mana": "1G"
+    "mana": "1G",
+    "amount": 2
   },{
     "gathererid": 225652,
     "name": "Lightning Bolt",
     "type": "Instant",
     "subtype": "Arcane",
     "setcode": "M11",
-    "mana": "R"
+    "mana": "R",
+    "amount": 1
   }, {
     "name": "Fire // Ice",
     "type": "Instant",
     "mana": "1R/1U",
     "setcode": "IVG",
-    "split": true
+    "split": true,
+    "amount": 2
   }, {
     "gathererid": 136194,
     "name": "Jhoira of the Ghitu",
     "type": "Legendary Creature",
     "subtype": "Human Wizard",
     "setcode": "FS",
-    "mana": "1UR"
+    "mana": "1UR",
+    "amount": 4
   }]
 }

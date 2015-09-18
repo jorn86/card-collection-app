@@ -69,16 +69,29 @@ angular.module('card-app')
             return firstData.data.name.localeCompare(secondData.data.name);
         };
 
+        $scope.updateAmount = function(data) {
+            $scope.datamodel.updateAmount(data.name, data.amount);
+        };
+
+        var amountRenderer = function() {
+            return '<input type="number" ng-model="data.amount" size="3" class="gridinput" ng-change="updateAmount(data)">';
+        };
+
         $scope.gridOptions = {
+            angularCompileRows: true,
             columnDefs: [{
+                headerName: 'Count',
+                cellRenderer: amountRenderer,
+                width: 50
+            },{
                 headerName: 'Name',
                 cellRenderer: cardNameRenderer,
                 comparator: nameComparator,
-                width: 300
+                width: 200
             }, {
                 headerName: 'Type',
                 cellRenderer: cardTypeRenderer,
-                width: 300
+                width: 200
             }, {
                 headerName: 'Set',
                 field: 'setcode',
@@ -105,6 +118,7 @@ angular.module('card-app')
         $scope.cardSearchValue = '';
         var searchResult = null;
         $scope.searchCallback = function(query) {
+            console.log('searching for ' + query);
             return $scope.datamodel.getInventory().then(function(result) {
                 return result.data.cards;
             });
