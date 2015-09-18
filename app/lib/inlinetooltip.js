@@ -532,7 +532,7 @@ var inlinemtg = {
             // </span>
 
             var a_start = '<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?type=card';
-            var a_end = '" target="_blank">';
+            var a_end = '" target="_blank" tabindex=-1>';
             var img_start = '<img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card';
 
             var htmlstring = [ a_start + a_params + a_end + contents + '</a><span class="iltt">',

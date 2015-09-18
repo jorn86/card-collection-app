@@ -74,7 +74,7 @@ angular.module('card-app')
         };
 
         var amountRenderer = function() {
-            return '<input type="number" ng-model="data.amount" size="3" class="gridinput" ng-change="updateAmount(data)">';
+            return '<input type="number" min="0" ng-model="data.amount" size="3" class="gridinput" ng-change="updateAmount(data)">';
         };
 
         $scope.gridOptions = {
@@ -82,16 +82,18 @@ angular.module('card-app')
             columnDefs: [{
                 headerName: 'Count',
                 cellRenderer: amountRenderer,
-                width: 50
+                width: 40
             },{
                 headerName: 'Name',
                 cellRenderer: cardNameRenderer,
                 comparator: nameComparator,
-                width: 200
+                minWidth: 200,
+                maxWidth: 600
             }, {
                 headerName: 'Type',
                 cellRenderer: cardTypeRenderer,
-                width: 200
+                minWidth: 200,
+                maxWidth: 600
             }, {
                 headerName: 'Set',
                 field: 'setcode',
@@ -103,7 +105,7 @@ angular.module('card-app')
                 cellRenderer: manaRenderer,
                 width: 100
             }],
-            enableSorting:true,
+            enableSorting: true,
             rowData: []
         };
 
