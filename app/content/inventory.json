@@ -15,12 +15,21 @@
     "mana": "R",
     "amount": 1
   }, {
+    "gathererid": 292753,
     "name": "Fire // Ice",
     "type": "Instant",
     "mana": "1R/1U",
     "setcode": "IVG",
     "split": true,
     "amount": 2
+  }, {
+    "gathererid": 262694,
+    "name": "Scorned Villager",
+    "type": "Creature",
+    "subtype": "Human Werewolf",
+    "mana": "1G",
+    "setcode": "DKA",
+    "amount": 22
   }, {
     "gathererid": 136194,
     "name": "Jhoira of the Ghitu",
@@ -29,5 +38,29 @@
     "setcode": "FS",
     "mana": "1UR",
     "amount": 4
+  }, {
+    "gathererid": 398434,
+    "name": "Jace, Vryn's Prodigy",
+    "type": "Legendary Creature",
+    "subtype": "Human Wizard",
+    "setcode": "ORI",
+    "mana": "1U",
+    "amount": 1
+  }, {
+    "gathererid": 398435,
+    "name": "Jace, Telepath Unbound",
+    "type": "Planeswalker",
+    "subtype": "Jace",
+    "setcode": "ORI",
+    "mana": "",
+    "amount": 1
+  }, {
+    "gathererid": 226512,
+    "name": "Akoum",
+    "type": "Plane",
+    "subtype": "Zendikar",
+    "setcode": "PC2",
+    "mana": "",
+    "amount": 1
   }]
 }

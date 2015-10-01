@@ -1,0 +1,13 @@
+<div class="grid" id="card-grid">
+    <div class="grid-header">
+        <div class="grid-cell grid-cell-count">Count</div>
+        <div class="grid-cell grid-cell-name">Name</div>
+        <div class="grid-cell grid-cell-type">Type</div>
+        <div class="grid-cell grid-cell-set">Set</div>
+        <div class="grid-cell grid-cell-cost">Cost</div>
+    </div>
+    <div ng-repeat="(key, value) in grid.rows | groupBy: typeGrouping">
+        <div class="grid-group-header">{{key}} ({{value.length}})</div>
+        <div class="grid-row" ng-repeat="card in value" ng-include="'partials/grid/grid-row.html'"></div>
+    </div>
+</div>
