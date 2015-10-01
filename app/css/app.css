@@ -33,6 +33,7 @@
     overflow: hidden;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
+    height: 21px;
 }
 .grid-row:hover {
     background-color: lightgrey;
@@ -86,10 +87,12 @@ input.grid-input {
 }
 
 img.mana {
+    margin-top: 2px;
     height: 16px;
 }
 img.set {
-    height: 16px;
+    margin-top: 1px;
+    height: 19px;
 }
 
 
