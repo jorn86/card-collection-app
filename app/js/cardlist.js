@@ -1,34 +1,7 @@
 angular.module('card-app')
 
     .controller('CardListController', function ($scope, $timeout) {
-        var cardNameRenderer = function (params) {
-            return '<span class=inlinemtg ' +
-                (params.data.gathererid ? 'data-multiverseid="' + params.data.gathererid + '" ' : '') +
-                (params.data.setcode ? 'data-set="' + params.data.setcode + '" ' : '') +
-                (params.data.split ? 'data-options="rotate90" ' : '') +
-                '>' + params.data.name + '</span>';
-        };
-
-        var manaRenderer = function(params) {
-            var mana = params.value;
-            if (!mana) {
-                return '';
-            }
-
-            if (params.data && params.data.split) {
-                var split = mana.indexOf('/');
-                return manaRenderer({value: mana.slice(0, split)}) + ' / ' + manaRenderer({value: mana.slice(split + 1, mana.length)});
-            }
-
-            var symbols = [];
-            for (var i = 0; i < mana.length; i++) {
-                var image = mapManaSymbolToImage(mana[i]);
-                symbols.push('<img src="' + image + '" class="mana" title="' + mana[i] + '">');
-            }
-            return symbols.join('');
-        };
-
-        var mapManaSymbolToImage = function(symbol) {
+        $scope.mapManaSymbolToImage = function(symbol) {
             var base = 'img/symbols/mana/';
             switch (symbol) {
                 case 'W': return base + 'A - Colored Mana/A01 - Colored Mana - White.svg';
@@ -44,12 +17,7 @@ angular.module('card-app')
             }
         };
 
-        var setRenderer = function(params) {
-            var image = mapSetCodeToImage(params.value);
-            return image ? '<img src="' + image + '" class="set">' : '';
-        };
-
-        var mapSetCodeToImage = function(setcode) {
+        $scope.mapSetCodeToImage = function(setcode) {
             var base = 'img/symbols/modern/';
             switch (setcode) {
                 case '1E': return base + 'A - Core Sets/A01 - Pre 6th Fake Symbols/A0101 - Alpha - Common.svg';

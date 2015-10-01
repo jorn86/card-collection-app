@@ -11,5 +11,5 @@
     <span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>
 </div>
 
-<div class="grid-cell grid-cell-set">{{card.setcode}}</div>
-<div class="grid-cell grid-cell-cost">{{card.mana}}</div>
+<div class="grid-cell grid-cell-set"><img class="set" ng-src="{{mapSetCodeToImage(card.setcode)}}"></div>
+<div class="grid-cell grid-cell-cost" ng-include="'partials/grid/mana.html'">{{card.mana}}</div>
