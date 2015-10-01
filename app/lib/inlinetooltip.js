@@ -471,7 +471,7 @@ var inlinemtg = {
 
             // If no multiverseid is specified ...
 
-            if( typeof multiverseid == "undefined" ) {
+            if( typeof multiverseid == "undefined"  || multiverseid == '') {
 
                 // ... set name = contents, or contents = name, if either
                 // is missing:

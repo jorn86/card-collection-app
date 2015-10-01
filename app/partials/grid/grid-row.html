@@ -1,0 +1,15 @@
+<div class="grid-cell grid-cell-count">
+    <input class="grid-input" type="number" min="0" size="3" ng-model="card.amount" ng-change="updateAmount(card)">
+</div>
+
+<div class="grid-cell grid-cell-name">
+    <span class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</span>
+</div>
+
+<div class="grid-cell grid-cell-type">
+    <span>{{card.type}}</span>
+    <span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>
+</div>
+
+<div class="grid-cell grid-cell-set">{{card.setcode}}</div>
+<div class="grid-cell grid-cell-cost">{{card.mana}}</div>

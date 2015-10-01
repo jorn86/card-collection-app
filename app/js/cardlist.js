@@ -1,6 +1,6 @@
 angular.module('card-app')
 
-    .controller('CardListController', function ($scope) {
+    .controller('CardListController', function ($scope, $timeout) {
         var cardNameRenderer = function (params) {
             return '<span class=inlinemtg ' +
                 (params.data.gathererid ? 'data-multiverseid="' + params.data.gathererid + '" ' : '') +
@@ -69,76 +69,54 @@ angular.module('card-app')
             return firstData.data.name.localeCompare(secondData.data.name);
         };
 
+        var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land'];
+        $scope.typeGrouping = function(card) {
+            for (var i = 0; i < types.length; i++) {
+                if (card.type.indexOf(types[i]) >= 0) {
+                    return types[i];
+                }
+            }
+            return 'Other';
+        };
+
         $scope.updateAmount = function(data) {
             $scope.datamodel.updateAmount(data.name, data.amount);
         };
 
-        var amountRenderer = function() {
-            return '<input type="number" min="0" ng-model="data.amount" size="3" class="gridinput" ng-change="updateAmount(data)">';
-        };
-
-        $scope.gridOptions = {
-            angularCompileRows: true,
-            columnDefs: [{
-                headerName: 'Count',
-                cellRenderer: amountRenderer,
-                width: 40
-            },{
-                headerName: 'Name',
-                cellRenderer: cardNameRenderer,
-                comparator: nameComparator,
-                minWidth: 200,
-                maxWidth: 600
-            }, {
-                headerName: 'Type',
-                cellRenderer: cardTypeRenderer,
-                minWidth: 200,
-                maxWidth: 600
-            }, {
-                headerName: 'Set',
-                field: 'setcode',
-                cellRenderer: setRenderer,
-                width: 50
-            }, {
-                headerName: 'Cost',
-                field: 'mana',
-                cellRenderer: manaRenderer,
-                width: 100
-            }],
-            enableSorting: true,
-            rowData: []
+        $scope.grid = {
+            rows: [],
+            groupBy: 'type'
         };
 
         $scope.updateGrid = function(cards) {
+            console.log('linking')
             if (cards) {
-                $scope.gridOptions.rowData = cards;
+                $scope.grid.rows = cards;
             }
-            $scope.gridOptions.api.onNewRows();
             inlinemtg.linkcards($('#card-grid'));
         };
 
         $scope.cardSearchValue = '';
         var searchResult = null;
         $scope.searchCallback = function(query) {
-            console.log('searching for ' + query);
             return $scope.datamodel.getInventory().then(function(result) {
                 return result.data.cards;
             });
         };
         $scope.searchSelectCallback = function(result) {
             searchResult = result.item.name;
-            console.log('select ' + searchResult);
             return result.item.name;
         };
         $scope.submitAdd = function() {
-            console.log('add ' + searchResult);
             if (!searchResult) {
                 return;
             }
 
-            $scope.gridOptions.rowData.push({name: searchResult});
+            $scope.grid.rows.push({name: searchResult});
             $scope.updateGrid();
             document.getElementById('add-card').value = '';
             searchResult = null;
         };
+
+        $timeout($scope.updateGrid, 500);
     });

@@ -1,14 +1,64 @@
 .list {
     position: absolute;
     width: 150px;
-    overflow: auto;
 }
 
 .deck {
     position: absolute;
     left: 150px;
     width: calc(100% - 150px);
+}
+
+.grid {
+    border: 2px outset black;
     overflow: auto;
+    margin-right: 10px;
+    min-width: 800px;
+    width: calc(100% - 10px);
+}
+
+.grid-header {
+    overflow: hidden;
+    height: 1.8em;
+    font-weight: bold;
+}
+
+.grid-group-header {
+    overflow: hidden;
+    height: 1.5em;
+    font-style: italic;
+}
+
+.grid-row {
+    overflow: hidden;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+
+.grid-cell {
+    float: left;
+}
+
+.grid-cell-count {
+    width: 40px;
+}
+
+.grid-cell-name {
+    min-width: 300px;
+    width: calc((100% - 190px) / 2);
+}
+
+.grid-cell-type {
+    min-width: 300px;
+    width: calc((100% - 190px) / 2);
+}
+
+.grid-cell-set {
+    width: 50px;
+}
+
+.grid-cell-cost {
+    width: 100px;
 }
 
 .footer {
@@ -18,6 +68,14 @@
     overflow: auto;
 }
 
+span.grid-cell {
+    text-overflow: ellipsis;
+}
+
+input.grid-input {
+    width: 30px;
+}
+
 img.mana {
     height: 16px;
 }
@@ -25,9 +83,6 @@ img.set {
     height: 20px;
 }
 
-input.gridinput {
-    width: 30px;
-}
 
 /*Live Search styles start*/
 ul.searchresultspopup {

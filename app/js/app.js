@@ -1,4 +1,4 @@
-angular.module('card-app', ['ui.router', 'LiveSearch', 'angularGrid'])
+angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
