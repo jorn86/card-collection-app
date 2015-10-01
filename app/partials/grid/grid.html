@@ -8,6 +8,6 @@
     </div>
     <div ng-repeat="(key, value) in grid.rows | groupBy: typeGrouping">
         <div class="grid-group-header">{{key}} ({{value.length}})</div>
-        <div class="grid-row" ng-repeat="card in value" ng-include="'partials/grid/grid-row.html'"></div>
+        <div class="grid-row" ng-class="{'row-even': $even, 'row-odd': $odd}" ng-repeat="card in value" ng-include="'partials/grid/grid-row.html'"></div>
     </div>
 </div>
