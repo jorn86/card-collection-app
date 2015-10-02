@@ -55,6 +55,13 @@
     "mana": "",
     "amount": 1
   }, {
+    "gathererid": 373544,
+    "name": "Bident of Thassa",
+    "type": "Legendary Enchantment Artifact",
+    "setcode": "THS",
+    "mana": "2UU",
+    "amount": 1
+  }, {
     "gathererid": 226512,
     "name": "Akoum",
     "type": "Plane",
@@ -62,5 +69,13 @@
     "setcode": "PC2",
     "mana": "",
     "amount": 1
+  }, {
+    "gathererid": 179496,
+    "name": "Progenitus",
+    "type": "Legendary Creature",
+    "subtype": "Hydra Avatar",
+    "setcode": "CFX",
+    "mana": "WWUUBBRRGG",
+    "amount": 0
   }]
 }

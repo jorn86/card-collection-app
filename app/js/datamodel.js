@@ -17,4 +17,8 @@ var Datamodel = function Datamodel($http) {
     this.updateAmount = function(name, amount) {
         return $http.put('content/inventory.json', {name: name, amount: amount});
     };
+
+    this.authenticateUser = function(user) {
+        return $http.post('login.json', user);
+    };
 };

@@ -3,13 +3,12 @@
 </div>
 
 <div class="grid-cell grid-cell-name">
-    <span class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</span>
+    <div class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>
 </div>
 
 <div class="grid-cell grid-cell-type">
-    <span>{{card.type}}</span>
-    <span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>
+    {{card.type}}<span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>
 </div>
 
-<div class="grid-cell grid-cell-set"><img class="set" ng-src="{{mapSetCodeToImage(card.setcode)}}"></div>
-<div class="grid-cell grid-cell-cost" ng-include="'partials/grid/mana.html'">{{card.mana}}</div>
+<div class="grid-cell grid-cell-set"><img ng-show="card.setcode !== 'ORI'" class="set" ng-src="{{mapSetCodeToImage(card.setcode)}}">&nbsp;</div>
+<div class="grid-cell grid-cell-cost" ng-include="'partials/grid/mana.html'"></div>
