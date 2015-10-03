@@ -11,6 +11,11 @@
                 live-search-select-callback="searchSelectCallback"
                 ng-model="cardSearchValue"></live-search>
         </label>
+        <label>
+            Group by
+            <select ng-options="option.name for option in grid.groupingOptions" ng-model="grid.currentSorting" ng-change="onSortingChange(value)"></select>
+            {{currentSorting.name}}
+        </label>
     </form>
     <div ng-include="'partials/grid/grid.html'"></div>
 </div>

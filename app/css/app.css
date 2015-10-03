@@ -28,6 +28,7 @@
 .grid {
     border: 2px outset black;
     overflow: auto;
+    margin-top: 5px;
     margin-right: 10px;
     min-width: 740px;
     width: calc(100% - 10px);

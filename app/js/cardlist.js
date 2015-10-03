@@ -22,12 +22,12 @@ angular.module('card-app')
             switch (setcode) {
                 case '1E': return base + 'A - Core Sets/A01 - Pre 6th Fake Symbols/A0101 - Alpha - Common.svg';
                 case 'M11': return base + 'A - Core Sets/A03 - Magic 20xx/A0305 - Magic 2011 - Common.svg';
-                case 'FS': return base + 'B - Expert Level Expansion Sets/B13 - Time Spiral Block/B1310 - Future Sight - Rare.svg';
+                case 'FUI': return base + 'B - Expert Level Expansion Sets/B13 - Time Spiral Block/B1310 - Future Sight - Rare.svg';
                 case 'CFX': return base + 'B - Expert Level Expansion Sets/B15 - Shards of Alara Block/B1508 - Conflux - Mythic Rare.svg';
                 case 'DKA': return base + 'B - Expert Level Expansion Sets/B18 - Innistrad Block/B1805 - Dark Ascension - Common.svg';
                 case 'THS': return base + 'B - Expert Level Expansion Sets/B20 - Theros Block/B2003 - Theros - Rare.svg';
                 case 'PC2': return base + 'C - Command Zone Sets/D04 - Planechase 2012/D0401 - Planechase 2012 - Common.svg';
-                case 'IVG': return base + 'F - Duel Decks/F10 - Izzet vs. Golgari/F1002 - Izzet vs Golgari - Uncommon.svg';
+                case 'DDJ': return base + 'F - Duel Decks/F10 - Izzet vs. Golgari/F1002 - Izzet vs Golgari - Uncommon.svg';
             }
         };
 
@@ -38,12 +38,8 @@ angular.module('card-app')
             return params.data.type;
         };
 
-        var nameComparator = function(first, second, firstData, secondData) {
-            return firstData.data.name.localeCompare(secondData.data.name);
-        };
-
-        var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land'];
-        $scope.typeGrouping = function(card) {
+        var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
+        var typeGrouping = function(card) {
             for (var i = 0; i < types.length; i++) {
                 if (card.type.indexOf(types[i]) >= 0) {
                     return types[i];
@@ -51,22 +47,56 @@ angular.module('card-app')
             }
             return 'Other';
         };
+        var typeOrder = function(card) {
+            return _.indexOf(types, card.$key);
+        };
+
+        var colors = {'W': 'White', 'U': 'Blue', 'B': 'Black', 'R': 'Red', 'G': 'Green', 'C': 'Colorless', 'M': 'Multicolored'};
+        var colorGrouping = function(card) {
+            return colors[color(card.mana)];
+        };
+        var colorOrder = function(group) {
+            return _.indexOf(_.keys(colors), color(group.$key));
+        };
+        var color = function(mana) {
+            if (!mana) return 'C';
+
+            var color = null;
+            for (var symbol in colors) {
+                if (mana.indexOf(symbol) >= 0) {
+                    if (color) {
+                        return 'M'
+                    }
+                    color = symbol;
+                }
+            }
+            return color || 'C';
+        };
+
+        $scope.grid = {
+            rows: [],
+            groupBy: typeGrouping,
+            orderBy: typeOrder,
+            allSelected: false
+        };
+
+        $scope.grid.groupingOptions = [{
+            name: 'Type', group: typeGrouping, order: typeOrder
+        }, {
+            name: 'Color', group: colorGrouping, order: colorOrder
+        }];
+        $scope.grid.currentSorting = $scope.grid.groupingOptions[0];
+        $scope.onSortingChange = function(value) {
+            $scope.grid.orderBy = $scope.grid.currentSorting.order;
+            $scope.grid.groupBy = $scope.grid.currentSorting.group;
+        };
 
         $scope.updateAmount = function(data) {
             $scope.datamodel.updateAmount(data.name, data.amount);
         };
 
-        $scope.grid = {
-            rows: [],
-            groupBy: $scope.typeGrouping,
-            allSelected: false
-        };
-
         $scope.updateGrid = function(cards) {
-            if (cards) {
-                $scope.grid.rows = cards;
-            }
-            inlinemtg.linkcards($('#card-grid'));
+            $scope.grid.rows = cards;
         };
 
         $scope.onSelectAll = function() {
@@ -101,11 +131,22 @@ angular.module('card-app')
                 return;
             }
 
-            $scope.grid.rows.push({name: searchResult});
-            $scope.updateGrid();
+            $scope.grid.rows.push({name: searchResult, type: 'Unknown', amount: 1});
             document.getElementById('add-card').value = '';
             searchResult = null;
         };
+    })
 
-        $timeout($scope.updateGrid, 500);
+    .directive('linkcard', function() {
+        return {
+            link: function($scope, element, attrs) {
+                var watch = $scope.$watch(function() {
+                    return element.children().length;
+                }, function() {
+                    $scope.$evalAsync(function() {
+                        inlinemtg.linkcards($(element));
+                    });
+                });
+            }
+        };
     });
