@@ -29,7 +29,7 @@
     border: 2px outset black;
     overflow: auto;
     margin-right: 10px;
-    min-width: 700px;
+    min-width: 740px;
     width: calc(100% - 10px);
 }
 
@@ -46,7 +46,6 @@
 .grid-row {
     overflow: hidden;
     border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
     height: 21px;
 }
 .grid-row:hover {
@@ -58,6 +57,12 @@
 .row-even {
     background-color: white;
 }
+.row-last {
+    border-bottom: 1px solid grey;
+}
+.row-selected {
+    background: lightblue;
+}
 
 .grid-cell {
     float: left;
@@ -65,16 +70,19 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.grid-cell-check {
+    width: 40px;
+}
 .grid-cell-count {
     width: 40px;
 }
 .grid-cell-name {
     min-width: 200px;
-    width: calc((100% - 290px) / 2);
+    width: calc((100% - 330px) / 2);
 }
 .grid-cell-type {
     min-width: 200px;
-    width: calc((100% - 290px) / 2);
+    width: calc((100% - 330px) / 2);
 }
 .grid-cell-set {
     width: 50px;
@@ -89,7 +97,7 @@ input.grid-input {
 
 img.mana {
     margin-top: 2px;
-    margin-right: -2px;
+    margin-right: -3px;
     height: 16px;
 }
 img.set {
