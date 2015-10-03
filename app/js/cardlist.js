@@ -25,6 +25,7 @@ angular.module('card-app')
                 case 'FS': return base + 'B - Expert Level Expansion Sets/B13 - Time Spiral Block/B1310 - Future Sight - Rare.svg';
                 case 'CFX': return base + 'B - Expert Level Expansion Sets/B15 - Shards of Alara Block/B1508 - Conflux - Mythic Rare.svg';
                 case 'DKA': return base + 'B - Expert Level Expansion Sets/B18 - Innistrad Block/B1805 - Dark Ascension - Common.svg';
+                case 'THS': return base + 'B - Expert Level Expansion Sets/B20 - Theros Block/B2003 - Theros - Rare.svg';
                 case 'PC2': return base + 'C - Command Zone Sets/D04 - Planechase 2012/D0401 - Planechase 2012 - Common.svg';
                 case 'IVG': return base + 'F - Duel Decks/F10 - Izzet vs. Golgari/F1002 - Izzet vs Golgari - Uncommon.svg';
             }
@@ -57,7 +58,8 @@ angular.module('card-app')
 
         $scope.grid = {
             rows: [],
-            groupBy: 'type'
+            groupBy: $scope.typeGrouping,
+            allSelected: false
         };
 
         $scope.updateGrid = function(cards) {
@@ -65,6 +67,22 @@ angular.module('card-app')
                 $scope.grid.rows = cards;
             }
             inlinemtg.linkcards($('#card-grid'));
+        };
+
+        $scope.onSelectAll = function() {
+            for (var i = 0; i < $scope.grid.rows.length; i++) {
+                $scope.grid.rows[i].selected = $scope.grid.allSelected;
+            }
+        };
+
+        $scope.getSelected = function() {
+            var selected = [];
+            for (var i = 0; i < $scope.grid.rows.length; i++) {
+                if ($scope.grid.rows[i].selected) {
+                    selected.push($scope.grid.rows[i]);
+                }
+            }
+            return selected;
         };
 
         $scope.cardSearchValue = '';
