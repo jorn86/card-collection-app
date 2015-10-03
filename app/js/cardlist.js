@@ -75,20 +75,35 @@ angular.module('card-app')
 
         $scope.grid = {
             rows: [],
+
+            groupingOptions: [{
+                name: 'Type', group: typeGrouping, order: typeOrder
+            }, {
+                name: 'Color', group: colorGrouping, order: colorOrder
+            }],
             groupBy: typeGrouping,
             orderBy: typeOrder,
+
+            sortingOptions: [
+                { name: 'Count', field: 'amount' },
+                { name: 'Name', field: 'name' },
+                { name: 'Type', field: 'type' },
+                { name: 'Set', field: 'setcode' },
+                { name: 'Cost', field: 'mana' }
+            ],
+
             allSelected: false
         };
 
-        $scope.grid.groupingOptions = [{
-            name: 'Type', group: typeGrouping, order: typeOrder
-        }, {
-            name: 'Color', group: colorGrouping, order: colorOrder
-        }];
-        $scope.grid.currentSorting = $scope.grid.groupingOptions[0];
-        $scope.onSortingChange = function(value) {
-            $scope.grid.orderBy = $scope.grid.currentSorting.order;
-            $scope.grid.groupBy = $scope.grid.currentSorting.group;
+        $scope.grid.currentGrouping = $scope.grid.groupingOptions[0];
+        $scope.onGroupingChange = function(value) {
+            $scope.grid.orderBy = $scope.grid.currentGrouping.order;
+            $scope.grid.groupBy = $scope.grid.currentGrouping.group;
+        };
+
+        $scope.grid.currentSorting = $scope.grid.sortingOptions[0];
+        $scope.onSortingChange = function() {
+            console.log($scope.grid.currentSorting)
         };
 
         $scope.updateAmount = function(data) {

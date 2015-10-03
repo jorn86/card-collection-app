@@ -13,8 +13,11 @@
         </label>
         <label>
             Group by
-            <select ng-options="option.name for option in grid.groupingOptions" ng-model="grid.currentSorting" ng-change="onSortingChange(value)"></select>
-            {{currentSorting.name}}
+            <select ng-options="grouping.name for grouping in grid.groupingOptions" ng-model="grid.currentGrouping" ng-change="onGroupingChange()"></select>
+        </label>
+        <label>
+            Sort by
+            <select ng-options="sorting.name for sorting in grid.sortingOptions" ng-model="grid.currentSorting"></select>
         </label>
     </form>
     <div ng-include="'partials/grid/grid.html'"></div>
