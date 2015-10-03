@@ -6,7 +6,7 @@
     <input class="grid-input" type="number" min="0" size="3" ng-model="card.amount" ng-change="updateAmount(card)">
 </div>
 
-<div class="grid-cell grid-cell-name">
+<div class="grid-cell grid-cell-name" linkcard>
     <div class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>
 </div>
 

@@ -1,12 +1,5 @@
 {
   "cards": [{
-    "name": "Grizzly Bears",
-    "type": "Creature",
-    "subtype": "Bear",
-    "setcode": "1E",
-    "mana": "1G",
-    "amount": 2
-  },{
     "gathererid": 225652,
     "name": "Lightning Bolt",
     "type": "Instant",
@@ -15,11 +8,18 @@
     "mana": "R",
     "amount": 1
   }, {
+    "name": "Grizzly Bears",
+    "type": "Creature",
+    "subtype": "Bear",
+    "setcode": "1E",
+    "mana": "1G",
+    "amount": 2
+  },{
     "gathererid": 292753,
     "name": "Fire // Ice",
     "type": "Instant",
     "mana": "1R/1U",
-    "setcode": "IVG",
+    "setcode": "DDJ",
     "split": true,
     "amount": 2
   }, {
@@ -35,7 +35,7 @@
     "name": "Jhoira of the Ghitu",
     "type": "Legendary Creature",
     "subtype": "Human Wizard",
-    "setcode": "FS",
+    "setcode": "FUI",
     "mana": "1UR",
     "amount": 4
   }, {
