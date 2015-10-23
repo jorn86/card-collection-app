@@ -203,8 +203,9 @@ var iltt = {
         var height = tooltip.outerHeight();         // Tooltip height
 
         // Position the tooltip under its parent, left-aligned.
+            // change from original: left of tooltip aligns to parent center
 
-        left = p_left;
+        left = p_left + (p_width / 2);
         top = p_top + p_height;
 
         // If the tooltip extends past the right edge of the viewport

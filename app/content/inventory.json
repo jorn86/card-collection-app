@@ -6,6 +6,7 @@
     "subtype": "Arcane",
     "setcode": "M11",
     "mana": "R",
+    "cmc": 1,
     "amount": 1
   }, {
     "name": "Grizzly Bears",
@@ -13,12 +14,14 @@
     "subtype": "Bear",
     "setcode": "1E",
     "mana": "1G",
+    "cmc": 2,
     "amount": 2
   },{
     "gathererid": 292753,
     "name": "Fire // Ice",
     "type": "Instant",
     "mana": "1R/1U",
+    "cmc": 4,
     "setcode": "DDJ",
     "split": true,
     "amount": 2
@@ -28,6 +31,7 @@
     "type": "Creature",
     "subtype": "Human Werewolf",
     "mana": "1G",
+    "cmc": 2,
     "setcode": "DKA",
     "amount": 22
   }, {
@@ -37,6 +41,7 @@
     "subtype": "Human Wizard",
     "setcode": "FUI",
     "mana": "1UR",
+    "cmc": 3,
     "amount": 4
   }, {
     "gathererid": 398434,
@@ -45,6 +50,7 @@
     "subtype": "Human Wizard",
     "setcode": "ORI",
     "mana": "1U",
+    "cmc": 2,
     "amount": 1
   }, {
     "gathererid": 398435,
@@ -52,7 +58,7 @@
     "type": "Planeswalker",
     "subtype": "Jace",
     "setcode": "ORI",
-    "mana": "",
+    "cmc": 0,
     "amount": 1
   }, {
     "gathererid": 373544,
@@ -60,6 +66,7 @@
     "type": "Legendary Enchantment Artifact",
     "setcode": "THS",
     "mana": "2UU",
+    "cmc": 4,
     "amount": 1
   }, {
     "gathererid": 226512,
@@ -67,7 +74,6 @@
     "type": "Plane",
     "subtype": "Zendikar",
     "setcode": "PC2",
-    "mana": "",
     "amount": 1
   }, {
     "gathererid": 179496,

@@ -1,7 +1,26 @@
-.menubar {
-    position: absolute;
-    width: 98%;
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
+
+.menubar {
+    height: 50px;
+    padding: 5px;
+}
+
+.content {
+    height: calc(100% - 77px);
+    padding: 0 5px;
+}
+
+.footer {
+    height: 10px;
+    font-size: 10px;
+    padding: 5px 5px 2px;
+}
+
+/* Menu bar */
 .menuitem {
     float: right;
 }
@@ -12,26 +31,23 @@
     border-radius: 16px;
 }
 
+/* Main frame content */
 .list {
-    position: absolute;
-    top: 50px;
+    float: left;
     width: 150px;
 }
 
 .deck {
-    position: absolute;
-    top: 50px;
-    left: 150px;
+    float: left;
     width: calc(100% - 150px);
 }
 
 .grid {
     border: 2px outset black;
     overflow: auto;
-    margin-top: 5px;
-    margin-right: 10px;
+    padding-top: 5px;
     min-width: 740px;
-    width: calc(100% - 10px);
+    width: calc(100% - 4px);
 }
 
 .grid-header {
@@ -105,45 +121,3 @@ img.set {
     margin-top: 1px;
     height: 19px;
 }
-
-.footer {
-    position: absolute;
-    bottom: 1em;
-    font-size: 10px;
-    overflow: auto;
-}
-
-
-/*Live Search styles start*/
-ul.searchresultspopup {
-    border: #a4bed4 1px solid;
-    margin-top: 0;
-    padding: 0;
-    z-index: 99999!important;
-    position: fixed;
-    background-color: white;
-    border-collapse: separate;
-    overflow-y: hidden;
-}
-
-ul.searchresultspopup > li {
-    cursor: pointer;
-    padding-left: 1px;
-    text-align: left;
-    line-height: 20px;
-    list-style: none outside none;
-    text-transform: lowercase;
-}
-
-ul.searchresultspopup li.selected, ul.searchresultspopup li:hover {
-    background-color: #ededed;
-}
-
-ul.searchresultspopup b {
-    color: blue;
-}
-
-ul.searchresultspopup strong {
-    color: green;
-}
-/*Live Search styles end*/

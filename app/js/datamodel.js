@@ -19,6 +19,6 @@ var Datamodel = function Datamodel($http) {
     };
 
     this.authenticateUser = function(user) {
-        return $http.post('login.json', user);
+        return $http.post('content/login.json', user);
     };
 };
