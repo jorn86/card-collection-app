@@ -12,11 +12,12 @@ angular.module('card-app')
                 $scope.datamodel.authenticateUser({
                     name: result.data.name,
                     email: result.data.email,
-                    token: authResult.id_token
+                    token: authResult.id_token,
+                    type: 'google'
                 });
             });
         });
         $scope.$on('event:google-plus-signin-failure', function (event, authResult) {
-            //console.log('sign in failed', event, authResult)
+            console.log('sign in failed', event, authResult)
         });
     });

@@ -90,6 +90,7 @@ angular.module('card-app')
                 { name: 'Name', field: 'name' },
                 { name: 'Type', field: 'type' },
                 { name: 'Set', field: 'setcode' },
+                { name: 'CMC', field: 'cmc' },
                 { name: 'Cost', field: 'mana' }
             ],
 

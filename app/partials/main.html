@@ -1,10 +1,12 @@
 <div class="menubar" ng-controller="UserController">
     <div style="float:left">Card Collection App</div>
     <div class="menuitem" ng-hide="userInfo">
-        <google-plus-signin clientid="1037739193811-rus02skk6058rm7k7bqf38trafthugdj" theme="dark" language="en"></google-plus-signin>
+        <google-plus-signin clientid="1037739193811-rus02skk6058rm7k7bqf38trafthugdj" theme="dark"
+                            language="en"></google-plus-signin>
     </div>
     <div class="menuitem" ng-show="userInfo">
         <img class="userimage" ng-src="{{userInfo.image}}">
+
         <div>
             <div class="grid-cell" ng-show="userInfo">{{userInfo.name}}</div>
             <a ng-click="logout()">Sign out</a>
@@ -12,22 +14,26 @@
     </div>
 </div>
 
-<div class="list" ng-controller="DeckListController" ng-show="decks">
-    <select ng-options="tag.id as tag.name for tag in tags" ng-model="selectedTag">
-        <option value="">All decks</option>
-    </select>
-    <ul>
-        <li><a ui-sref="app.inventory">Inventory</a></li>
-        <li ng-repeat="deck in decks | filter: tagFilter"><a ui-sref="app.deck({id:deck.id})">{{deck.name}}</a></li>
-    </ul>
-</div>
+<div class="content">
+    <div class="list" ng-controller="DeckListController" ng-show="decks">
+        <select ng-options="tag.id as tag.name for tag in tags" ng-model="selectedTag">
+            <option value="">All decks</option>
+        </select>
+        <ul>
+            <li><a ui-sref="app.inventory">Inventory</a></li>
+            <li ng-repeat="deck in decks | filter: tagFilter"><a ui-sref="app.deck({id:deck.id})">{{deck.name}}</a></li>
+        </ul>
+    </div>
 
-<div class="deck" ng-controller="CardListController">
-    <div style="width: 100%; height: 100% " ui-view>
-        <span>No content here yet</span>
+    <div class="deck" ng-controller="CardListController">
+        <div style="width: 100%; height: 100% " ui-view>
+            <span>No content here yet</span>
+        </div>
     </div>
 </div>
 
 <div class="footer">
-    Thanks to BaconCatBug for providing SVG images for all mana and set symbols &mdash; <a href="http://www.mtgsalvation.com/forums/creativity/artwork/494438-baconcatbugs-set-and-mana-symbol-megapack" target="_blank">Source</a>
+    Thanks to BaconCatBug for providing SVG images for all mana and set symbols &mdash; <a
+        href="http://www.mtgsalvation.com/forums/creativity/artwork/494438-baconcatbugs-set-and-mana-symbol-megapack"
+        target="_blank">Source</a>
 </div>
