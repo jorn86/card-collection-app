@@ -83,6 +83,7 @@ angular.module('card-app')
             }],
             groupBy: typeGrouping,
             orderBy: typeOrder,
+            sortDescending: false,
 
             sortingOptions: [
                 { name: 'Count', field: 'amount' },
@@ -96,15 +97,12 @@ angular.module('card-app')
         };
 
         $scope.grid.currentGrouping = $scope.grid.groupingOptions[0];
-        $scope.onGroupingChange = function(value) {
+        $scope.onGroupingChange = function() {
             $scope.grid.orderBy = $scope.grid.currentGrouping.order;
             $scope.grid.groupBy = $scope.grid.currentGrouping.group;
         };
 
         $scope.grid.currentSorting = $scope.grid.sortingOptions[0];
-        $scope.onSortingChange = function() {
-            console.log($scope.grid.currentSorting)
-        };
 
         $scope.updateAmount = function(data) {
             $scope.datamodel.updateAmount(data.name, data.amount);
@@ -154,9 +152,10 @@ angular.module('card-app')
 
     .directive('linkcard', function() {
         return {
-            link: function($scope, element, attrs) {
-                var watch = $scope.$watch(function() {
+            link: function($scope, element) {
+                $scope.$watch(function() {
                     return element.children().length;
+
                 }, function() {
                     $scope.$evalAsync(function() {
                         inlinemtg.linkcards($(element));

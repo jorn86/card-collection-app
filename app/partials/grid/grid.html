@@ -9,9 +9,9 @@
         <div class="grid-cell grid-cell-set">Set</div>
         <div class="grid-cell grid-cell-cost">Cost</div>
     </div>
-    <div ng-repeat="(key, value) in grid.rows | groupBy: grid.groupBy | toArray: true | orderBy: grid.orderBy">
+    <div ng-repeat="(key, value) in grid.rows | groupBy: grid.groupBy | toArray: true | orderBy : grid.orderBy ">
         <div class="grid-group-header">{{value.$key}} ({{value.length}})</div>
         <div class="grid-row" ng-class="{'row-even': $even, 'row-odd': $odd, 'row-last': $last, 'row-selected': card.selected}"
-             ng-repeat="card in value | orderBy: grid.currentSorting.field" ng-include="'partials/grid/grid-row.html'"></div>
+             ng-repeat="card in value | orderBy: grid.currentSorting.field : grid.sortDescending" ng-include="'partials/grid/grid-row.html'"></div>
     </div>
 </div>
