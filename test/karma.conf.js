@@ -5,6 +5,7 @@ module.exports = function(config) {
         files : [
             'app/bower_components/jquery/dist/jquery.js',
             'app/bower_components/q/q.js',
+            'app/bower_components/underscore/underscore.js',
             'app/bower_components/angular/angular.js',
             'app/bower_components/angular-ui-router/release/angular-ui-router.js',
             'app/bower_components/angular-filter/dist/angular-filter.js',

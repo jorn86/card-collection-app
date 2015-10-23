@@ -19,6 +19,10 @@
             Sort by
             <select ng-options="sorting.name for sorting in grid.sortingOptions" ng-model="grid.currentSorting"></select>
         </label>
+        <label>
+            Descending
+            <input type="checkbox" ng-model="grid.sortDescending">
+        </label>
     </form>
     <div ng-include="'partials/grid/grid.html'"></div>
 </div>
