@@ -5,12 +5,12 @@ html,body {
 }
 
 .menubar {
-    height: 50px;
+    height: 40px;
     padding: 5px;
 }
 
 .content {
-    height: calc(100% - 77px);
+    height: calc(100% - 67px);
     padding: 0 5px;
 }
 
@@ -23,6 +23,7 @@ html,body {
 /* Menu bar */
 .menuitem {
     float: right;
+    padding-right: 5px;
 }
 .userimage {
     float: right;
@@ -114,7 +115,6 @@ input.grid-input {
 
 img.mana {
     margin-top: 2px;
-    margin-right: -3px;
     height: 16px;
 }
 img.set {

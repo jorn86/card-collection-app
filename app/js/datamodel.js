@@ -1,24 +1,29 @@
 var Datamodel = function Datamodel($http) {
     this.getDecks = function() {
         return $http.get('content/list.json');
+        //return $http.get('decks');
     };
 
     this.getDeck = function(id) {
-        return $http.get('content/decks.json').then(function(result) {
-            result.data = result.data[id];
-            return result;
-        });
+        console.log('get deck', id);
+        return $http.get('content/decks.json');
+        // return $http.get('deck/' + id);
     };
 
     this.getInventory = function() {
         return $http.get('content/inventory.json');
+        // return $http.get('inventory');
     };
 
-    this.updateAmount = function(name, amount) {
-        return $http.put('content/inventory.json', {name: name, amount: amount});
+    this.updateAmount = function(deckId, rowId, amount) {
+        console.log('update amount', deckId, rowId, amount);
+        return $http.get('content/inventory.json');
+        //return $http.put('deck/' + deckId, {id: rowId, amount: amount});
     };
 
     this.authenticateUser = function(user) {
-        return $http.post('content/login.json', user);
+        console.log('authenticate user', user);
+        return $http.get('content/login.json');
+        //return $http.post('user/login', user);
     };
 };

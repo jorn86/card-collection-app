@@ -2,7 +2,12 @@ angular.module('card-app')
 
     .controller('IndexController', function ($scope, $http, $state) {
         $scope.datamodel = new Datamodel($http);
-        $state.go('app');
+        $scope.$on('user', function(event, user) {
+            $scope.user = user;
+            if (!$state.includes('app')) {
+                $state.go('app');
+            }
+        });
     })
 
     .controller('DeckListController', function ($scope) {
@@ -19,14 +24,12 @@ angular.module('card-app')
 
     .controller('DeckController', function ($scope, $stateParams) {
         $scope.datamodel.getDeck($stateParams.id).then(function (result) {
-            $scope.deck = result.data;
-            $scope.updateGrid(result.data.cards);
+            $scope.setDeck(result.data);
         });
     })
 
     .controller('InventoryController', function ($scope) {
         $scope.datamodel.getInventory().then(function (result) {
-            $scope.deck = { name: 'Inventory' };
-            $scope.updateGrid(result.data.cards);
-        })
+            $scope.setDeck(result.data);
+        });
     });

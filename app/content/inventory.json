@@ -1,4 +1,6 @@
 {
+  "id": 0,
+  "name": "Inventory",
   "cards": [{
     "gathererid": 225652,
     "name": "Lightning Bolt",
@@ -16,7 +18,7 @@
     "mana": "1G",
     "cmc": 2,
     "amount": 2
-  },{
+  }, {
     "gathererid": 292753,
     "name": "Fire // Ice",
     "type": "Instant",
@@ -34,6 +36,32 @@
     "cmc": 2,
     "setcode": "DKA",
     "amount": 22
+  }, {
+    "gathererid": 159408,
+    "name": "Reaper King",
+    "type": "Legendary Artifact Creature",
+    "subtype": "Scarecrow",
+    "mana": "{2W}{2U}{2B}{2R}{2G}",
+    "cmc": 10,
+    "setcode": "SHM",
+    "amount": 3
+  }, {
+    "gathererid": 289222,
+    "name": "Blistercoil Weird",
+    "type": "Creature",
+    "subtype": "Weird",
+    "mana": "{UR}",
+    "cmc": 1,
+    "setcode": "RTR",
+    "amount": 2
+  }, {
+    "gathererid": 389480,
+    "name": "Decree of Justice",
+    "type": "Sorcery",
+    "mana": "XX2WW",
+    "cmc": 4,
+    "setcode": "C14",
+    "amount": 1
   }, {
     "gathererid": 136194,
     "name": "Jhoira of the Ghitu",
@@ -75,6 +103,31 @@
     "subtype": "Zendikar",
     "setcode": "PC2",
     "amount": 1
+  }, {
+    "gathererid": 51634,
+    "name": "Blinkmoth Infusion",
+    "type": "Instant",
+    "setcode": "5DN",
+    "mana": "12UU",
+    "cmc": 14,
+    "amount": 1
+  }, {
+    "gathererid": 178018,
+    "name": "Draco",
+    "type": "Artifact Creature",
+    "subtype": "Dragon",
+    "setcode": "DRB",
+    "mana": "16",
+    "cmc": 16,
+    "amount": 2
+  }, {
+    "gathererid": 73947,
+    "name": "Gleemax",
+    "type": "Legendary Artifact",
+    "setcode": "UNH",
+    "mana": "1000000",
+    "cmc": 100000,
+    "amount": 0
   }, {
     "gathererid": 179496,
     "name": "Progenitus",
