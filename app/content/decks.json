@@ -1,23 +1,16 @@
 {
-  "1": {
-    "id": 1,
-    "name": "First",
-    "cards": [{
+  "id": 1,
+  "name": "First",
+  "cards": [
+    {
       "name": "Grizzly Bears",
-      "type": "Creature"
-    },{
+      "type": "Creature",
+      "mana": "1G"
+    },
+    {
       "name": "Lightning Bolt",
-      "type": "Instant"
-    }]
-  },
-  "2": {
-    "id": 1,
-    "name": "Second",
-    "cards": []
-  },
-  "3": {
-    "id": 1,
-    "name": "Third",
-    "cards": []
-  }
+      "type": "Instant",
+      "mana": "R"
+    }
+  ]
 }
