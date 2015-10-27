@@ -2,14 +2,14 @@ angular.module('card-app')
     .directive('setimage', function() {
         var getPrefixes = function(setcode) {
             switch(setcode) {
-                case '1E': return ['A', '01', ['01', '02', '03'], 'Alpha'];
-                case '2E': return ['A', '01', ['04', '05', '06'], 'Beta'];
-                case '2U': return ['A', '01', ['07', '08', '09'], 'Unlimited'];
-                case '3E': return ['A', '01', ['10', '11', '12'], 'Revised'];
-                case '4E': return ['A', '01', ['13', '14', '15'], 'Fourth Edition'];
-                case '5E': return ['A', '01', ['16', '17', '18'], 'Fifth Edition'];
-                case '6E': return ['A', '02', ['01', '02', '03'], 'Sixth Edition Classic'];
-                case '7E': return ['A', '02', ['04', '05', '06'], 'Seventh Edition'];
+                case '1E':  return ['A', '01', ['01', '02', '03'], 'Alpha'];
+                case '2E':  return ['A', '01', ['04', '05', '06'], 'Beta'];
+                case '2U':  return ['A', '01', ['07', '08', '09'], 'Unlimited'];
+                case '3E':  return ['A', '01', ['10', '11', '12'], 'Revised'];
+                case '4E':  return ['A', '01', ['13', '14', '15'], 'Fourth Edition'];
+                case '5E':  return ['A', '01', ['16', '17', '18'], 'Fifth Edition'];
+                case '6E':  return ['A', '02', ['01', '02', '03'], 'Sixth Edition Classic'];
+                case '7E':  return ['A', '02', ['04', '05', '06'], 'Seventh Edition'];
                 case '8ED': return ['A', '02', ['07', '08', '09'], 'Eighth Edition'];
                 case '9ED': return ['A', '02', ['10', '11', '12'], 'Ninth Edition'];
                 case '10E': return ['A', '02', ['13', '14', '15'], 'Tenth Edition'];
@@ -20,6 +20,21 @@ angular.module('card-app')
                 case 'M14': return ['A', '03', ['17', '18', '19', '20'], 'Magic 2014'];
                 case 'M15': return ['A', '03', ['21', '22', '23', '24'], 'Magic 2015'];
                 case 'ORI': return ['A', '03', ['25', '26', '27', '28'], 'Magic Origins'];
+                case 'IN':  return ['B', '07', ['01', '02', '03'], 'Invasion'];
+                case 'PS':  return ['B', '07', ['04', '05', '06'], 'Planeshift'];
+                case 'AP':  return ['B', '07', ['07', '08', '09'], 'Apocalypse'];
+                case 'OD':  return ['B', '08', ['01', '02', '03'], 'Odyssey'];
+                case 'TOR': return ['B', '08', ['04', '05', '06'], 'Torment'];
+                case 'JUD': return ['B', '08', ['07', '08', '09'], 'Judgement'];
+                case 'ONS': return ['B', '09', ['01', '02', '03'], 'Onslaught'];
+                case 'LGN': return ['B', '09', ['04', '05', '06'], 'Legions'];
+                case 'SCG': return ['B', '09', ['07', '08', '09'], 'Scourge'];
+                case 'MRD': return ['B', '10', ['01', '02', '03'], 'Mirrodin'];
+                case 'DST': return ['B', '10', ['04', '05', '06'], 'Darksteel'];
+                case '5DN': return ['B', '10', ['07', '08', '09'], 'Fifth Dawn'];
+                case 'CHK': return ['B', '11', ['01', '02', '03'], 'Champions of Kamigawa'];
+                case 'BOK': return ['B', '11', ['04', '05', '06'], 'Betrayers of Kamigawa'];
+                case 'SOK': return ['B', '11', ['07', '08', '09'], 'Saviors of Kamigawa'];
                 case 'RAV': return ['B', '12', ['01', '02', '03'], 'Ravnica'];
                 case 'GPT': return ['B', '12', ['04', '05', '06'], 'Guildpact'];
                 case 'DIS': return ['B', '12', ['07', '08', '09'], 'Dissension'];
@@ -54,6 +69,37 @@ angular.module('card-app')
                 case 'BFZ': return ['B', '22', ['01', '02', '03', '04'], 'Battle for Zendikar'];
                 case 'OGW': return ['B', '22', ['05', '06', '07', '08'], 'Oath of the Gatewatch'];
                 case 'EXP': return ['B', '22', ['09', '10', '11', '12'], 'Zendikar Expeditions'];
+                case 'HOP': return ['C', '01', ['01', '02', '03'], 'Planechase'];
+                case 'ARC': return ['C', '02', ['01', '02', '03'], 'Archenemy'];
+                case 'CMD': return ['C', '03', ['01', '02', '03', '04'], 'Commander'];
+                case 'PC2': return ['C', '04', ['01', '02', '03', '04'], 'Planechase 2012'];
+                case 'CM1': return ['C', '05', ['01', '02', '03', '04'], "Commander's Arsenal"];
+                case 'C13': return ['C', '06', ['01', '02', '03', '04'], 'Commander 2013'];
+                case 'C14': return ['C', '07', ['01', '02', '03', '04'], 'Commander 2014'];
+                case 'C15': return ['C', '08', ['01', '02', '03', '04'], 'Commander 2015'];
+                case 'DDA': return ['F', '01', ['01', '02', '03'], 'Elves vs Goblins'];
+                case 'DDB': return ['F', '02', ['01', '02', '03', '04'], 'Jace vs Chandra'];
+                case 'DDC': return ['F', '03', ['01', '02', '03', '04'], 'Divine vs Demonic'];
+                case 'DDD': return ['F', '04', ['01', '02', '03', '04'], 'Garruk vs Liliana'];
+                case 'DDE': return ['F', '05', ['01', '02', '03', '04'], 'Phyrexia vs The Coalition'];
+                case 'DDF': return ['F', '06', ['01', '02', '03', '04'], 'Elspeth vs Tezzeret'];
+                case 'DDG': return ['F', '07', ['01', '02', '03', '04'], 'Knights vs Dragons'];
+                case 'DDH': return ['F', '08', ['01', '02', '03', '04'], 'Ajani vs Nicol Bolas'];
+                case 'DDI': return ['F', '09', ['01', '02', '03', '04'], 'Venser vs Koth'];
+                case 'DDJ': return ['F', '10', ['01', '02', '03', '04'], 'Izzet vs Golgari'];
+                case 'DDK': return ['F', '11', ['01', '02', '03', '04'], 'Sorin vs Tibalt'];
+                case 'DDL': return ['F', '12', ['01', '02', '03', '04'], 'Heroes vs Monsters'];
+                case 'DDM': return ['F', '13', ['01', '02', '03', '04'], 'Jace vs Vraska'];
+                case 'DRB': return ['G', '01', ['01', '02', '03', '04'], 'From the Vault Dragons'];
+                case 'V09': return ['G', '02', ['01', '02', '03', '04'], 'From the Vault Exiled'];
+                case 'V10': return ['G', '03', ['01', '02', '03', '04'], 'From the Vault Relics'];
+                case 'V11': return ['G', '04', ['01', '02', '03', '04'], 'From the Vault Legends'];
+                case 'V12': return ['G', '05', ['01', '02', '03', '04'], 'From the Vault Realms'];
+                case 'V13': return ['G', '06', ['01', '02', '03', '04'], 'From the Vault Twenty'];
+                case 'V14': return ['G', '07', ['01', '02', '03', '04'], 'From the Vault Annihilation'];
+                case 'V15': return ['G', '08', ['01', '02', '03', '04'], 'From the Vault Angels'];
+                case 'UG':  return ['K', '01', ['01', '02', '03'], 'Unglued'];
+                case 'UNH': return ['K', '02', ['01', '02', '03'], 'Unhinged'];
             }
         };
 
@@ -93,6 +139,27 @@ angular.module('card-app')
                 case 'C05': return "C - Command Zone Sets/D05 - Commander's Arsenal";
                 case 'C06': return 'C - Command Zone Sets/D06 - Commander 2013';
                 case 'C07': return 'C - Command Zone Sets/D07 - Commander 2014';
+                case 'F01': return 'F - Duel Decks/F01 - Elves vs. Goblins';
+                case 'F02': return 'F - Duel Decks/F02 - Jace vs. Chandra';
+                case 'F03': return 'F - Duel Decks/F03 - Divine vs. Demonic';
+                case 'F04': return 'F - Duel Decks/F04 - Garruk vs. Liliana';
+                case 'F05': return 'F - Duel Decks/F05 - Phyrexia vs. The Coalition';
+                case 'F06': return 'F - Duel Decks/F06 - Elspeth vs. Tezzeret';
+                case 'F07': return 'F - Duel Decks/F07 - Knights vs. Dragons';
+                case 'F08': return 'F - Duel Decks/F08 - Ajani vs. Nicol Bolas';
+                case 'F09': return 'F - Duel Decks/F09 - Venser vs. Koth';
+                case 'F10': return 'F - Duel Decks/F10 - Izzet vs. Golgari';
+                case 'F11': return 'F - Duel Decks/F11 - Sorin vs. Tibalt';
+                case 'F12': return 'F - Duel Decks/F12 - Heroes vs. Monsters';
+                case 'F13': return 'F - Duel Decks/F13 - Jace vs. Vraska';
+                case 'G01': return 'G - From the Vault/G01 - Dragons';
+                case 'G02': return 'G - From the Vault/G02 - Exiled';
+                case 'G03': return 'G - From the Vault/G03 - Relics';
+                case 'G04': return 'G - From the Vault/G04 - Legends';
+                case 'G05': return 'G - From the Vault/G05 - Realms';
+                case 'G06': return 'G - From the Vault/G06 - Twenty';
+                case 'K01': return 'K - Un-Sets/K01 - Unglued';
+                case 'K02': return 'K - Un-Sets/K02 - Unhinged';
             }
         };
 
@@ -109,12 +176,13 @@ angular.module('card-app')
             var prefixes = getPrefixes(setcode);
             if (!prefixes) return null;
 
+            var i = rarities.indexOf(rarity);
+            var folder = getFolder(prefixes[0], prefixes[1]);
+            if (prefixes[0] == 'C') prefixes[0] = 'D'; // naming error in image library :(
             return {
-                folder: getFolder(prefixes[0], prefixes[1]),
-                file:       prefixes[0] + prefixes[1] + prefixes[2][rarities.indexOf(rarity)]
-                + ' - ' + prefixes[3] + ' - ' + rarity + '.svg',
-                commonfile: prefixes[0] + prefixes[1] + prefixes[2][0]
-                + ' - ' + prefixes[3] + ' - Common.svg'
+                folder: folder,
+                file:       prefixes[0] + prefixes[1] + prefixes[2][i] + ' - ' + prefixes[3] + ' - ' + rarity + '.svg',
+                commonfile: prefixes[0] + prefixes[1] + prefixes[2][0] + ' - ' + prefixes[3] + ' - Common.svg'
             };
         };
 
