@@ -679,6 +679,7 @@ var inlinemtg = {
         "BOK": "BOK",
         "BATTLEROYALE": "BR",
         "BRB": "BR",
+        "BFZ": "BFZ",
         "C13": "C13",
         "COMMANDER2013EDITION": "C13",
         "COMMANDER2013": "C13",
@@ -904,6 +905,7 @@ var inlinemtg = {
         "ODYSSEY": "OD",
         "ONS": "ONS",
         "ONSLAUGHT": "ONS",
+        "ORI": "ORI",
         "P02": "P2",
         "PORTAL2": "P2",
         "PORTALSECONDAGE": "P2",
@@ -1032,5 +1034,4 @@ var inlinemtg = {
         "ZEN": "ZEN",
         "ZENDIKAR": "ZEN"
     }
-
 };

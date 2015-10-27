@@ -61,8 +61,16 @@
     "rarity": "Uncommon",
     "amount": 2
   }, {
+    "gathererid": 109739,
+    "name": "Arena",
+    "type": "Land",
+    "cmc": 0,
+    "setcode": "TSP",
+    "rarity": "Timeshifted",
+    "amount": 2
+  }, {
     "gathererid": 383388,
-    "name": "New Phyrexia",
+    "name": "Newer Phyrexia",
     "type": "Custom",
     "mana": "1{PW}{PU}{PB}{PR}{PG}",
     "cmc": 6,
