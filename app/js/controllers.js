@@ -32,4 +32,18 @@ angular.module('card-app')
         $scope.datamodel.getInventory().then(function (result) {
             $scope.setDeck(result.data);
         });
+    })
+
+    .directive('fallback-src', function() {
+        console.log('register fallback directive');
+        return {
+            scope: {'fallback': '=fallback-src'},
+            link: function($scope, element) {
+                console.log('binding fallback to ' + $scope.fallback);
+                element.bind('error', function() {
+                    console.log('applying fallback ' + $scope.fallback);
+                    $(element).attr("src", $scope.fallback);
+                });
+            }
+        };
     });
