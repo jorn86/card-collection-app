@@ -14,6 +14,6 @@
     {{card.type}}<span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>&nbsp;
 </div>
 
-<div class="grid-cell grid-cell-set"><ng-include src="'partials/setimage.html'"></ng-include>&nbsp;</div>
+<div class="grid-cell grid-cell-set"><setimage set="card.setcode" rarity="card.rarity"></div>
 
 <div class="grid-cell grid-cell-cost"><manacost mana="card.mana"></manacost>&nbsp;</div>
