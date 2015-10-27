@@ -96,14 +96,15 @@ html,body {
 }
 .grid-cell-name {
     min-width: 200px;
-    width: calc((100% - 330px) / 2);
+    width: calc((100% - 325px) / 2);
 }
 .grid-cell-type {
     min-width: 200px;
-    width: calc((100% - 330px) / 2);
+    width: calc((100% - 325px) / 2);
 }
 .grid-cell-set {
-    width: 50px;
+    width: 40px;
+    padding-right: 5px;
 }
 .grid-cell-cost {
     width: 200px;
@@ -114,10 +115,11 @@ input.grid-input {
 }
 
 img.mana {
-    margin-top: 2px;
     height: 16px;
+    margin-top: 2px;
 }
 img.set {
-    margin-top: 1px;
     height: 19px;
+    display: block;
+    margin: 1px auto 0;
 }

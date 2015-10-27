@@ -55,6 +55,21 @@
     "setcode": "RTR",
     "amount": 2
   }, {
+    "gathererid": 383388,
+    "name": "New Phyrexia",
+    "type": "Custom",
+    "mana": "1{PW}{PU}{PB}{PR}{PG}",
+    "cmc": 6,
+    "setcode": "NPH",
+    "amount": 2
+  }, {
+    "name": "Half",
+    "type": "Custom",
+    "mana": "{HC}{HW}{HU}{HB}{HR}{HG}",
+    "cmc": 3,
+    "setcode": "UNH",
+    "amount": 2
+  }, {
     "gathererid": 389480,
     "name": "Decree of Justice",
     "type": "Sorcery",

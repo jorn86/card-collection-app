@@ -10,7 +10,8 @@ describe('the mana cost directive', function() {
     }));
 
     var parse = function(mana) {
-        var element = $compile('<manacost mana="\'' + mana + '\'"></manacost>')($rootScope);
+        $rootScope.mana = mana;
+        var element = $compile('<manacost mana="mana"></manacost>')($rootScope);
         $rootScope.$digest();
         return element;
     };
