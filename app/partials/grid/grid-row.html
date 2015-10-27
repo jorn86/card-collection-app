@@ -7,13 +7,13 @@
 </div>
 
 <div class="grid-cell grid-cell-name" linkcard>
-    <div class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>
+    <div class="inlinemtg" data-multiverseid="{{card.gathererid}}" data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>&nbsp;
 </div>
 
 <div class="grid-cell grid-cell-type">
-    {{card.type}}<span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>
+    {{card.type}}<span ng-show="card.subtype"> &mdash; {{card.subtype}}</span>&nbsp;
 </div>
 
 <div class="grid-cell grid-cell-set"><img class="set" ng-src="{{mapSetCodeToImage(card.setcode)}}">&nbsp;</div>
 
-<div class="grid-cell grid-cell-cost"><manacost mana="card.mana"></manacost></div>
+<div class="grid-cell grid-cell-cost"><manacost mana="card.mana"></manacost>&nbsp;</div>

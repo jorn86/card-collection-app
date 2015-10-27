@@ -9,7 +9,6 @@ angular.module('card-app')
                     image: user.picture
                 };
 
-                console.log(authResult, user)
                 $scope.datamodel.authenticateUser({
                     name: user.name,
                     email: user.email,

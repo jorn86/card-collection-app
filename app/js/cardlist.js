@@ -11,6 +11,7 @@ angular.module('card-app')
                 case '5DN': return base + 'B - Expert Level Expansion Sets/B10 - Mirrodin Block/B1009 - Fifth Dawn - Rare.svg';
                 case 'SHM': return base + 'B - Expert Level Expansion Sets/B14 - Lorwyn-Shadowmoor Block/B1409 - Shadowmoor - Rare.svg';
                 case 'CFX': return base + 'B - Expert Level Expansion Sets/B15 - Shards of Alara Block/B1508 - Conflux - Mythic Rare.svg';
+                case 'NPH': return base + 'B - Expert Level Expansion Sets/B17 - Scars of Mirrodin Block/B1712 - New Phyrexia - Mythic Rare.svg';
                 case 'DKA': return base + 'B - Expert Level Expansion Sets/B18 - Innistrad Block/B1805 - Dark Ascension - Common.svg';
                 case 'RTR': return base + 'B - Expert Level Expansion Sets/B19 - Return to Ravnica Block/B1902 - Return to Ravnica - Uncommon.svg';
                 case 'THS': return base + 'B - Expert Level Expansion Sets/B20 - Theros Block/B2003 - Theros - Rare.svg';
@@ -25,9 +26,11 @@ angular.module('card-app')
 
         var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
         var typeGrouping = function(card) {
-            for (var i = 0; i < types.length; i++) {
-                if (card.type.indexOf(types[i]) >= 0) {
-                    return types[i];
+            if (card.type) {
+                for (var i = 0; i < types.length; i++) {
+                    if (card.type.indexOf(types[i]) >= 0) {
+                        return types[i];
+                    }
                 }
             }
             return 'Other';
@@ -88,7 +91,7 @@ angular.module('card-app')
             $scope.grid.groupBy = $scope.grid.currentGrouping.group;
         };
 
-        $scope.grid.currentSorting = $scope.grid.sortingOptions[0];
+        $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
 
         $scope.updateAmount = function(data) {
             $scope.datamodel.updateAmount($scope.deck.id, data.rowId, data.amount);
@@ -244,6 +247,17 @@ angular.module('card-app')
                 case '2B': return base + 'C - Hybrid Mana/C13 - Hybrid Mana - 2 Colorless or Black.svg';
                 case '2R': return base + 'C - Hybrid Mana/C14 - Hybrid Mana - 2 Colorless or Red.svg';
                 case '2G': return base + 'C - Hybrid Mana/C15 - Hybrid Mana - 2 Colorless or Green.svg';
+                case 'PW': return base + 'D - Phyrexian Mana/D01 - Phyrexian Mana - White.svg';
+                case 'PU': return base + 'D - Phyrexian Mana/D02 - Phyrexian Mana - Blue.svg';
+                case 'PB': return base + 'D - Phyrexian Mana/D03 - Phyrexian Mana - Black.svg';
+                case 'PR': return base + 'D - Phyrexian Mana/D04 - Phyrexian Mana - Red.svg';
+                case 'PG': return base + 'D - Phyrexian Mana/D05 - Phyrexian Mana - Green.svg';
+                case 'HW': return base + 'X - Miscellaneous Symbols/X01 - Half Mana - White.svg';
+                case 'HU': return base + 'X - Miscellaneous Symbols/X02 - Half Mana - Blue.svg';
+                case 'HB': return base + 'X - Miscellaneous Symbols/X03 - Half Mana - Black.svg';
+                case 'HR': return base + 'X - Miscellaneous Symbols/X04 - Half Mana - Red.svg';
+                case 'HG': return base + 'X - Miscellaneous Symbols/X05 - Half Mana - Green.svg';
+                case 'HC': return base + 'X - Miscellaneous Symbols/X06 - Half Mana - Colorless.svg';
             }
             console.log('Unknown mana symbol:', symbol);
         };
