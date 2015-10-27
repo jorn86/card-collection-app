@@ -77,6 +77,9 @@ angular.module('card-app')
                 case 'C13': return ['C', '06', ['01', '02', '03', '04'], 'Commander 2013'];
                 case 'C14': return ['C', '07', ['01', '02', '03', '04'], 'Commander 2014'];
                 case 'C15': return ['C', '08', ['01', '02', '03', '04'], 'Commander 2015'];
+                case 'PO':  return ['E', '01', ['01', '02', '03'], 'Portal'];
+                case 'P2':  return ['E', '02', ['01', '02', '03'], 'Portal Second Age'];
+                case 'PK':  return ['E', '03', ['01', '02', '03'], 'Portal Three Kingdoms'];
                 case 'DDA': return ['F', '01', ['01', '02', '03'], 'Elves vs Goblins'];
                 case 'DDB': return ['F', '02', ['01', '02', '03', '04'], 'Jace vs Chandra'];
                 case 'DDC': return ['F', '03', ['01', '02', '03', '04'], 'Divine vs Demonic'];
@@ -98,6 +101,9 @@ angular.module('card-app')
                 case 'V13': return ['G', '06', ['01', '02', '03', '04'], 'From the Vault Twenty'];
                 case 'V14': return ['G', '07', ['01', '02', '03', '04'], 'From the Vault Annihilation'];
                 case 'V15': return ['G', '08', ['01', '02', '03', '04'], 'From the Vault Angels'];
+                case 'H09': return ['H', '01', ['01', '02', '03', '04'], 'Premium Deck Series Slivers'];
+                case 'PD2': return ['H', '02', ['01', '02', '03', '04'], 'Premium Deck Series Fire & Lightning'];
+                case 'PD3': return ['H', '03', ['01', '02', '03', '04'], 'Premium Deck Series Graveborn'];
                 case 'UG':  return ['K', '01', ['01', '02', '03'], 'Unglued'];
                 case 'UNH': return ['K', '02', ['01', '02', '03'], 'Unhinged'];
             }
@@ -139,6 +145,9 @@ angular.module('card-app')
                 case 'C05': return "C - Command Zone Sets/D05 - Commander's Arsenal";
                 case 'C06': return 'C - Command Zone Sets/D06 - Commander 2013';
                 case 'C07': return 'C - Command Zone Sets/D07 - Commander 2014';
+                case 'E01': return 'E - Portal Sets/E01 - Portal';
+                case 'E02': return 'E - Portal Sets/E02 - Portal Second Age';
+                case 'E03': return 'E - Portal Sets/E03 - Portal Three Kingdoms';
                 case 'F01': return 'F - Duel Decks/F01 - Elves vs. Goblins';
                 case 'F02': return 'F - Duel Decks/F02 - Jace vs. Chandra';
                 case 'F03': return 'F - Duel Decks/F03 - Divine vs. Demonic';
@@ -158,6 +167,9 @@ angular.module('card-app')
                 case 'G04': return 'G - From the Vault/G04 - Legends';
                 case 'G05': return 'G - From the Vault/G05 - Realms';
                 case 'G06': return 'G - From the Vault/G06 - Twenty';
+                case 'H01': return 'H - Premium Deck Series/H01 - Slivers';
+                case 'PD2': return 'H - Premium Deck Series/H02 - Fire and Lightning';
+                case 'PD3': return 'H - Premium Deck Series/H03 - Graveborn';
                 case 'K01': return 'K - Un-Sets/K01 - Unglued';
                 case 'K02': return 'K - Un-Sets/K02 - Unhinged';
             }
@@ -176,6 +188,7 @@ angular.module('card-app')
             var prefixes = getPrefixes(setcode);
             if (!prefixes) return null;
 
+            rarity = rarity || 'Common';
             var i = rarities.indexOf(rarity);
             var folder = getFolder(prefixes[0], prefixes[1]);
             if (prefixes[0] == 'C') prefixes[0] = 'D'; // naming error in image library :(
@@ -195,7 +208,8 @@ angular.module('card-app')
                     return;
                 }
                 var onerror = "$(this).attr('src', 'img/symbols/set/" + names.folder + "/" + names.commonfile + "').attr('onerror', '');";
-                var img = element.append('<img class="set" src="img/symbols/set/' + names.folder + '/' + names.file + '" onerror="' + onerror + '">');
+                var image = '<img class="set" src="img/symbols/set/' + names.folder + '/' + names.file + '" onerror="' + onerror + '">';
+                var img = element.append(image);
             }
         };
     });
