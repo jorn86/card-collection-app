@@ -7,6 +7,7 @@
     "type": "Instant",
     "subtype": "Arcane",
     "setcode": "M11",
+    "rarity": "Common",
     "mana": "R",
     "cmc": 1,
     "amount": 1
@@ -15,6 +16,7 @@
     "type": "Creature",
     "subtype": "Bear",
     "setcode": "1E",
+    "rarity": "Common",
     "mana": "1G",
     "cmc": 2,
     "amount": 2
@@ -23,6 +25,7 @@
     "name": "Fire // Ice",
     "type": "Instant",
     "mana": "1R/1U",
+    "rarity": "Uncommon",
     "cmc": 4,
     "setcode": "DDJ",
     "split": true,
@@ -33,6 +36,7 @@
     "type": "Creature",
     "subtype": "Human Werewolf",
     "mana": "1G",
+    "rarity": "Common",
     "cmc": 2,
     "setcode": "DKA",
     "amount": 22
@@ -44,6 +48,7 @@
     "mana": "{2W}{2U}{2B}{2R}{2G}",
     "cmc": 10,
     "setcode": "SHM",
+    "rarity": "Rare",
     "amount": 3
   }, {
     "gathererid": 289222,
@@ -53,6 +58,7 @@
     "mana": "{UR}",
     "cmc": 1,
     "setcode": "RTR",
+    "rarity": "Uncommon",
     "amount": 2
   }, {
     "gathererid": 383388,
@@ -61,6 +67,7 @@
     "mana": "1{PW}{PU}{PB}{PR}{PG}",
     "cmc": 6,
     "setcode": "NPH",
+    "rarity": "Mythic Rare",
     "amount": 2
   }, {
     "name": "Half",
@@ -76,6 +83,7 @@
     "mana": "XX2WW",
     "cmc": 4,
     "setcode": "C14",
+    "rarity": "Rare",
     "amount": 1
   }, {
     "gathererid": 136194,
@@ -83,6 +91,7 @@
     "type": "Legendary Creature",
     "subtype": "Human Wizard",
     "setcode": "FUI",
+    "rarity": "Rare",
     "mana": "1UR",
     "cmc": 3,
     "amount": 4
@@ -92,6 +101,7 @@
     "type": "Legendary Creature",
     "subtype": "Human Wizard",
     "setcode": "ORI",
+    "rarity": "Mythic Rare",
     "mana": "1U",
     "cmc": 2,
     "amount": 1
@@ -101,6 +111,7 @@
     "type": "Planeswalker",
     "subtype": "Jace",
     "setcode": "ORI",
+    "rarity": "Mythic Rare",
     "cmc": 0,
     "amount": 1
   }, {
@@ -108,6 +119,7 @@
     "name": "Bident of Thassa",
     "type": "Legendary Enchantment Artifact",
     "setcode": "THS",
+    "rarity": "Rare",
     "mana": "2UU",
     "cmc": 4,
     "amount": 1
@@ -117,12 +129,14 @@
     "type": "Plane",
     "subtype": "Zendikar",
     "setcode": "PC2",
+    "rarity": "Common",
     "amount": 1
   }, {
     "gathererid": 51634,
     "name": "Blinkmoth Infusion",
     "type": "Instant",
     "setcode": "5DN",
+    "rarity": "Rare",
     "mana": "12UU",
     "cmc": 14,
     "amount": 1
@@ -132,6 +146,7 @@
     "type": "Artifact Creature",
     "subtype": "Dragon",
     "setcode": "DRB",
+    "rarity": "Rare",
     "mana": "16",
     "cmc": 16,
     "amount": 2
@@ -140,6 +155,7 @@
     "name": "Gleemax",
     "type": "Legendary Artifact",
     "setcode": "UNH",
+    "rarity": "Rare",
     "mana": "1000000",
     "cmc": 100000,
     "amount": 0
@@ -149,6 +165,7 @@
     "type": "Legendary Creature",
     "subtype": "Hydra Avatar",
     "setcode": "CFX",
+    "rarity": "Mythic Rare",
     "mana": "WWUUBBRRGG",
     "amount": 0
   }]
