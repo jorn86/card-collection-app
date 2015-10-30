@@ -77,6 +77,8 @@ angular.module('card-app')
                 case 'C13': return ['C', '06', ['01', '02', '03', '04'], 'Commander 2013'];
                 case 'C14': return ['C', '07', ['01', '02', '03', '04'], 'Commander 2014'];
                 case 'C15': return ['C', '08', ['01', '02', '03', '04'], 'Commander 2015'];
+                case 'D08': return ['D', '08', ['01', '02', '03', '04'], 'Modern Masters'];
+                case 'D09': return ['D', '09', ['01', '02', '03', '04'], 'Modern Masters 2015'];
                 case 'PO':  return ['E', '01', ['01', '02', '03'], 'Portal'];
                 case 'P2':  return ['E', '02', ['01', '02', '03'], 'Portal Second Age'];
                 case 'PK':  return ['E', '03', ['01', '02', '03'], 'Portal Three Kingdoms'];
@@ -145,6 +147,8 @@ angular.module('card-app')
                 case 'C05': return "C - Command Zone Sets/D05 - Commander's Arsenal";
                 case 'C06': return 'C - Command Zone Sets/D06 - Commander 2013';
                 case 'C07': return 'C - Command Zone Sets/D07 - Commander 2014';
+                case 'D08': return 'D - Reprint, Starter and Other Box Sets/D08 - Modern Masters';
+                case 'D09': return 'D - Reprint, Starter and Other Box Sets/D08 - Modern Masters 2015';
                 case 'E01': return 'E - Portal Sets/E01 - Portal';
                 case 'E02': return 'E - Portal Sets/E02 - Portal Second Age';
                 case 'E03': return 'E - Portal Sets/E03 - Portal Three Kingdoms';
