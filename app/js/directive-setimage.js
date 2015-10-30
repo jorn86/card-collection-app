@@ -20,6 +20,27 @@ angular.module('card-app')
                 case 'M14': return ['A', '03', ['17', '18', '19', '20'], 'Magic 2014'];
                 case 'M15': return ['A', '03', ['21', '22', '23', '24'], 'Magic 2015'];
                 case 'ORI': return ['A', '03', ['25', '26', '27', '28'], 'Magic Origins'];
+                case 'AN':  return ['B', '01', ['01', '02', '03'], 'Arabian Nights'];
+                case 'AQ':  return ['B', '01', ['04', '05', '06'], 'Antiquities'];
+                case 'LE':  return ['B', '01', ['07', '08', '09'], 'Legends'];
+                case 'DK':  return ['B', '01', ['10', '11', '12'], 'The Dark'];
+                case 'FE':  return ['B', '01', ['13', '14', '15'], 'Fallen Empires'];
+                case 'HM':  return ['B', '01', ['16', '17', '18'], 'Homelands'];
+                case 'IA':  return ['B', '02', ['01', '02', '03'], 'Ice Age'];
+                case 'AL':  return ['B', '02', ['04', '05', '06'], 'Alliances'];
+                case 'CSP': return ['B', '02', ['07', '08', '09'], 'Coldsnap'];
+                case 'MI':  return ['B', '03', ['01', '02', '03'], 'Mirage'];
+                case 'VI':  return ['B', '03', ['04', '05', '06'], 'Visions'];
+                case 'WL':  return ['B', '03', ['07', '08', '09'], 'Weatherlight'];
+                case 'TE':  return ['B', '04', ['01', '02', '03'], 'Tempest'];
+                case 'ST':  return ['B', '04', ['04', '05', '06'], 'Stronghold'];
+                case 'EX':  return ['B', '04', ['07', '08', '09'], 'Exodus'];
+                case 'UZ':  return ['B', '05', ['01', '02', '03'], "Urza's Saga"];
+                case 'GU':  return ['B', '05', ['04', '05', '06'], "Urza's Legacy"];
+                case 'CG':  return ['B', '05', ['07', '08', '09'], "Urza's Destiny"];
+                case 'MM':  return ['B', '06', ['01', '02', '03'], 'Mercadian Masques'];
+                case 'NE':  return ['B', '06', ['04', '05', '06'], 'Nemesis'];
+                case 'PR':  return ['B', '06', ['07', '08', '09'], 'Prophecy'];
                 case 'IN':  return ['B', '07', ['01', '02', '03'], 'Invasion'];
                 case 'PS':  return ['B', '07', ['04', '05', '06'], 'Planeshift'];
                 case 'AP':  return ['B', '07', ['07', '08', '09'], 'Apocalypse'];
@@ -116,7 +137,6 @@ angular.module('card-app')
                 case 'A01': return 'A - Core Sets/A01 - Pre 6th Fake Symbols';
                 case 'A02': return 'A - Core Sets/A02 - 6th to 10th editions';
                 case 'A03': return 'A - Core Sets/A03 - Magic 20xx';
-                case 'B00': return 'B - Expert Level Expansion Sets/B00 - Original Black-Grey Pre Exodus Set Symbols';
                 case 'B01': return 'B - Expert Level Expansion Sets/B01 - Early Non-Block Sets';
                 case 'B02': return 'B - Expert Level Expansion Sets/B02 - Ice Age Block';
                 case 'B03': return 'B - Expert Level Expansion Sets/B03 - Mirage Block';
@@ -171,9 +191,11 @@ angular.module('card-app')
                 case 'G04': return 'G - From the Vault/G04 - Legends';
                 case 'G05': return 'G - From the Vault/G05 - Realms';
                 case 'G06': return 'G - From the Vault/G06 - Twenty';
+                case 'G07': return 'G - From the Vault/G07 - Annihilation';
+                case 'G08': return 'G - From the Vault/G07 - Angels';
                 case 'H01': return 'H - Premium Deck Series/H01 - Slivers';
-                case 'PD2': return 'H - Premium Deck Series/H02 - Fire and Lightning';
-                case 'PD3': return 'H - Premium Deck Series/H03 - Graveborn';
+                case 'H02': return 'H - Premium Deck Series/H02 - Fire and Lightning';
+                case 'H03': return 'H - Premium Deck Series/H03 - Graveborn';
                 case 'K01': return 'K - Un-Sets/K01 - Unglued';
                 case 'K02': return 'K - Un-Sets/K02 - Unhinged';
             }
@@ -196,11 +218,16 @@ angular.module('card-app')
             var i = rarities.indexOf(rarity);
             var folder = getFolder(prefixes[0], prefixes[1]);
             if (prefixes[0] == 'C') prefixes[0] = 'D'; // naming error in image library :(
-            return {
+
+            var names = {
                 folder: folder,
-                file:       prefixes[0] + prefixes[1] + prefixes[2][i] + ' - ' + prefixes[3] + ' - ' + rarity + '.svg',
-                commonfile: prefixes[0] + prefixes[1] + prefixes[2][0] + ' - ' + prefixes[3] + ' - Common.svg'
+                file:  prefixes[0] + prefixes[1] + prefixes[2][0] + ' - ' + prefixes[3] + ' - Common.svg'
             };
+            if (prefixes[2][i]) {
+                names.commonfile = names.file;
+                names.file = prefixes[0] + prefixes[1] + prefixes[2][i] + ' - ' + prefixes[3] + ' - ' + rarity + '.svg';
+            }
+            return names;
         };
 
         return {

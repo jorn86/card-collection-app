@@ -32,4 +32,8 @@ angular.module('card-app')
         $scope.datamodel.getInventory().then(function (result) {
             $scope.setDeck(result.data);
         });
+    })
+
+    .controller('VersionCheckController', function($scope) {
+        $scope.sets = _.uniq(_.values(inlinemtg.sets));
     });
