@@ -18,7 +18,6 @@ public class GuiceServletConfig extends GuiceServletContextListener {
         return Guice.createInjector(new ServletModule() {
             @Override
             protected void configureServlets() {
-                log.error("In config");
                 requestStaticInjection(ApplicationConfig.JerseyWorkaround.class);
 
                 bind(ServletContainer.class).asEagerSingleton();

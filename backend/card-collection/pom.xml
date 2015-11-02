@@ -7,6 +7,10 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <prerequisites>
+        <maven>3.0.5</maven>
+    </prerequisites>
+    
     <properties>
         <guava.version>16.0.1</guava.version>
         <guice.version>4.0</guice.version>
@@ -139,8 +143,4 @@
             </resource>
         </resources>
     </build>
-
-    <prerequisites>
-        <maven>3.0.5</maven>
-    </prerequisites>
 </project>

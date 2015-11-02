@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 public class ApplicationConfig extends ResourceConfig {
     @Inject
     public ApplicationConfig(ServiceLocator serviceLocator) {
-        log.error( "In application");
         packages("org.hertsig.restlet");
         register(new JacksonJaxbJsonProvider(new ObjectMapper(), JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS));
 
