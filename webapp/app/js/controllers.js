@@ -11,9 +11,13 @@ angular.module('card-app')
     })
 
     .controller('DeckListController', function ($scope) {
-        $scope.datamodel.getDecks().then(function (result) {
-            $scope.decks = result.data.decks;
-            $scope.tags = result.data.tags
+        $scope.$on('user', function(event, user) {
+            if (user) {
+                $scope.datamodel.getDecks().then(function (result) {
+                    $scope.decks = result.data.decks;
+                    $scope.tags = result.data.tags
+                });
+            }
         });
 
         $scope.selectedTag = null;

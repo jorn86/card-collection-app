@@ -12,10 +12,11 @@ angular.module('card-app')
                 $scope.datamodel.authenticateUser({
                     name: user.name,
                     email: user.email,
-                    id: user.id,
-                    type: 'google'
+                    authenticationOptions: [{ id: user.id, type: 'google' }]
+
+                }).then(function(user) {
+                    $rootScope.$broadcast('user', user);
                 });
-                $rootScope.$broadcast('user', result.data);
             });
         });
 

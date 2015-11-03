@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ApplicationConfig extends ResourceConfig {
     @Inject
     public ApplicationConfig(ServiceLocator serviceLocator) {
-        packages("org.hertsig.restlet");
+        packages("org.hertsig");
         register(new JacksonJaxbJsonProvider(new ObjectMapper(), JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS));
 
         GuiceBridge.getGuiceBridge().initializeGuiceBridge(serviceLocator);
@@ -26,7 +26,7 @@ public class ApplicationConfig extends ResourceConfig {
 
     /**
      * Jersey does not allow us to inject directly into the {@link ResourceConfig} class, since it uses its own flavor of injection.
-     * We inject the TOPdesk injector here so we can combine it with Jersey's injection, and inject into our restlets.
+     * We inject the injector here so we can combine it with Jersey's injection, and inject into our restlets.
      */
     public static class JerseyWorkaround {
         @Inject
