@@ -1,0 +1,2 @@
+Name: card-collection webapp
+Specification-Version: 0.1

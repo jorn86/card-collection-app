@@ -1,10 +1,10 @@
-<div class="list" ng-controller="DeckListController" ng-show="decks">
+<div class="list" ng-controller="DeckListController">
     <select ng-options="tag.id as tag.name for tag in tags" ng-model="selectedTag">
         <option value="">All decks</option>
     </select>
     <ul>
         <li><a ui-sref="app.inventory">Inventory</a></li>
-        <li ng-repeat="deck in decks | filter: tagFilter"><a ui-sref="app.deck({id:deck.id})">{{deck.name}}</a></li>
+        <li ng-show="decks" ng-repeat="deck in decks | filter: tagFilter"><a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a></li>
     </ul>
 </div>
 

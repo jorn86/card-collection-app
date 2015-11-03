@@ -9,7 +9,7 @@ public class Webserver {
     public static void main(String... args) throws Exception {
         ContextHandlerCollection handler = new ContextHandlerCollection();
         handler.setHandlers(new Handler[]{
-                new WebAppContext("src/main/webapp", "/backend"),
+                new WebAppContext("src/main/webapp", "/api"),
                 new WebAppContext("../../webapp/ROOT.war", "/")
         });
 
