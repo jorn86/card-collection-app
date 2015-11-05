@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.flywaydb.core.Flyway;
+import org.flywaydb.core.api.FlywayException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,6 +15,13 @@ public class DatabaseUpgrade {
         Flyway flyway = new Flyway();
         flyway.setDataSource(dataSource);
         flyway.setLocations(DatabaseUpgrade.class.getPackage().getName());
-        flyway.migrate();
+        try {
+            flyway.migrate();
+        }
+        catch (FlywayException e) {
+            log.warn("Migration failed, attempting repair", e);
+            flyway.repair();
+            flyway.migrate();
+        }
     }
 }

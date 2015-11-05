@@ -1,6 +1,8 @@
 package org.hertsig.user;
 
 import java.util.UUID;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import javax.inject.Inject;
 
@@ -22,6 +24,12 @@ public class UserManager {
 
     public boolean isAvailable() {
         return currentUser != null;
+    }
+
+    public void throwIfNotAvailable(Supplier<? extends RuntimeException> exception) {
+        if (!isAvailable()) {
+            throw exception.get();
+        }
     }
 
     public void setCurrentUser(UUID userId) {

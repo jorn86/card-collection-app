@@ -34,9 +34,7 @@ public class DeckRestlet {
     }
 
     private void checkUser() {
-        if (!userManager.isAvailable()) {
-            throw new UnauthorizedException("DeckRestlet is not available without user");
-        }
+        userManager.throwIfNotAvailable(() -> new UnauthorizedException("DeckRestlet is not available without user"));
     }
 
     @GET
