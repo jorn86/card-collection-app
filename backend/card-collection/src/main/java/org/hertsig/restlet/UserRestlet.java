@@ -39,7 +39,7 @@ public class UserRestlet {
             }
 
             UUID createdUserId = userDao.create(newUser.getName(), newUser.getEmail());
-            authDao.insert(createdUserId, auth.getId(), auth.getType());
+            authDao.create(createdUserId, auth.getId(), auth.getType());
             return userDao.get(createdUserId);
         }
     }
