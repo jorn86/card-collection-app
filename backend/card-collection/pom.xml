@@ -10,16 +10,19 @@
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
-    
+
     <properties>
+        <flyway.version>3.2.1</flyway.version>
         <guava.version>16.0.1</guava.version>
         <guice.version>4.0</guice.version>
         <hk2.version>2.4.0-b31</hk2.version>
         <jackson.version>2.6.3</jackson.version>
+        <jdbi.version>2.63.1</jdbi.version>
         <jersey.version>2.22.1</jersey.version>
         <jetty.version>9.3.5.v20151012</jetty.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.6</lombok.version>
+        <postgres.version>9.3-1102-jdbc41</postgres.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <slf4j.version>1.7.12</slf4j.version>
     </properties>
@@ -72,7 +75,6 @@
             <artifactId>jersey-container-servlet-core</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -88,6 +90,22 @@
                     <artifactId>guice</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgres.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi</artifactId>
+            <version>${jdbi.version}</version>
         </dependency>
 
         <dependency>
