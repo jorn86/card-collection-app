@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.hertsig.database.UuidMapper;
 import org.hertsig.dto.User;
 import org.skife.jdbi.v2.sqlobject.Bind;
+import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
@@ -13,7 +14,7 @@ import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 public interface UserDao extends AutoCloseable {
     @SqlUpdate("INSERT INTO \"user\" (name, email) VALUES (:name, :email)")
     @GetGeneratedKeys(UuidMapper.class)
-    UUID create(@Bind("name") String name, @Bind("email") String email);
+    UUID create(@BindBean User user);
 
     @SqlQuery("SELECT * FROM \"user\" WHERE id = :id")
     @MapResultAsBean
