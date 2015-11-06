@@ -14,6 +14,7 @@
     <properties>
         <flyway.version>3.2.1</flyway.version>
         <guava.version>16.0.1</guava.version>
+        <gson.version>2.4</gson.version>
         <guice.version>4.0</guice.version>
         <hk2.version>2.4.0-b31</hk2.version>
         <jackson.version>2.6.3</jackson.version>
@@ -48,6 +49,12 @@
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>${guice.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
 
         <dependency>
