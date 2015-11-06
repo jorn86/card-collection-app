@@ -2,9 +2,10 @@ CREATE TYPE color AS ENUM ('W', 'U', 'B', 'R', 'G');
 
 CREATE TABLE "set" (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
-  gatherercode CHAR(4) NOT NULL UNIQUE CHECK (gatherercode <> ''),
-  code CHAR(4) NOT NULL UNIQUE CHECK (code <> ''),
-  name VARCHAR(128) NOT NULL UNIQUE CHECK (name <> '')
+  gatherercode VARCHAR(8) NOT NULL UNIQUE CHECK (gatherercode <> ''),
+  code VARCHAR(8) NOT NULL UNIQUE CHECK (code <> ''),
+  name VARCHAR(128) NOT NULL UNIQUE CHECK (name <> ''),
+  releasedate DATE
 );
 
 CREATE TABLE card (
@@ -16,7 +17,7 @@ CREATE TABLE card (
   subtypes VARCHAR(128)[],
   cost VARCHAR(128) NOT NULL,
   cmc NUMERIC NOT NULL CHECK (cmc >= 0),
---   colors color[] NOT NULL CHECK (colors = uniq(colors)),
+  colors color[] NOT NULL, -- CHECK (colors = uniq(colors)), -- http://stackoverflow.com/q/33567996/8681
   text VARCHAR,
   power NUMERIC,
   toughness NUMERIC,

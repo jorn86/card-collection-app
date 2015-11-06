@@ -1,5 +1,6 @@
 package org.hertsig.dto;
 
+import java.util.Date;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -12,4 +13,5 @@ public class Set {
     private String gatherercode;
     private String code;
     private String name;
+    private Date releasedate;
 }

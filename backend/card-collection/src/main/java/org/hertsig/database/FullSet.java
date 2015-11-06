@@ -5,8 +5,10 @@ import java.util.List;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
+@ToString
 public class FullSet {
     String name;
     String code;
@@ -21,7 +23,7 @@ public class FullSet {
     List<Card> cards;
 
     @Data
-    @FieldDefaults(level= AccessLevel.PRIVATE)
+    @FieldDefaults(level=AccessLevel.PRIVATE)
     public static class Card {
         String name;
         List<String> names;

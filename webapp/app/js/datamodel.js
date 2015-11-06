@@ -16,6 +16,10 @@ var Datamodel = function Datamodel($http) {
         return $http.get('content/inventory.json');
     };
 
+    this.getAllSets = function() {
+        return $http.get(base + 'database/sets');
+    };
+
     this.updateAmount = function(deckId, rowId, amount) {
         return $http.put(base + 'deck/' + deckId + '/row/' + rowId, {amount: amount});
     };
