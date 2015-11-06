@@ -2,15 +2,16 @@ package org.hertsig.database;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.UUID;
 import java.util.zip.ZipInputStream;
 
 import javax.inject.Inject;
@@ -22,7 +23,7 @@ import org.skife.jdbi.v2.DBI;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import com.google.common.io.CharStreams;
+import com.google.common.io.ByteStreams;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.inject.util.Types;
@@ -38,11 +39,11 @@ public class ContentUpgrade {
                 Reader sets = ensureSetFile()) {
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
             Map<String, FullSet> map = gson.fromJson(sets, Types.mapOf(String.class, FullSet.class));
-            log.debug("parsed json {}", map);
             for (FullSet fullSet : map.values()) {
-                Set set = setDao.get(fullSet.gathererCode);
-                if (set == null) {
-                    setDao.create(new Set(null, fullSet.gathererCode, fullSet.code, fullSet.name));
+                UUID setId = ensureSet(setDao, fullSet);
+                for (FullSet.Card card : fullSet.cards) {
+                    UUID cardId = ensureCard(card);
+                    ensurePrinting(cardId, setId, card);
                 }
             }
         }
@@ -51,19 +52,39 @@ public class ContentUpgrade {
         }
     }
 
-    private Reader ensureSetFile() throws IOException {
-        if (!Files.isDirectory(Paths.get("json"))) {
-            Files.createDirectory(Paths.get("json"));
+    private void ensurePrinting(UUID cardId, UUID setId, FullSet.Card card) {
+        
+    }
+
+    private UUID ensureCard(FullSet.Card card) {
+        return null;
+    }
+
+    private UUID ensureSet(SetDao setDao, FullSet fullSet) {
+        Set set = setDao.get(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
+        if (set == null) {
+            return setDao.create(new Set(null, fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode, fullSet.code, fullSet.name, fullSet.releaseDate));
         }
-        if (!Files.exists(Paths.get("json", "AllSets.json.zip"))) {
-            log.info("Downloading sets file");
-            try (InputStream in = new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream();
-                    FileOutputStream out = new FileOutputStream("json/AllSets.json.zip")) {
-                CharStreams.copy(new InputStreamReader(in), new OutputStreamWriter(out));
+        if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {
+            log.warn("Inconsistency: database {}; external {} {}", set, fullSet.code, fullSet.name, fullSet.releaseDate);
+        }
+        return set.getId();
+    }
+
+    private Reader ensureSetFile() throws IOException {
+        Path folder = Paths.get("json");
+        if (!Files.isDirectory(folder)) {
+            Files.createDirectory(folder);
+        }
+        if (!Files.isRegularFile(folder.resolve("AllSets-x.json"))) {
+            log.debug("Downloading sets file");
+            try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
+                    FileOutputStream outputStream = new FileOutputStream("json/AllSets-x.json")) {
+                Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"));
+                ByteStreams.copy(zipInputStream, outputStream);
             }
         }
-        ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream("json/AllSets.json.zip"));
-        Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets.json"));
-        return new InputStreamReader(zipInputStream, Charsets.UTF_8);
+
+        return new InputStreamReader(new FileInputStream("json/AllSets-x.json"), Charsets.UTF_8);
     }
 }

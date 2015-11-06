@@ -39,5 +39,7 @@ angular.module('card-app')
     })
 
     .controller('VersionCheckController', function($scope) {
-        $scope.sets = _.uniq(_.values(inlinemtg.sets));
+        $scope.datamodel.getAllSets().then(function(result) {
+            $scope.sets = result.data;
+        });
     });

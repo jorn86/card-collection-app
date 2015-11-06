@@ -26,12 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Path("deck")
 @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 public class DeckRestlet {
-    private UserManager userManager;
-
-    @Inject
-    public DeckRestlet(UserManager userManager) {
-        this.userManager = userManager;
-    }
+    @Inject private UserManager userManager;
 
     private void checkUser() {
         userManager.throwIfNotAvailable(() -> new UnauthorizedException("DeckRestlet is not available without user"));

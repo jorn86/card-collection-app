@@ -1,11 +1,12 @@
 <table ng-controller="VersionCheckController">
-    <tr><th>Code</th><th>Common</th><th>Uncommon</th><th>Rare</th><th>Mythic</th></tr>
-    <tr ng-repeat="set in sets">
-        <td>{{set}}</td>
-        <td><setimage set="set" rarity="'Common'"</td>
-        <td><setimage set="set" rarity="'Uncommon'"</td>
-        <td><setimage set="set" rarity="'Rare'"</td>
-        <td><setimage set="set" rarity="'Mythic Rare'"</td>
-        <td ng-if="set === 'TSP'"><setimage set="set" rarity="'Timeshifted'"</td>
+    <tr><th>Code</th><th>Name</th><th>Common</th><th>Uncommon</th><th>Rare</th><th>Mythic</th></tr>
+    <tr ng-repeat="set in sets track by $index">
+        <td>{{set.gatherercode}}</td>
+        <td>{{set.name}}</td>
+        <td><setimage set="set.gatherercode" rarity="'Common'"></setimage></td>
+        <td><setimage set="set.gatherercode" rarity="'Uncommon'"></setimage></td>
+        <td><setimage set="set.gatherercode" rarity="'Rare'"></setimage></td>
+        <td><setimage set="set.gatherercode" rarity="'Mythic Rare'"></setimage></td>
+        <td ng-if="set.gatherercode === 'TSP'"><setimage set="'TSB'" rarity="'Timeshifted'"></setimage></td>
     </tr>
 </table>
