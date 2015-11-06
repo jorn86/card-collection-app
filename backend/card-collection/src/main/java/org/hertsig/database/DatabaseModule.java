@@ -1,7 +1,5 @@
 package org.hertsig.database;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.UUID;
 
 import javax.inject.Singleton;
@@ -21,6 +19,7 @@ public class DatabaseModule extends AbstractModule {
     protected void configure() {
         bind(DataSource.class).toProvider(PostgresqlDatasourceProvider.class).in(Scopes.SINGLETON);
         bind(DatabaseUpgrade.class).asEagerSingleton();
+        bind(ContentUpgrade.class).asEagerSingleton();
     }
 
     @Singleton @Provides
