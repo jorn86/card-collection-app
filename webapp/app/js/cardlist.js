@@ -101,8 +101,8 @@ angular.module('card-app')
         $scope.cardSearchValue = '';
         var searchResult = null;
         $scope.searchCallback = function(query) {
-            return $scope.datamodel.getInventory().then(function(result) {
-                return result.data.cards;
+            return $scope.datamodel.searchCardsByName(query.query).then(function(result) {
+                return result.data;
             });
         };
         $scope.searchSelectCallback = function(result) {
