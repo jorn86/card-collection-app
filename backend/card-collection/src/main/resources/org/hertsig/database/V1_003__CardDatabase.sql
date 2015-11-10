@@ -10,14 +10,14 @@ CREATE TABLE "set" (
 
 CREATE TABLE card (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
-  name VARCHAR(150) NOT NULL CHECK (name <> ''),
+  name VARCHAR(150) NOT NULL UNIQUE CHECK (name <> ''),
   fulltype VARCHAR(128),
   supertypes VARCHAR(128)[],
   types VARCHAR(128)[],
   subtypes VARCHAR(128)[],
   cost VARCHAR(128) NOT NULL,
   cmc NUMERIC NOT NULL CHECK (cmc >= 0),
-  colors color[] NOT NULL, -- CHECK (colors = uniq(colors)), -- http://stackoverflow.com/q/33567996/8681
+  colors color[] NOT NULL,
   text VARCHAR,
   power NUMERIC,
   toughness NUMERIC,

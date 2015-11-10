@@ -1,8 +1,7 @@
-package org.hertsig.database;
+package org.hertsig.contentupgrade;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -17,12 +16,16 @@ import java.util.zip.ZipInputStream;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import org.hertsig.dao.SetDao;
+import org.hertsig.dao.ContentUpgradeDao;
+import org.hertsig.dto.Card;
+import org.hertsig.dto.Color;
 import org.hertsig.dto.Set;
 import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.exceptions.DBIException;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.ByteStreams;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,15 +38,14 @@ import lombok.extern.slf4j.Slf4j;
 public class ContentUpgrade {
     @Inject
     public ContentUpgrade(DBI dbi) {
-        try (SetDao setDao = dbi.open(SetDao.class);
-                Reader sets = ensureSetFile()) {
+        try (ContentUpgradeDao dao = dbi.open(ContentUpgradeDao.class); Reader sets = ensureSetFile()) {
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
             Map<String, FullSet> map = gson.fromJson(sets, Types.mapOf(String.class, FullSet.class));
             for (FullSet fullSet : map.values()) {
-                UUID setId = ensureSet(setDao, fullSet);
+                UUID setId = ensureSet(dao, fullSet);
                 for (FullSet.Card card : fullSet.cards) {
-                    UUID cardId = ensureCard(card);
-                    ensurePrinting(cardId, setId, card);
+                    UUID cardId = ensureCard(dao, card);
+                    ensurePrinting(dao, cardId, setId, card);
                 }
             }
         }
@@ -52,18 +54,29 @@ public class ContentUpgrade {
         }
     }
 
-    private void ensurePrinting(UUID cardId, UUID setId, FullSet.Card card) {
+    private void ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
         
     }
 
-    private UUID ensureCard(FullSet.Card card) {
-        return null;
+    private UUID ensureCard(ContentUpgradeDao dao, FullSet.Card card) {
+        Card existingCard = dao.getCard(card.getName());
+        if (existingCard == null) {
+            try {
+                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(),
+                        card.getSubtypes(), ImmutableList.of(Color.W), card.getLayout()));
+            }
+            catch (DBIException e) {
+                log.debug("Inserting card {} failed", card, e);
+                return null;
+            }
+        }
+        return existingCard.getId();
     }
 
-    private UUID ensureSet(SetDao setDao, FullSet fullSet) {
-        Set set = setDao.get(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
+    private UUID ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
+        Set set = dao.getSet(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
         if (set == null) {
-            return setDao.create(new Set(null, fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode, fullSet.code, fullSet.name, fullSet.releaseDate));
+            return dao.createSet(new Set(null, fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode, fullSet.code, fullSet.name, fullSet.releaseDate));
         }
         if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {
             log.warn("Inconsistency: database {}; external {} {}", set, fullSet.code, fullSet.name, fullSet.releaseDate);
@@ -76,15 +89,17 @@ public class ContentUpgrade {
         if (!Files.isDirectory(folder)) {
             Files.createDirectory(folder);
         }
-        if (!Files.isRegularFile(folder.resolve("AllSets-x.json"))) {
+
+        Path file = folder.resolve("AllSets-x.json");
+        if (!Files.isRegularFile(file)) {
             log.debug("Downloading sets file");
             try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
-                    FileOutputStream outputStream = new FileOutputStream("json/AllSets-x.json")) {
-                Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"));
+                    FileOutputStream outputStream = new FileOutputStream(file.toFile())) {
+                Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"), "Invalid zip file contents");
                 ByteStreams.copy(zipInputStream, outputStream);
             }
         }
 
-        return new InputStreamReader(new FileInputStream("json/AllSets-x.json"), Charsets.UTF_8);
+        return new InputStreamReader(new FileInputStream(file.toFile()), Charsets.UTF_8);
     }
 }

@@ -1,4 +1,4 @@
-package org.hertsig.database;
+package org.hertsig.contentupgrade;
 
 import java.util.Date;
 import java.util.List;
@@ -42,7 +42,7 @@ public class FullSet {
         String power;
         String toughness;
         Integer loyalty;
-        Layout layout;
+        String layout;
         int multiverseid;
         List<Integer> variations;
         String imageName;
@@ -57,9 +57,5 @@ public class FullSet {
 
     public static enum Border {
         black, white, silver;
-    }
-
-    public static enum Layout {
-        normal, split, flip, double_faced, token, plane, scheme, phenomenon, leveler, vanguard;
     }
 }
