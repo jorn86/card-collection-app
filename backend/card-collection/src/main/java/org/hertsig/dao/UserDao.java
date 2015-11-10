@@ -12,13 +12,13 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 
 public interface UserDao extends AutoCloseable {
-    @SqlUpdate("INSERT INTO \"user\" (name, email) VALUES (:name, :email)")
-    @GetGeneratedKeys(UuidMapper.class)
-    UUID create(@BindBean User user);
-
     @SqlQuery("SELECT * FROM \"user\" WHERE id = :id")
     @MapResultAsBean
     User get(@Bind("id") UUID id);
+
+    @SqlUpdate("INSERT INTO \"user\" (name, email) VALUES (:name, :email)")
+    @GetGeneratedKeys(UuidMapper.class)
+    UUID create(@BindBean User user);
 
     void close();
 }
