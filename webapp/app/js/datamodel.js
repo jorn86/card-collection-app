@@ -28,6 +28,10 @@ var Datamodel = function Datamodel($http) {
         return $http.put(base + 'deck/' + deckId + '/row/' + rowId, {amount: amount});
     };
 
+    this.addCardToDeck = function(deckId, cardId, amount) {
+        return $http.post(base + 'deck/' + deckId + '/card', {id: cardId, amount: amount});
+    };
+
     this.authenticateUser = function(user) {
         //return $http.get('content/login.json');
         return $http.post(base + 'user', user).then(function(response) {

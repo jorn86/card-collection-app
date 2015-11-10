@@ -106,16 +106,20 @@ angular.module('card-app')
             });
         };
         $scope.searchSelectCallback = function(result) {
-            searchResult = result.item.name;
+            searchResult = result.item;
             return result.item.name;
         };
         $scope.submitAdd = function() {
+            console.log("add", searchResult)
             if (!searchResult) {
                 return;
             }
 
-            $scope.grid.rows.push({name: searchResult, type: 'Unknown', amount: 1});
-            document.getElementById('add-card').value = '';
+            $scope.datamodel.addCardToDeck($scope.deck.id, searchResult.id, 1).then(function (result) {
+                console.log("Added card", result)
+                return $scope.getDeck($scope.deck.id);
+            }).then($scope.setDeck);
+
             searchResult = null;
         };
 

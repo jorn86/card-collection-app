@@ -35,8 +35,8 @@ import com.google.inject.util.Types;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Singleton
 @Slf4j
+@Singleton
 public class ContentUpgrade {
     @Inject
     public ContentUpgrade(DBI dbi) {
