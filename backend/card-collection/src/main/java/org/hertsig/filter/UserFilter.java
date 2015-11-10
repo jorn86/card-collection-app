@@ -23,6 +23,6 @@ public class UserFilter implements ContainerRequestFilter {
         if (userId != null) {
             userManagerProvider.get().setCurrentUser(UUID.fromString(userId));
         }
-        log.debug("{} '{}' with user {}", containerRequestContext.getMethod(), containerRequestContext.getUriInfo().getPath(), userId);
+        log.trace("{} '{}' with user {}", containerRequestContext.getMethod(), containerRequestContext.getUriInfo().getPath(), userId);
     }
 }

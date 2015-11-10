@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.hertsig.dto.Card;
 import org.hertsig.dto.Deck;
 import org.hertsig.dto.Row;
 import org.hertsig.user.UnauthorizedException;
@@ -68,5 +69,12 @@ public class DeckRestlet {
         checkUser();
         row.setId(rowId);
         return row;
+    }
+
+    @POST
+    @Path("{deckId}/card")
+    public Object addCard(@PathParam("deckId") UUID deckId, Row card) {
+        checkUser();
+        return card;
     }
 }

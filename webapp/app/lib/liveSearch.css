@@ -15,7 +15,6 @@ ul.searchresultspopup > li {
     text-align: left;
     line-height: 20px;
     list-style: none outside none;
-    text-transform: lowercase;
 }
 
 ul.searchresultspopup li.selected, ul.searchresultspopup li:hover {

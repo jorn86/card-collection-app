@@ -17,7 +17,7 @@ CREATE TABLE card (
   subtypes VARCHAR(128)[],
   cost VARCHAR(128),
   cmc NUMERIC NOT NULL CHECK (cmc >= 0),
-  colors color[] NOT NULL,
+  colors color[],
   text VARCHAR,
   power VARCHAR(8),
   toughness VARCHAR(8),
@@ -36,5 +36,6 @@ CREATE TABLE printing (
   rarity VARCHAR(32),
   originaltext VARCHAR,
   originaltype VARCHAR,
-  flavortext VARCHAR
+  flavortext VARCHAR,
+  UNIQUE (setid, cardid)
 );
