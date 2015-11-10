@@ -16,6 +16,10 @@ var Datamodel = function Datamodel($http) {
         return $http.get('content/inventory.json');
     };
 
+    this.searchCardsByName = function(name) {
+        return $http.get(base + 'database/search/?name=' + name);
+    };
+
     this.getAllSets = function() {
         return $http.get(base + 'database/sets');
     };

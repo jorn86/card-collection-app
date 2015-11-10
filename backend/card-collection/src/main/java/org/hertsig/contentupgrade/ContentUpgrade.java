@@ -90,7 +90,7 @@ public class ContentUpgrade {
         if (colors == null || colors.isEmpty()) {
             return Lists.newArrayList();
         }
-        return Lists.transform(colors, Color::fromString);
+        return Lists.transform(colors, Color::forName);
     }
 
     private UUID ensureSet(ContentUpgradeDao dao, FullSet fullSet) {

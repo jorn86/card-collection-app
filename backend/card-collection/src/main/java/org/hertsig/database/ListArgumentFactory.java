@@ -20,7 +20,7 @@ public class ListArgumentFactory implements ArgumentFactory<List<?>> {
     public Argument build(Class<?> expectedType, List<?> value, StatementContext ctx) {
         return (position, statement, ctx1) -> {
             String parameterTypeName = statement.getParameterMetaData().getParameterTypeName(position);
-            // type name starts with _ for some reason, cut it off here.
+            // type name starts with _, cut it off here.
             Array array = ctx1.getConnection().createArrayOf(parameterTypeName.substring(1), value.toArray());
             statement.setArray(position, array);
         };
