@@ -45,6 +45,8 @@ public class FullSet {
         String layout;
         int multiverseid;
         List<Integer> variations;
+        String originalText;
+        String originalType;
         String imageName;
         String watermark;
         Border border;
@@ -55,7 +57,7 @@ public class FullSet {
         int life;
     }
 
-    public static enum Border {
+    public enum Border {
         black, white, silver;
     }
 }

@@ -1,35 +1,27 @@
 package org.hertsig.database;
 
 import java.sql.Array;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.Argument;
 import org.skife.jdbi.v2.tweak.ArgumentFactory;
 
-public class ListArgumentFactory<T> implements ArgumentFactory<List<T>> {
-    private final String sqlType;
-    private final Class<T> javaType;
+import lombok.extern.slf4j.Slf4j;
 
-    public ListArgumentFactory(String sqlType, Class<T> javaType) {
-        this.sqlType = sqlType;
-        this.javaType = javaType;
-    }
-
+@Slf4j
+public class ListArgumentFactory implements ArgumentFactory<List<?>> {
     @Override
     public boolean accepts(Class<?> expectedType, Object value, StatementContext ctx) {
-        if (!(value instanceof List) || ((List) value).isEmpty()) {
-            return false;
-        }
-        return javaType.isInstance(((List) value).get(0));
+        return value instanceof List;
     }
 
     @Override
-    public Argument build(Class<?> expectedType, List<T> value, StatementContext ctx) {
+    public Argument build(Class<?> expectedType, List<?> value, StatementContext ctx) {
         return (position, statement, ctx1) -> {
-            Array array = ctx1.getConnection().createArrayOf(sqlType, value.toArray());
+            String parameterTypeName = statement.getParameterMetaData().getParameterTypeName(position);
+            // type name starts with _ for some reason, cut it off here.
+            Array array = ctx1.getConnection().createArrayOf(parameterTypeName.substring(1), value.toArray());
             statement.setArray(position, array);
         };
     }

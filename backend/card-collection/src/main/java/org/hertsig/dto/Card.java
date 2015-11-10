@@ -14,6 +14,14 @@ public class Card {
     private String fulltype;
     private List<String> supertypes;
     private List<String> subtypes;
+    private String cost;
+    private double cmc;
     private List<Color> colors;
+    private String text;
+    private String power;
+    private String toughness;
+    private Integer loyalty;
     private String layout;
+    private UUID splitcardparent;
+    private UUID doublefacefront;
 }

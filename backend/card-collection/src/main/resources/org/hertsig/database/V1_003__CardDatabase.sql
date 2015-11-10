@@ -15,15 +15,16 @@ CREATE TABLE card (
   supertypes VARCHAR(128)[],
   types VARCHAR(128)[],
   subtypes VARCHAR(128)[],
-  cost VARCHAR(128) NOT NULL,
+  cost VARCHAR(128),
   cmc NUMERIC NOT NULL CHECK (cmc >= 0),
   colors color[] NOT NULL,
   text VARCHAR,
-  power NUMERIC,
-  toughness NUMERIC,
+  power VARCHAR(8),
+  toughness VARCHAR(8),
   loyalty NUMERIC,
   layout VARCHAR(20) NOT NULL,
-  splitcardparent UUID REFERENCES card
+  splitcardparent UUID REFERENCES card,
+  doublefacefront UUID REFERENCES card
 );
 
 CREATE TABLE printing (

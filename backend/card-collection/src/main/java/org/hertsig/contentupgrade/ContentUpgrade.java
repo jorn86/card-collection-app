@@ -9,6 +9,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.zip.ZipInputStream;
@@ -19,13 +20,14 @@ import javax.inject.Singleton;
 import org.hertsig.dao.ContentUpgradeDao;
 import org.hertsig.dto.Card;
 import org.hertsig.dto.Color;
+import org.hertsig.dto.Printing;
 import org.hertsig.dto.Set;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.exceptions.DBIException;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,6 +44,7 @@ public class ContentUpgrade {
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
             Map<String, FullSet> map = gson.fromJson(sets, Types.mapOf(String.class, FullSet.class));
             for (FullSet fullSet : map.values()) {
+                log.debug("Checking database for set {}", fullSet.name);
                 UUID setId = ensureSet(dao, fullSet);
                 for (FullSet.Card card : fullSet.cards) {
                     UUID cardId = ensureCard(dao, card);
@@ -54,16 +57,22 @@ public class ContentUpgrade {
         }
     }
 
-    private void ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
-        
+    private UUID ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
+        Printing printing = dao.getPrinting(setId, cardId);
+        if (printing == null) {
+            return dao.createPrinting(new Printing(null, setId, cardId, card.getMultiverseid(), card.getNumber(),
+                    card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor()));
+        }
+        return printing.getId();
     }
 
     private UUID ensureCard(ContentUpgradeDao dao, FullSet.Card card) {
         Card existingCard = dao.getCard(card.getName());
         if (existingCard == null) {
             try {
-                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(),
-                        card.getSubtypes(), ImmutableList.of(Color.W), card.getLayout()));
+                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(), card.getSubtypes(),
+                        card.getManaCost(), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
+                        card.getPower(), card.getToughness(), card.getLoyalty(), card.getLayout(), null, null));
             }
             catch (DBIException e) {
                 log.debug("Inserting card {} failed", card, e);
@@ -71,6 +80,17 @@ public class ContentUpgrade {
             }
         }
         return existingCard.getId();
+    }
+
+    private <T> T d(T value, T fallback) {
+        return value == null ? fallback : value;
+    }
+
+    private List<Color> mapColors(List<String> colors) {
+        if (colors == null || colors.isEmpty()) {
+            return Lists.newArrayList();
+        }
+        return Lists.transform(colors, Color::fromString);
     }
 
     private UUID ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
