@@ -14,10 +14,16 @@ angular.module('card-app')
         $scope.$on('user', function(event, user) {
             if (user) {
                 $scope.datamodel.getDecks().then(function (result) {
-                    $scope.decks = result.data.decks;
+                    $scope.decksForUser = result.data.decks;
                     $scope.tags = result.data.tags
                 });
             }
+            else {
+                $scope.decksForUser = null;
+            }
+        });
+        $scope.datamodel.getPreconstructedDecks().then(function(result) {
+            $scope.preconstructedDecks = result.data.decks;
         });
 
         $scope.selectedTag = null;
@@ -34,7 +40,7 @@ angular.module('card-app')
 
     .controller('InventoryController', function ($scope) {
         $scope.datamodel.getInventory().then(function (result) {
-            $scope.setDeck(result.data);
+            $scope.setDeck({'Inventory' : result.data});
         });
     })
 

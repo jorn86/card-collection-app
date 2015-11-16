@@ -123,8 +123,14 @@ angular.module('card-app')
             searchResult = null;
         };
 
+        var currentUserId;
+        $scope.$on('user', function(event, user) {
+            currentUserId = user ? user.id : null;
+        });
+
         $scope.setDeck = function(deck) {
             $scope.deck = deck;
+            $scope.editable = deck.userid === currentUserId;
             $scope.updateGrid(deck.cards);
         };
     })
