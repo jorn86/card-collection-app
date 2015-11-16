@@ -41,12 +41,12 @@ table, th, td {
 /* Main frame content */
 .list {
     float: left;
-    width: 150px;
+    width: 200px;
 }
 
 .deck {
     float: left;
-    width: calc(100% - 150px);
+    width: calc(100% - 210px);
 }
 
 .grid {

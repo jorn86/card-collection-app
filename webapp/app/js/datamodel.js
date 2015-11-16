@@ -2,13 +2,15 @@ var Datamodel = function Datamodel($http) {
     var base = "api/";
 
     this.getDecks = function(userId) {
-        //return $http.get('content/list.json');
         return $http.get(base + 'deck/list');
     };
 
+    this.getPreconstructedDecks = function() {
+        return $http.get(base + 'deck/preconstructedlist');
+    };
+
     this.getDeck = function(id) {
-        $http.get(base + 'deck/' + id);
-        return $http.get('content/decks.json');
+        return $http.get(base + 'deck/' + id);
     };
 
     this.getInventory = function() {
