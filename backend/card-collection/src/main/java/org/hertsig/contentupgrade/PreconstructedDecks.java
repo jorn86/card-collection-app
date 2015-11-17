@@ -14,9 +14,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.hertsig.dao.PreconstructedDao;
-import org.hertsig.dto.Card;
 import org.hertsig.dto.Printing;
-import org.hertsig.dto.Set;
 import org.hertsig.dto.Tag;
 import org.skife.jdbi.v2.DBI;
 
@@ -28,11 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Singleton
 public class PreconstructedDecks {
-    private final DBI dbi;
-
     @Inject
     public PreconstructedDecks(DBI dbi) {
-        this.dbi = dbi;
         try (PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
             if (dao.getPreconstructedTag() == null) {
                 dao.createPreconstructedTag();
@@ -52,7 +47,7 @@ public class PreconstructedDecks {
     }
 
     private void importPreconstructedDeck(PreconstructedDao dao, Tag baseTag, Path file) throws IOException {
-        log.debug("Importing file {}", file);
+        log.debug("Checking file {}", file);
         PreconstructedDeck deck = new Gson().fromJson(Files.newBufferedReader(file), PreconstructedDeck.class);
 
         UUID tagId = ensureTagChain(dao, baseTag, deck.getTag());

@@ -16,11 +16,10 @@ import javax.ws.rs.core.Response;
 
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
-import org.hertsig.dto.Card;
 import org.hertsig.dto.Deck;
 import org.hertsig.dto.DeckEntry;
 import org.hertsig.dto.Row;
-import org.hertsig.user.UnauthorizedException;
+import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.DBI;
 
@@ -37,7 +36,7 @@ public class DeckRestlet {
     @Inject private DBI dbi;
 
     private void checkUser() {
-        userManager.throwIfNotAvailable(() -> new UnauthorizedException("DeckRestlet is not available without user"));
+        userManager.throwIfNotAvailable("DeckRestlet is not available without user");
     }
 
     @GET
@@ -67,10 +66,13 @@ public class DeckRestlet {
     public Object getDeck(@PathParam("deckId") UUID deckId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             Deck deck = dao.getDeck(deckId);
+            if (deck == null) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
+            }
             if (deck.getUserid() != null) {
                 checkUser();
                 if (!deck.getUserid().equals(userManager.getCurrentUser().getId())) {
-                    throw new UnauthorizedException("Not your deck");
+                    throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
                 }
             }
 

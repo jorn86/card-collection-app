@@ -14,9 +14,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.hertsig.dao.AuthenticationOptionDao;
+import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.UserDao;
 import org.hertsig.dto.User;
-import org.hertsig.user.UnauthorizedException;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.DBI;
 
@@ -38,7 +38,8 @@ public class UserRestlet {
         }
 
         try (AuthenticationOptionDao authDao = dbi.open(AuthenticationOptionDao.class);
-             UserDao userDao = dbi.open(UserDao.class)) {
+             UserDao userDao = dbi.open(UserDao.class);
+             DeckDao deckDao = dbi.open(DeckDao.class)) {
 
             Optional<UUID> user = options.stream().map(authDao::getExistingUser).filter(Objects::nonNull).findFirst();
             if (user.isPresent()) {
@@ -47,6 +48,8 @@ public class UserRestlet {
 
             UUID createdUserId = userDao.create(newUser);
             options.stream().forEach(option -> authDao.create(createdUserId, option));
+            UUID inventoryId = deckDao.createDeck("Inventory", createdUserId);
+            userDao.setInventory(createdUserId, inventoryId);
             return userDao.get(createdUserId);
         }
     }
@@ -54,7 +57,7 @@ public class UserRestlet {
     @POST
     @Path("addauthentication")
     public Object addAuthenticationOption(User.AuthenticationOption auth) {
-        userManager.throwIfNotAvailable(() -> new UnauthorizedException("Cannot add authentication option without user"));
+        userManager.throwIfNotAvailable("Cannot add authentication option without user");
         try (AuthenticationOptionDao authDao = dbi.open(AuthenticationOptionDao.class)) {
             authDao.create(userManager.getCurrentUser().getId(), auth);
             return Response.noContent().build();

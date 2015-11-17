@@ -12,6 +12,7 @@ public class User {
     private UUID id;
     private String name;
     private String email;
+    private UUID inventoryid;
     private List<AuthenticationOption> authenticationOptions;
 
     @Data
