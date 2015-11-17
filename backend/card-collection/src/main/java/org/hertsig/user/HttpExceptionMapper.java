@@ -9,10 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Provider
-public class UnauthorizedExceptionMapper implements ExceptionMapper<UnauthorizedException> {
+public class HttpExceptionMapper implements ExceptionMapper<HttpRequestException> {
     @Override
-    public Response toResponse(UnauthorizedException e) {
-        return Response.status(Response.Status.UNAUTHORIZED)
+    public Response toResponse(HttpRequestException e) {
+        return Response.status(e.getStatus())
                 .entity(e.getMessage())
                 .type(MediaType.TEXT_PLAIN_TYPE)
                 .build();

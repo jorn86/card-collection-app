@@ -70,7 +70,7 @@ public class ContentUpgrade {
         Card existingCard = dao.getCard(card.getName());
         if (existingCard == null) {
             try {
-                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(), card.getSubtypes(),
+                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
                         card.getManaCost(), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
                         card.getPower(), card.getToughness(), card.getLoyalty(), card.getLayout(), null, null));
             }

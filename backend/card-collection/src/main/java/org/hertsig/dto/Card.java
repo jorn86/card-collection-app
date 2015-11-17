@@ -13,6 +13,7 @@ public class Card {
     private String name;
     private String fulltype;
     private List<String> supertypes;
+    private List<String> types;
     private List<String> subtypes;
     private String cost;
     private double cmc;

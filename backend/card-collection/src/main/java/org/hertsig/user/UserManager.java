@@ -1,10 +1,9 @@
 package org.hertsig.user;
 
 import java.util.UUID;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 import javax.inject.Inject;
+import javax.ws.rs.core.Response;
 
 import org.hertsig.dao.UserDao;
 import org.hertsig.dto.User;
@@ -26,9 +25,9 @@ public class UserManager {
         return currentUser != null;
     }
 
-    public void throwIfNotAvailable(Supplier<? extends RuntimeException> exception) {
+    public void throwIfNotAvailable(String message) {
         if (!isAvailable()) {
-            throw exception.get();
+            throw new HttpRequestException(Response.Status.UNAUTHORIZED, message);
         }
     }
 

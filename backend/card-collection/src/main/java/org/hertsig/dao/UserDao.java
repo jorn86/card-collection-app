@@ -20,5 +20,9 @@ public interface UserDao extends AutoCloseable {
     @GetGeneratedKeys(UuidMapper.class)
     UUID create(@BindBean User user);
 
+    @SqlUpdate("UPDATE \"user\" SET inventoryid = :inventory WHERE id = :user AND inventoryid IS NULL")
+    int setInventory(@Bind("user") UUID createdUserId, @Bind("inventory") UUID inventoryId);
+
     void close();
+
 }

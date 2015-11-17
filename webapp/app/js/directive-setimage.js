@@ -167,6 +167,7 @@ angular.module('card-app')
                 case 'C05': return "C - Command Zone Sets/D05 - Commander's Arsenal";
                 case 'C06': return 'C - Command Zone Sets/D06 - Commander 2013';
                 case 'C07': return 'C - Command Zone Sets/D07 - Commander 2014';
+                case 'C08': return 'C - Command Zone Sets/D08 - Commander 2015';
                 case 'D08': return 'D - Reprint, Starter and Other Box Sets/D08 - Modern Masters';
                 case 'D09': return 'D - Reprint, Starter and Other Box Sets/D09 - Modern Masters 2015';
                 case 'E01': return 'E - Portal Sets/E01 - Portal';
