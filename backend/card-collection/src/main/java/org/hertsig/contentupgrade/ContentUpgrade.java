@@ -11,7 +11,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
+import java.util.stream.Stream;
 import java.util.zip.ZipInputStream;
 
 import javax.inject.Inject;
@@ -96,12 +98,36 @@ public class ContentUpgrade {
     private UUID ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
         Set set = dao.getSet(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
         if (set == null) {
-            return dao.createSet(new Set(null, fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode, fullSet.code, fullSet.name, fullSet.releaseDate));
+            return dao.createSet(new Set(null, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
+                    fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type), fullSet.onlineOnly));
         }
         if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {
             log.warn("Inconsistency: database {}; external {} {}", set, fullSet.code, fullSet.name, fullSet.releaseDate);
         }
         return set.getId();
+    }
+
+    private int priority(String type) {
+        switch (type) {
+            case "core":
+            case "expansion":
+                return 1;
+            case "conspiracy":
+            case "reprint":
+            case "starter":
+            case "un":
+                return 2;
+            case "archenemy":
+            case "box":
+            case "commander":
+            case "duel deck":
+            case "from the vault":
+            case "planechase":
+            case "premium deck":
+                return 3;
+            default:
+                return 4;
+        }
     }
 
     private Reader ensureSetFile() throws IOException {
@@ -121,5 +147,10 @@ public class ContentUpgrade {
         }
 
         return new InputStreamReader(new FileInputStream(file.toFile()), Charsets.UTF_8);
+    }
+
+    @SafeVarargs
+    private final <T> T coalesce(T... values) {
+        return Stream.of(values).filter(Objects::nonNull).findFirst().orElse(null);
     }
 }

@@ -4,8 +4,12 @@ CREATE TABLE "set" (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
   gatherercode VARCHAR(8) NOT NULL UNIQUE CHECK (gatherercode <> ''),
   code VARCHAR(8) NOT NULL UNIQUE CHECK (code <> ''),
+  mcicode VARCHAR(8),
   name VARCHAR(128) NOT NULL UNIQUE CHECK (name <> ''),
-  releasedate DATE
+  releasedate DATE,
+  type VARCHAR(32) NOT NULL,
+  priority INT NOT NULL,
+  onlineonly BOOLEAN NOT NULL
 );
 
 CREATE TABLE card (

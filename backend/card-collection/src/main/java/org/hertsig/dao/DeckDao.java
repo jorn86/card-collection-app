@@ -21,16 +21,7 @@ public interface DeckDao extends AutoCloseable {
     @GetGeneratedKeys(UuidMapper.class)
     UUID createDeck(@Bind("name") String name, @Bind("user") UUID userId);
 
-    @SqlQuery("SELECT deckrow.id, deckrow.amount, card.name, card.cost, card.cmc, " +
-                "array_to_string(card.types, ' ') AS type, " +
-                "array_to_string(card.subtypes, ' ') AS subtype, " +
-                "set.gatherercode, " +
-                "printing.multiverseid, set.gatherercode AS setcode, printing.rarity " +
-            "FROM deckrowwithprinting deckrow " +
-            "LEFT JOIN card ON card.id = deckrow.cardid " +
-            "LEFT JOIN printing ON printing.id = deckrow.printingid " +
-            "LEFT JOIN set ON printing.setid = set.id " +
-            "WHERE deckrow.deckid = :deck")
+    @SqlQuery("SELECT * FROM deckentryview WHERE deckid = :deck")
     @MapResultAsBean
     List<DeckEntry> getCards(@Bind("deck") UUID deckId);
 

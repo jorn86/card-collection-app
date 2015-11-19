@@ -1,14 +1,18 @@
 CREATE VIEW latestprinting AS (
-    WITH dates AS (SELECT card.id AS cardid, MAX("set".releasedate) AS releasedate
-      FROM card JOIN printing ON card.id = printing.cardid JOIN "set" ON set.id = printing.setid
-      GROUP BY card.id)
-    SELECT dates.cardid, set.id AS setid, set.gatherercode, printing.id AS printingid
-      FROM dates JOIN set ON set.releasedate = dates.releasedate
-        LEFT JOIN printing ON set.id = printing.setid AND dates.cardid = printing.cardid
-);
+    SELECT DISTINCT ON(printing.cardid) printing.*
+    FROM printing LEFT JOIN "set" ON set.id = printing.setid
+    ORDER BY printing.cardid, set.priority, set.releasedate DESC);
 
-CREATE VIEW deckrowwithprinting AS (
-    SELECT deckrow.id, deckrow.deckid, deckrow.cardid, deckrow.amount,
-      (CASE WHEN deckrow.printingid IS NULL THEN latestprinting.printingid ELSE deckrow.printingid END) AS printingid
-    FROM deckrow LEFT JOIN latestprinting ON deckrow.cardid = latestprinting.cardid
-);
+CREATE VIEW deckentryview AS (
+  SELECT deckrow.*, card.name, card.cost, card.cmc,
+    array_to_string(card.types, ' ') AS type,
+    array_to_string(card.subtypes, ' ') AS subtype,
+    coalesce(printing.multiverseid, latestprinting.multiverseid) AS multiverseid,
+    coalesce(printing.rarity, latestprinting.rarity) AS rarity,
+    printing.multiverseid IS NULL AS setisfallback,
+    set.gatherercode AS setcode
+  FROM deckrow
+    LEFT JOIN card ON card.id = deckrow.cardid
+    LEFT JOIN printing ON printing.id = deckrow.printingid
+    LEFT JOIN latestprinting ON latestprinting.cardid = deckrow.cardid
+    LEFT JOIN set ON coalesce(printing.setid, latestprinting.setid) = set.id);
