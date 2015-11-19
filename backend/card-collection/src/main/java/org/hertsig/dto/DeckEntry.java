@@ -18,4 +18,5 @@ public class DeckEntry {
     private long multiverseid;
     private String setcode;
     private String rarity;
+    private boolean setisfallback;
 }

@@ -19,7 +19,7 @@ public class DatabaseModule extends AbstractModule {
     protected void configure() {
         bind(DataSource.class).toProvider(PostgresqlDatasourceProvider.class).in(Scopes.SINGLETON);
         bind(DatabaseUpgrade.class).asEagerSingleton();
-//        bind(ContentUpgrade.class).asEagerSingleton();
+        bind(ContentUpgrade.class).asEagerSingleton();
         bind(PreconstructedDecks.class).asEagerSingleton();
     }
 

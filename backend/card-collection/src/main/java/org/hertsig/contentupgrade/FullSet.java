@@ -14,6 +14,7 @@ public class FullSet {
     String code;
     String gathererCode;
     String oldCode;
+    String magicCardsInfoCode;
     Date releaseDate;
     Border border;
     String type;

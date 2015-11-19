@@ -12,6 +12,10 @@ public class Set {
     private UUID id;
     private String gatherercode;
     private String code;
+    private String mcicode;
     private String name;
     private Date releasedate;
+    private String type;
+    private int priority;
+    private boolean onlineonly;
 }

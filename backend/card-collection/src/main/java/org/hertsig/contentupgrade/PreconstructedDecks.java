@@ -26,6 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Singleton
 public class PreconstructedDecks {
+    private final Gson gson = new Gson();
+
     @Inject
     public PreconstructedDecks(DBI dbi) {
         try (PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
@@ -48,7 +50,7 @@ public class PreconstructedDecks {
 
     private void importPreconstructedDeck(PreconstructedDao dao, Tag baseTag, Path file) throws IOException {
         log.debug("Checking file {}", file);
-        PreconstructedDeck deck = new Gson().fromJson(Files.newBufferedReader(file), PreconstructedDeck.class);
+        PreconstructedDeck deck = gson.fromJson(Files.newBufferedReader(file), PreconstructedDeck.class);
 
         UUID tagId = ensureTagChain(dao, baseTag, deck.getTag());
         UUID existingDeck = dao.getPreconstructedDeck(tagId, deck.getName());

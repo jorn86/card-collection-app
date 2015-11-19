@@ -19,7 +19,8 @@ public interface ContentUpgradeDao extends AutoCloseable {
     @MapResultAsBean
     Set getSet(@Bind("code") String gathererCode);
 
-    @SqlUpdate("INSERT INTO set (gatherercode, code, name, releasedate) VALUES (:gatherercode, :code, :name, :releasedate)")
+    @SqlUpdate("INSERT INTO set (gatherercode, code, mcicode, name, releasedate, type, priority, onlineonly) " +
+            "VALUES (:gatherercode, :code, :mcicode, :name, :releasedate, :type, :priority, :onlineonly)")
     @GetGeneratedKeys(UuidMapper.class)
     UUID createSet(@BindBean Set set);
 
