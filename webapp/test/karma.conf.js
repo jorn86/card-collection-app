@@ -3,14 +3,13 @@ module.exports = function(config) {
         basePath : '../',
 
         files : [
-            'app/bower_components/jquery/dist/jquery.js',
-            'app/bower_components/q/q.js',
-            'app/bower_components/underscore/underscore.js',
-            'app/bower_components/angular/angular.js',
-            'app/bower_components/angular-ui-router/release/angular-ui-router.js',
-            'app/bower_components/angular-filter/dist/angular-filter.js',
-            'app/bower_components/angular-directive.g-signin/google-plus-signin.js',
-            'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/node_modules/jquery/dist/jquery.js',
+            'app/node_modules/q/q.js',
+            'app/node_modules/underscore/underscore.js',
+            'app/node_modules/angular/angular.js',
+            'app/node_modules/angular-ui-router/release/angular-ui-router.js',
+            'app/node_modules/angular-filter/dist/angular-filter.js',
+            'app/node_modules/angular-mocks/angular-mocks.js',
             'app/lib/**/*.js',
             'app/js/**/*.js',
             'test/unit/**/*.js'
