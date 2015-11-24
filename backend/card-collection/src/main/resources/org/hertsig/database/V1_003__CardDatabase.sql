@@ -35,7 +35,7 @@ CREATE TABLE printing (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
   setid UUID NOT NULL REFERENCES "set",
   cardid UUID NOT NULL REFERENCES card,
-  multiverseid NUMERIC,
+  multiverseid INT,
   number CHAR(5),
   rarity VARCHAR(32),
   originaltext VARCHAR,
