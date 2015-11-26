@@ -2,7 +2,7 @@ syntax:glob
 bower_components/
 node_modules/
 temp/
-json/
+json/AllSets-x.json
 *.iml
 *.iws
 *.ipr
