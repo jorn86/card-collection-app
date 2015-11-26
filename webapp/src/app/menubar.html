@@ -1,0 +1,13 @@
+<div class="menubar">
+    <h1 style="float:left">Card Collection App</h1>
+    <div class="menuitem" ng-hide="userInfo">
+        <google-plus-signin clientid="1037739193811-rus02skk6058rm7k7bqf38trafthugdj" theme="dark"
+                            language="en"></google-plus-signin>
+    </div>
+    <div class="menuitem" ng-show="userInfo">
+        <img class="userimage" ng-src="{{userInfo.image}}">
+    </div>
+    <div class="menuitem" ng-show="userInfo">
+        <div class="grid-cell">{{userInfo.name}}</div>
+    </div>
+</div>

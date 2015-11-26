@@ -1,0 +1,131 @@
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.menubar {
+    height: 40px;
+    padding: 5px;
+}
+
+.content {
+    height: calc(100% - 67px);
+    padding: 0 5px;
+}
+
+.footer {
+    height: 10px;
+    font-size: 10px;
+    padding: 5px 5px 2px;
+}
+
+/* Menu bar */
+.menuitem {
+    float: right;
+    padding-right: 5px;
+}
+.userimage {
+    float: right;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+/* Main frame content */
+.list {
+    float: left;
+    width: 200px;
+}
+
+.deck {
+    float: left;
+    width: calc(100% - 210px);
+}
+
+.grid {
+    border: 2px outset black;
+    overflow: auto;
+    padding-top: 5px;
+    min-width: 740px;
+    width: calc(100% - 4px);
+}
+
+.grid-header {
+    overflow: hidden;
+    height: 1.8em;
+    font-weight: bold;
+}
+.grid-group-header {
+    overflow: hidden;
+    height: 1.5em;
+    font-style: italic;
+}
+.grid-row {
+    overflow: hidden;
+    border-top: 1px solid grey;
+    height: 21px;
+}
+.grid-row:hover {
+    background-color: lightgrey;
+}
+.row-odd {
+    background-color: whitesmoke;
+}
+.row-even {
+    background-color: white;
+}
+.row-last {
+    border-bottom: 1px solid grey;
+}
+.row-selected {
+    background: lightblue;
+}
+
+.grid-cell {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.grid-cell-check {
+    width: 40px;
+}
+.grid-cell-count {
+    width: 40px;
+}
+.grid-cell-name {
+    min-width: 200px;
+    width: calc((100% - 325px) / 2);
+}
+.grid-cell-type {
+    min-width: 200px;
+    width: calc((100% - 325px) / 2);
+}
+.grid-cell-set {
+    width: 40px;
+    padding-right: 5px;
+}
+.grid-cell-cost {
+    width: 200px;
+}
+
+input.grid-input {
+    width: 30px;
+}
+
+img.mana {
+    height: 16px;
+    margin-top: 2px;
+}
+img.set {
+    height: 19px;
+    display: block;
+    margin: 1px auto 0;
+}
