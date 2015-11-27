@@ -124,8 +124,8 @@ img.mana {
     height: 16px;
     margin-top: 2px;
 }
-img.set {
-    height: 19px;
-    display: block;
+
+.set {
+    font-size: 18px;
     margin: 1px auto 0;
 }
