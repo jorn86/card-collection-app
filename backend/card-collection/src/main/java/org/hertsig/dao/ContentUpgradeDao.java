@@ -42,5 +42,12 @@ public interface ContentUpgradeDao extends AutoCloseable {
     @GetGeneratedKeys(UuidMapper.class)
     UUID createPrinting(@BindBean Printing printing);
 
+    @SqlUpdate("UPDATE card SET splitcardparent = :parent WHERE id = :card")
+    void setParent(@Bind("card") UUID childId, @Bind("parent") UUID parentId);
+
+    @SqlUpdate("UPDATE card SET doublefacefront = :front WHERE id = :back")
+    void setFlipFront(@Bind("front") UUID front, @Bind("back") UUID back);
+
     void close();
+
 }
