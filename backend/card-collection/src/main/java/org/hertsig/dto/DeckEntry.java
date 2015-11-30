@@ -19,4 +19,5 @@ public class DeckEntry {
     private String setcode;
     private String rarity;
     private boolean setisfallback;
+    private boolean split;
 }

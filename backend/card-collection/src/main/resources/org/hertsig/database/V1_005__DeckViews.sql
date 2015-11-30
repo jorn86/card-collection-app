@@ -10,7 +10,8 @@ CREATE VIEW deckentryview AS (
     coalesce(printing.multiverseid, latestprinting.multiverseid) AS multiverseid,
     coalesce(printing.rarity, latestprinting.rarity) AS rarity,
     printing.multiverseid IS NULL AS setisfallback,
-    set.gatherercode AS setcode
+    set.gatherercode AS setcode,
+    card.layout = 'split' OR card.layout = 'split-parent' AS split
   FROM deckrow
     LEFT JOIN card ON card.id = deckrow.cardid
     LEFT JOIN printing ON printing.id = deckrow.printingid

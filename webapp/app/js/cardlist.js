@@ -1,9 +1,6 @@
 angular.module('card-app')
 
     .controller('CardListController', function ($scope) {
-        $scope.mapSetCodeToImage = function (setcode) {
-        };
-
         var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
         var typeGrouping = function (card) {
             if (card.type) {
@@ -29,7 +26,7 @@ angular.module('card-app')
             'M': 'Multicolored'
         };
         var colorGrouping = function (card) {
-            return colors[color(card.mana)];
+            return colors[color(card.cost)];
         };
         var colorOrder = function (group) {
             return _.indexOf(_.keys(colors), color(group.$key));
@@ -49,6 +46,13 @@ angular.module('card-app')
             return color || 'C';
         };
 
+        var setGrouping = function(card) {
+            return $scope.setNames[card.setcode];
+        };
+        var setOrder = function(group) {
+            return _.indexOf(_.values($scope.setNames), group.$key);
+        };
+
         $scope.grid = {
             rows: [],
 
@@ -56,6 +60,8 @@ angular.module('card-app')
                 name: 'Type', group: typeGrouping, order: typeOrder
             }, {
                 name: 'Color', group: colorGrouping, order: colorOrder
+            }, {
+                name: 'Set', group: setGrouping, order: setOrder
             }, {
                 name: 'None', group: function () {
                     return 'All'
@@ -149,6 +155,14 @@ angular.module('card-app')
         $scope.totalAmount = function (group) {
             return _.map(group, function(value) { return value.amount; }).reduce(function(a,b) { return a+b;}, 0);
         };
+
+        $scope.setNames = {};
+        $scope.datamodel.getAllSets().then(function(sets) {
+            for (var index in sets.data) {
+                var s = sets.data[index];
+                $scope.setNames[s.gatherercode] = s.name;
+            }
+        });
     })
 
     .directive('linkcard', function() {

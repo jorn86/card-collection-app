@@ -92,7 +92,7 @@ public class ContentUpgrade {
                 String name = left.getName() + " / " + right.getName();
                 Card parent = dao.getCard(name);
                 if (parent == null) {
-                    parent = new Card(null, name, null, null, null, null,
+                    parent = new Card(null, name, left.getFulltype(), null, null, null,
                         left.getCost() + "/" + right.getCost(), left.getCmc() + right.getCmc(),
                         joinColors(left.getColors(), right.getColors()), null, null, null, null, "split-parent", null, null);
 
@@ -113,9 +113,9 @@ public class ContentUpgrade {
         Printing printing = dao.getPrinting(setId, parentId);
         if (printing == null) {
             Printing leftPrinting = dao.getPrinting(setId, left.getId());
+            Printing rightPrinting = dao.getPrinting(setId, right.getId());
             return dao.createPrinting(new Printing(null, setId, parentId, leftPrinting.getMultiverseid(),
-                    leftPrinting.getNumber().substring(0, leftPrinting.getNumber().length() - 1),
-                    leftPrinting.getRarity(), null, null, null));
+                    null, leftPrinting.getRarity(), null, null, null));
         }
         return printing.getId();
     }
@@ -151,6 +151,7 @@ public class ContentUpgrade {
 
     @VisibleForTesting static String mapManaCost(String manaCost) {
         if (manaCost == null) return null;
+
         StringBuilder result = new StringBuilder();
         for (Matcher m = PATTERN.matcher(manaCost); m.find();) {
             String symbol = m.group();

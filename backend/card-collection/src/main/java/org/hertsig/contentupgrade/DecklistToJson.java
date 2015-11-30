@@ -14,7 +14,7 @@ public class DecklistToJson {
 
                 int index = line.indexOf(' ');
                 if (index <= 0) continue;
-                System.out.printf("\t\t{ \"amount\": %s, \"name\": \"%s\" },%n", line.substring(0, index), line.substring(index + 1));
+                System.out.printf("\t\t{ \"amount\": %s, \"name\": \"%s\" },%n", line.substring(0, index), line.substring(index + 1).replace("Ae", "Æ"));
             }
         }
     }
