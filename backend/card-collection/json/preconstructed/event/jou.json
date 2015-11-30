@@ -1,0 +1,39 @@
+{
+  "tag": [
+    "Event decks", "Journey into Nyx"
+  ],
+  "name": "Wrath of the Mortals",
+  "set": "JOU",
+  "mainboard": [
+    { "amount": 9, "name": "Island" },
+    { "amount": 4, "name": "Izzet Guildgate" },
+    { "amount": 12, "name": "Mountain" },
+    { "amount": 1, "name": "Ætherling" },
+    { "amount": 1, "name": "Anger of the Gods" },
+    { "amount": 1, "name": "Battlefield Thaumaturge" },
+    { "amount": 1, "name": "Chandra's Phoenix" },
+    { "amount": 2, "name": "Divination" },
+    { "amount": 1, "name": "Fated Conflagration" },
+    { "amount": 2, "name": "Flames of the Firebrand" },
+    { "amount": 3, "name": "Guttersnipe" },
+    { "amount": 1, "name": "Harness by Force" },
+    { "amount": 4, "name": "Lightning Strike" },
+    { "amount": 3, "name": "Magma Jet" },
+    { "amount": 1, "name": "Mizzium Mortars" },
+    { "amount": 1, "name": "Ogre Battledriver" },
+    { "amount": 1, "name": "Oracle of Bones" },
+    { "amount": 2, "name": "Searing Blood" },
+    { "amount": 4, "name": "Spellheart Chimera" },
+    { "amount": 1, "name": "Steam Augury" },
+    { "amount": 2, "name": "Turn / Burn" },
+    { "amount": 3, "name": "Young Pyromancer" }
+  ],
+  "sideboard": [
+    { "amount": 2, "name": "Dispel" },
+    { "amount": 2, "name": "Elixir of Immortality" },
+    { "amount": 3, "name": "Essence Scatter" },
+    { "amount": 2, "name": "Flames of the Firebrand" },
+    { "amount": 3, "name": "Izzet Staticaster" },
+    { "amount": 3, "name": "Negate" }
+  ]
+}
