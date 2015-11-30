@@ -13,12 +13,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import java.util.zip.ZipInputStream;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 import org.hertsig.dao.ContentUpgradeDao;
 import org.hertsig.dto.Card;
 import org.hertsig.dto.Color;
@@ -40,23 +45,83 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Singleton
 public class ContentUpgrade {
+    private static final Pattern PATTERN = Pattern.compile("\\{.+?\\}");
+
     @Inject
     public ContentUpgrade(DBI dbi) {
-        try (ContentUpgradeDao dao = dbi.open(ContentUpgradeDao.class); Reader sets = ensureSetFile()) {
-            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        try (ContentUpgradeDao dao = dbi.open(ContentUpgradeDao.class);
+             Reader sets = ensureSetFile()) {
             Map<String, FullSet> map = gson.fromJson(sets, Types.mapOf(String.class, FullSet.class));
             for (FullSet fullSet : map.values()) {
                 log.debug("Checking database for set {}", fullSet.name);
                 UUID setId = ensureSet(dao, fullSet);
+                java.util.Set<List<String>> splitCards = Sets.newHashSet();
                 for (FullSet.Card card : fullSet.cards) {
+                    if (card.getNames() != null) {
+                        splitCards.add(card.getNames());
+                    }
                     UUID cardId = ensureCard(dao, card);
                     ensurePrinting(dao, cardId, setId, card);
                 }
+                ensureSplitCards(dao, setId, splitCards);
             }
         }
         catch (IOException e) {
             log.error("Exception during content upgrade", e);
         }
+    }
+
+    private void ensureSplitCards(ContentUpgradeDao dao, UUID setId, java.util.Set<List<String>> splitCards) {
+        if (splitCards.isEmpty()) {
+            return;
+        }
+
+        log.debug("Ensuring {} split cards", splitCards.size());
+
+        for (List<String> splitCard : splitCards) {
+            if (splitCard.size() != 2) {
+                log.debug("Ignoring split card {}", splitCard);
+                continue;
+            }
+
+            Card left = dao.getCard(splitCard.get(0));
+            Card right = dao.getCard(splitCard.get(1));
+
+            if (left.getLayout().equals("split")) {
+                String name = left.getName() + " / " + right.getName();
+                Card parent = dao.getCard(name);
+                if (parent == null) {
+                    parent = new Card(null, name, null, null, null, null,
+                        left.getCost() + "/" + right.getCost(), left.getCmc() + right.getCmc(),
+                        joinColors(left.getColors(), right.getColors()), null, null, null, null, "split-parent", null, null);
+
+                    UUID parentId = dao.createCard(parent);
+                    dao.setParent(left.getId(), parentId);
+                    dao.setParent(right.getId(), parentId);
+                    parent.setId(parentId);
+                }
+                ensureSplitPrinting(dao, parent.getId(), setId, left, right);
+            }
+            else if (left.getLayout().equals("flip") || left.getLayout().equals("double-faced")) {
+                dao.setFlipFront(left.getId(), right.getId());
+            }
+        }
+    }
+
+    private UUID ensureSplitPrinting(ContentUpgradeDao dao, UUID parentId, UUID setId, Card left, Card right) {
+        Printing printing = dao.getPrinting(setId, parentId);
+        if (printing == null) {
+            Printing leftPrinting = dao.getPrinting(setId, left.getId());
+            return dao.createPrinting(new Printing(null, setId, parentId, leftPrinting.getMultiverseid(),
+                    leftPrinting.getNumber().substring(0, leftPrinting.getNumber().length() - 1),
+                    leftPrinting.getRarity(), null, null, null));
+        }
+        return printing.getId();
+    }
+
+    private List<Color> joinColors(List<Color> leftColors, List<Color> rightColors) {
+        return Lists.newArrayList(Sets.newTreeSet(Iterables.concat(leftColors, rightColors)));
     }
 
     private UUID ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
@@ -73,7 +138,7 @@ public class ContentUpgrade {
         if (existingCard == null) {
             try {
                 return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
-                        card.getManaCost(), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
+                        mapManaCost(card.getManaCost()), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
                         card.getPower(), card.getToughness(), card.getLoyalty(), card.getLayout(), null, null));
             }
             catch (DBIException e) {
@@ -82,6 +147,25 @@ public class ContentUpgrade {
             }
         }
         return existingCard.getId();
+    }
+
+    @VisibleForTesting static String mapManaCost(String manaCost) {
+        if (manaCost == null) return null;
+        StringBuilder result = new StringBuilder();
+        for (Matcher m = PATTERN.matcher(manaCost); m.find();) {
+            String symbol = m.group();
+            symbol = symbol.substring(1, symbol.length() - 1);
+            if (symbol.length() == 1 || symbol.matches("\\d+")) {
+                result.append(symbol);
+            }
+            else if (symbol.length() == 3) {
+                result.append('{').append(symbol.charAt(0)).append(symbol.charAt(2)).append('}');
+            }
+            else {
+                result.append('{').append(symbol.toUpperCase()).append('}');
+            }
+        }
+        return result.toString();
     }
 
     private <T> T d(T value, T fallback) {

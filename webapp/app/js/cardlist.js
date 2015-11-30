@@ -147,7 +147,6 @@ angular.module('card-app')
         };
 
         $scope.totalAmount = function (group) {
-            console.log(group);
             return _.map(group, function(value) { return value.amount; }).reduce(function(a,b) { return a+b;}, 0);
         };
     })

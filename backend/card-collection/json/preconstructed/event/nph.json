@@ -1,0 +1,36 @@
+{
+  "tag": [
+    "Event decks", "New Phyrexia"
+  ],
+  "name": "War of Attrition",
+  "set": "NPH",
+  "mainboard": [
+    { "amount": 2, "name": "Dread Statuary" },
+    { "amount": 21, "name": "Plains" },
+    { "amount": 1, "name": "Apostle's Blessing" },
+    { "amount": 1, "name": "Bonehoard" },
+    { "amount": 1, "name": "Darksteel Axe" },
+    { "amount": 4, "name": "Elite Vanguard" },
+    { "amount": 4, "name": "Flayer Husk" },
+    { "amount": 4, "name": "Journey to Nowhere" },
+    { "amount": 1, "name": "Kemba, Kha Regent" },
+    { "amount": 2, "name": "Kor Duelist" },
+    { "amount": 4, "name": "Leonin Relic-Warder" },
+    { "amount": 4, "name": "Leonin Skyhunter" },
+    { "amount": 1, "name": "Mirran Crusader" },
+    { "amount": 4, "name": "Porcelain Legionnaire" },
+    { "amount": 1, "name": "Puresteel Paladin" },
+    { "amount": 1, "name": "Sickleslicer" },
+    { "amount": 1, "name": "Skinwing" },
+    { "amount": 2, "name": "Stoneforge Mystic" },
+    { "amount": 1, "name": "Sword of Vengeance" }
+  ],
+  "sideboard": [
+    { "amount": 1, "name": "Apostle's Blessing" },
+    { "amount": 2, "name": "Arrest" },
+    { "amount": 3, "name": "Celestial Purge" },
+    { "amount": 1, "name": "Kor Duelist" },
+    { "amount": 4, "name": "Kor Firewalker" },
+    { "amount": 4, "name": "Revoke Existence" }
+  ]
+}

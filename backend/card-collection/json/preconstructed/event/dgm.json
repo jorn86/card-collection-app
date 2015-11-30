@@ -1,0 +1,40 @@
+{
+  "tag": [
+    "Event decks", "Dragon's Maze"
+  ],
+  "name": "Strength of Selesnya",
+  "set": "DGM",
+  "mainboard": [
+    { "amount": 4, "name": "Evolving Wilds" },
+    { "amount": 6, "name": "Forest" },
+    { "amount": 1, "name": "Godless Shrine" },
+    { "amount": 1, "name": "Grove of the Guardian" },
+    { "amount": 7, "name": "Plains" },
+    { "amount": 4, "name": "Selesnya Guildgate" },
+    { "amount": 1, "name": "Swamp" },
+    { "amount": 1, "name": "Advent of the Wurm" },
+    { "amount": 4, "name": "Call of the Conclave" },
+    { "amount": 1, "name": "Champion of Lambholt" },
+    { "amount": 2, "name": "Doomed Traveler" },
+    { "amount": 1, "name": "Geist-Honored Monk" },
+    { "amount": 1, "name": "Growing Ranks" },
+    { "amount": 1, "name": "Increasing Devotion" },
+    { "amount": 4, "name": "Intangible Virtue" },
+    { "amount": 3, "name": "Lingering Souls" },
+    { "amount": 1, "name": "Odric, Master Tactician" },
+    { "amount": 1, "name": "Parallel Lives" },
+    { "amount": 2, "name": "Rancor" },
+    { "amount": 3, "name": "Rootborn Defenses" },
+    { "amount": 4, "name": "Selesnya Charm" },
+    { "amount": 2, "name": "Vitu-Ghazi Guildmage" },
+    { "amount": 4, "name": "Wake the Reflections" },
+    { "amount": 1, "name": "Wayfaring Temple" }
+  ],
+  "sideboard": [
+    { "amount": 4, "name": "Centaur Healer" },
+    { "amount": 3, "name": "Druid's Deliverance" },
+    { "amount": 4, "name": "Pacifism" },
+    { "amount": 1, "name": "Rogue's Passage" },
+    { "amount": 3, "name": "Sundering Growth" }
+  ]
+}
