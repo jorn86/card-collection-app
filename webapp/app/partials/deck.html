@@ -1,5 +1,5 @@
 <div>
-    <div>{{deck.name}}</div>
+    <div>{{deck.name}} ({{totalAmount(deck.cards)}} cards / {{deck.cards.length}} distinct)</div>
     <form ng-submit="submitAdd()" style="padding-bottom: 2px">
         <label>
             Add card
