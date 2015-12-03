@@ -88,11 +88,11 @@ angular.module('card-app')
                 case '2B': return base + 'C - Hybrid Mana/C13 - Hybrid Mana - 2 Colorless or Black.svg';
                 case '2R': return base + 'C - Hybrid Mana/C14 - Hybrid Mana - 2 Colorless or Red.svg';
                 case '2G': return base + 'C - Hybrid Mana/C15 - Hybrid Mana - 2 Colorless or Green.svg';
-                case 'PW': return base + 'D - Phyrexian Mana/D01 - Phyrexian Mana - White.svg';
-                case 'PU': return base + 'D - Phyrexian Mana/D02 - Phyrexian Mana - Blue.svg';
-                case 'PB': return base + 'D - Phyrexian Mana/D03 - Phyrexian Mana - Black.svg';
-                case 'PR': return base + 'D - Phyrexian Mana/D04 - Phyrexian Mana - Red.svg';
-                case 'PG': return base + 'D - Phyrexian Mana/D05 - Phyrexian Mana - Green.svg';
+                case 'WP': return base + 'D - Phyrexian Mana/D01 - Phyrexian Mana - White.svg';
+                case 'UP': return base + 'D - Phyrexian Mana/D02 - Phyrexian Mana - Blue.svg';
+                case 'BP': return base + 'D - Phyrexian Mana/D03 - Phyrexian Mana - Black.svg';
+                case 'RP': return base + 'D - Phyrexian Mana/D04 - Phyrexian Mana - Red.svg';
+                case 'GP': return base + 'D - Phyrexian Mana/D05 - Phyrexian Mana - Green.svg';
                 case 'HW': return base + 'X - Miscellaneous Symbols/X01 - Half Mana - White.svg';
                 case 'HU': return base + 'X - Miscellaneous Symbols/X02 - Half Mana - Blue.svg';
                 case 'HB': return base + 'X - Miscellaneous Symbols/X03 - Half Mana - Black.svg';

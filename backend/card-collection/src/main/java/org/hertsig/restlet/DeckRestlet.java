@@ -1,32 +1,24 @@
 package org.hertsig.restlet;
 
-import java.util.List;
-import java.util.UUID;
-
-import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
+import com.google.common.base.Objects;
+import com.google.common.collect.Lists;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
-import org.hertsig.dto.Deck;
-import org.hertsig.dto.DeckEntry;
-import org.hertsig.dto.Row;
+import org.hertsig.dto.*;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.DBI;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
-
-import lombok.extern.slf4j.Slf4j;
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Path("deck")
@@ -43,15 +35,43 @@ public class DeckRestlet {
     @Path("list")
     public Object getList() {
         checkUser();
-        return getPreconstructedList();
+        try (DecklistDao dao = dbi.open(DecklistDao.class)) {
+            UUID user = userManager.getUserId();
+            return createDecklist(dao.getDecks(user), dao.getTags(user));
+        }
     }
 
     @GET
     @Path("preconstructedlist")
     public Object getPreconstructedList() {
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
-            return ImmutableMap.of("decks", dao.getPreconstructedDecks(), "tags", Lists.newArrayList());
+            return createDecklist(dao.getPreconstructedDecks(), dao.getPreconstructedTags());
         }
+    }
+
+    private Object createDecklist(List<Deck> decks, List<Tag> tags) {
+        if (tags.isEmpty()) {
+            return new DeckListNode(null, Lists.newArrayList(), decks);
+        }
+
+        return createNode(tags.get(0), tags, decks);
+    }
+
+    private DeckListNode createNode(Tag root, List<Tag> tags, List<Deck> decks) {
+        List<DeckListNode> children = tags.stream()
+                .filter(t -> Objects.equal(t.getParentid(), root.getId()))
+                .map(t -> createNode(t, tags, decks))
+                .collect(Collectors.toList());
+        return new DeckListNode(root.getName(), children, decks.stream()
+                .filter(d -> d.getTags().contains(root.getId()))
+                .collect(Collectors.toList()));
+    }
+
+    @Data @AllArgsConstructor
+    private static class DeckListNode {
+        private final String tagName;
+        private final List<DeckListNode> children;
+        private final List<Deck> decks;
     }
 
     @GET
@@ -71,7 +91,7 @@ public class DeckRestlet {
             }
             if (deck.getUserid() != null) {
                 checkUser();
-                if (!deck.getUserid().equals(userManager.getCurrentUser().getId())) {
+                if (!deck.getUserid().equals(userManager.getUserId())) {
                     throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
                 }
             }
@@ -91,16 +111,29 @@ public class DeckRestlet {
 
     @PUT
     @Path("{deckId}/row/{rowId}")
-    public Object updateAmount(@PathParam("deckId") UUID deckId, @PathParam("rowId") UUID rowId, Row row) {
+    public Object updateAmount(DeckRow card) {
         checkUser();
-        row.setId(rowId);
-        return row;
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            if (!Objects.equal(dao.getDeck(card.getDeckid()).getUserid(), userManager.getUserId())) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + card.getDeckid() + " does not exist for you");
+            }
+            if (dao.updateAmount(card) != 1) {
+                log.warn("Update amount for row {} failed", card.getId());
+                return null;
+            }
+            return card.getId();
+        }
     }
 
     @POST
-    @Path("{deckId}/card")
-    public Object addCard(@PathParam("deckId") UUID deckId, Row card) {
+    @Path("addcard")
+    public Object addCard(DeckRow card) {
         checkUser();
-        return card;
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            if (!Objects.equal(dao.getDeck(card.getDeckid()).getUserid(), userManager.getUserId())) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + card.getDeckid() + " does not exist for you");
+            }
+            return dao.addCardToDeck(card);
+        }
     }
 }

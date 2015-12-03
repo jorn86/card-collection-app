@@ -11,6 +11,8 @@ public class DeckEntry {
     private UUID id;
     private int amount;
     private String name;
+    private String fulltype;
+    private String supertype;
     private String type;
     private String subtype;
     private String cost;

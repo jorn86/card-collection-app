@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.inject.servlet.RequestScoped;
 import com.google.inject.servlet.ServletModule;
 
-public class RestletModule extends ServletModule {
+class RestletModule extends ServletModule {
     @Override
     protected void configureServlets() {
         requestStaticInjection(ApplicationConfig.JerseyWorkaround.class);

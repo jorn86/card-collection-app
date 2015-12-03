@@ -14,7 +14,7 @@ public interface SearchDao extends AutoCloseable {
     @MapResultAsBean
     List<Set> getAll();
 
-    @SqlQuery("SELECT id, name FROM card WHERE name ILIKE :name ORDER BY name LIMIT 20")
+    @SqlQuery("SELECT id, name FROM card WHERE name ILIKE :name AND splitcardparent IS NULL ORDER BY name LIMIT 20")
     @UseBetterBeanMapper
     List<Card> searchCardsByName(@Bind("name") String name);
 

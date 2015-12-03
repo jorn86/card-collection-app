@@ -31,13 +31,11 @@ var Datamodel = function Datamodel($http) {
     };
 
     this.addCardToDeck = function(deckId, cardId, amount) {
-        return $http.post(base + 'deck/' + deckId + '/card', {id: cardId, amount: amount});
+        return $http.post(base + 'deck/addcard', {deckid: deckId, cardid: cardId, amount: amount});
     };
 
     this.authenticateUser = function(user) {
-        //return $http.get('content/login.json');
         return $http.post(base + 'user', user).then(function(response) {
-            console.log('got user, set id', response.data.id);
             $http.defaults.headers.common['X-UserId'] = response.data.id;
             return response.data;
         });

@@ -12,6 +12,7 @@
     <div ng-repeat="(key, value) in grid.rows | groupBy: grid.groupBy | toArray: true | orderBy : grid.orderBy ">
         <div class="grid-group-header">{{value.$key}} ({{totalAmount(value)}} cards / {{value.length}} distinct)</div>
         <div class="grid-row" ng-class="{'row-even': $even, 'row-odd': $odd, 'row-last': $last, 'row-selected': card.selected}"
-             ng-repeat="card in value | orderBy: grid.currentSorting.field : grid.sortDescending" ng-include="'partials/grid/grid-row.html'"></div>
+             ng-repeat="card in value | orderBy: [grid.currentSorting.field, 'name'] : grid.sortDescending"
+             ng-include="'partials/grid/grid-row.html'"></div>
     </div>
 </div>

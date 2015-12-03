@@ -10,6 +10,16 @@ table, th, td {
     border: 1px solid black;
 }
 
+ul, ol, dl {
+    padding-left: 15px;
+    list-style-position: inside;
+}
+li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .menubar {
     height: 40px;
     padding: 5px;

@@ -6,10 +6,9 @@ import java.util.UUID;
 import org.hertsig.database.UuidMapper;
 import org.hertsig.dto.Deck;
 import org.hertsig.dto.DeckEntry;
-import org.skife.jdbi.v2.sqlobject.Bind;
-import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
-import org.skife.jdbi.v2.sqlobject.SqlQuery;
-import org.skife.jdbi.v2.sqlobject.SqlUpdate;
+import org.hertsig.dto.DeckRow;
+import org.hertsig.dto.Row;
+import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 
 public interface DeckDao extends AutoCloseable {
@@ -25,5 +24,13 @@ public interface DeckDao extends AutoCloseable {
     @MapResultAsBean
     List<DeckEntry> getCards(@Bind("deck") UUID deckId);
 
+    @SqlUpdate("INSERT INTO deckrow (deckid, cardid, printingid, amount) VALUES (:deckid, :cardid, :printingid, :amount)")
+    @GetGeneratedKeys(UuidMapper.class)
+    UUID addCardToDeck(@BindBean DeckRow row);
+
+    @SqlUpdate("UPDATE deckrow SET amount = :amount WHERE id = :id")
+    int updateAmount(DeckRow row);
+
     void close();
+
 }

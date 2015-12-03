@@ -8,7 +8,7 @@ import org.postgresql.ds.PGPoolingDataSource;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class PostgresqlDatasourceProvider implements Provider<DataSource> {
+class PostgresqlDatasourceProvider implements Provider<DataSource> {
     @Override
     public DataSource get() {
         try {

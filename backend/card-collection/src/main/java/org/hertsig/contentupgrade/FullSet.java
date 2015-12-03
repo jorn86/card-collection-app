@@ -59,6 +59,6 @@ public class FullSet {
     }
 
     public enum Border {
-        black, white, silver;
+        black, white, silver
     }
 }
