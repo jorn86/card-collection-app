@@ -27,11 +27,11 @@ var Datamodel = function Datamodel($http) {
     };
 
     this.updateAmount = function(deckId, rowId, amount) {
-        return $http.put(base + 'deck/' + deckId + '/row/' + rowId, {amount: amount});
+        return $http.put(base + 'deck/card', {id: rowId, deckid: deckId, amount: amount});
     };
 
     this.addCardToDeck = function(deckId, cardId, amount) {
-        return $http.post(base + 'deck/addcard', {deckid: deckId, cardid: cardId, amount: amount});
+        return $http.post(base + 'deck/card', {deckid: deckId, cardid: cardId, amount: amount});
     };
 
     this.authenticateUser = function(user) {

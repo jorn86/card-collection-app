@@ -1,13 +1,13 @@
 package org.hertsig.dao;
 
-import java.util.List;
-
 import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.dto.Card;
 import org.hertsig.dto.Set;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
+
+import java.util.List;
 
 public interface SearchDao extends AutoCloseable {
     @SqlQuery("SELECT gatherercode, name FROM set ORDER BY releasedate")

@@ -467,6 +467,7 @@ var inlinemtg = {
             var name = $( element ).data( "name" );                 // data-name
             var set = $( element ).data( "set" );                   // data-set
             var multiverseid = $( element ).data( "multiverseid" ); // data-multiverseid
+            var multiverseidBack = $( element ).data( "multiverseid-back" ); // data-multiverseid-back
             var contents = $( element ).html();                     // Span contents (link text)
             var a_params = "";
 
@@ -536,11 +537,15 @@ var inlinemtg = {
             var a_end = '" target="_blank" tabindex=-1>';
             var img_start = '<img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card';
 
-            var htmlstring = [ a_start + a_params + a_end + contents + '</a><span class="iltt">',
-                a_start + a_params + a_end + img_start + img_params + '"></a></span>'
-            ].join( "" );
+            var htmlstring = [ a_start, a_params, a_end, contents, '</a><span class="iltt">',
+                a_start, a_params, a_end, img_start, img_params, '">'
+            ];
+            if (multiverseidBack) {
+                htmlstring.push('&nbsp', img_start, '&multiverseid=', multiverseidBack, '">');
+            }
+            htmlstring.push('</a></span>');
 
-            $( element ).html( htmlstring );
+            $( element ).html( htmlstring.join( "" ) );
 
             // Add a css class to the indicate that the inlinemtg span has been
             // processed. This prevents the script from trying to reprocess it

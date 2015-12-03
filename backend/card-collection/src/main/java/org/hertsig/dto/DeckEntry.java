@@ -1,10 +1,10 @@
 package org.hertsig.dto;
 
-import java.util.UUID;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.UUID;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class DeckEntry {
@@ -18,6 +18,7 @@ public class DeckEntry {
     private String cost;
     private double cmc;
     private long multiverseid;
+    private long multiverseidBack;
     private String setcode;
     private String rarity;
     private boolean setisfallback;
