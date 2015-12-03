@@ -1,7 +1,7 @@
 <div>
     <div>{{deck.name}} ({{totalAmount(deck.cards)}} cards / {{deck.cards.length}} distinct)</div>
     <form ng-submit="submitAdd()" style="padding-bottom: 2px">
-        <label>
+        <label ng-show="editable">
             Add card
             <live-search
                 id="add-card" type="text"

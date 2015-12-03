@@ -41,7 +41,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  * A result set mapper which maps the fields in a statement into a JavaBean. This uses
  * the JDK's built in bean mapping facilities, so it does not support nested properties.
  */
-public class BetterBeanMapper<T> implements ResultSetMapper<T>
+class BetterBeanMapper<T> implements ResultSetMapper<T>
 {
     private final Class<T> type;
     private final Map<String, PropertyDescriptor> properties = new HashMap<>();

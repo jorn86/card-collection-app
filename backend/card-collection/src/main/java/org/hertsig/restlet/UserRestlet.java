@@ -49,7 +49,9 @@ public class UserRestlet {
             UUID createdUserId = userDao.create(newUser);
             options.stream().forEach(option -> authDao.create(createdUserId, option));
             UUID inventoryId = deckDao.createDeck("Inventory", createdUserId);
-            userDao.setInventory(createdUserId, inventoryId);
+            if (userDao.setInventory(createdUserId, inventoryId) != 1) {
+                log.warn("Set inventory failed for user {}", createdUserId);
+            }
             return userDao.get(createdUserId);
         }
     }

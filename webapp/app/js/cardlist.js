@@ -64,9 +64,9 @@ angular.module('card-app')
                 name: 'Set', group: setGrouping, order: setOrder
             }, {
                 name: 'None', group: function () {
-                    return 'All'
+                    return 'All';
                 }, order: function () {
-                    return 0
+                    return 0;
                 }
             }],
             groupBy: typeGrouping,
@@ -75,7 +75,7 @@ angular.module('card-app')
             sortingOptions: [
                 {name: 'Count', field: 'amount'},
                 {name: 'Name', field: 'name'},
-                {name: 'Type', field: 'type'},
+                {name: 'Type', field: 'fulltype'},
                 {name: 'Set', field: 'setcode'},
                 {name: 'Converted Mana Cost', field: 'cmc'}
             ],
@@ -93,7 +93,8 @@ angular.module('card-app')
         $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
 
         $scope.updateAmount = function (data) {
-            $scope.datamodel.updateAmount($scope.deck.id, data.rowId, data.amount);
+            console.log('update amount', data)
+            $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount);
         };
 
         $scope.updateGrid = function (cards) {
@@ -128,32 +129,35 @@ angular.module('card-app')
             return result.item.name;
         };
         $scope.submitAdd = function () {
-            console.log("add", searchResult)
             if (!searchResult) {
                 return;
             }
 
             $scope.datamodel.addCardToDeck($scope.deck.id, searchResult.id, 1).then(function (result) {
-                console.log("Added card", result)
-                return $scope.getDeck($scope.deck.id);
-            }).then($scope.setDeck);
+                return $scope.datamodel.getDeck($scope.deck.id);
+            }).then(function (result) {
+                $scope.setDeck(result.data);
+            });
 
             searchResult = null;
         };
 
-        var currentUserId;
-        $scope.$on('user', function (event, user) {
-            currentUserId = user ? user.id : null;
-        });
-
         $scope.setDeck = function (deck) {
             $scope.deck = deck;
-            $scope.editable = deck.userid === currentUserId;
+            $scope.editable = deck.userid === $scope.currentUserId;
             $scope.updateGrid(deck.cards);
         };
 
+        $scope.requeryOnAuth = function(id) {
+            $scope.$on('user', function() {
+                $scope.datamodel.getDeck(id).then(function (result) {
+                    $scope.setDeck(result.data);
+                });
+            });
+        };
+
         $scope.totalAmount = function (group) {
-            return _.map(group, function(value) { return value.amount; }).reduce(function(a,b) { return a+b;}, 0);
+            return _.map(group, function(value) { return value.amount; }).reduce(function(a,b) { return a+b; }, 0);
         };
 
         $scope.setNames = {};

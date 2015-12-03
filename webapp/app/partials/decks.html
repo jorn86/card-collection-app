@@ -1,0 +1,23 @@
+<div>
+    <a ng-show="showInventory" ui-sref="app.inventory"></a>
+    <div>{{node.tagName}}</div>
+    <ul>
+        <li ng-repeat="child in node.children">{{child.tagName}}
+            <ul>
+                <li ng-repeat="c2 in child.children">{{c2.tagName}}
+                    <ul>
+                        <li ng-repeat="deck in c2.decks">
+                            <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-repeat="deck in child.decks">
+                    <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
+                </li>
+            </ul>
+        </li>
+        <li ng-repeat="deck in node.decks">
+            <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
+        </li>
+    </ul>
+</div>

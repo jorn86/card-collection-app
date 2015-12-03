@@ -1,22 +1,6 @@
-<div class="list" ng-controller="DeckListController">
-
-    <div ng-show="decksForUser">
-        <select ng-options="tag.id as tag.name for tag in tags" ng-model="selectedTag">
-            <option value="">All decks</option>
-        </select>
-        <h4>Your lists</h4>
-        <ul>
-            <li><a ui-sref="app.inventory">Inventory</a></li>
-            <li ng-repeat="deck in decksForUser | orderBy: 'name' | filter: tagFilter"><a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a></li>
-        </ul>
-    </div>
-
-    <div ng-show="preconstructedDecks">
-        <h4>Preconstructed decks</h4>
-        <ul>
-            <li ng-repeat="deck in preconstructedDecks | orderBy: 'name' | filter: tagFilter"><a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a></li>
-        </ul>
-    </div>
+<div class="list">
+    <decks ng-if="currentUserId" userid="{{currentUserId}}"></decks>
+    <decks userid="{{null}}"></decks>
 </div>
 
 <div class="deck" ng-controller="CardListController">

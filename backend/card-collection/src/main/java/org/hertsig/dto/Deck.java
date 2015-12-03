@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class Deck {
     private UUID id;
     private UUID userid;
+    private List<UUID> tags;
     private String name;
     private List<DeckEntry> cards;
 }

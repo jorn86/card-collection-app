@@ -10,7 +10,7 @@ import org.skife.jdbi.v2.tweak.ArgumentFactory;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ListArgumentFactory implements ArgumentFactory<List<?>> {
+class ListArgumentFactory implements ArgumentFactory<List<?>> {
     @Override
     public boolean accepts(Class<?> expectedType, Object value, StatementContext ctx) {
         return value instanceof List;

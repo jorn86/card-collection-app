@@ -36,4 +36,8 @@ public class UserManager {
             currentUser = userDao.get(userId);
         }
     }
+
+    public UUID getUserId() {
+        return getCurrentUser().getId();
+    }
 }
