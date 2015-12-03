@@ -1,15 +1,14 @@
 package org.hertsig.dao;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.hertsig.database.UuidMapper;
 import org.hertsig.dto.Deck;
 import org.hertsig.dto.DeckEntry;
 import org.hertsig.dto.DeckRow;
-import org.hertsig.dto.Row;
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
+
+import java.util.List;
+import java.util.UUID;
 
 public interface DeckDao extends AutoCloseable {
     @SqlQuery("SELECT * FROM deck WHERE id = :deck")
@@ -28,8 +27,11 @@ public interface DeckDao extends AutoCloseable {
     @GetGeneratedKeys(UuidMapper.class)
     UUID addCardToDeck(@BindBean DeckRow row);
 
-    @SqlUpdate("UPDATE deckrow SET amount = :amount WHERE id = :id")
-    int updateAmount(DeckRow row);
+    @SqlUpdate("UPDATE deckrow SET amount = :amount, printingid = COALESCE(:printingid, printingid) WHERE id = :id")
+    int updateRow(@BindBean DeckRow row);
+
+    @SqlUpdate("DELETE FROM deckrow WHERE id = :id")
+    int deleteRow(@Bind("id") UUID rowId);
 
     void close();
 

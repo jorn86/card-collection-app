@@ -7,7 +7,10 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
-import org.hertsig.dto.*;
+import org.hertsig.dto.Deck;
+import org.hertsig.dto.DeckEntry;
+import org.hertsig.dto.DeckRow;
+import org.hertsig.dto.Tag;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.DBI;
@@ -78,24 +81,14 @@ public class DeckRestlet {
     @Path("inventory")
     public Object getInventory() {
         checkUser();
-        return Lists.newArrayList();
+        return getDeck(userManager.getCurrentUser().getInventoryid());
     }
 
     @GET
     @Path("{deckId}")
     public Object getDeck(@PathParam("deckId") UUID deckId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            Deck deck = dao.getDeck(deckId);
-            if (deck == null) {
-                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
-            }
-            if (deck.getUserid() != null) {
-                checkUser();
-                if (!deck.getUserid().equals(userManager.getUserId())) {
-                    throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
-                }
-            }
-
+            Deck deck = getDeckForUser(dao, deckId);
             List<DeckEntry> cards = dao.getCards(deck.getId());
             deck.setCards(cards);
             return deck;
@@ -110,30 +103,54 @@ public class DeckRestlet {
     }
 
     @PUT
-    @Path("{deckId}/row/{rowId}")
-    public Object updateAmount(DeckRow card) {
-        checkUser();
+    @Path("card")
+    public Object updateRow(DeckRow row) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            if (!Objects.equal(dao.getDeck(card.getDeckid()).getUserid(), userManager.getUserId())) {
-                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + card.getDeckid() + " does not exist for you");
-            }
-            if (dao.updateAmount(card) != 1) {
-                log.warn("Update amount for row {} failed", card.getId());
+            getDeckForUser(dao, row.getDeckid());
+
+            if (row.getAmount() < 1) {
+                handleUpdate(dao.deleteRow(row.getId()), "Row with id " + row.getId() + " not found");
                 return null;
             }
-            return card.getId();
+
+            handleUpdate(dao.updateRow(row), "Row with id " + row.getId() + " not found");
+            return row.getId();
         }
     }
 
     @POST
-    @Path("addcard")
+    @Path("card")
     public Object addCard(DeckRow card) {
-        checkUser();
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            if (!Objects.equal(dao.getDeck(card.getDeckid()).getUserid(), userManager.getUserId())) {
-                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + card.getDeckid() + " does not exist for you");
+            getDeckForUser(dao, card.getDeckid());
+            if (card.getAmount() < 1) {
+                card.setAmount(1);
             }
             return dao.addCardToDeck(card);
+        }
+    }
+
+    private Deck getDeckForUser(DeckDao dao, UUID deckId) {
+        checkUser();
+
+        Deck deck = dao.getDeck(deckId);
+        if (deck == null) {
+            throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
+        }
+        if (deck.getUserid() != null) {
+            if (!deck.getUserid().equals(userManager.getUserId())) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
+            }
+        }
+        return deck;
+    }
+
+    private void handleUpdate(int updated, String message) {
+        if (updated < 1) {
+            throw new HttpRequestException(Response.Status.NOT_FOUND, message);
+        }
+        if (updated > 1) {
+            log.warn("Update hit {} rows: {}", updated, message);
         }
     }
 }

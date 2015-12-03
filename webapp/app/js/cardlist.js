@@ -93,8 +93,12 @@ angular.module('card-app')
         $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
 
         $scope.updateAmount = function (data) {
-            console.log('update amount', data)
-            $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount);
+            $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount).then(function() {
+                return $scope.datamodel.getDeck($scope.deck.id);
+
+            }).then(function(result) {
+                $scope.setDeck(result.data);
+            });
         };
 
         $scope.updateGrid = function (cards) {
@@ -133,8 +137,9 @@ angular.module('card-app')
                 return;
             }
 
-            $scope.datamodel.addCardToDeck($scope.deck.id, searchResult.id, 1).then(function (result) {
+            $scope.datamodel.addCardToDeck($scope.deck.id, searchResult.id, 1).then(function() {
                 return $scope.datamodel.getDeck($scope.deck.id);
+
             }).then(function (result) {
                 $scope.setDeck(result.data);
             });
