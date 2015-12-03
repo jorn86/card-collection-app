@@ -1,5 +1,10 @@
 package org.hertsig.restlet;
 
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.jaxrs.annotation.JacksonFeatures;
+import com.google.common.escape.Escaper;
+import com.google.common.escape.Escapers;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.SearchDao;
 import org.skife.jdbi.v2.DBI;
@@ -12,6 +17,8 @@ import javax.ws.rs.core.MediaType;
 @Path("database")
 @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 public class DatabaseRestlet {
+    private static final Escaper LIKE_ESCAPER = Escapers.builder().addEscape('_', "\\_").addEscape('%', "\\%").build();
+
     @Inject private DBI dbi;
 
     @GET
@@ -26,7 +33,16 @@ public class DatabaseRestlet {
     @Path("search")
     public Object searchCards(@QueryParam("name") String name) {
         try (SearchDao dao = dbi.open(SearchDao.class)) {
-            return dao.searchCardsByName(name + "%");
+            return dao.searchCardsByName(LIKE_ESCAPER.escape(name) + "%");
+        }
+    }
+
+    @GET
+    @Path("statistics")
+    @JacksonFeatures(serializationEnable = SerializationFeature.INDENT_OUTPUT)
+    public Object getSetStatistics() {
+        try (SearchDao dao = dbi.open(SearchDao.class)) {
+            return dao.getSetStatistics();
         }
     }
 }

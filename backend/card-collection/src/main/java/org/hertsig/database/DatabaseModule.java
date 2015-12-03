@@ -3,8 +3,6 @@ package org.hertsig.database;
 import javax.inject.Singleton;
 import javax.sql.DataSource;
 
-import org.hertsig.contentupgrade.ContentUpgrade;
-import org.hertsig.contentupgrade.PreconstructedDecks;
 import org.skife.jdbi.v2.DBI;
 
 import com.google.inject.AbstractModule;
@@ -19,8 +17,6 @@ public class DatabaseModule extends AbstractModule {
     protected void configure() {
         bind(DataSource.class).toProvider(PostgresqlDatasourceProvider.class).in(Scopes.SINGLETON);
         bind(DatabaseUpgrade.class).asEagerSingleton();
-        bind(ContentUpgrade.class).asEagerSingleton();
-        bind(PreconstructedDecks.class).asEagerSingleton();
     }
 
     @Singleton @Provides

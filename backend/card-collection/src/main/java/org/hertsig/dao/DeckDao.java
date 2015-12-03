@@ -1,5 +1,6 @@
 package org.hertsig.dao;
 
+import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.database.UuidMapper;
 import org.hertsig.dto.Deck;
 import org.hertsig.dto.DeckEntry;
@@ -32,6 +33,10 @@ public interface DeckDao extends AutoCloseable {
 
     @SqlUpdate("DELETE FROM deckrow WHERE id = :id")
     int deleteRow(@Bind("id") UUID rowId);
+
+    @SqlQuery("SELECT * FROM deckrow WHERE deckid = :deckid AND cardid = :cardid")
+    @UseBetterBeanMapper
+    List<DeckRow> getRows(@Bind("deckid") UUID deckid, @Bind("cardid") UUID cardid);
 
     void close();
 

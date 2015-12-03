@@ -23,7 +23,8 @@ CREATE TABLE deckrow (
   deckid UUID NOT NULL REFERENCES deck ON DELETE CASCADE,
   cardid UUID NOT NULL REFERENCES card,
   printingid UUID REFERENCES printing,
-  amount INT NOT NULL CHECK (amount > 0)
+  amount INT NOT NULL CHECK (amount > 0),
+  UNIQUE (deckid, cardid, printingid)
 );
 
 ALTER TABLE "user" ADD COLUMN inventoryid UUID REFERENCES deck;

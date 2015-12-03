@@ -1,12 +1,11 @@
 package org.hertsig.webserver;
 
-import org.glassfish.jersey.servlet.ServletContainer;
-import org.glassfish.jersey.servlet.ServletProperties;
-import org.hertsig.user.UserManager;
-
 import com.google.common.collect.ImmutableMap;
 import com.google.inject.servlet.RequestScoped;
 import com.google.inject.servlet.ServletModule;
+import org.glassfish.jersey.servlet.ServletContainer;
+import org.glassfish.jersey.servlet.ServletProperties;
+import org.hertsig.user.UserManager;
 
 class RestletModule extends ServletModule {
     @Override
