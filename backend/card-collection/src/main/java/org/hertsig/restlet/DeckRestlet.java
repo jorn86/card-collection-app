@@ -20,6 +20,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -123,8 +124,20 @@ public class DeckRestlet {
     public Object addCard(DeckRow card) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckForUser(dao, card.getDeckid());
+
             if (card.getAmount() < 1) {
                 card.setAmount(1);
+            }
+
+            List<DeckRow> rows = dao.getRows(card.getDeckid(), card.getCardid());
+            Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
+            if (existingPrinting.isPresent()) {
+                DeckRow existing = existingPrinting.get();
+                return dao.updateRow(new DeckRow(existing.getId(), null, null, existing.getPrintingid(), existing.getAmount() + card.getAmount()));
+            }
+            if (rows.size() > 0) {
+                DeckRow existing = rows.get(0);
+                return dao.updateRow(new DeckRow(existing.getId(), null, null, existing.getPrintingid(), existing.getAmount() + card.getAmount()));
             }
             return dao.addCardToDeck(card);
         }

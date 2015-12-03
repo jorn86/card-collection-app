@@ -2,21 +2,21 @@
     <a ng-show="showInventory" ui-sref="app.inventory"></a>
     <div>{{node.tagName}}</div>
     <ul>
-        <li ng-repeat="child in node.children">{{child.tagName}}
+        <li ng-repeat="child in node.children | orderBy: 'tagName'">{{child.tagName}}
             <ul>
-                <li ng-repeat="c2 in child.children">{{c2.tagName}}
+                <li ng-repeat="c2 in child.children | orderBy: 'tagName'">{{c2.tagName}}
                     <ul>
-                        <li ng-repeat="deck in c2.decks">
+                        <li ng-repeat="deck in c2.decks | orderBy: 'name'">
                             <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
                         </li>
                     </ul>
                 </li>
-                <li ng-repeat="deck in child.decks">
+                <li ng-repeat="deck in child.decks | orderBy: 'name'">
                     <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
                 </li>
             </ul>
         </li>
-        <li ng-repeat="deck in node.decks">
+        <li ng-repeat="deck in node.decks | orderBy: 'name'">
             <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
         </li>
     </ul>

@@ -1,4 +1,4 @@
-package org.hertsig.contentupgrade;
+package org.hertsig.startup;
 
 import java.util.Scanner;
 

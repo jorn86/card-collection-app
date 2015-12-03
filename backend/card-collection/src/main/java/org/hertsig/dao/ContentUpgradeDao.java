@@ -1,5 +1,6 @@
 package org.hertsig.dao;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.hertsig.database.UseBetterBeanMapper;
@@ -35,7 +36,7 @@ public interface ContentUpgradeDao extends AutoCloseable {
 
     @SqlQuery("SELECT * FROM printing WHERE setid = :setid AND cardid = :cardid")
     @MapResultAsBean
-    Printing getPrinting(@Bind("setid") UUID setId, @Bind("cardid") UUID cardId);
+    List<Printing> getPrintings(@Bind("setid") UUID setId, @Bind("cardid") UUID cardId);
 
     @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext) " +
             "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext)")

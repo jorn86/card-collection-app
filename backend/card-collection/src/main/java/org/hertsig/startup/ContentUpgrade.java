@@ -1,4 +1,4 @@
-package org.hertsig.contentupgrade;
+package org.hertsig.startup;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,10 +9,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -44,11 +41,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Singleton
-public class ContentUpgrade {
+public class ContentUpgrade implements StartupAction {
     private static final Pattern PATTERN = Pattern.compile("\\{.+?\\}");
+    @Inject private DBI dbi;
 
-    @Inject
-    public ContentUpgrade(DBI dbi) {
+    @Override
+    public void run() {
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         try (ContentUpgradeDao dao = dbi.open(ContentUpgradeDao.class);
              Reader sets = ensureSetFile()) {
@@ -92,7 +90,7 @@ public class ContentUpgrade {
                 String name = left.getName() + " / " + right.getName();
                 Card parent = dao.getCard(name);
                 if (parent == null) {
-                    parent = new Card(null, name, left.getFulltype(), null, null, null,
+                    parent = new Card(null, name, left.getFulltype(), left.getSupertypes(), left.getTypes(), left.getSubtypes(),
                         left.getCost() + "/" + right.getCost(), left.getCmc() + right.getCmc(),
                         joinColors(left.getColors(), right.getColors()), null, null, null, null, "split-parent", null, null);
 
@@ -109,15 +107,13 @@ public class ContentUpgrade {
         }
     }
 
-    private UUID ensureSplitPrinting(ContentUpgradeDao dao, UUID parentId, UUID setId, Card left, Card right) {
-        Printing printing = dao.getPrinting(setId, parentId);
-        if (printing == null) {
-            Printing leftPrinting = dao.getPrinting(setId, left.getId());
-            Printing rightPrinting = dao.getPrinting(setId, right.getId());
-            return dao.createPrinting(new Printing(null, setId, parentId, leftPrinting.getMultiverseid(),
+    private void ensureSplitPrinting(ContentUpgradeDao dao, UUID parentId, UUID setId, Card left, Card right) {
+        List<Printing> printing = dao.getPrintings(setId, parentId);
+        if (printing.isEmpty()) {
+            Printing leftPrinting = dao.getPrintings(setId, left.getId()).get(0);
+            dao.createPrinting(new Printing(null, setId, parentId, leftPrinting.getMultiverseid(),
                     null, leftPrinting.getRarity(), null, null, null));
         }
-        return printing.getId();
     }
 
     private List<Color> joinColors(List<Color> leftColors, List<Color> rightColors) {
@@ -125,12 +121,13 @@ public class ContentUpgrade {
     }
 
     private UUID ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
-        Printing printing = dao.getPrinting(setId, cardId);
-        if (printing == null) {
-            return dao.createPrinting(new Printing(null, setId, cardId, card.getMultiverseid(), card.getNumber(),
-                    card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor()));
+        List<Printing> printings = dao.getPrintings(setId, cardId);
+        Optional<Printing> printing = printings.stream().filter(p -> Objects.equals(p.getNumber(), card.getNumber())).findAny();
+        if (printing.isPresent()) {
+            return printing.get().getId();
         }
-        return printing.getId();
+        return dao.createPrinting(new Printing(null, setId, cardId, card.getMultiverseid(), card.getNumber(),
+                card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor()));
     }
 
     private UUID ensureCard(ContentUpgradeDao dao, FullSet.Card card) {

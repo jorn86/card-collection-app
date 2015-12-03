@@ -1,4 +1,4 @@
-package org.hertsig.contentupgrade;
+package org.hertsig.startup;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -25,11 +25,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Singleton
-public class PreconstructedDecks {
+public class PreconstructedDecks implements StartupAction {
     private final Gson gson = new Gson();
+    @Inject private DBI dbi;
 
-    @Inject
-    public PreconstructedDecks(DBI dbi) {
+    @Override
+    public void run() {
         try (PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
             if (dao.getPreconstructedTag() == null) {
                 dao.createPreconstructedTag();
