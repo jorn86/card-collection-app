@@ -46,7 +46,7 @@ public class ContentUpgrade implements StartupAction {
     @Inject private DBI dbi;
 
     @Override
-    public void run() {
+    public void run() throws StartupActionException {
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         try (ContentUpgradeDao dao = dbi.open(ContentUpgradeDao.class);
              Reader sets = ensureSetFile()) {
@@ -66,7 +66,7 @@ public class ContentUpgrade implements StartupAction {
             }
         }
         catch (IOException e) {
-            log.error("Exception during content upgrade", e);
+            throw new StartupActionException("Exception during content upgrade", e);
         }
     }
 

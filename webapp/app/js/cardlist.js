@@ -93,12 +93,16 @@ angular.module('card-app')
         $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
 
         $scope.updateAmount = function (data) {
-            $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount).then(function() {
-                return $scope.datamodel.getDeck($scope.deck.id);
+            console.log('in update amount')
+            var promise = $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount);
+            if (data.amount == 0) {
+                promise.then(function() {
+                    return $scope.datamodel.getDeck($scope.deck.id);
 
-            }).then(function(result) {
-                $scope.setDeck(result.data);
-            });
+                }).then(function(result) {
+                    $scope.setDeck(result.data);
+                });
+            }
         };
 
         $scope.updateGrid = function (cards) {
@@ -106,6 +110,7 @@ angular.module('card-app')
         };
 
         $scope.onSelectAll = function () {
+            console.log('in on select all')
             for (var i = 0; i < $scope.grid.rows.length; i++) {
                 $scope.grid.rows[i].selected = $scope.grid.allSelected;
             }
