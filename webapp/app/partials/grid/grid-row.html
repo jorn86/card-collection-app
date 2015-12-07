@@ -1,5 +1,5 @@
 <div class="grid-cell grid-cell-check">
-    <input class="grid-input" type="checkbox" ng-model="card.selected">
+    <input class="grid-input" type="checkbox" ng-model="card.selected" tabindex="-1">
 </div>
 
 <div class="grid-cell grid-cell-count">
@@ -11,7 +11,7 @@
          data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>&nbsp;
 </div>
 
-<div class="grid-cell grid-cell-type">
+<div class="grid-cell grid-cell-type" title="{{card.fulltype}}">
     {{card.fulltype}}&nbsp;
 </div>
 

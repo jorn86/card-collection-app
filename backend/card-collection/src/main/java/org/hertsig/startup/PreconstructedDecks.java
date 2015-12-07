@@ -30,7 +30,7 @@ public class PreconstructedDecks implements StartupAction {
     @Inject private DBI dbi;
 
     @Override
-    public void run() {
+    public void run() throws StartupActionException {
         try (PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
             if (dao.getPreconstructedTag() == null) {
                 dao.createPreconstructedTag();
@@ -44,8 +44,9 @@ public class PreconstructedDecks implements StartupAction {
                     return FileVisitResult.CONTINUE;
                 }
             });
-        } catch (IOException e) {
-            log.error("Exception while loading preconstructed decks", e);
+        }
+        catch (IOException e) {
+            throw new StartupActionException("Exception while loading preconstructed decks", e);
         }
     }
 

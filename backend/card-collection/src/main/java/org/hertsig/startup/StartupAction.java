@@ -1,5 +1,5 @@
 package org.hertsig.startup;
 
-public interface StartupAction extends Runnable {
-    //
+public interface StartupAction {
+    void run() throws StartupActionException;
 }

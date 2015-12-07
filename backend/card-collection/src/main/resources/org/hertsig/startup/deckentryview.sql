@@ -1,9 +1,4 @@
-CREATE VIEW latestprinting AS (
-    SELECT DISTINCT ON(printing.cardid) printing.*
-    FROM printing LEFT JOIN "set" ON set.id = printing.setid
-    ORDER BY printing.cardid, set.priority, set.releasedate DESC);
-
-CREATE VIEW deckentryview AS (
+CREATE OR REPLACE VIEW deckentryview AS (
   SELECT deckrow.*, card.name, card.cost, card.cmc, card.fulltype,
     array_to_string(card.supertypes, ' ') AS supertype,
     array_to_string(card.types, ' ') AS type,

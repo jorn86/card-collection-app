@@ -65,6 +65,7 @@ li {
     padding-top: 5px;
     min-width: 740px;
     width: calc(100% - 4px);
+    max-width: 1000px;
 }
 
 .grid-header {
@@ -111,12 +112,12 @@ li {
     width: 40px;
 }
 .grid-cell-name {
-    min-width: 200px;
-    width: calc((100% - 325px) / 2);
+    min-width: 160px;
+    width: calc((100% - 325px) * 0.4);
 }
 .grid-cell-type {
-    min-width: 200px;
-    width: calc((100% - 325px) / 2);
+    min-width: 240px;
+    width: calc((100% - 325px) * 0.6);
 }
 .grid-cell-set {
     width: 40px;
