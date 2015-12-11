@@ -1,9 +1,10 @@
 <div>
-    <a ng-show="showInventory" ui-sref="app.inventory"></a>
+    <a ng-hide="preconstructed || !userid" ui-sref="app.inventory"></a>
     <div>{{node.tagName}}</div>
     <ul>
-        <li ng-repeat="child in node.children | orderBy: 'tagName'">{{child.tagName}}
-            <ul>
+        <li ng-repeat="child in node.children | orderBy: 'tagName'">
+            <span ng-click="child.expand = !child.expand">{{child.tagName}}</span>
+            <ul ng-show="child.expand">
                 <li ng-repeat="c2 in child.children | orderBy: 'tagName'">{{c2.tagName}}
                     <ul>
                         <li ng-repeat="deck in c2.decks | orderBy: 'name'">
