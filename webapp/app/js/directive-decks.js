@@ -3,13 +3,21 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/decks.html',
-            link: function($scope, element, attributes) {
-                $scope.showInventory = !!(attributes.userid);
+            scope: {userid: '=', preconstructed: '='},
+            controller: function($scope) {
+                $scope.$watch('userid', function(value) {
+                    if (!$scope.preconstructed && !value) {
+                        $scope.node = null;
+                        return;
+                    }
 
-                var promise = attributes.userid ? $rootScope.datamodel.getDecks(attributes.userid) : $rootScope.datamodel.getPreconstructedDecks();
-                promise.then(function(result) {
-                    $scope.node = result.data;
+                    var promise = $scope.preconstructed
+                        ? $rootScope.datamodel.getPreconstructedDecks()
+                        : $rootScope.datamodel.getDecks($scope.userid);
+                    promise.then(function(result) {
+                        $scope.node = result.data;
+                    });
                 });
             }
-        }
+        };
     });

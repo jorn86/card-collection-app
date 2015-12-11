@@ -1,6 +1,6 @@
 <div class="list">
-    <decks ng-if="currentUserId" userid="{{currentUserId}}"></decks>
-    <decks userid="{{null}}"></decks>
+    <decks ng-if="currentUserId" userid="currentUserId"></decks>
+    <decks preconstructed="true"></decks>
 </div>
 
 <div class="deck" ng-controller="CardListController">
