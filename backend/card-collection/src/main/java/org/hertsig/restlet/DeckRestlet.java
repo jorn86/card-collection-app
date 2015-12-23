@@ -13,7 +13,7 @@ import org.hertsig.dto.DeckRow;
 import org.hertsig.dto.Tag;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
-import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.IDBI;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -28,8 +28,14 @@ import java.util.stream.Collectors;
 @Path("deck")
 @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 public class DeckRestlet {
-    @Inject private UserManager userManager;
-    @Inject private DBI dbi;
+    private final UserManager userManager;
+    private final IDBI dbi;
+
+    @Inject
+    public DeckRestlet(IDBI dbi, UserManager userManager) {
+        this.dbi = dbi;
+        this.userManager = userManager;
+    }
 
     private void checkUser() {
         userManager.throwIfNotAvailable("DeckRestlet is not available without user");

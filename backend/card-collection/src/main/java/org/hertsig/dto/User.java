@@ -15,7 +15,7 @@ public class User {
     private UUID inventoryid;
     private List<AuthenticationOption> authenticationOptions;
 
-    @Data
+    @Data @NoArgsConstructor @AllArgsConstructor
     public static class AuthenticationOption {
         private String id;
         private String type;
