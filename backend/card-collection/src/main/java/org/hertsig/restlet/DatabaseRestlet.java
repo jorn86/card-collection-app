@@ -1,13 +1,12 @@
 package org.hertsig.restlet;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.jaxrs.annotation.JacksonFeatures;
 import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.SearchDao;
-import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.IDBI;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -19,7 +18,12 @@ import javax.ws.rs.core.MediaType;
 public class DatabaseRestlet {
     private static final Escaper LIKE_ESCAPER = Escapers.builder().addEscape('_', "\\_").addEscape('%', "\\%").build();
 
-    @Inject private DBI dbi;
+    private final IDBI dbi;
+
+    @Inject
+    public DatabaseRestlet(IDBI dbi) {
+        this.dbi = dbi;
+    }
 
     @GET
     @Path("sets")

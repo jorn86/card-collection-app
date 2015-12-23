@@ -27,6 +27,7 @@ import org.hertsig.dto.Color;
 import org.hertsig.dto.Printing;
 import org.hertsig.dto.Set;
 import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.IDBI;
 import org.skife.jdbi.v2.exceptions.DBIException;
 
 import com.google.common.base.Charsets;
@@ -43,7 +44,7 @@ import lombok.extern.slf4j.Slf4j;
 @Singleton
 public class ContentUpgrade implements StartupAction {
     private static final Pattern PATTERN = Pattern.compile("\\{.+?\\}");
-    @Inject private DBI dbi;
+    @Inject private IDBI dbi;
 
     @Override
     public void run() throws StartupActionException {

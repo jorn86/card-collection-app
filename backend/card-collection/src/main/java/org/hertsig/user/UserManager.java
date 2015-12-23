@@ -1,25 +1,27 @@
 package org.hertsig.user;
 
-import java.util.UUID;
+import com.google.inject.servlet.RequestScoped;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+import org.hertsig.dao.UserDao;
+import org.hertsig.dto.User;
+import org.skife.jdbi.v2.IDBI;
 
 import javax.inject.Inject;
 import javax.ws.rs.core.Response;
-
-import org.hertsig.dao.UserDao;
-import org.hertsig.dto.User;
-import org.skife.jdbi.v2.DBI;
-
-import com.google.inject.servlet.RequestScoped;
-
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import java.util.UUID;
 
 @Slf4j
 @RequestScoped
 public class UserManager {
-    @Inject private DBI dbi;
+    private final IDBI dbi;
 
     @Getter private User currentUser;
+
+    @Inject
+    public UserManager(IDBI dbi) {
+        this.dbi = dbi;
+    }
 
     public boolean isAvailable() {
         return currentUser != null;

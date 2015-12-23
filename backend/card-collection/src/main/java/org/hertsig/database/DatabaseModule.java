@@ -10,6 +10,7 @@ import com.google.inject.Provides;
 import com.google.inject.Scopes;
 
 import lombok.extern.slf4j.Slf4j;
+import org.skife.jdbi.v2.IDBI;
 
 @Slf4j
 public class DatabaseModule extends AbstractModule {
@@ -20,7 +21,7 @@ public class DatabaseModule extends AbstractModule {
     }
 
     @Singleton @Provides
-    public DBI createDBI(DataSource dataSource) {
+    public IDBI createDBI(DataSource dataSource) {
         DBI dbi = new DBI(dataSource);
         dbi.registerArgumentFactory(new UuidArgumentFactory());
         dbi.registerArgumentFactory(new ListArgumentFactory());

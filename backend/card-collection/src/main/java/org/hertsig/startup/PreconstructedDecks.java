@@ -22,12 +22,13 @@ import com.google.gson.Gson;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.skife.jdbi.v2.IDBI;
 
 @Slf4j
 @Singleton
 public class PreconstructedDecks implements StartupAction {
     private final Gson gson = new Gson();
-    @Inject private DBI dbi;
+    @Inject private IDBI dbi;
 
     @Override
     public void run() throws StartupActionException {

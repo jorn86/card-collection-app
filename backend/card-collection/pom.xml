@@ -25,6 +25,7 @@
         <jetty.version>9.3.6.v20151106</jetty.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.6</lombok.version>
+        <mockito.version>2.0.33-beta</mockito.version>
         <postgres.version>9.3-1102-jdbc41</postgres.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <slf4j.version>1.7.13</slf4j.version>
@@ -131,6 +132,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
