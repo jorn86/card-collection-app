@@ -8,8 +8,11 @@ import org.hertsig.database.MockDbi;
 import org.hertsig.dto.User;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
+import javax.ws.rs.core.Response;
 import java.util.UUID;
 
 import static org.junit.Assert.assertNull;
@@ -20,6 +23,8 @@ public class UserRestletTest {
     private final MockDbi mock = new MockDbi();
     private final UserManager userManager = new UserManager(mock.getDbi());
     private final UserRestlet restlet = new UserRestlet(mock.getDbi(), userManager);
+
+    @Rule public final ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testRejectOnNoAuthenticationOptions() {
@@ -60,8 +65,9 @@ public class UserRestletTest {
         verify(userDao).setInventory(newUserId, newDeckId);
     }
 
-    @Test(expected = HttpRequestException.class)
+    @Test
     public void testUnauthorizedOnNoUser() {
+        expectedException.expect(new HttpRequestExceptionMatcher(Response.Status.UNAUTHORIZED));
         restlet.addAuthenticationOption(new User.AuthenticationOption("", ""));
     }
 

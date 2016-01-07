@@ -1,5 +1,6 @@
 package org.hertsig.restlet;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
@@ -43,7 +44,7 @@ public class DeckRestlet {
 
     @GET
     @Path("list")
-    public Object getList() {
+    public DeckListNode getList() {
         checkUser();
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
             UUID user = userManager.getUserId();
@@ -53,13 +54,13 @@ public class DeckRestlet {
 
     @GET
     @Path("preconstructedlist")
-    public Object getPreconstructedList() {
+    public DeckListNode getPreconstructedList() {
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
             return createDecklist(dao.getPreconstructedDecks(), dao.getPreconstructedTags());
         }
     }
 
-    private Object createDecklist(List<Deck> decks, List<Tag> tags) {
+    private DeckListNode createDecklist(List<Deck> decks, List<Tag> tags) {
         if (tags.isEmpty()) {
             return new DeckListNode(null, Lists.newArrayList(), decks);
         }
@@ -78,7 +79,7 @@ public class DeckRestlet {
     }
 
     @Data @AllArgsConstructor
-    private static class DeckListNode {
+    @VisibleForTesting static class DeckListNode {
         private final String tagName;
         private final List<DeckListNode> children;
         private final List<Deck> decks;
@@ -102,16 +103,9 @@ public class DeckRestlet {
         }
     }
 
-    @POST
-    public Object createDeck(Deck deck) {
-        checkUser();
-        deck.setId(UUID.randomUUID());
-        return deck;
-    }
-
     @PUT
     @Path("card")
-    public Object updateRow(DeckRow row) {
+    public DeckRow updateRow(DeckRow row) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckForUser(dao, row.getDeckid());
 
@@ -120,14 +114,13 @@ public class DeckRestlet {
                 return null;
             }
 
-            handleUpdate(dao.updateRow(row), "Row with id " + row.getId() + " not found");
-            return row.getId();
+            return dao.updateRow(row);
         }
     }
 
     @POST
     @Path("card")
-    public Object addCard(DeckRow card) {
+    public DeckRow addCard(DeckRow card) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckForUser(dao, card.getDeckid());
 
@@ -139,11 +132,11 @@ public class DeckRestlet {
             Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
             if (existingPrinting.isPresent()) {
                 DeckRow existing = existingPrinting.get();
-                return dao.updateRow(new DeckRow(existing.getId(), null, null, existing.getPrintingid(), existing.getAmount() + card.getAmount()));
+                return dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
             }
-            if (rows.size() > 0) {
+            if (rows.size() > 0 && card.getPrintingid() == null) {
                 DeckRow existing = rows.get(0);
-                return dao.updateRow(new DeckRow(existing.getId(), null, null, existing.getPrintingid(), existing.getAmount() + card.getAmount()));
+                return dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
             }
             return dao.addCardToDeck(card);
         }
