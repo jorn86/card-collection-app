@@ -24,11 +24,11 @@ public interface DeckDao extends AutoCloseable {
     @MapResultAsBean
     List<DeckEntry> getCards(@Bind("deck") UUID deckId);
 
-    @SqlUpdate("INSERT INTO deckrow (deckid, cardid, printingid, amount) VALUES (:deckid, :cardid, :printingid, :amount) RETURNING *")
+    @SqlQuery("INSERT INTO deckrow (deckid, cardid, printingid, amount) VALUES (:deckid, :cardid, :printingid, :amount) RETURNING *")
     @MapResultAsBean
     DeckRow addCardToDeck(@BindBean DeckRow row);
 
-    @SqlUpdate("UPDATE deckrow SET amount = :amount WHERE id = :id RETURNING *")
+    @SqlQuery("UPDATE deckrow SET amount = :amount WHERE id = :id RETURNING *")
     @MapResultAsBean
     DeckRow updateRow(@BindBean DeckRow row);
 
