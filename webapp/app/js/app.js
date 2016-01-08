@@ -17,11 +17,7 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
             .state('app.inventory', {
                 url: '/inventory',
                 controller: 'InventoryController',
-                templateUrl: 'partials/deck.html'
-            })
-            .state('app.versioncheck', {
-                url: '/versioncheck',
-                templateUrl: 'partials/versioncheck.html'
+                templateUrl: 'partials/cardlist.html'
             })
             .state('app.sets', {
                 url: '/sets',

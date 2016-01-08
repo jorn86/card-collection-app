@@ -17,13 +17,13 @@ import java.util.List;
 @Slf4j
 @Singleton
 class Views implements StartupAction {
-    private static final List<String> names = ImmutableList.of("latestprinting", "deckentryview");
+    private static final List<String> NAMES = ImmutableList.of("latestprinting", "deckentryview", "setstatistics");
     @Inject private DataSource dataSource;
 
     @Override
     public void run() throws StartupActionException {
         try (Connection connection = dataSource.getConnection()) {
-            for (String name : names) {
+            for (String name : NAMES) {
                 log.debug("Updating view {}", name);
                 String query = CharStreams.toString(new InputStreamReader(Views.class.getResourceAsStream(name + ".sql")));
                 try (Statement create = connection.createStatement()) {

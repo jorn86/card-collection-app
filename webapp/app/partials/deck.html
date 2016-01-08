@@ -1,28 +1,4 @@
-<div>
-    <div>{{deck.name}} ({{totalAmount(deck.cards)}} cards / {{deck.cards.length}} distinct)</div>
-    <form ng-submit="submitAdd()" style="padding-bottom: 2px">
-        <label ng-show="editable">
-            Add card
-            <live-search
-                id="add-card" type="text"
-                autofocus
-                live-search-callback="searchCallback"
-                live-search-item-template="{{result.name}}"
-                live-search-select-callback="searchSelectCallback"
-                ng-model="cardSearchValue"></live-search>
-        </label>
-        <label>
-            Group by
-            <select ng-options="grouping.name for grouping in grid.groupingOptions" ng-model="grid.currentGrouping" ng-change="onGroupingChange()"></select>
-        </label>
-        <label>
-            Sort by
-            <select ng-options="sorting.name for sorting in grid.sortingOptions" ng-model="grid.currentSorting"></select>
-        </label>
-        <label>
-            Descending
-            <input type="checkbox" ng-model="grid.sortDescending">
-        </label>
-    </form>
-    <div ng-include="'partials/grid/grid.html'"></div>
+<div>{{deck.name}}</div>
+<div ng-repeat="(key, list) in deck.boards | groupBy: 'id' | toArray: true">
+    <div ng-include="'partials/cardlist.html'"></div>
 </div>

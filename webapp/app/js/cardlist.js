@@ -94,10 +94,10 @@ angular.module('card-app')
 
         $scope.updateAmount = function (data) {
             console.log('in update amount')
-            var promise = $scope.datamodel.updateAmount($scope.deck.id, data.id, data.amount);
+            var promise = $scope.datamodel.updateAmount($scope.list.id, data.id, data.amount);
             if (data.amount == 0) {
                 promise.then(function() {
-                    return $scope.datamodel.getDeck($scope.deck.id);
+                    return $scope.datamodel.getDeck($scope.deckid);
 
                 }).then(function(result) {
                     $scope.setDeck(result.data);
@@ -110,7 +110,6 @@ angular.module('card-app')
         };
 
         $scope.onSelectAll = function () {
-            console.log('in on select all')
             for (var i = 0; i < $scope.grid.rows.length; i++) {
                 $scope.grid.rows[i].selected = $scope.grid.allSelected;
             }
@@ -142,8 +141,8 @@ angular.module('card-app')
                 return;
             }
 
-            $scope.datamodel.addCardToDeck($scope.deck.id, searchResult.id, 1).then(function() {
-                return $scope.datamodel.getDeck($scope.deck.id);
+            $scope.datamodel.addCardToDeck($scope.list.id, searchResult.id, 1).then(function() {
+                return $scope.datamodel.getDeck($scope.deckid);
 
             }).then(function (result) {
                 $scope.setDeck(result.data);
@@ -152,10 +151,10 @@ angular.module('card-app')
             searchResult = null;
         };
 
-        $scope.setDeck = function (deck) {
-            $scope.deck = deck;
-            $scope.editable = deck.userid === $scope.currentUserId;
-            $scope.updateGrid(deck.cards);
+        $scope.setDeck = function (cardlist) {
+            $scope.list = cardlist;
+            $scope.editable = cardlist.userid === $scope.currentUserId;
+            $scope.updateGrid(cardlist.cards);
         };
 
         $scope.requeryOnAuth = function(id) {
@@ -171,7 +170,7 @@ angular.module('card-app')
         };
 
         $scope.setNames = {};
-        $scope.datamodel.getAllSets().then(function(sets) {
+        $scope.datamodel.getSetStatistics().then(function(sets) {
             for (var index in sets.data) {
                 var s = sets.data[index];
                 $scope.setNames[s.gatherercode] = s.name;

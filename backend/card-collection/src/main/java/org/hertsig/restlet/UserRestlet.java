@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.AuthenticationOptionDao;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.UserDao;
+import org.hertsig.dto.DeckBoard;
 import org.hertsig.dto.User;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.IDBI;
@@ -56,6 +57,7 @@ public class UserRestlet {
             if (userDao.setInventory(createdUserId, inventoryId) != 1) {
                 log.warn("Set inventory failed for user {}", createdUserId);
             }
+            deckDao.createBoard(new DeckBoard(null, inventoryId, "Inventory", 0, null));
             return userDao.get(createdUserId);
         }
     }

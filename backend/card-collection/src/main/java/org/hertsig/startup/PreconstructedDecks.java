@@ -78,16 +78,16 @@ public class PreconstructedDecks implements StartupAction {
             return;
         }
 
-        UUID boardId = dao.createBoard(new DeckBoard(null, deckId, boardName, order));
+        UUID boardId = dao.createBoard(new DeckBoard(null, deckId, boardName, order, null));
         for (PreconstructedDeck.Card card : cards) {
             UUID setId = card.getEdition() == null ? defaultSet : dao.getSet(card.getEdition());
             Printing printing = dao.getPrinting(setId, card.getName());
             if (printing == null) {
                 log.warn("For preconstructed deck {} ({}), card {} does not exist in set {} ({})", deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet());
-                dao.addCard2(boardId, card.getName(), card.getAmount());
+                dao.addCard(boardId, card.getName(), card.getAmount());
             }
             else {
-                dao.addCard2(boardId, printing.getCardid(), printing.getId(), card.getAmount());
+                dao.addCard(boardId, printing.getCardid(), printing.getId(), card.getAmount());
             }
         }
     }

@@ -8,10 +8,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
-import org.hertsig.dto.Deck;
-import org.hertsig.dto.DeckEntry;
-import org.hertsig.dto.DeckRow;
-import org.hertsig.dto.Tag;
+import org.hertsig.dto.*;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.IDBI;
@@ -87,14 +84,14 @@ public class DeckRestlet {
 
     @GET
     @Path("inventory")
-    public Object getInventory() {
+    public Deck getInventory() {
         checkUser();
         return getDeck(userManager.getCurrentUser().getInventoryid());
     }
 
     @GET
     @Path("{deckId}")
-    public Object getDeck(@PathParam("deckId") UUID deckId) {
+    public Deck getDeck(@PathParam("deckId") UUID deckId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             checkUser();
 
@@ -108,8 +105,13 @@ public class DeckRestlet {
                 }
             }
 
-            List<DeckEntry> cards = dao.getCards(deck.getId());
-            deck.setCards(cards);
+            List<DeckBoard> boards = dao.getBoards(deck.getId());
+            for (DeckBoard board : boards) {
+                List<DeckEntry> cards = dao.getCardsForBoard(board.getId());
+                board.setCards(cards);
+            }
+
+            deck.setBoards(boards);
             return deck;
         }
     }

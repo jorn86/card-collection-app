@@ -11,7 +11,7 @@ public class StartupActionModule extends AbstractModule {
 
         Multibinder<StartupAction> binder = Multibinder.newSetBinder(binder(), StartupAction.class);
         binder.addBinding().to(Views.class).in(Scopes.SINGLETON);
-//        binder.addBinding().to(ContentUpgrade.class).in(Scopes.SINGLETON);
+        binder.addBinding().to(ContentUpgrade.class).in(Scopes.SINGLETON);
         binder.addBinding().to(PreconstructedDecks.class).in(Scopes.SINGLETON);
     }
 }
