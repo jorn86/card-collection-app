@@ -96,7 +96,18 @@ public class DeckRestlet {
     @Path("{deckId}")
     public Object getDeck(@PathParam("deckId") UUID deckId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            Deck deck = getDeckForUser(dao, deckId);
+            checkUser();
+
+            Deck deck = dao.getDeck(deckId);
+            if (deck == null) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
+            }
+            if (deck.getUserid() != null) {
+                if (!deck.getUserid().equals(userManager.getUserId())) {
+                    throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
+                }
+            }
+
             List<DeckEntry> cards = dao.getCards(deck.getId());
             deck.setCards(cards);
             return deck;
@@ -107,7 +118,7 @@ public class DeckRestlet {
     @Path("card")
     public DeckRow updateRow(DeckRow row) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, row.getDeckid());
+            getDeckForUser(dao, row.getBoardid());
 
             if (row.getAmount() < 1) {
                 handleUpdate(dao.deleteRow(row.getId()), "Row with id " + row.getId() + " not found");
@@ -122,13 +133,13 @@ public class DeckRestlet {
     @Path("card")
     public DeckRow addCard(DeckRow card) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, card.getDeckid());
+            getDeckForUser(dao, card.getBoardid());
 
             if (card.getAmount() < 1) {
                 card.setAmount(1);
             }
 
-            List<DeckRow> rows = dao.getRows(card.getDeckid(), card.getCardid());
+            List<DeckRow> rows = dao.getBoardRows(card.getBoardid(), card.getCardid());
             Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
             if (existingPrinting.isPresent()) {
                 DeckRow existing = existingPrinting.get();
@@ -142,16 +153,16 @@ public class DeckRestlet {
         }
     }
 
-    private Deck getDeckForUser(DeckDao dao, UUID deckId) {
+    private Deck getDeckForUser(DeckDao dao, UUID boardId) {
         checkUser();
 
-        Deck deck = dao.getDeck(deckId);
+        Deck deck = dao.getDeckByBoard(boardId);
         if (deck == null) {
-            throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
+            throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with board id " + boardId + " does not exist");
         }
         if (deck.getUserid() != null) {
             if (!deck.getUserid().equals(userManager.getUserId())) {
-                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with board id " + boardId + " does not exist for you");
             }
         }
         return deck;

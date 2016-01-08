@@ -35,4 +35,10 @@ angular.module('card-app')
         $scope.datamodel.getAllSets().then(function(result) {
             $scope.sets = result.data;
         });
+    })
+
+    .controller('StatisticsController', function($scope) {
+        $scope.datamodel.getSetStatistics().then(function(result) {
+            $scope.data = result.data;
+        });
     });

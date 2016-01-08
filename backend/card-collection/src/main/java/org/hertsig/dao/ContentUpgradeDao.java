@@ -29,8 +29,8 @@ public interface ContentUpgradeDao extends AutoCloseable {
     @UseBetterBeanMapper
     Card getCard(@Bind("name") String name);
 
-    @SqlUpdate("INSERT INTO card (name, fulltype, supertypes, types, subtypes, cost, cmc, colors, text, power, toughness, loyalty, layout, splitcardparent, doublefacefront) " +
-            "VALUES (:name, :fulltype, :supertypes, :types, :subtypes, :cost, :cmc, :colors, :text, :power, :toughness, :loyalty, :layout, :splitcardparent, :doublefacefront)")
+    @SqlUpdate("INSERT INTO card (name, normalizedname, fulltype, supertypes, types, subtypes, cost, cmc, colors, text, power, toughness, loyalty, layout, splitcardparent, doublefacefront) " +
+            "VALUES (:name, unaccent(replace(:name, 'Æ', 'Ae')), :fulltype, :supertypes, :types, :subtypes, :cost, :cmc, :colors, :text, :power, :toughness, :loyalty, :layout, :splitcardparent, :doublefacefront)")
     @GetGeneratedKeys(UuidMapper.class)
     UUID createCard(@BindBean Card card);
 

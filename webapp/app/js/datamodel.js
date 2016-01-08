@@ -26,6 +26,10 @@ var Datamodel = function Datamodel($http) {
         return $http.get(base + 'database/sets');
     };
 
+    this.getSetStatistics = function() {
+        return $http.get(base + 'database/setstatistics');
+    };
+
     this.updateAmount = function(deckId, rowId, amount) {
         return $http.put(base + 'deck/card', {id: rowId, deckid: deckId, amount: amount});
     };

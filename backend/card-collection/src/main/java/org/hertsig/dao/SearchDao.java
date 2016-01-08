@@ -15,13 +15,14 @@ public interface SearchDao extends AutoCloseable {
     @MapResultAsBean
     List<Set> getAll();
 
-    @SqlQuery("SELECT id, name FROM card WHERE name ILIKE :name " +
+    @SqlQuery("SELECT id, name FROM card WHERE normalizedname ILIKE :name " +
             "AND splitcardparent IS NULL AND doublefacefront IS NULL ORDER BY name LIMIT 20")
     @UseBetterBeanMapper
     List<Card> searchCardsByName(@Bind("name") String name);
 
-    @SqlQuery("SELECT s.id, name, COUNT(DISTINCT p.cardid) AS cards, COUNT(p.cardid) AS prints " +
+    @SqlQuery("SELECT s.*, COUNT(DISTINCT p.cardid) AS cards, COUNT(p.cardid) AS prints " +
             "FROM \"set\" s LEFT JOIN printing p ON s.id=p.setid GROUP BY s.id, name")
+    @MapResultAsBean
     List<SetInfo> getSetStatistics();
 
     void close();

@@ -14,9 +14,9 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.hertsig.dao.PreconstructedDao;
+import org.hertsig.dto.DeckBoard;
 import org.hertsig.dto.Printing;
 import org.hertsig.dto.Tag;
-import org.skife.jdbi.v2.DBI;
 
 import com.google.gson.Gson;
 
@@ -69,15 +69,25 @@ public class PreconstructedDecks implements StartupAction {
 
         UUID deckId = dao.createPreconstructedDeck(deck.getName());
         dao.addTag(deckId, tagId);
-        for (PreconstructedDeck.Card card : deck.getMainboard()) {
+        importPreconstructedDeckBoard(dao, deckId, deck, defaultSet, "Mainboard", 0, deck.getMainboard());
+        importPreconstructedDeckBoard(dao, deckId, deck, defaultSet, "Sideboard", 1, deck.getSideboard());
+    }
+
+    private void importPreconstructedDeckBoard(PreconstructedDao dao, UUID deckId, PreconstructedDeck deck, UUID defaultSet, String boardName, int order, List<PreconstructedDeck.Card> cards) {
+        if (cards == null || cards.isEmpty()) {
+            return;
+        }
+
+        UUID boardId = dao.createBoard(new DeckBoard(null, deckId, boardName, order));
+        for (PreconstructedDeck.Card card : cards) {
             UUID setId = card.getEdition() == null ? defaultSet : dao.getSet(card.getEdition());
             Printing printing = dao.getPrinting(setId, card.getName());
             if (printing == null) {
-                log.warn("For preconstructed deck {}, card {} does not exist in set {} ({})", deck.getName(), card.getName(), card.getEdition(), deck.getSet());
-                dao.addCard(deckId, card.getName(), card.getAmount());
+                log.warn("For preconstructed deck {} ({}), card {} does not exist in set {} ({})", deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet());
+                dao.addCard2(boardId, card.getName(), card.getAmount());
             }
             else {
-                dao.addCard(deckId, printing.getCardid(), printing.getId(), card.getAmount());
+                dao.addCard2(boardId, printing.getCardid(), printing.getId(), card.getAmount());
             }
         }
     }

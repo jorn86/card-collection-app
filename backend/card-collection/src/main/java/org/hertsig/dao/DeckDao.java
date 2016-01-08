@@ -3,6 +3,7 @@ package org.hertsig.dao;
 import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.database.UuidMapper;
 import org.hertsig.dto.Deck;
+import org.hertsig.dto.DeckBoard;
 import org.hertsig.dto.DeckEntry;
 import org.hertsig.dto.DeckRow;
 import org.skife.jdbi.v2.sqlobject.*;
@@ -16,6 +17,10 @@ public interface DeckDao extends AutoCloseable {
     @MapResultAsBean
     Deck getDeck(@Bind("deck") UUID deckId);
 
+    @SqlQuery("SELECT * FROM deck WHERE id IN (SELECT deckid FROM board WHERE id = :board)")
+    @MapResultAsBean
+    Deck getDeckByBoard(@Bind("board") UUID boardId);
+
     @SqlUpdate("INSERT INTO deck (name, userid) VALUES (:name, :user)")
     @GetGeneratedKeys(UuidMapper.class)
     UUID createDeck(@Bind("name") String name, @Bind("user") UUID userId);
@@ -24,7 +29,7 @@ public interface DeckDao extends AutoCloseable {
     @MapResultAsBean
     List<DeckEntry> getCards(@Bind("deck") UUID deckId);
 
-    @SqlQuery("INSERT INTO deckrow (deckid, cardid, printingid, amount) VALUES (:deckid, :cardid, :printingid, :amount) RETURNING *")
+    @SqlQuery("INSERT INTO deckrow (boardid, cardid, printingid, amount) VALUES (:boardid, :cardid, :printingid, :amount) RETURNING *")
     @MapResultAsBean
     DeckRow addCardToDeck(@BindBean DeckRow row);
 
@@ -35,9 +40,13 @@ public interface DeckDao extends AutoCloseable {
     @SqlUpdate("DELETE FROM deckrow WHERE id = :id")
     int deleteRow(@Bind("id") UUID rowId);
 
-    @SqlQuery("SELECT * FROM deckrow WHERE deckid = :deckid AND cardid = :cardid")
+    @SqlQuery("SELECT * FROM deckrow WHERE boardid = :boardid AND cardid = :cardid")
     @UseBetterBeanMapper
-    List<DeckRow> getRows(@Bind("deckid") UUID deckid, @Bind("cardid") UUID cardid);
+    List<DeckRow> getBoardRows(@Bind("boardid") UUID boardId, @Bind("cardid") UUID cardId);
+
+    @SqlQuery("SELECT deckrow.* FROM deckrow LEFT JOIN board ON board.id = deckrow.boardid WHERE deckid = :deckid AND cardid = :cardid")
+    @UseBetterBeanMapper
+    List<DeckRow> getDeckRows(@Bind("deckid") UUID deckid, @Bind("cardid") UUID cardId);
 
     void close();
 
