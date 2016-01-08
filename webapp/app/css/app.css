@@ -143,3 +143,10 @@ img.mana {
 .e-ex {
     font-size: 15px !important;
 }
+
+.sortorder:after {
+    content: '\25b2';
+}
+.sortorder.reverse:after {
+    content: '\25bc';
+}

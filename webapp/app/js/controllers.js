@@ -13,7 +13,7 @@ angular.module('card-app')
 
     .controller('DeckController', function ($scope, $stateParams) {
         $scope.datamodel.getDeck($stateParams.id).then(function (result) {
-            $scope.setDeck(result.data);
+            $scope.deck = result.data;
         }, function(error) {
             if (error.status === 401) {
                 $scope.requeryOnAuth($stateParams.id);
@@ -31,14 +31,21 @@ angular.module('card-app')
         });
     })
 
-    .controller('VersionCheckController', function($scope) {
-        $scope.datamodel.getAllSets().then(function(result) {
-            $scope.sets = result.data;
-        });
-    })
-
     .controller('StatisticsController', function($scope) {
-        $scope.datamodel.getSetStatistics().then(function(result) {
+        $scope.datamodel.getSetStatistics().then(function (result) {
             $scope.data = result.data;
         });
+
+        $scope.order = 'releasedate';
+        $scope.reverse = false;
+
+        $scope.setOrder = function (field) {
+            if ($scope.order === field) {
+                $scope.reverse = !$scope.reverse;
+            }
+            else {
+                $scope.order = field;
+                $scope.reverse = false;
+            }
+        };
     });

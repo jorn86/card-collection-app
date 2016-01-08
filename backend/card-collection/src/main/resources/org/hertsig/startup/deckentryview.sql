@@ -1,5 +1,5 @@
 CREATE OR REPLACE VIEW deckentryview AS (
-  SELECT deckrow.*, board.deckid, card.name, card.cost, card.cmc, card.fulltype,
+  SELECT deckrow.*, board.deckid, board.name AS boardname, card.name, card.cost, card.cmc, card.fulltype,
     array_to_string(card.supertypes, ' ') AS supertype,
     array_to_string(card.types, ' ') AS type,
     array_to_string(card.subtypes, ' ') AS subtype,

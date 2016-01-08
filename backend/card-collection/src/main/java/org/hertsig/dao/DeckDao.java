@@ -13,6 +13,15 @@ import java.util.List;
 import java.util.UUID;
 
 public interface DeckDao extends AutoCloseable {
+
+    @SqlUpdate("INSERT INTO board (deckid, name, \"order\") VALUES (:deckid, :name, :order)")
+    @GetGeneratedKeys(UuidMapper.class)
+    UUID createBoard(@BindBean DeckBoard board);
+
+    @SqlQuery("SELECT * FROM board WHERE deckid = :deck")
+    @MapResultAsBean
+    List<DeckBoard> getBoards(@Bind("deck") UUID deckId);
+
     @SqlQuery("SELECT * FROM deck WHERE id = :deck")
     @MapResultAsBean
     Deck getDeck(@Bind("deck") UUID deckId);
@@ -27,7 +36,11 @@ public interface DeckDao extends AutoCloseable {
 
     @SqlQuery("SELECT * FROM deckentryview WHERE deckid = :deck")
     @MapResultAsBean
-    List<DeckEntry> getCards(@Bind("deck") UUID deckId);
+    List<DeckEntry> getCardsForDeck(@Bind("deck") UUID deckId);
+
+    @SqlQuery("SELECT * FROM deckentryview WHERE boardid = :board")
+    @MapResultAsBean
+    List<DeckEntry> getCardsForBoard(@Bind("board") UUID boardId);
 
     @SqlQuery("INSERT INTO deckrow (boardid, cardid, printingid, amount) VALUES (:boardid, :cardid, :printingid, :amount) RETURNING *")
     @MapResultAsBean

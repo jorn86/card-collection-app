@@ -55,10 +55,10 @@ public interface PreconstructedDao extends AutoCloseable {
     void addTag(@Bind("deckid") UUID deckId, @Bind("tagid") UUID tagId);
 
     @SqlUpdate("INSERT INTO deckrow (boardid, cardid, printingid, amount) VALUES (:boardid, :cardid, :printingid, :amount)")
-    void addCard2(@Bind("boardid") UUID boardid, @Bind("cardid") UUID cardid, @Bind("printingid") UUID printingId, @Bind("amount") int amount);
+    void addCard(@Bind("boardid") UUID boardid, @Bind("cardid") UUID cardid, @Bind("printingid") UUID printingId, @Bind("amount") int amount);
 
     @SqlUpdate("INSERT INTO deckrow (boardid, cardid, amount) VALUES (:boardid, (SELECT id FROM card WHERE name = :name LIMIT 1), :amount)")
-    void addCard2(@Bind("boardid") UUID boardId, @Bind("name") String cardName, @Bind("amount") int amount);
+    void addCard(@Bind("boardid") UUID boardId, @Bind("name") String cardName, @Bind("amount") int amount);
 
     void close();
 

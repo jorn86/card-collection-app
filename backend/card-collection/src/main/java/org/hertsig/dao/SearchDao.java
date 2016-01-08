@@ -11,17 +11,12 @@ import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 import java.util.List;
 
 public interface SearchDao extends AutoCloseable {
-    @SqlQuery("SELECT gatherercode, name FROM set ORDER BY releasedate")
-    @MapResultAsBean
-    List<Set> getAll();
-
     @SqlQuery("SELECT id, name FROM card WHERE normalizedname ILIKE :name " +
             "AND splitcardparent IS NULL AND doublefacefront IS NULL ORDER BY name LIMIT 20")
     @UseBetterBeanMapper
     List<Card> searchCardsByName(@Bind("name") String name);
 
-    @SqlQuery("SELECT s.*, COUNT(DISTINCT p.cardid) AS cards, COUNT(p.cardid) AS prints " +
-            "FROM \"set\" s LEFT JOIN printing p ON s.id=p.setid GROUP BY s.id, name")
+    @SqlQuery("SELECT * FROM setstatistics")
     @MapResultAsBean
     List<SetInfo> getSetStatistics();
 

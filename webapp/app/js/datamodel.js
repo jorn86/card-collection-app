@@ -1,7 +1,7 @@
 var Datamodel = function Datamodel($http) {
     var base = "api/";
 
-    this.getDecks = function(userId) {
+    this.getDecks = function() {
         return $http.get(base + 'deck/list');
     };
 
@@ -20,10 +20,6 @@ var Datamodel = function Datamodel($http) {
 
     this.searchCardsByName = function(name) {
         return $http.get(base + 'database/search/?name=' + name);
-    };
-
-    this.getAllSets = function() {
-        return $http.get(base + 'database/sets');
     };
 
     this.getSetStatistics = function() {

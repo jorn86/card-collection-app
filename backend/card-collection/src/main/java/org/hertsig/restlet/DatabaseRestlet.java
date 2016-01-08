@@ -24,14 +24,6 @@ public class DatabaseRestlet {
     }
 
     @GET
-    @Path("sets")
-    public Object getSets() {
-        try (SearchDao dao = dbi.open(SearchDao.class)) {
-            return dao.getAll();
-        }
-    }
-
-    @GET
     @Path("search")
     public Object searchCards(@QueryParam("name") String name) {
         try (SearchDao dao = dbi.open(SearchDao.class)) {

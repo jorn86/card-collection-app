@@ -13,7 +13,7 @@ angular.module('card-app')
 
                     var promise = $scope.preconstructed
                         ? $rootScope.datamodel.getPreconstructedDecks()
-                        : $rootScope.datamodel.getDecks($scope.userid);
+                        : $rootScope.datamodel.getDecks();
                     promise.then(function(result) {
                         $scope.node = result.data;
                     });
