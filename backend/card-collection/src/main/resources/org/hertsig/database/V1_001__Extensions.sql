@@ -1,2 +1,3 @@
 CREATE EXTENSION "uuid-ossp";
 CREATE EXTENSION "citext";
+CREATE EXTENSION "unaccent";

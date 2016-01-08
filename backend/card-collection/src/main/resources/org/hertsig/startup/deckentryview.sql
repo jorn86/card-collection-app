@@ -1,5 +1,5 @@
 CREATE OR REPLACE VIEW deckentryview AS (
-  SELECT deckrow.*, card.name, card.cost, card.cmc, card.fulltype,
+  SELECT deckrow.*, board.deckid, card.name, card.cost, card.cmc, card.fulltype,
     array_to_string(card.supertypes, ' ') AS supertype,
     array_to_string(card.types, ' ') AS type,
     array_to_string(card.subtypes, ' ') AS subtype,
@@ -10,8 +10,10 @@ CREATE OR REPLACE VIEW deckentryview AS (
     set.gatherercode AS setcode,
     card.layout = 'split' OR card.layout = 'split-parent' AS split
   FROM deckrow
+    LEFT JOIN board ON board.id = deckrow.boardid
     LEFT JOIN card ON card.id = deckrow.cardid
     LEFT JOIN printing ON printing.id = deckrow.printingid
     LEFT JOIN latestprinting ON latestprinting.cardid = deckrow.cardid
     LEFT JOIN card backcard ON card.id = backcard.doublefacefront LEFT JOIN latestprinting backprinting ON backprinting.cardid = backcard.id
-    LEFT JOIN set ON coalesce(printing.setid, latestprinting.setid) = set.id);
+    LEFT JOIN set ON coalesce(printing.setid, latestprinting.setid) = set.id)
+  ;

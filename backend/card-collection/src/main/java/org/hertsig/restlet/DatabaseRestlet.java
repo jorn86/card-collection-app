@@ -1,7 +1,5 @@
 package org.hertsig.restlet;
 
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.jaxrs.annotation.JacksonFeatures;
 import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
 import lombok.extern.slf4j.Slf4j;
@@ -42,8 +40,7 @@ public class DatabaseRestlet {
     }
 
     @GET
-    @Path("statistics")
-    @JacksonFeatures(serializationEnable = SerializationFeature.INDENT_OUTPUT)
+    @Path("setstatistics")
     public Object getSetStatistics() {
         try (SearchDao dao = dbi.open(SearchDao.class)) {
             return dao.getSetStatistics();

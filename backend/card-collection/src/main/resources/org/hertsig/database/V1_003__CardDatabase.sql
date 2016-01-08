@@ -15,6 +15,7 @@ CREATE TABLE "set" (
 CREATE TABLE card (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
   name VARCHAR(150) NOT NULL UNIQUE CHECK (name <> ''),
+  normalizedname CITEXT NOT NULL UNIQUE CHECK (normalizedname <> ''),
   fulltype VARCHAR(128),
   supertypes VARCHAR(32)[],
   types VARCHAR(32)[],
@@ -30,6 +31,8 @@ CREATE TABLE card (
   splitcardparent UUID REFERENCES card,
   doublefacefront UUID REFERENCES card
 );
+
+CREATE INDEX ON card (fulltype);
 
 CREATE TABLE printing (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
