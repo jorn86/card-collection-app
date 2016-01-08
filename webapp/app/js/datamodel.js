@@ -26,12 +26,12 @@ var Datamodel = function Datamodel($http) {
         return $http.get(base + 'database/setstatistics');
     };
 
-    this.updateAmount = function(deckId, rowId, amount) {
-        return $http.put(base + 'deck/card', {id: rowId, deckid: deckId, amount: amount});
+    this.updateAmount = function(boardId, rowId, amount) {
+        return $http.put(base + 'deck/card', {id: rowId, boardid: boardId, amount: amount});
     };
 
-    this.addCardToDeck = function(deckId, cardId, amount) {
-        return $http.post(base + 'deck/card', {deckid: deckId, cardid: cardId, amount: amount});
+    this.addCardToDeck = function(boardId, cardId, amount) {
+        return $http.post(base + 'deck/card', {boardid: boardId, cardid: cardId, amount: amount});
     };
 
     this.authenticateUser = function(user) {

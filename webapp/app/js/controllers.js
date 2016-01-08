@@ -16,17 +16,17 @@ angular.module('card-app')
             $scope.deck = result.data;
         }, function(error) {
             if (error.status === 401) {
-                $scope.requeryOnAuth($stateParams.id);
+                //$scope.requeryOnAuth($stateParams.id);
             }
         });
     })
 
     .controller('InventoryController', function ($scope) {
         $scope.datamodel.getInventory().then(function (result) {
-            $scope.setDeck({'Inventory' : result.data});
+            $scope.inventory = result.data.boards[0];
         }, function(error) {
             if (error.status === 401) {
-                $scope.requeryOnAuth($stateParams.id);
+                //$scope.requeryOnAuth($stateParams.id);
             }
         });
     })
