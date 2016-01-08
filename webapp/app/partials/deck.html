@@ -1,4 +1,4 @@
 <div>{{deck.name}}</div>
-<div ng-repeat="(key, list) in deck.boards | groupBy: 'id' | toArray: true">
-    <div ng-include="'partials/cardlist.html'"></div>
+<div ng-repeat="board in deck.boards">
+    <cardlist list="board"></cardlist>
 </div>
