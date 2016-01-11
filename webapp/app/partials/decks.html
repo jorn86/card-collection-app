@@ -1,5 +1,4 @@
 <div>
-    <a ng-hide="preconstructed || !userid" ui-sref="app.inventory"></a>
     <div>{{node.tagName}}</div>
     <ul>
         <li ng-repeat="child in node.children | orderBy: 'tagName'">

@@ -118,22 +118,24 @@ public class DeckRestlet {
 
     @PUT
     @Path("card")
-    public DeckRow updateRow(DeckRow row) {
+    public List<DeckEntry> updateRow(DeckRow row) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckForUser(dao, row.getBoardid());
 
             if (row.getAmount() < 1) {
                 handleUpdate(dao.deleteRow(row.getId()), "Row with id " + row.getId() + " not found");
-                return null;
+            }
+            else {
+                dao.updateRow(row);
             }
 
-            return dao.updateRow(row);
+            return dao.getCardsForBoard(row.getBoardid());
         }
     }
 
     @POST
     @Path("card")
-    public DeckRow addCard(DeckRow card) {
+    public List<DeckEntry> addCard(DeckRow card) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckForUser(dao, card.getBoardid());
 
@@ -145,13 +147,16 @@ public class DeckRestlet {
             Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
             if (existingPrinting.isPresent()) {
                 DeckRow existing = existingPrinting.get();
-                return dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
+                dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
             }
-            if (rows.size() > 0 && card.getPrintingid() == null) {
+            else if (rows.size() > 0 && card.getPrintingid() == null) {
                 DeckRow existing = rows.get(0);
-                return dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
+                dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
             }
-            return dao.addCardToDeck(card);
+            else {
+                dao.addCardToDeck(card);
+            }
+            return dao.getCardsForBoard(card.getBoardid());
         }
     }
 
