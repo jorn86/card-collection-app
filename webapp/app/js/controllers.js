@@ -12,23 +12,15 @@ angular.module('card-app')
     })
 
     .controller('DeckController', function ($scope, $stateParams) {
-        $scope.datamodel.getDeck($stateParams.id).then(function (result) {
-            $scope.deck = result.data;
-        }, function(error) {
-            if (error.status === 401) {
-                //$scope.requeryOnAuth($stateParams.id);
-            }
-        });
-    })
-
-    .controller('InventoryController', function ($scope) {
-        $scope.datamodel.getInventory().then(function (result) {
-            $scope.inventory = result.data.boards[0];
-        }, function(error) {
-            if (error.status === 401) {
-                //$scope.requeryOnAuth($stateParams.id);
-            }
-        });
+        $scope.deckId = $stateParams.id;
+        $scope.reload = function() {
+            $scope.datamodel.getDeck($scope.deckId).then(function (result) {
+                $scope.deck = result.data;
+                $scope.editable = $scope.deck.userid === $scope.currentUserId;
+            });
+        };
+        $scope.$on('user', $scope.reload);
+        $scope.reload();
     })
 
     .controller('StatisticsController', function($scope) {

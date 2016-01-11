@@ -3,7 +3,7 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
-            scope: {list: '='},
+            scope: {list: '=', editable: '='},
             controller: function($scope, $rootScope) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
                 var typeGrouping = function (card) {
@@ -97,14 +97,11 @@ angular.module('card-app')
                 $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
 
                 $scope.updateAmount = function (data) {
-                    console.log('in update amount')
                     var promise = $rootScope.datamodel.updateAmount($scope.list.id, data.id, data.amount);
                     if (data.amount == 0) {
-                        promise.then(function() {
-                            return $rootScope.datamodel.getDeck($scope.deckid);
-
-                        }).then(function(result) {
-                            $scope.list = result.data.boards[0];
+                        promise.then(function(updatedBoard) {
+                            $scope.list = updatedBoard.data;
+                            $scope.grid.rows = updatedBoard.data;
                         });
                     }
                 };
@@ -141,11 +138,9 @@ angular.module('card-app')
                         return;
                     }
 
-                    $rootScope.datamodel.addCardToDeck($scope.list.id, searchResult.id, 1).then(function() {
-                        return $rootScope.datamodel.getDeck($scope.deckid);
-
-                    }).then(function (result) {
-                        $scope.list = result.data.boards[0];
+                    $rootScope.datamodel.addCardToDeck($scope.list.id, searchResult.id, 1).then(function(updatedBoard) {
+                        $scope.list = updatedBoard.data;
+                        $scope.grid.rows = updatedBoard.data;
                     });
 
                     searchResult = null;
@@ -165,22 +160,3 @@ angular.module('card-app')
             }
         }
     });
-
-
-//$scope.updateGrid = function (cards) {
-//    $scope.grid.rows = cards;
-//};
-//
-//$scope.setDeck = function (cardlist) {
-//    $scope.list = cardlist;
-//    $scope.editable = cardlist.userid === $scope.currentUserId;
-//    $scope.updateGrid(cardlist.cards);
-//};
-//
-//$scope.requeryOnAuth = function(id) {
-//    $scope.$on('user', function() {
-//        $scope.datamodel.getDeck(id).then(function (result) {
-//            $scope.setDeck(result.data);
-//        });
-//    });
-//};
