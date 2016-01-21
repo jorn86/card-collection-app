@@ -16,7 +16,6 @@ import javax.sql.DataSource;
 public class GuiceServletConfig extends GuiceServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        // TODO test
         Injector injector = (Injector) servletContextEvent.getServletContext().getAttribute(Injector.class.getName());
         ((PGPoolingDataSource) injector.getInstance(DataSource.class)).close();
         log.info("Closed data source");
