@@ -1,18 +1,16 @@
 package org.hertsig.webserver;
 
-import javax.servlet.ServletContextEvent;
-import javax.sql.DataSource;
-
-import org.hertsig.database.DatabaseModule;
-import org.hertsig.startup.StartupActionModule;
-import org.postgresql.ds.PGPoolingDataSource;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
-
 import lombok.extern.slf4j.Slf4j;
+import org.hertsig.database.DatabaseModule;
+import org.hertsig.startup.StartupActionModule;
+import org.postgresql.ds.PGPoolingDataSource;
+
+import javax.servlet.ServletContextEvent;
+import javax.sql.DataSource;
 
 @Slf4j
 public class GuiceServletConfig extends GuiceServletContextListener {
