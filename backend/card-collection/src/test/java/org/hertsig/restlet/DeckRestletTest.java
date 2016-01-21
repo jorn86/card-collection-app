@@ -5,10 +5,7 @@ import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
 import org.hertsig.dao.UserDao;
 import org.hertsig.database.MockDbi;
-import org.hertsig.dto.Deck;
-import org.hertsig.dto.DeckRow;
-import org.hertsig.dto.Tag;
-import org.hertsig.dto.User;
+import org.hertsig.dto.*;
 import org.hertsig.user.UserManager;
 import org.junit.Before;
 import org.junit.Rule;
@@ -73,7 +70,9 @@ public class DeckRestletTest {
 
     @Test
     public void testGetMyDeck() {
-        UUID deckId = initMyDeck();
+        UUID deckId = UUID.randomUUID();
+        Deck deck = new Deck(deckId, userId, null, "My deck", null);
+        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(deck);
         restlet.getDeck(deckId);
     }
 
@@ -181,7 +180,10 @@ public class DeckRestletTest {
 
     private UUID initMyDeck() {
         UUID deckId = UUID.randomUUID();
-        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(new Deck(deckId, userId, null, "My deck", null));
-        return deckId;
+        UUID boardId = UUID.randomUUID();
+        Deck deck = new Deck(deckId, userId, null, "My deck", Lists.newArrayList(new DeckBoard(boardId, deckId, "Test mainboard", 1, null)));
+        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(deck);
+        when(mock.getMockedDao(DeckDao.class).getDeckByBoard(boardId)).thenReturn(deck);
+        return boardId;
     }
 }
