@@ -44,7 +44,12 @@ import lombok.extern.slf4j.Slf4j;
 @Singleton
 public class ContentUpgrade implements StartupAction {
     private static final Pattern PATTERN = Pattern.compile("\\{.+?\\}");
-    @Inject private IDBI dbi;
+    private final IDBI dbi;
+
+    @Inject
+    public ContentUpgrade(IDBI dbi) {
+        this.dbi = dbi;
+    }
 
     @Override
     public void run() throws StartupActionException {
@@ -213,7 +218,7 @@ public class ContentUpgrade implements StartupAction {
         }
     }
 
-    private Reader ensureSetFile() throws IOException {
+    @VisibleForTesting Reader ensureSetFile() throws IOException {
         Path folder = Paths.get("json");
         if (!Files.isDirectory(folder)) {
             Files.createDirectory(folder);
