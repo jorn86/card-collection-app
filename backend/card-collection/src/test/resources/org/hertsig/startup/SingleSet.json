@@ -1,0 +1,19 @@
+{
+  "ONE": {
+    "name": "First testset",
+    "code": "ONE",
+    "releaseDate": "2016-01-01",
+    "type": "core",
+    "cards": [{
+      "name": "Card one",
+      "layout": "normal",
+      "manaCost": "{G}",
+      "cmc": 1,
+      "colors": ["Green"],
+      "colorIdentity": ["G"],
+      "type": "Instant",
+      "types": ["Instant"],
+      "rarity": "Common"
+    }]
+  }
+}

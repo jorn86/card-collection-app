@@ -8,6 +8,7 @@ import com.google.inject.util.Modules;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.startup.IntegrationTestViewsModule;
 import org.hertsig.startup.StartupAction;
+import org.intellij.lang.annotations.Language;
 import org.junit.rules.ExternalResource;
 import org.postgresql.ds.PGPoolingDataSource;
 import org.postgresql.ds.PGSimpleDataSource;
@@ -46,7 +47,7 @@ public class TestDatabaseResource extends ExternalResource {
                 bind(DataSource.class).toProvider(new TestDatasourceProvider(databaseName)).in(Scopes.SINGLETON);
             }
         }), new IntegrationTestViewsModule());
-        injector.getInstance(StartupAction.class).run();
+        injector.getInstance(StartupAction.class).run(); // runs Views
     }
 
     @Override
@@ -56,7 +57,7 @@ public class TestDatabaseResource extends ExternalResource {
         executeAdmin("DROP DATABASE " + databaseName);
     }
 
-    private boolean executeAdmin(String statement) {
+    private boolean executeAdmin(@Language("SQL") String statement) {
         try (Connection c = adminDatasource.getConnection("cardcollection", "cardcollection");
              Statement s = c.createStatement()) {
             return s.execute(statement);

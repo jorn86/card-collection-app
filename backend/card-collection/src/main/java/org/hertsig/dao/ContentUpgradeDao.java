@@ -38,6 +38,10 @@ public interface ContentUpgradeDao extends AutoCloseable {
     @MapResultAsBean
     List<Printing> getPrintings(@Bind("setid") UUID setId, @Bind("cardid") UUID cardId);
 
+    @SqlQuery("SELECT * FROM printing WHERE cardid = :cardid")
+    @MapResultAsBean
+    List<Printing> getPrintings(@Bind("cardid") UUID cardId);
+
     @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext) " +
             "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext)")
     @GetGeneratedKeys(UuidMapper.class)

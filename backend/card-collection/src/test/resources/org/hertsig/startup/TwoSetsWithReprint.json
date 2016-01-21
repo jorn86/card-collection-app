@@ -1,0 +1,46 @@
+{
+  "ONE": {
+    "name": "First testset",
+    "code": "ONE",
+    "releaseDate": "2016-01-01",
+    "type": "core",
+    "cards": [{
+      "name": "Card one",
+      "layout": "normal",
+      "manaCost": "{G}",
+      "cmc": 1,
+      "colors": ["Green"],
+      "colorIdentity": ["G"],
+      "type": "Instant",
+      "types": ["Instant"],
+      "rarity": "Common"
+    }]
+  },
+  "TWO": {
+    "name": "Second testset",
+    "code": "TWO",
+    "releaseDate": "2016-01-02",
+    "type": "core",
+    "cards": [{
+      "name": "Card two",
+      "layout": "normal",
+      "manaCost": "{W}{B}",
+      "cmc": 2,
+      "colors": ["White", "Black"],
+      "colorIdentity": ["W", "B"],
+      "type": "Sorcery",
+      "types": ["Sorcery"],
+      "rarity": "Uncommon"
+    }, {
+      "name": "Card one",
+      "layout": "normal",
+      "manaCost": "{G}",
+      "cmc": 1,
+      "colors": ["Green"],
+      "colorIdentity": ["G"],
+      "type": "Instant",
+      "types": ["Instant"],
+      "rarity": "Common"
+    }]
+  }
+}
