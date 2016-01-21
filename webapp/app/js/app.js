@@ -14,6 +14,11 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
                 controller: 'DeckController',
                 templateUrl: 'partials/deck.html'
             })
+            .state('app.search', {
+                url: '/search',
+                controller: 'SearchController',
+                templateUrl: 'partials/search.html'
+            })
             .state('app.sets', {
                 url: '/sets',
                 templateUrl: 'partials/setstatistics.html'

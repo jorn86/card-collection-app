@@ -23,13 +23,24 @@ angular.module('card-app')
         $scope.reload();
     })
 
+    .controller('SearchController', function($scope) {
+        $scope.name = '';
+        $scope.text = '';
+        $scope.pow = null;
+        $scope.tou = null;
+
+        $scope.doSearch = function() {
+            console.log('search', $scope.name, $scope.text, $scope.pow, $scope.tou)
+        };
+    })
+
     .controller('StatisticsController', function($scope) {
         $scope.datamodel.getSetStatistics().then(function (result) {
             $scope.data = result.data;
         });
 
         $scope.order = 'releasedate';
-        $scope.reverse = false;
+        $scope.reverse = true;
 
         $scope.setOrder = function (field) {
             if ($scope.order === field) {
