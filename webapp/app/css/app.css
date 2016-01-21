@@ -6,8 +6,17 @@ html,body {
     font-size: 14px;
 }
 
-table, th, td {
+table.sets {
+    border-collapse: collapse;
     border: 1px solid black;
+}
+table.sets th td {
+    border: 1px solid lightgrey;
+}
+
+table.search td {
+    padding: 2px 0;
+    border-bottom: 1px dashed lightgrey;
 }
 
 ul, ol, dl {
@@ -145,8 +154,8 @@ img.mana {
 }
 
 .sortorder:after {
-    content: '\25b2';
+    content: '\25b2'; /* up arrow */
 }
 .sortorder.reverse:after {
-    content: '\25bc';
+    content: '\25bc'; /* down arrow */
 }

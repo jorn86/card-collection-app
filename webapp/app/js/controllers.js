@@ -26,11 +26,14 @@ angular.module('card-app')
     .controller('SearchController', function($scope) {
         $scope.name = '';
         $scope.text = '';
+        $scope.types = '';
         $scope.pow = null;
         $scope.tou = null;
+        $scope.c = {};
+        $scope.ci = {};
 
         $scope.doSearch = function() {
-            console.log('search', $scope.name, $scope.text, $scope.pow, $scope.tou)
+            console.log('search', $scope.name, $scope.text, $scope.types, $scope.pow, $scope.tou, $scope.c, $scope.ci)
         };
     })
 
