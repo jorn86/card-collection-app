@@ -1,16 +1,14 @@
 package org.hertsig.database;
 
-import javax.inject.Singleton;
-import javax.sql.DataSource;
-
-import org.skife.jdbi.v2.DBI;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
-
 import lombok.extern.slf4j.Slf4j;
+import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.IDBI;
+
+import javax.inject.Singleton;
+import javax.sql.DataSource;
 
 @Slf4j
 public class DatabaseModule extends AbstractModule {
