@@ -1,43 +1,47 @@
 <div ng-controller="StatisticsController">
-    <table ng-show="data">
-        <tr>
-            <th ng-click="setOrder('name')">Name
-                <span class="sortorder" ng-show="order === 'name'" ng-class="{reverse:reverse}"></span></th>
-            <th>Code</th>
-            <th><a href="http://gatherer.wizards.com/" target="_blank">Gatherer</a></th>
-            <th>Common</th>
-            <th>Uncommon</th>
-            <th>Rare</th>
-            <th>Mythic</th>
-            <th ng-click="setOrder('prints')">Cards
-                <span class="sortorder" ng-show="order === 'prints'" ng-class="{reverse:reverse}"></span></th>
-            <th ng-click="setOrder('cards')">Distinct
-                <span class="sortorder" ng-show="order === 'cards'" ng-class="{reverse:reverse}"></span></th>
-            <th ng-click="setOrder('newcards')">New
-                <span class="sortorder" ng-show="order === 'newcards'" ng-class="{reverse:reverse}"></span></th>
-            <th ng-click="setOrder('reprints')">Reprints
-                <span class="sortorder" ng-show="order === 'reprints'" ng-class="{reverse:reverse}"></span></th>
-            <!--<th><a href="http://magiccards.info/" target="_blank">MCI</a></th>-->
-            <th ng-click="setOrder('releasedate')">Release date
-                <span class="sortorder" ng-show="order === 'releasedate'" ng-class="{reverse:reverse}"></span></th>
-            <th>Online only</th>
-        </tr>
-        <tr ng-repeat="row in data | orderBy:order:reverse">
-            <td>{{row.name}}</td>
-            <td>{{row.code}}</td>
-            <td><span ng-hide="row.gatherercode === row.code">{{row.gatherercode}}</span>&nbsp;</td>
-            <td><setimage set="row.gatherercode" rarity="'Common'"></setimage></td>
-            <td><setimage set="row.gatherercode" rarity="'Uncommon'"></setimage></td>
-            <td><setimage set="row.gatherercode" rarity="'Rare'"></setimage></td>
-            <td><setimage set="row.gatherercode" rarity="'Mythic Rare'"></setimage></td>
-            <td>{{row.prints}}</td>
-            <td>{{row.cards}}</td>
-            <td>{{row.newcards}}</td>
-            <td>{{row.reprints}}</td>
-            <!--<td><a href="http://magiccards.info/query?v=olist&q=e:{{row.mcicode}}" target="_blank">{{row.mcicode}}</a></td>-->
-            <td>{{row.releasedate | date}}</td>
-            <td><setimage ng-show="row.onlineonly" set="'me2'" rarity="'Rare'"></setimage>&nbsp;</td>
-        </tr>
+    <table ng-show="data" class="sets" cellspacing="0">
+        <thead>
+            <tr class="sets">
+                <th ng-click="setOrder('name')">Name
+                    <span class="sortorder" ng-show="order === 'name'" ng-class="{reverse:reverse}"></span></th>
+                <th>Code</th>
+                <th><a href="http://gatherer.wizards.com/" target="_blank">Gatherer</a></th>
+                <th>Common</th>
+                <th>Uncommon</th>
+                <th>Rare</th>
+                <th>Mythic</th>
+                <th ng-click="setOrder('prints')">Cards
+                    <span class="sortorder" ng-show="order === 'prints'" ng-class="{reverse:reverse}"></span></th>
+                <th ng-click="setOrder('cards')">Distinct
+                    <span class="sortorder" ng-show="order === 'cards'" ng-class="{reverse:reverse}"></span></th>
+                <th ng-click="setOrder('newcards')">New
+                    <span class="sortorder" ng-show="order === 'newcards'" ng-class="{reverse:reverse}"></span></th>
+                <th ng-click="setOrder('reprints')">Reprints
+                    <span class="sortorder" ng-show="order === 'reprints'" ng-class="{reverse:reverse}"></span></th>
+                <!--<th><a href="http://magiccards.info/" target="_blank">MCI</a></th>-->
+                <th ng-click="setOrder('releasedate')">Release date
+                    <span class="sortorder" ng-show="order === 'releasedate'" ng-class="{reverse:reverse}"></span></th>
+                <th>Online only</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in data | orderBy:order:reverse">
+                <td>{{row.name}}</td>
+                <td>{{row.code}}</td>
+                <td><span ng-hide="row.gatherercode === row.code">{{row.gatherercode}}</span>&nbsp;</td>
+                <td><setimage set="row.gatherercode" rarity="'Common'"></setimage></td>
+                <td><setimage set="row.gatherercode" rarity="'Uncommon'"></setimage></td>
+                <td><setimage set="row.gatherercode" rarity="'Rare'"></setimage></td>
+                <td><setimage set="row.gatherercode" rarity="'Mythic Rare'"></setimage></td>
+                <td>{{row.prints}}</td>
+                <td>{{row.cards}}</td>
+                <td>{{row.newcards}}</td>
+                <td>{{row.reprints}}</td>
+                <!--<td><a href="http://magiccards.info/query?v=olist&q=e:{{row.mcicode}}" target="_blank">{{row.mcicode}}</a></td>-->
+                <td>{{row.releasedate | date}}</td>
+                <td><setimage ng-show="row.onlineonly" set="'me2'" rarity="'Rare'"></setimage>&nbsp;</td>
+            </tr>
+        </tbody>
     </table>
     <span ng-hide="data">Loading...</span>
 </div>

@@ -1,18 +1,23 @@
-<div>
-    <label>Name
-        <input type="text" ng-model="name">
-    </label>
-    <label>Power
-        <input type="number" ng-model="pow">
-    </label>
-    <label>Toughness
-        <input type="number" ng-model="tou">
-    </label>
-    <label>Color
-
-    </label>
-    <label>Oracle text
-        <input type="text" ng-model="text">
-    </label>
-    <button ng-click="doSearch()">Search</button>
-</div>
+<h2>Advanced search</h2>
+<form ng-submit="doSearch()">
+    <table class="search" cellspacing="0">
+        <tr><td>Name</td><td><input type="text" ng-model="name"></td></tr>
+        <tr><td>Text (Oracle)</td><td><input type="text" ng-model="text"></td></tr>
+        <tr><td>Types</td><td><input type="text" ng-model="types"></td></tr>
+        <tr><td>Colors</td><td>
+            <label><input type="checkbox" ng-model="c.w">White</label>
+            <label><input type="checkbox" ng-model="c.u">Blue</label>
+            <label><input type="checkbox" ng-model="c.b">Black</label>
+            <label><input type="checkbox" ng-model="c.r">Red</label>
+            <label><input type="checkbox" ng-model="c.g">Green</label>
+        </td></tr>
+        <tr><td>Color identity</td><td>
+            <label><input type="checkbox" ng-model="ci.w">White</label>
+            <label><input type="checkbox" ng-model="ci.u">Blue</label>
+            <label><input type="checkbox" ng-model="ci.b">Black</label>
+            <label><input type="checkbox" ng-model="ci.r">Red</label>
+            <label><input type="checkbox" ng-model="ci.g">Green</label>
+        </td></tr>
+        <tr><td style="border: 0"><input type="submit" value="Search"></td></tr>
+    </table>
+</form>

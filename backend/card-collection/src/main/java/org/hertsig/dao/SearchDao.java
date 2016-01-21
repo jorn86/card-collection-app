@@ -2,7 +2,6 @@ package org.hertsig.dao;
 
 import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.dto.Card;
-import org.hertsig.dto.Set;
 import org.hertsig.dto.SetInfo;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;

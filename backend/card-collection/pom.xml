@@ -26,7 +26,7 @@
         <jetty.version>9.3.7.v20160115</jetty.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.6</lombok.version>
-        <mockito.version>2.0.33-beta</mockito.version>
+        <mockito.version>2.0.40-beta</mockito.version>
         <postgres.version>9.3-1102-jdbc41</postgres.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <slf4j.version>1.7.13</slf4j.version>
