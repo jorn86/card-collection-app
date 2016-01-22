@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class DeckRow {
     private UUID id;
     private UUID boardid;
-    private UUID cardid;
-    private UUID printingid;
+    private int cardid;
+    private Integer printingid;
     private int amount;
 }

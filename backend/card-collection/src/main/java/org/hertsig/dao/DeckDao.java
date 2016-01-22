@@ -55,11 +55,11 @@ public interface DeckDao extends AutoCloseable {
 
     @SqlQuery("SELECT * FROM deckrow WHERE boardid = :boardid AND cardid = :cardid")
     @UseBetterBeanMapper
-    List<DeckRow> getBoardRows(@Bind("boardid") UUID boardId, @Bind("cardid") UUID cardId);
+    List<DeckRow> getBoardRows(@Bind("boardid") UUID boardId, @Bind("cardid") int cardId);
 
     @SqlQuery("SELECT deckrow.* FROM deckrow LEFT JOIN board ON board.id = deckrow.boardid WHERE deckid = :deckid AND cardid = :cardid")
     @UseBetterBeanMapper
-    List<DeckRow> getDeckRows(@Bind("deckid") UUID deckid, @Bind("cardid") UUID cardId);
+    List<DeckRow> getDeckRows(@Bind("deckid") UUID deckid, @Bind("cardid") int cardId);
 
     void close();
 

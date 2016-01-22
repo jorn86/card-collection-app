@@ -25,13 +25,17 @@ angular.module('card-app')
 
         return {
             scope: {'set': '=', rarity: '='},
-            template: '<i class="set mtg {{setClass}} {{rarityClass}}">',
+            template: '&nbsp;<i class="set mtg {{setClass}} {{rarityClass}}">',
             link: function($scope) {
-                if ($scope.set.slice(0, 1) === 'p' || promoSets.indexOf($scope.set) >= 0) {
-                    $scope.setClass = 'promo-2';
+                if ($scope.set) {
+                    if ($scope.set.slice(0, 1) === 'p' || promoSets.indexOf($scope.set) >= 0) {
+                        $scope.setClass = 'promo-2';
+                    } else {
+                        $scope.setClass = 'e-' + mapSet($scope.set).toLowerCase();
+                    }
                 }
                 else {
-                    $scope.setClass = 'e-' + mapSet($scope.set).toLowerCase();
+
                 }
                 $scope.rarityClass = getRarityClass($scope.rarity) || '';
             }

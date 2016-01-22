@@ -13,5 +13,6 @@ public class Deck {
     private UUID userid;
     private List<UUID> tags;
     private String name;
+    private boolean inventory;
     private List<DeckBoard> boards;
 }

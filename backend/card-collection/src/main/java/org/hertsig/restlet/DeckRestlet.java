@@ -147,11 +147,11 @@ public class DeckRestlet {
             Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
             if (existingPrinting.isPresent()) {
                 DeckRow existing = existingPrinting.get();
-                dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
+                dao.updateRow(new DeckRow(existing.getId(), null, 0, null, existing.getAmount() + card.getAmount()));
             }
             else if (rows.size() > 0 && card.getPrintingid() == null) {
                 DeckRow existing = rows.get(0);
-                dao.updateRow(new DeckRow(existing.getId(), null, null, null, existing.getAmount() + card.getAmount()));
+                dao.updateRow(new DeckRow(existing.getId(), null, 0, null, existing.getAmount() + card.getAmount()));
             }
             else {
                 dao.addCardToDeck(card);

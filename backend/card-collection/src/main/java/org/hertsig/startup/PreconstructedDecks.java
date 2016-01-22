@@ -61,7 +61,7 @@ public class PreconstructedDecks implements StartupAction {
             return;
         }
 
-        UUID defaultSet = dao.getSet(deck.getSet());
+        Integer defaultSet = dao.getSet(deck.getSet());
         if (defaultSet == null) {
             log.warn("Preconstructed deck {} has unknown default set {}", file, deck.getSet());
             return;
@@ -73,14 +73,14 @@ public class PreconstructedDecks implements StartupAction {
         importPreconstructedDeckBoard(dao, deckId, deck, defaultSet, "Sideboard", 1, deck.getSideboard());
     }
 
-    private void importPreconstructedDeckBoard(PreconstructedDao dao, UUID deckId, PreconstructedDeck deck, UUID defaultSet, String boardName, int order, List<PreconstructedDeck.Card> cards) {
+    private void importPreconstructedDeckBoard(PreconstructedDao dao, UUID deckId, PreconstructedDeck deck, int defaultSet, String boardName, int order, List<PreconstructedDeck.Card> cards) {
         if (cards == null || cards.isEmpty()) {
             return;
         }
 
         UUID boardId = dao.createBoard(new DeckBoard(null, deckId, boardName, order, null));
         for (PreconstructedDeck.Card card : cards) {
-            UUID setId = card.getEdition() == null ? defaultSet : dao.getSet(card.getEdition());
+            int setId = card.getEdition() == null ? defaultSet : dao.getSet(card.getEdition());
             Printing printing = dao.getPrinting(setId, card.getName());
             if (printing == null) {
                 log.warn("For preconstructed deck {} ({}), card {} does not exist in set {} ({})", deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet());

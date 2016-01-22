@@ -26,7 +26,6 @@ import org.hertsig.dto.Card;
 import org.hertsig.dto.Color;
 import org.hertsig.dto.Printing;
 import org.hertsig.dto.Set;
-import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.IDBI;
 import org.skife.jdbi.v2.exceptions.DBIException;
 
@@ -59,13 +58,13 @@ public class ContentUpgrade implements StartupAction {
             Map<String, FullSet> map = gson.fromJson(sets, Types.mapOf(String.class, FullSet.class));
             for (FullSet fullSet : map.values()) {
                 log.debug("Checking database for set {}", fullSet.name);
-                UUID setId = ensureSet(dao, fullSet);
+                int setId = ensureSet(dao, fullSet);
                 java.util.Set<List<String>> splitCards = Sets.newHashSet();
                 for (FullSet.Card card : fullSet.cards) {
                     if (card.getNames() != null) {
                         splitCards.add(card.getNames());
                     }
-                    UUID cardId = ensureCard(dao, card);
+                    int cardId = ensureCard(dao, card);
                     ensurePrinting(dao, cardId, setId, card);
                 }
                 ensureSplitCards(dao, setId, splitCards);
@@ -76,7 +75,7 @@ public class ContentUpgrade implements StartupAction {
         }
     }
 
-    private void ensureSplitCards(ContentUpgradeDao dao, UUID setId, java.util.Set<List<String>> splitCards) {
+    private void ensureSplitCards(ContentUpgradeDao dao, int setId, java.util.Set<List<String>> splitCards) {
         if (splitCards.isEmpty()) {
             return;
         }
@@ -96,11 +95,11 @@ public class ContentUpgrade implements StartupAction {
                 String name = left.getName() + " / " + right.getName();
                 Card parent = dao.getCard(name);
                 if (parent == null) {
-                    parent = new Card(null, name, left.getFulltype(), left.getSupertypes(), left.getTypes(), left.getSubtypes(),
+                    parent = new Card(0, name, left.getFulltype(), left.getSupertypes(), left.getTypes(), left.getSubtypes(),
                         left.getCost() + "/" + right.getCost(), left.getCmc() + right.getCmc(),
                         joinColors(left.getColors(), right.getColors()), null, null, null, null, "split-parent", null, null);
 
-                    UUID parentId = dao.createCard(parent);
+                    int parentId = dao.createCard(parent);
                     dao.setParent(left.getId(), parentId);
                     dao.setParent(right.getId(), parentId);
                     parent.setId(parentId);
@@ -113,11 +112,11 @@ public class ContentUpgrade implements StartupAction {
         }
     }
 
-    private void ensureSplitPrinting(ContentUpgradeDao dao, UUID parentId, UUID setId, Card left, Card right) {
+    private void ensureSplitPrinting(ContentUpgradeDao dao, int parentId, int setId, Card left, Card right) {
         List<Printing> printing = dao.getPrintings(setId, parentId);
         if (printing.isEmpty()) {
             Printing leftPrinting = dao.getPrintings(setId, left.getId()).get(0);
-            dao.createPrinting(new Printing(null, setId, parentId, leftPrinting.getMultiverseid(),
+            dao.createPrinting(new Printing(0, setId, parentId, leftPrinting.getMultiverseid(),
                     null, leftPrinting.getRarity(), null, null, null));
         }
     }
@@ -126,27 +125,27 @@ public class ContentUpgrade implements StartupAction {
         return Lists.newArrayList(Sets.newTreeSet(Iterables.concat(leftColors, rightColors)));
     }
 
-    private UUID ensurePrinting(ContentUpgradeDao dao, UUID cardId, UUID setId, FullSet.Card card) {
+    private int ensurePrinting(ContentUpgradeDao dao, int cardId, int setId, FullSet.Card card) {
         List<Printing> printings = dao.getPrintings(setId, cardId);
         Optional<Printing> printing = printings.stream().filter(p -> Objects.equals(p.getNumber(), card.getNumber())).findAny();
         if (printing.isPresent()) {
             return printing.get().getId();
         }
-        return dao.createPrinting(new Printing(null, setId, cardId, card.getMultiverseid(), card.getNumber(),
+        return dao.createPrinting(new Printing(0, setId, cardId, card.getMultiverseid(), card.getNumber(),
                 card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor()));
     }
 
-    private UUID ensureCard(ContentUpgradeDao dao, FullSet.Card card) {
+    private int ensureCard(ContentUpgradeDao dao, FullSet.Card card) {
         Card existingCard = dao.getCard(card.getName());
         if (existingCard == null) {
             try {
-                return dao.createCard(new Card(null, card.getName(), card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
+                return dao.createCard(new Card(0, card.getName(), card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
                         mapManaCost(card.getManaCost()), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
                         card.getPower(), card.getToughness(), card.getLoyalty(), card.getLayout(), null, null));
             }
             catch (DBIException e) {
                 log.debug("Inserting card {} failed", card, e);
-                return null;
+                return 0;
             }
         }
         return existingCard.getId();
@@ -183,10 +182,10 @@ public class ContentUpgrade implements StartupAction {
         return Lists.transform(colors, Color::forName);
     }
 
-    private UUID ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
+    private int ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
         Set set = dao.getSet(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
         if (set == null) {
-            return dao.createSet(new Set(null, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
+            return dao.createSet(new Set(0, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
                     fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type), fullSet.onlineOnly));
         }
         if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {

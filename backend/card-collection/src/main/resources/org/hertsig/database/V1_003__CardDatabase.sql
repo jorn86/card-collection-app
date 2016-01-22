@@ -1,7 +1,7 @@
 CREATE TYPE color AS ENUM ('W', 'U', 'B', 'R', 'G');
 
 CREATE TABLE "set" (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
+  id SERIAL PRIMARY KEY,
   gatherercode VARCHAR(8) NOT NULL UNIQUE CHECK (gatherercode <> ''),
   code VARCHAR(8) NOT NULL UNIQUE CHECK (code <> ''),
   mcicode VARCHAR(8),
@@ -13,7 +13,7 @@ CREATE TABLE "set" (
 );
 
 CREATE TABLE card (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
+  id SERIAL PRIMARY KEY,
   name VARCHAR(150) NOT NULL UNIQUE CHECK (name <> ''),
   normalizedname CITEXT NOT NULL UNIQUE CHECK (normalizedname <> ''),
   fulltype VARCHAR(128),
@@ -28,16 +28,16 @@ CREATE TABLE card (
   toughness VARCHAR(8),
   loyalty NUMERIC,
   layout VARCHAR(20) NOT NULL,
-  splitcardparent UUID REFERENCES card,
-  doublefacefront UUID REFERENCES card
+  splitcardparent INT REFERENCES card,
+  doublefacefront INT REFERENCES card
 );
 
 CREATE INDEX ON card (fulltype);
 
 CREATE TABLE printing (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v1mc(),
-  setid UUID NOT NULL REFERENCES "set",
-  cardid UUID NOT NULL REFERENCES card,
+  id SERIAL PRIMARY KEY,
+  setid INT NOT NULL REFERENCES "set",
+  cardid INT NOT NULL REFERENCES card,
   multiverseid INT,
   number VARCHAR(5),
   rarity VARCHAR(32),

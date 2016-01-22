@@ -139,23 +139,22 @@ class BetterBeanMapper<T> implements ResultSetMapper<T>
                     value = null;
                 }
 
-                try
-                {
+                try {
                     descriptor.getWriteMethod().invoke(bean, value);
                 }
                 catch (IllegalAccessException e) {
-                    throw new IllegalArgumentException(String.format("Unable to access setter for " +
-                            "property, %s", name), e);
+                    throw new IllegalArgumentException(String.format("Unable to access setter for property %s", name), e);
                 }
                 catch (InvocationTargetException e) {
                     throw new IllegalArgumentException(String.format("Invocation target exception trying to " +
-                            "invoker setter for the %s property", name), e);
+                            "invoker setter for property %s", name), e);
+                }
+                catch (ClassCastException e) {
+                    throw new IllegalArgumentException(String.format("Type mismatch for property %s", name), e);
                 }
                 catch (NullPointerException e) {
-                    throw new IllegalArgumentException(String.format("No appropriate method to " +
-                            "write property %s", name), e);
+                    throw new IllegalArgumentException(String.format("No appropriate method to write property %s", name), e);
                 }
-
             }
         }
 
