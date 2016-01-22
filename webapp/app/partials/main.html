@@ -1,6 +1,10 @@
 <div class="list">
-    <decks ng-if="currentUserId" userid="currentUserId"></decks>
-    <decks preconstructed="true"></decks>
+    <div ng-show="currentUserId">
+        <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})">Inventory</a>
+        <div>My decks</div>
+        <decktree node="decksForUser"></decktree>
+    </div>
+    <decktree node="preconstructedDecks"></decktree>
 </div>
 
 <div class="deck">

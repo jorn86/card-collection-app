@@ -11,7 +11,7 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 
 public interface DecklistDao extends AutoCloseable {
-    @SqlQuery("SELECT d.id, d.name, ARRAY(SELECT tagid FROM decktag WHERE deckid=d.id) AS tags FROM deck d WHERE userid = :user")
+    @SqlQuery("SELECT d.id, d.name, ARRAY(SELECT tagid FROM decktag WHERE deckid=d.id) AS tags FROM deck d WHERE userid = :user AND NOT inventory")
     @UseBetterBeanMapper
     List<Deck> getDecks(@Bind("user") UUID user);
 
