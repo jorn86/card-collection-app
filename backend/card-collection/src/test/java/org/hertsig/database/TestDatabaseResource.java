@@ -69,7 +69,7 @@ public class TestDatabaseResource extends ExternalResource {
 
     private static class TestDatasourceProvider extends PostgresqlDatasourceProvider {
         public TestDatasourceProvider(String databaseName) {
-            super("cardcollection", "cardcollection", databaseName);
+            super("tester", "tester", databaseName);
         }
     }
 }

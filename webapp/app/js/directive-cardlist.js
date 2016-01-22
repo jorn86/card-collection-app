@@ -100,7 +100,7 @@ angular.module('card-app')
                     var promise = $rootScope.datamodel.updateAmount($scope.list.id, data.id, data.amount);
                     if (data.amount == 0) {
                         promise.then(function(updatedBoard) {
-                            $scope.list = updatedBoard.data;
+                            $scope.list.cards = updatedBoard.data;
                             $scope.grid.rows = updatedBoard.data;
                         });
                     }
@@ -139,7 +139,7 @@ angular.module('card-app')
                     }
 
                     $rootScope.datamodel.addCardToDeck($scope.list.id, searchResult.id, 1).then(function(updatedBoard) {
-                        $scope.list = updatedBoard.data;
+                        $scope.list.cards = updatedBoard.data;
                         $scope.grid.rows = updatedBoard.data;
                     });
 

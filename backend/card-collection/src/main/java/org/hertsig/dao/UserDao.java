@@ -23,6 +23,10 @@ public interface UserDao extends AutoCloseable {
     @SqlUpdate("UPDATE \"user\" SET inventoryid = :inventory WHERE id = :user AND inventoryid IS NULL")
     int setInventory(@Bind("user") UUID createdUserId, @Bind("inventory") UUID inventoryId);
 
+    @SqlUpdate("INSERT INTO deck (name, userid, inventory) VALUES (:name, :user, TRUE)")
+    @GetGeneratedKeys(UuidMapper.class)
+    UUID createInventory(@Bind("name") String name, @Bind("user") UUID userId);
+
     void close();
 
 }

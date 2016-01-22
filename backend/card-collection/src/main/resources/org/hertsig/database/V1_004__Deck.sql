@@ -8,7 +8,8 @@ CREATE TABLE "tag" (
 CREATE TABLE deck (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   name VARCHAR(128) NOT NULL,
-  userid UUID REFERENCES "user"
+  userid UUID REFERENCES "user",
+  inventory BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE decktag (
@@ -30,8 +31,8 @@ CREATE TABLE board (
 CREATE TABLE deckrow (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   boardid UUID NOT NULL REFERENCES board ON DELETE CASCADE,
-  cardid UUID NOT NULL REFERENCES card,
-  printingid UUID REFERENCES printing,
+  cardid INT NOT NULL REFERENCES card,
+  printingid INT REFERENCES printing,
   amount INT NOT NULL CHECK (amount > 0),
   UNIQUE (boardid, cardid, printingid)
 );

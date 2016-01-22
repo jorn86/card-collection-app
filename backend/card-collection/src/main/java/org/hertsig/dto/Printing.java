@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Printing {
-    private UUID id;
-    private UUID setid;
-    private UUID cardid;
+    private int id;
+    private int setid;
+    private int cardid;
     private int multiverseid;
     private String number;
     private String rarity;

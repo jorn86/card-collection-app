@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Card {
-    private UUID id;
+    private int id;
     private String name;
     private String fulltype;
     private List<String> supertypes;
@@ -23,6 +23,6 @@ public class Card {
     private String toughness;
     private Integer loyalty;
     private String layout;
-    private UUID splitcardparent;
-    private UUID doublefacefront;
+    private Integer splitcardparent;
+    private Integer doublefacefront;
 }

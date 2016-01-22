@@ -72,6 +72,7 @@ li {
     border: 2px outset black;
     overflow: auto;
     padding-top: 5px;
+    margin-bottom: 20px;
     min-width: 740px;
     width: calc(100% - 4px);
     max-width: 1000px;

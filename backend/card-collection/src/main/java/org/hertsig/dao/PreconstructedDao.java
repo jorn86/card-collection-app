@@ -19,8 +19,7 @@ public interface PreconstructedDao extends AutoCloseable {
     void createPreconstructedTag();
 
     @SqlQuery("SELECT id FROM \"set\" WHERE gatherercode = :set")
-    @Mapper(UuidMapper.class)
-    UUID getSet(@Bind("set") String setcode);
+    Integer getSet(@Bind("set") String setcode);
 
     @SqlQuery("SELECT id FROM \"tag\" WHERE parentid = :parent AND name = :name AND userid IS NULL")
     @Mapper(UuidMapper.class)
@@ -40,7 +39,7 @@ public interface PreconstructedDao extends AutoCloseable {
 
     @SqlQuery("SELECT p.* FROM printing p LEFT JOIN card c ON c.id=p.cardid WHERE p.setid = :setid AND c.name = :name")
     @MapResultAsBean
-    Printing getPrinting(@Bind("setid") UUID setId, @Bind("name") String cardName);
+    Printing getPrinting(@Bind("setid") int setId, @Bind("name") String cardName);
 
     @SqlUpdate("INSERT INTO deck (name, userid) VALUES (:name, NULL)")
     @GetGeneratedKeys(UuidMapper.class)
@@ -50,7 +49,7 @@ public interface PreconstructedDao extends AutoCloseable {
     void addTag(@Bind("deckid") UUID deckId, @Bind("tagid") UUID tagId);
 
     @SqlUpdate("INSERT INTO deckrow (boardid, cardid, printingid, amount) VALUES (:boardid, :cardid, :printingid, :amount)")
-    void addCard(@Bind("boardid") UUID boardid, @Bind("cardid") UUID cardid, @Bind("printingid") UUID printingId, @Bind("amount") int amount);
+    void addCard(@Bind("boardid") UUID boardid, @Bind("cardid") int cardid, @Bind("printingid") int printingId, @Bind("amount") int amount);
 
     @SqlUpdate("INSERT INTO deckrow (boardid, cardid, amount) VALUES (:boardid, (SELECT id FROM card WHERE name = :name LIMIT 1), :amount)")
     void addCard(@Bind("boardid") UUID boardId, @Bind("name") String cardName, @Bind("amount") int amount);

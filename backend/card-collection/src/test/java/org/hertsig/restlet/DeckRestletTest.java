@@ -71,7 +71,7 @@ public class DeckRestletTest {
     @Test
     public void testGetMyDeck() {
         UUID deckId = UUID.randomUUID();
-        Deck deck = new Deck(deckId, userId, null, "My deck", null);
+        Deck deck = new Deck(deckId, userId, null, "My deck", false, null);
         when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(deck);
         restlet.getDeck(deckId);
     }
@@ -79,7 +79,7 @@ public class DeckRestletTest {
     @Test
     public void testGetDeckForOtherUser() {
         UUID deckId = UUID.randomUUID();
-        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(new Deck(deckId, UUID.randomUUID(), null, "Not my deck", null));
+        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(new Deck(deckId, UUID.randomUUID(), null, "Not my deck", false, null));
         expectedException.expect(new HttpRequestExceptionMatcher(Response.Status.NOT_FOUND));
         restlet.getDeck(deckId);
     }
@@ -87,17 +87,17 @@ public class DeckRestletTest {
     @Test
     public void testGetPreconstructedDeck() {
         UUID deckId = UUID.randomUUID();
-        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(new Deck(deckId, null, null, "Preconstructed deck", null));
+        when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(new Deck(deckId, null, null, "Preconstructed deck", false, null));
         restlet.getDeck(deckId);
     }
 
     @Test
     public void testAddCardAsNewRow() {
         UUID boardid = initMyDeck();
-        DeckRow input = new DeckRow(null, boardid, null, null, -1);
+        DeckRow input = new DeckRow(null, boardid, 0, null, -1);
 
         DeckDao dao = mock.getMockedDao(DeckDao.class);
-        when(dao.getBoardRows(boardid, null)).thenReturn(Lists.newArrayList());
+        when(dao.getBoardRows(boardid, 0)).thenReturn(Lists.newArrayList());
 
         restlet.addCard(input);
 
@@ -108,8 +108,8 @@ public class DeckRestletTest {
     @Test
     public void testAddCardToExistingRowByPrinting() {
         UUID boardId = initMyDeck();
-        UUID cardId = UUID.randomUUID();
-        UUID printingId = UUID.randomUUID();
+        int cardId = 42;
+        int printingId = 1337;
         DeckRow input = new DeckRow(null, boardId, cardId, printingId, 2);
 
         DeckDao dao = mock.getMockedDao(DeckDao.class);
@@ -119,14 +119,14 @@ public class DeckRestletTest {
                 new DeckRow(expectedRowUpdate, boardId, cardId, printingId, 2)
         ));
         restlet.addCard(input);
-        verify(dao).updateRow(new DeckRow(expectedRowUpdate, null, null, null, 4));
+        verify(dao).updateRow(new DeckRow(expectedRowUpdate, null, 0, null, 4));
     }
 
     @Test
     public void testAddCardToSingleExistingRow() {
         UUID boardId = initMyDeck();
-        UUID cardId = UUID.randomUUID();
-        UUID printingId = UUID.randomUUID();
+        int cardId = 42;
+        int printingId = 1337;
         DeckRow input = new DeckRow(null, boardId, cardId, null, 2);
 
         DeckDao dao = mock.getMockedDao(DeckDao.class);
@@ -135,14 +135,14 @@ public class DeckRestletTest {
                 new DeckRow(expectedRowUpdate, boardId, cardId, printingId, 1)
         ));
         restlet.addCard(input);
-        verify(dao).updateRow(new DeckRow(expectedRowUpdate, null, null, null, 3));
+        verify(dao).updateRow(new DeckRow(expectedRowUpdate, null, 0, null, 3));
     }
 
     @Test
     public void testAddCardWithPrintingToSingleExistingRow() {
         UUID boardId = initMyDeck();
-        UUID cardId = UUID.randomUUID();
-        UUID printingId = UUID.randomUUID();
+        int cardId = 42;
+        int printingId = 1337;
         DeckRow input = new DeckRow(null, boardId, cardId, printingId, 2);
 
         DeckDao dao = mock.getMockedDao(DeckDao.class);
@@ -156,7 +156,7 @@ public class DeckRestletTest {
 
     @Test
     public void testUpdateRowAmount() {
-        DeckRow input = new DeckRow(UUID.randomUUID(), initMyDeck(), null, null, 2);
+        DeckRow input = new DeckRow(UUID.randomUUID(), initMyDeck(), 0, null, 2);
         restlet.updateRow(input);
         verify(mock.getMockedDao(DeckDao.class)).updateRow(input);
     }
@@ -164,7 +164,7 @@ public class DeckRestletTest {
     @Test
     public void testUpdateRowAmountToZero() {
         UUID rowId = UUID.randomUUID();
-        DeckRow input = new DeckRow(rowId, initMyDeck(), null, null, 0);
+        DeckRow input = new DeckRow(rowId, initMyDeck(), 0, null, 0);
 
         DeckDao dao = mock.getMockedDao(DeckDao.class);
         when(dao.deleteRow(rowId)).thenReturn(1);
@@ -175,13 +175,13 @@ public class DeckRestletTest {
     @Test
     public void testUpdateNonexistingRowAmountToZero() {
         expectedException.expect(new HttpRequestExceptionMatcher(Response.Status.NOT_FOUND));
-        restlet.updateRow(new DeckRow(UUID.randomUUID(), initMyDeck(), null, null, 0));
+        restlet.updateRow(new DeckRow(UUID.randomUUID(), initMyDeck(), 0, null, 0));
     }
 
     private UUID initMyDeck() {
         UUID deckId = UUID.randomUUID();
         UUID boardId = UUID.randomUUID();
-        Deck deck = new Deck(deckId, userId, null, "My deck", Lists.newArrayList(new DeckBoard(boardId, deckId, "Test mainboard", 1, null)));
+        Deck deck = new Deck(deckId, userId, null, "My deck", false, Lists.newArrayList(new DeckBoard(boardId, deckId, "Test mainboard", 1, null)));
         when(mock.getMockedDao(DeckDao.class).getDeck(deckId)).thenReturn(deck);
         when(mock.getMockedDao(DeckDao.class).getDeckByBoard(boardId)).thenReturn(deck);
         return boardId;

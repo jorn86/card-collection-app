@@ -22,36 +22,36 @@ public interface ContentUpgradeDao extends AutoCloseable {
 
     @SqlUpdate("INSERT INTO set (gatherercode, code, mcicode, name, releasedate, type, priority, onlineonly) " +
             "VALUES (:gatherercode, :code, :mcicode, :name, :releasedate, :type, :priority, :onlineonly)")
-    @GetGeneratedKeys(UuidMapper.class)
-    UUID createSet(@BindBean Set set);
+    @GetGeneratedKeys
+    int createSet(@BindBean Set set);
 
     @SqlQuery("SELECT * FROM card WHERE name = :name")
     @UseBetterBeanMapper
     Card getCard(@Bind("name") String name);
 
-    @SqlUpdate("INSERT INTO card (name, normalizedname, fulltype, supertypes, types, subtypes, cost, cmc, colors, text, power, toughness, loyalty, layout, splitcardparent, doublefacefront) " +
-            "VALUES (:name, unaccent(replace(:name, 'Æ', 'Ae')), :fulltype, :supertypes, :types, :subtypes, :cost, :cmc, :colors, :text, :power, :toughness, :loyalty, :layout, :splitcardparent, :doublefacefront)")
-    @GetGeneratedKeys(UuidMapper.class)
-    UUID createCard(@BindBean Card card);
+    @SqlUpdate("INSERT INTO card (name, normalizedname, fulltype, supertypes, types, subtypes, cost, cmc, colors, text, " +
+            "power, toughness, loyalty, layout, splitcardparent, doublefacefront) " +
+        "VALUES (:name, unaccent(replace(:name, 'Æ', 'Ae')), :fulltype, :supertypes, :types, :subtypes, :cost, :cmc, :colors, :text, " +
+            ":power, :toughness, :loyalty, :layout, :splitcardparent, :doublefacefront)")
+    int createCard(@BindBean Card card);
 
     @SqlQuery("SELECT * FROM printing WHERE setid = :setid AND cardid = :cardid")
     @MapResultAsBean
-    List<Printing> getPrintings(@Bind("setid") UUID setId, @Bind("cardid") UUID cardId);
+    List<Printing> getPrintings(@Bind("setid") int setId, @Bind("cardid") int cardId);
 
     @SqlQuery("SELECT * FROM printing WHERE cardid = :cardid")
     @MapResultAsBean
-    List<Printing> getPrintings(@Bind("cardid") UUID cardId);
+    List<Printing> getPrintings(@Bind("cardid") int cardId);
 
     @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext) " +
             "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext)")
-    @GetGeneratedKeys(UuidMapper.class)
-    UUID createPrinting(@BindBean Printing printing);
+    int createPrinting(@BindBean Printing printing);
 
     @SqlUpdate("UPDATE card SET splitcardparent = :parent WHERE id = :card")
-    void setParent(@Bind("card") UUID childId, @Bind("parent") UUID parentId);
+    void setParent(@Bind("card") int childId, @Bind("parent") int parentId);
 
     @SqlUpdate("UPDATE card SET doublefacefront = :front WHERE id = :back")
-    void setFlipFront(@Bind("front") UUID front, @Bind("back") UUID back);
+    void setFlipFront(@Bind("front") int front, @Bind("back") int back);
 
     void close();
 

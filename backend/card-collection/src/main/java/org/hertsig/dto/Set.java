@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Set {
-    private UUID id;
+    private int id;
     private String gatherercode;
     private String code;
     private String mcicode;

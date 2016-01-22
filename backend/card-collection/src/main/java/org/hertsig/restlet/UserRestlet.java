@@ -15,7 +15,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -53,7 +52,7 @@ public class UserRestlet {
 
             UUID createdUserId = userDao.create(newUser);
             options.stream().forEach(option -> authDao.create(createdUserId, option));
-            UUID inventoryId = deckDao.createDeck("Inventory", createdUserId);
+            UUID inventoryId = userDao.createInventory("Inventory", createdUserId);
             if (userDao.setInventory(createdUserId, inventoryId) != 1) {
                 log.warn("Set inventory failed for user {}", createdUserId);
             }
