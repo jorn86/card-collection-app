@@ -1,0 +1,9 @@
+<div>
+    <div class="tree" ng-class="{expanded: node.expand}" ng-click="node.expand = !node.expand">{{node.tagName || 'Decks'}}<span ng-show="node.decks.length"> ({{node.decks.length}})</span></div>
+    <div ng-show="node.expand" class="indent" ng-repeat="child in node.children | orderBy: 'tagName'">
+        <decktree node="child"></decktree>
+    </div>
+    <div ng-show="node.expand" class="indent" ng-repeat="deck in node.decks">
+        <a ui-sref="app.deck({id: deck.id})">{{deck.name}}</a>
+    </div>
+</div>

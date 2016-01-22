@@ -119,15 +119,15 @@ li {
     width: 40px;
 }
 .grid-cell-count {
-    width: 40px;
+    width: 60px;
 }
 .grid-cell-name {
     min-width: 160px;
-    width: calc((100% - 325px) * 0.4);
+    width: calc((100% - 345px) * 0.4);
 }
 .grid-cell-type {
     min-width: 240px;
-    width: calc((100% - 325px) * 0.6);
+    width: calc((100% - 345px) * 0.6);
 }
 .grid-cell-set {
     width: 40px;
@@ -158,5 +158,15 @@ img.mana {
     content: '\25b2'; /* up arrow */
 }
 .sortorder.reverse:after {
+    content: '\25bc'; /* down arrow */
+}
+
+.indent {
+    margin-left: 15px;
+}
+.tree:before {
+    content: '\25b6'; /* right arrow */
+}
+.tree.expanded:before {
     content: '\25bc'; /* down arrow */
 }

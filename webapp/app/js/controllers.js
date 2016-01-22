@@ -8,6 +8,16 @@ angular.module('card-app')
             if (!$state.includes('app')) {
                 $state.go('app');
             }
+
+            $rootScope.datamodel.getDecks().then(function(result) {
+                $scope.decksForUser = result.data;
+                $scope.decksForUser.expand = true;
+            });
+        });
+
+        $rootScope.datamodel.getPreconstructedDecks().then(function(result) {
+            $scope.preconstructedDecks = result.data;
+            $scope.preconstructedDecks.expand = true;
         });
     })
 
