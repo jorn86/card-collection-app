@@ -30,9 +30,9 @@ public interface DeckDao extends AutoCloseable {
     @MapResultAsBean
     Deck getDeckByBoard(@Bind("board") UUID boardId);
 
-    @SqlUpdate("INSERT INTO deck (name, userid) VALUES (:name, :user)")
-    @GetGeneratedKeys(UuidMapper.class)
-    UUID createDeck(@Bind("name") String name, @Bind("user") UUID userId);
+    @SqlQuery("INSERT INTO deck (name, userid) VALUES (:name, :user) RETURNING *")
+    @UseBetterBeanMapper
+    Deck createDeck(@Bind("name") String name, @Bind("user") UUID userId);
 
     @SqlQuery("SELECT * FROM deckentryview WHERE deckid = :deck")
     @MapResultAsBean

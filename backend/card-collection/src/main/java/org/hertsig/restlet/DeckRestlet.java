@@ -89,12 +89,21 @@ public class DeckRestlet {
         return getDeck(userManager.getCurrentUser().getInventoryid());
     }
 
+    @POST
+    public Deck createDeck(Deck deck) {
+        checkUser();
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            Deck created = dao.createDeck(deck.getName(), userManager.getUserId());
+            dao.createBoard(new DeckBoard(null, created.getId(), "Mainboard", 0, null));
+            return getDeck(created.getId());
+        }
+    }
+
     @GET
     @Path("{deckId}")
     public Deck getDeck(@PathParam("deckId") UUID deckId) {
+        checkUser();
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            checkUser();
-
             Deck deck = dao.getDeck(deckId);
             if (deck == null) {
                 throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
