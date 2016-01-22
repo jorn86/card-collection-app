@@ -2,18 +2,24 @@ angular.module('card-app')
 
     .controller('IndexController', function ($rootScope, $scope, $http, $state) {
         $rootScope.datamodel = new Datamodel($http);
-        $scope.$on('user', function(event, user) {
-            $scope.user = user;
-            $scope.currentUserId = user ? user.id : null;
-            if (!$state.includes('app')) {
-                $state.go('app');
-            }
 
+        $scope.reloadUserDecks = function() {
             $rootScope.datamodel.getDecks().then(function(result) {
                 $scope.decksForUser = result.data;
                 $scope.decksForUser.expand = true;
             });
+        };
+
+        $scope.$on('user', function(event, user) {
+            $scope.user = user;
+            $rootScope.currentUserId = user ? user.id : null;
+            if (!$state.includes('app')) {
+                $state.go('app');
+            }
+
+            $scope.reloadUserDecks();
         });
+        $rootScope.$on('reloadUserDecks', $scope.reloadUserDecks);
 
         $rootScope.datamodel.getPreconstructedDecks().then(function(result) {
             $scope.preconstructedDecks = result.data;

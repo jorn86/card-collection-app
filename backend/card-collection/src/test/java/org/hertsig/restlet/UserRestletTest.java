@@ -5,6 +5,7 @@ import org.hertsig.dao.AuthenticationOptionDao;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.UserDao;
 import org.hertsig.database.MockDbi;
+import org.hertsig.dto.Deck;
 import org.hertsig.dto.User;
 import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
@@ -55,7 +56,7 @@ public class UserRestletTest {
         UserDao userDao = mock.getMockedDao(UserDao.class);
 
         when(userDao.create(newUser)).thenReturn(newUserId);
-        when(mock.getMockedDao(DeckDao.class).createDeck("Inventory", newUserId)).thenReturn(newDeckId);
+//        when(mock.getMockedDao(DeckDao.class).createDeck("Inventory", newUserId)).thenReturn(new Deck());
         when(userDao.get(newUserId)).thenReturn(createdUser);
         when(userDao.setInventory(newUserId, newDeckId)).thenReturn(1);
 

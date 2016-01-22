@@ -34,6 +34,10 @@ var Datamodel = function Datamodel($http) {
         return $http.post(base + 'deck/card', {boardid: boardId, cardid: cardId, amount: amount});
     };
 
+    this.createDeck = function(name) {
+        return $http.post(base + 'deck', {name: name});
+    };
+
     this.authenticateUser = function(user) {
         return $http.post(base + 'user', user).then(function(response) {
             $http.defaults.headers.common['X-UserId'] = response.data.id;

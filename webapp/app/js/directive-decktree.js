@@ -16,7 +16,7 @@ angular.module('card-app')
                     else {
                         _.each($scope.node.children, function (child) { child.expand = false; });
                     }
-                })
+                });
             }
         };
     });
