@@ -2,10 +2,7 @@ package org.hertsig.dao;
 
 import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.database.UuidMapper;
-import org.hertsig.dto.Deck;
-import org.hertsig.dto.DeckBoard;
-import org.hertsig.dto.DeckEntry;
-import org.hertsig.dto.DeckRow;
+import org.hertsig.dto.*;
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 
@@ -13,6 +10,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface DeckDao extends AutoCloseable {
+    @SqlQuery("INSERT INTO \"tag\" (name, parentid, userid) VALUES (:name, :parentid, :userid) RETURNING *")
+    @MapResultAsBean
+    Tag createTag(@BindBean Tag tag);
 
     @SqlUpdate("INSERT INTO board (deckid, name, \"order\") VALUES (:deckid, :name, :order)")
     @GetGeneratedKeys(UuidMapper.class)

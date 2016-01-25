@@ -37,6 +37,9 @@ var Datamodel = function Datamodel($http) {
     this.createDeck = function(name) {
         return $http.post(base + 'deck', {name: name});
     };
+    this.createTag = function(name) {
+        return $http.post(base + 'deck/tag', {name: name});
+    };
 
     this.authenticateUser = function(user) {
         return $http.post(base + 'user', user).then(function(response) {

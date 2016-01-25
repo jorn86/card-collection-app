@@ -1,11 +1,8 @@
 package org.hertsig.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data @EqualsAndHashCode(callSuper = true)
+@Data @EqualsAndHashCode(callSuper = true) @ToString(callSuper = true)
 @AllArgsConstructor @NoArgsConstructor
 public class SetInfo extends Set {
     private int cards;

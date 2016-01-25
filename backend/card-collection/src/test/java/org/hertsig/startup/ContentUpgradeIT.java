@@ -33,7 +33,7 @@ public class ContentUpgradeIT {
         contentFromResource("EmptySet.json");
         List<SetInfo> sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(1, sets.size());
-        assertEquals(0, sets.get(0).getCards());
+        assertEquals(0, sets.get(0).getPrints());
     }
 
     @Test
@@ -41,12 +41,12 @@ public class ContentUpgradeIT {
         contentFromResource("EmptySet.json");
         List<SetInfo> sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(1, sets.size());
-        assertEquals(0, sets.get(0).getCards());
+        assertEquals(0, sets.get(0).getPrints());
 
         contentFromResource("SingleSet.json");
         sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(1, sets.size());
-        assertEquals(1, sets.get(0).getCards());
+        assertEquals(1, sets.get(0).getPrints());
     }
 
     @Test
@@ -54,13 +54,13 @@ public class ContentUpgradeIT {
         contentFromResource("SingleSet.json");
         List<SetInfo> sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(1, sets.size());
-        assertEquals(1, sets.get(0).getCards());
+        assertEquals(1, sets.get(0).getPrints());
 
         contentFromResource("TwoSetsWithReprint.json");
         sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(2, sets.size());
-        assertEquals(1, sets.get(0).getCards());
-        assertEquals(2, sets.get(1).getCards());
+        assertEquals("Was " + sets.get(0), 1, sets.get(0).getPrints());
+        assertEquals("Was " + sets.get(1), 2, sets.get(1).getPrints());
     }
 
     @Test
@@ -68,14 +68,16 @@ public class ContentUpgradeIT {
         contentFromResource("TwoSetsWithReprint.json");
         List<SetInfo> sets = query(SearchDao.class, SearchDao::getSetStatistics);
         assertEquals(2, sets.size());
-        assertEquals(1, sets.get(0).getCards());
-        assertEquals(2, sets.get(1).getCards());
-        assertEquals(1, sets.get(1).getNewcards());
-        assertEquals(1, sets.get(1).getReprints());
+        assertEquals("Was " + sets.get(0), 1, sets.get(0).getPrints());
+        assertEquals("Was " + sets.get(0), 1, sets.get(0).getCards());
+        assertEquals("Was " + sets.get(1), 2, sets.get(1).getPrints());
+        assertEquals("Was " + sets.get(1), 2, sets.get(1).getCards());
+        assertEquals("Was " + sets.get(1), 1, sets.get(1).getNewcards());
+        assertEquals("Was " + sets.get(1), 1, sets.get(1).getReprints());
 
         List<Printing> printings = query(ContentUpgradeDao.class, (dao) -> dao.getPrintings(dao.getCard("Card one").getId()));
         assertEquals(2, printings.size());
-        assertEquals(printings.get(0).getCardid(), printings.get(1).getCardid());
+        assertEquals("Was " + printings.get(0), printings.get(0).getCardid(), printings.get(1).getCardid());
         assertNotEquals(printings.get(0).getSetid(), printings.get(1).getSetid());
     }
 

@@ -10,7 +10,12 @@ angular.module('card-app')
                         $rootScope.$broadcast('reloadUserDecks');
                         $state.go('app.deck', {id: result.data.id});
                     });
-                }
+                };
+                scope.createTag = function() {
+                    $rootScope.datamodel.createTag('New tag').then(function() {
+                        $rootScope.$broadcast('reloadUserDecks');
+                    });
+                };
             }
         };
     });

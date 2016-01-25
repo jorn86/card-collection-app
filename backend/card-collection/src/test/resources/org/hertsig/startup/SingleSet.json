@@ -6,6 +6,7 @@
     "type": "core",
     "cards": [{
       "name": "Card one",
+      "number": 1,
       "layout": "normal",
       "manaCost": "{G}",
       "cmc": 1,

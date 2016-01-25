@@ -33,6 +33,7 @@ public interface ContentUpgradeDao extends AutoCloseable {
             "power, toughness, loyalty, layout, splitcardparent, doublefacefront) " +
         "VALUES (:name, unaccent(replace(:name, 'Æ', 'Ae')), :fulltype, :supertypes, :types, :subtypes, :cost, :cmc, :colors, :text, " +
             ":power, :toughness, :loyalty, :layout, :splitcardparent, :doublefacefront)")
+    @GetGeneratedKeys
     int createCard(@BindBean Card card);
 
     @SqlQuery("SELECT * FROM printing WHERE setid = :setid AND cardid = :cardid")
@@ -45,6 +46,7 @@ public interface ContentUpgradeDao extends AutoCloseable {
 
     @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext) " +
             "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext)")
+    @GetGeneratedKeys
     int createPrinting(@BindBean Printing printing);
 
     @SqlUpdate("UPDATE card SET splitcardparent = :parent WHERE id = :card")

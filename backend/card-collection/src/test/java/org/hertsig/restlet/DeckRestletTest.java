@@ -39,27 +39,25 @@ public class DeckRestletTest {
         when(mock.getMockedDao(DecklistDao.class).getTags(userId)).thenReturn(Lists.newArrayList());
         DeckRestlet.DeckListNode list = restlet.getList();
         assertNotNull(list);
-        assertNull(list.getTagName());
+        assertEquals("My decks", list.getTagName());
         assertTrue(list.getDecks().isEmpty());
         assertTrue(list.getChildren().isEmpty());
     }
 
     @Test
     public void testSimpleTagTree() {
-        UUID parentId = UUID.randomUUID();
         UUID firstChildId = UUID.randomUUID();
         when(mock.getMockedDao(DecklistDao.class).getTags(userId)).thenReturn(Lists.newArrayList(
-                new Tag(parentId, null, "parent", userId),
-                new Tag(firstChildId, parentId, "first child", userId),
-                new Tag(UUID.randomUUID(), parentId, "second child", userId),
-                new Tag(UUID.randomUUID(), firstChildId, "first grandchild", userId)
+                new Tag(firstChildId, null, "first tag", userId),
+                new Tag(UUID.randomUUID(), null, "second tag", userId),
+                new Tag(UUID.randomUUID(), firstChildId, "first child", userId)
         ));
         DeckRestlet.DeckListNode list = restlet.getList();
         assertEquals(2, list.getChildren().size());
-        assertEquals("first child", list.getChildren().get(0).getTagName());
-        assertEquals("second child", list.getChildren().get(1).getTagName());
+        assertEquals("first tag", list.getChildren().get(0).getTagName());
+        assertEquals("second tag", list.getChildren().get(1).getTagName());
         assertEquals(1, list.getChildren().get(0).getChildren().size());
-        assertEquals("first grandchild", list.getChildren().get(0).getChildren().get(0).getTagName());
+        assertEquals("first child", list.getChildren().get(0).getChildren().get(0).getTagName());
     }
 
     @Test
