@@ -2,7 +2,6 @@ package org.hertsig.restlet;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Objects;
-import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +44,7 @@ public class DeckRestlet {
         checkUser();
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
             UUID user = userManager.getUserId();
-            return createDecklist(dao.getDecks(user), dao.getTags(user));
+            return createNode(new Tag(null, null, "My decks", user), dao.getTags(user), dao.getDecks(user));
         }
     }
 
@@ -53,16 +52,8 @@ public class DeckRestlet {
     @Path("preconstructedlist")
     public DeckListNode getPreconstructedList() {
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
-            return createDecklist(dao.getPreconstructedDecks(), dao.getPreconstructedTags());
+            return createNode(dao.getPreconstructedTags().get(0), dao.getPreconstructedTags(), dao.getPreconstructedDecks());
         }
-    }
-
-    private DeckListNode createDecklist(List<Deck> decks, List<Tag> tags) {
-        if (tags.isEmpty()) {
-            return new DeckListNode(null, Lists.newArrayList(), decks);
-        }
-
-        return createNode(tags.get(0), tags, decks);
     }
 
     private DeckListNode createNode(Tag root, List<Tag> tags, List<Deck> decks) {
@@ -71,7 +62,7 @@ public class DeckRestlet {
                 .map(t -> createNode(t, tags, decks))
                 .collect(Collectors.toList());
         return new DeckListNode(root.getName(), children, decks.stream()
-                .filter(d -> d.getTags().contains(root.getId()))
+                .filter(d -> root.getId() == null ? d.getTags().isEmpty() : d.getTags().contains(root.getId()))
                 .collect(Collectors.toList()));
     }
 
@@ -80,6 +71,16 @@ public class DeckRestlet {
         private final String tagName;
         private final List<DeckListNode> children;
         private final List<Deck> decks;
+    }
+
+    @POST
+    @Path("tag")
+    public Tag createTag(Tag tag) {
+        checkUser();
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            tag.setUserid(userManager.getUserId());
+            return dao.createTag(tag);
+        }
     }
 
     @GET

@@ -15,7 +15,7 @@ public interface SearchDao extends AutoCloseable {
     @UseBetterBeanMapper
     List<Card> searchCardsByName(@Bind("name") String name);
 
-    @SqlQuery("SELECT * FROM setstatistics")
+    @SqlQuery("SELECT * FROM setstatistics ORDER BY id")
     @MapResultAsBean
     List<SetInfo> getSetStatistics();
 

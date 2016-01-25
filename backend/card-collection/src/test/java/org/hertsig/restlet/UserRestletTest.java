@@ -2,12 +2,9 @@ package org.hertsig.restlet;
 
 import com.google.common.collect.Lists;
 import org.hertsig.dao.AuthenticationOptionDao;
-import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.UserDao;
 import org.hertsig.database.MockDbi;
-import org.hertsig.dto.Deck;
 import org.hertsig.dto.User;
-import org.hertsig.user.HttpRequestException;
 import org.hertsig.user.UserManager;
 import org.junit.Rule;
 import org.junit.Test;
@@ -18,7 +15,8 @@ import java.util.UUID;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class UserRestletTest {
     private final MockDbi mock = new MockDbi();
@@ -56,7 +54,7 @@ public class UserRestletTest {
         UserDao userDao = mock.getMockedDao(UserDao.class);
 
         when(userDao.create(newUser)).thenReturn(newUserId);
-//        when(mock.getMockedDao(DeckDao.class).createDeck("Inventory", newUserId)).thenReturn(new Deck());
+        when(mock.getMockedDao(UserDao.class).createInventory("Inventory", newUserId)).thenReturn(newDeckId);
         when(userDao.get(newUserId)).thenReturn(createdUser);
         when(userDao.setInventory(newUserId, newDeckId)).thenReturn(1);
 
