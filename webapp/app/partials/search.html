@@ -1,22 +1,36 @@
 <h2>Advanced search</h2>
 <form ng-submit="doSearch()">
     <table class="search" cellspacing="0">
-        <tr><td>Name</td><td><input type="text" ng-model="name"></td></tr>
-        <tr><td>Text (Oracle)</td><td><input type="text" ng-model="text"></td></tr>
-        <tr><td>Types</td><td><input type="text" ng-model="types"></td></tr>
-        <tr><td>Colors</td><td>
-            <label><input type="checkbox" ng-model="c.w">White</label>
-            <label><input type="checkbox" ng-model="c.u">Blue</label>
-            <label><input type="checkbox" ng-model="c.b">Black</label>
-            <label><input type="checkbox" ng-model="c.r">Red</label>
-            <label><input type="checkbox" ng-model="c.g">Green</label>
-        </td></tr>
-        <tr><td>Color identity</td><td>
-            <label><input type="checkbox" ng-model="ci.w">White</label>
-            <label><input type="checkbox" ng-model="ci.u">Blue</label>
-            <label><input type="checkbox" ng-model="ci.b">Black</label>
-            <label><input type="checkbox" ng-model="ci.r">Red</label>
-            <label><input type="checkbox" ng-model="ci.g">Green</label>
+        <tr><td>Name</td><td colspan="2"><input type="text" ng-model="name"></td></tr>
+        <tr><td>Text (Oracle)</td><td colspan="2"><input type="text" ng-model="text"></td></tr>
+        <tr><td>Types</td><td colspan="2"><input type="text" ng-model="types"></td></tr>
+        <tr>
+            <td rowspan="5">Colors</td>
+            <td><label><input type="checkbox" ng-model="c.w"><mana s="w"></mana></label></td>
+            <td><label><input type="radio" value="any" ng-model="c.type">Any <i>(Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards)</i></label></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox" ng-model="c.u"><mana s="u"></mana></label></td>
+            <td><label><input type="radio" value="all" ng-model="c.type">All <i>(Check <manacost mana="'WU'"></manacost> to find <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but not <mana s="w"></mana> or <mana s="u"></mana>)</i></label></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox" ng-model="c.b"><mana s="b"></mana></label></td>
+            <td><label><input type="radio" value="only" ng-model="c.type">Only <i>(Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost> cards, but not <manacost mana="'WUB'"></manacost>)</i></label></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox" ng-model="c.r"><mana s="r"></mana></label></td>
+            <td><label><input type="radio" value="exact" ng-model="c.type">Exact <i>(Check <manacost mana="'WU'"></manacost> to find only <manacost mana="'WU'"></manacost> cards)</i></label></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label><input type="checkbox" ng-model="c.g"><mana s="g"></mana></label></td>
+        </tr>
+        <tr><td>Color identity</td><td colspan="2">
+            <label><input type="checkbox" ng-model="ci.w"><mana s="w"></mana></label>
+            <label><input type="checkbox" ng-model="ci.u"><mana s="u"></mana></label>
+            <label><input type="checkbox" ng-model="ci.b"><mana s="b"></mana></label>
+            <label><input type="checkbox" ng-model="ci.r"><mana s="r"></mana></label>
+            <label><input type="checkbox" ng-model="ci.g"><mana s="g"></mana></label>
+            <label><input type="radio" ng-model="ci.c" value="true"><mana s="c"></mana></label>
         </td></tr>
         <tr><td style="border: 0"><input type="submit" value="Search"></td></tr>
     </table>

@@ -45,8 +45,24 @@ angular.module('card-app')
         $scope.types = '';
         $scope.pow = null;
         $scope.tou = null;
-        $scope.c = {};
-        $scope.ci = {};
+        $scope.c = {type: 'any'};
+        $scope.ci = {c: true};
+
+        $scope.$watch('ci.c', function(value) {
+            if (value) {
+                $scope.ci.w = false;
+                $scope.ci.u = false;
+                $scope.ci.b = false;
+                $scope.ci.r = false;
+                $scope.ci.g = false;
+            }
+        });
+        var reset = function(value) { if (value) $scope.ci.c = false; };
+        $scope.$watch('ci.w', reset);
+        $scope.$watch('ci.u', reset);
+        $scope.$watch('ci.b', reset);
+        $scope.$watch('ci.r', reset);
+        $scope.$watch('ci.g', reset);
 
         $scope.doSearch = function() {
             console.log('search', $scope.name, $scope.text, $scope.types, $scope.pow, $scope.tou, $scope.c, $scope.ci)

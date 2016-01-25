@@ -78,4 +78,16 @@ angular.module('card-app')
                 }
             }
         };
+    })
+    .directive('mana', function() {
+        return {
+            restrict: 'E',
+            template: '<i class="mtg" ng-class="style"></i>',
+            scope: {s: '@'},
+            link: function(scope) {
+                scope.$watch('s', function(e, symbol) {
+                    scope.style = 'mana-' + symbol;
+                });
+            }
+        }
     });
