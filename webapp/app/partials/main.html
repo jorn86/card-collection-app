@@ -1,8 +1,8 @@
 <div class="list">
     <div ng-show="currentUserId">
         <h2>My decks</h2>
-        <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})">Inventory</a>
-        <div><new-buttons></new-buttons></div>
+        <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})"><img src="../img/inventory.svg" height="16"> Inventory</a>
+        <div style="margin: 5px 0"><new-buttons></new-buttons></div>
         <decktree node="decksForUser"></decktree>
     </div>
     <decktree node="preconstructedDecks"></decktree>
