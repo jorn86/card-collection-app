@@ -70,6 +70,11 @@ li {
     padding: 5px;
 }
 .menuitem {
+    float: left;
+    padding-right: 5px;
+    margin: auto 0;
+}
+.menuitem-right {
     float: right;
     padding-right: 5px;
 }

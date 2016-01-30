@@ -2,7 +2,8 @@ angular.module('card-app')
     .directive('newButtons', function($rootScope, $state) {
         return {
             restrict: 'E',
-            template: '<button ng-click="createTag()">Tag</button><button ng-click="createDeck()">Deck</button>',
+            template: '<button ng-click="createTag()">+<img src="../img/tag.svg" height="16" alt="New tag"></button>' +
+                '&nbsp;<button ng-click="createDeck()">+<img src="../img/deck.svg" height="16" alt="New deck"></button>',
             scope: {},
             link: function(scope) {
                 scope.createDeck = function() {
