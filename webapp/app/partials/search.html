@@ -1,9 +1,9 @@
 <h2>Advanced search</h2>
 <form ng-submit="doSearch()">
     <table class="search" cellspacing="0">
-        <tr><td>Name</td><td colspan="2"><input type="text" ng-model="name"></td></tr>
-        <tr><td>Text (Oracle)</td><td colspan="2"><input type="text" ng-model="text"></td></tr>
-        <tr><td>Types</td><td colspan="2"><input type="text" ng-model="types"></td></tr>
+        <tr><td>Name</td><td colspan="2"><input type="text" ng-model="name" size="40"></td></tr>
+        <tr><td>Text (Oracle)</td><td colspan="2"><input type="text" ng-model="text" size="40"></td></tr>
+        <tr><td>Types</td><td colspan="2"><input type="text" ng-model="types" size="40"></td></tr>
         <tr>
             <td rowspan="5">Colors</td>
             <td><label><input type="checkbox" ng-model="c.w"><mana s="w"></mana></label></td>
@@ -22,16 +22,45 @@
             <td><label><input type="radio" value="exact" ng-model="c.type">Exact <i>(Check <manacost mana="'WU'"></manacost> to find only <manacost mana="'WU'"></manacost> cards)</i></label></td>
         </tr>
         <tr>
-            <td colspan="2"><label><input type="checkbox" ng-model="c.g"><mana s="g"></mana></label></td>
+            <td><label><input type="checkbox" ng-model="c.g"><mana s="g"></mana></label></td>
+            <td><label>Amount of colors <amount type="c.amounttype" value="c.amount"></amount></label></td>
         </tr>
-        <tr><td>Color identity</td><td colspan="2">
+        <tr>
+            <td rowspan="2">Mana cost</td>
+            <td><input type="text" ng-model="cost" size="40"></td>
+            <td width="460px">Add:
+                <span ng-repeat="o in costOptions" class="pointer"><mana s="{{o}}" ng-click="addManaCost(o)"></mana> </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Converted <amount type="cmc.amounttype" value="cmc.amount"></amount></td><td>&nbsp;</td>
+        </tr>
+        <tr><td>Color identity</td><td>
             <label><input type="checkbox" ng-model="ci.w"><mana s="w"></mana></label>
             <label><input type="checkbox" ng-model="ci.u"><mana s="u"></mana></label>
             <label><input type="checkbox" ng-model="ci.b"><mana s="b"></mana></label>
             <label><input type="checkbox" ng-model="ci.r"><mana s="r"></mana></label>
             <label><input type="checkbox" ng-model="ci.g"><mana s="g"></mana></label>
-            <label><input type="radio" ng-model="ci.c" value="true"><mana s="c"></mana></label>
-        </td></tr>
+            <label><input type="radio" ng-model="ci.c" value="true"><mana s="c"></mana></label></td>
+            <td><label>&nbsp;Amount of colors <amount type="ci.amounttype" value="ci.amount"></amount></label></td>
+        </tr>
+        <tr><td>Creature</td>
+            <td>Power <amount type="pow.amounttype" value="pow.amount"></amount></td>
+            <td>Toughness <amount type="tou.amounttype" value="tou.amount"></amount></td>
+        </tr>
+        <tr><td>Planeswalker</td>
+            <td>Starting loyalty&nbsp;<amount type="loy.amounttype" value="loy.amount"></amount></td><td>&nbsp;</td>
+        </tr>
+        <tr><td>Rarity</td>
+            <td colspan="2"><select ng-model="rarity">
+                <option ng-repeat="o in rarityOptions" value="{{o}}">{{o}}</option></select></td>
+        </tr>
+        <tr><td>Format</td>
+            <td colspan="2"><label ng-repeat="o in formatOptions"><input type="radio" ng-model="format.value" value="{{o}}">{{o}}</label></td>
+        </tr>
+        <tr><td>Flavor text</td>
+            <td colspan="2"><input type="text" ng-model="ft" size="40"></td>
+        </tr>
         <tr><td style="border: 0"><input type="submit" value="Search"></td></tr>
     </table>
 </form>

@@ -2,7 +2,7 @@
     <div ng-show="currentUserId">
         <h2>My decks</h2>
         <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})">Inventory</a>
-        <new-buttons></new-buttons>
+        <div><new-buttons></new-buttons></div>
         <decktree node="decksForUser"></decktree>
     </div>
     <decktree node="preconstructedDecks"></decktree>

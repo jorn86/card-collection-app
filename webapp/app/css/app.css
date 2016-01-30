@@ -15,8 +15,11 @@ table.sets th td {
     border: 1px solid lightgrey;
 }
 
+table.search {
+    width: 900px;
+}
 table.search td {
-    padding: 2px 0;
+    padding: 2px 5px;
     border-bottom: 1px dashed lightgrey;
 }
 
