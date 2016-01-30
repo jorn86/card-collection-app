@@ -25,7 +25,7 @@ angular.module('card-app')
 
         return {
             scope: {'set': '=', rarity: '='},
-            template: '&nbsp;<i class="set mtg {{setClass}} {{rarityClass}}">',
+            template: '&nbsp;<span class="set"><i class="mtg {{setClass}} {{rarityClass}}"></i></span>',
             link: function($scope) {
                 if ($scope.set) {
                     if ($scope.set.slice(0, 1) === 'p' || promoSets.indexOf($scope.set) >= 0) {
