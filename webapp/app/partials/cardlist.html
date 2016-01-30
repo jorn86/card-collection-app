@@ -1,7 +1,7 @@
 <div>
-    <div>{{list.name}} ({{totalAmount(list.cards)}} cards / {{list.cards.length}} distinct)</div>
+    <div class="nowrap">{{list.name}} ({{totalAmount(list.cards)}} cards / {{list.cards.length}} distinct)</div>
     <form ng-submit="submitAdd()" style="padding-bottom: 2px">
-        <label ng-show="editable">
+        <label ng-show="editable" class="nowrap">
             Add card
             <live-search
                 id="add-card" type="text"
@@ -11,15 +11,15 @@
                 live-search-select-callback="searchSelectCallback"
                 ng-model="cardSearchValue"></live-search>
         </label>
-        <label>
+        <label class="nowrap">
             Group by
             <select ng-options="grouping.name for grouping in grid.groupingOptions" ng-model="grid.currentGrouping" ng-change="onGroupingChange()"></select>
         </label>
-        <label>
+        <label class="nowrap">
             Sort by
             <select ng-options="sorting.name for sorting in grid.sortingOptions" ng-model="grid.currentSorting"></select>
         </label>
-        <label>
+        <label class="nowrap">
             Descending
             <input type="checkbox" ng-model="grid.sortDescending">
         </label>

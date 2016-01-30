@@ -28,4 +28,7 @@ angular.module('card-app')
         $scope.goToSearch = function() {
             $state.go('app.search');
         };
+        $scope.goToSets = function() {
+            $state.go('app.sets');
+        };
     });
