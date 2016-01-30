@@ -64,8 +64,26 @@ angular.module('card-app')
         $scope.$watch('ci.r', reset);
         $scope.$watch('ci.g', reset);
 
+        $scope.cost = '';
+        $scope.costOptions = [
+            '0', '1', '2', '3', '4', '5', '6', '7', '8',
+            'w', 'u', 'b', 'r', 'g', 'c',
+            'wp', 'up', 'bp', 'rp', 'gp',
+            'wu', 'wb', 'ub', 'ur', 'br', 'bg', 'rg', 'rw', 'gw', 'gu',
+            '2w', '2u', '2b', '2r', '2g'
+        ];
+
+        $scope.rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic Rare', 'Special', 'Basic Land'];
+
+        $scope.format = {value: 'All'};
+        $scope.formatOptions = ['All', 'Vintage', 'Legacy', 'Extended', 'Modern', 'Standard', 'Commander', 'MTGO'];
+
+        $scope.addManaCost = function(symbol) {
+            $scope.cost = $scope.cost + (symbol.length == 1 ? symbol.toUpperCase() : '{' + symbol.toUpperCase() + '}');
+        };
+
         $scope.doSearch = function() {
-            console.log('search', $scope.name, $scope.text, $scope.types, $scope.pow, $scope.tou, $scope.c, $scope.ci)
+            console.log('search', $scope)
         };
     })
 
