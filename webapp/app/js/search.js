@@ -4,8 +4,9 @@ angular.module('card-app')
             name: '',
             text: '',
             types: '',
-            p: null, // power
-            t: null, // toughness
+            p: {},
+            t: {},
+            loyalty: {},
             c: {
                 type: 'any'
             },
@@ -13,8 +14,9 @@ angular.module('card-app')
                 c: true
             },
             cost: '',
-            format: { value: 'All' },
-            rarity: null
+            format: 'All',
+            rarity: null,
+            ft: ''
         };
         $scope.costOptions = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8',

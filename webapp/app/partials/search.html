@@ -8,62 +8,62 @@
             <td rowspan="5">Colors</td>
             <td><label><input type="checkbox" ng-model="search.c.w"><mana s="w"></mana></label></td>
             <td><label><input type="radio" value="any" ng-model="search.c.type">Any <i>
-                (Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards)</i></label></td>
+                (Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but no <mana s="c"></mana> cards)</i></label></td>
         </tr>
         <tr>
-            <td><label><input type="checkbox" ng-model="c.u"><mana s="u"></mana></label></td>
+            <td><label><input type="checkbox" ng-model="search.c.u"><mana s="u"></mana></label></td>
             <td><label><input type="radio" value="all" ng-model="search.c.type">All <i>
-                (Check <manacost mana="'WU'"></manacost> to find <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but not <mana s="w"></mana> or <mana s="u"></mana>)</i></label></td>
+                (Check <manacost mana="'WU'"></manacost> to find <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but no <mana s="w"></mana> or <mana s="u"></mana> cards)</i></label></td>
         </tr>
         <tr>
-            <td><label><input type="checkbox" ng-model="c.b"><mana s="b"></mana></label></td>
+            <td><label><input type="checkbox" ng-model="search.c.b"><mana s="b"></mana></label></td>
             <td><label><input type="radio" value="only" ng-model="search.c.type">Only <i>
-                (Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost> cards, but not <manacost mana="'WUB'"></manacost>)</i></label></td>
+                (Check <manacost mana="'WU'"></manacost> to find <mana s="c"></mana>, <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost> cards, but no <manacost mana="'WUB'"></manacost> cards)</i></label></td>
         </tr>
         <tr>
-            <td><label><input type="checkbox" ng-model="c.r"><mana s="r"></mana></label></td>
+            <td><label><input type="checkbox" ng-model="search.c.r"><mana s="r"></mana></label></td>
             <td><label><input type="radio" value="exact" ng-model="search.c.type">Exact <i>
                 (Check <manacost mana="'WU'"></manacost> to find only <manacost mana="'WU'"></manacost> cards)</i></label></td>
         </tr>
         <tr>
-            <td><label><input type="checkbox" ng-model="c.g"><mana s="g"></mana></label></td>
-            <td><label>Amount of colors <amount type="c.amounttype" value="c.amount"></amount></label></td>
+            <td><label><input type="checkbox" ng-model="search.c.g"><mana s="g"></mana></label></td>
+            <td><label>Amount of colors <amount type="search.c.amounttype" value="search.c.amount"></amount></label></td>
         </tr>
         <tr>
             <td rowspan="2">Mana cost</td>
-            <td><input type="text" ng-model="cost" size="40"></td>
+            <td><input type="text" ng-model="search.cost" size="40"></td>
             <td width="460px">Add:
                 <span ng-repeat="o in costOptions" class="pointer"><mana s="{{o}}" ng-click="addManaCost(o)"></mana> </span>
             </td>
         </tr>
         <tr>
-            <td>Converted <amount type="cmc.amounttype" value="cmc.amount"></amount></td><td>&nbsp;</td>
+            <td>Converted <amount type="search.cmc.amounttype" value="search.cmc.amount"></amount></td><td>&nbsp;</td>
         </tr>
         <tr><td>Color identity</td><td>
-            <label><input type="checkbox" ng-model="ci.w"><mana s="w"></mana></label>
-            <label><input type="checkbox" ng-model="ci.u"><mana s="u"></mana></label>
-            <label><input type="checkbox" ng-model="ci.b"><mana s="b"></mana></label>
-            <label><input type="checkbox" ng-model="ci.r"><mana s="r"></mana></label>
-            <label><input type="checkbox" ng-model="ci.g"><mana s="g"></mana></label>
-            <label><input type="radio" ng-model="ci.c" value="true"><mana s="c"></mana></label></td>
-            <td><label>&nbsp;Amount of colors <amount type="ci.amounttype" value="ci.amount"></amount></label></td>
+            <label><input type="checkbox" ng-model="search.ci.w"><mana s="w"></mana></label>
+            <label><input type="checkbox" ng-model="search.ci.u"><mana s="u"></mana></label>
+            <label><input type="checkbox" ng-model="search.ci.b"><mana s="b"></mana></label>
+            <label><input type="checkbox" ng-model="search.ci.r"><mana s="r"></mana></label>
+            <label><input type="checkbox" ng-model="search.ci.g"><mana s="g"></mana></label>
+            <label><input type="radio" ng-model="search.ci.c" value="true"><mana s="c"></mana></label></td>
+            <td><label>&nbsp;Amount of colors <amount type="search.ci.amounttype" value="search.ci.amount"></amount></label></td>
         </tr>
         <tr><td>Creature</td>
-            <td>Power <amount type="pow.amounttype" value="pow.amount"></amount></td>
-            <td>Toughness <amount type="tou.amounttype" value="tou.amount"></amount></td>
+            <td>Power <amount type="search.p.amounttype" value="search.p.amount"></amount></td>
+            <td>Toughness <amount type="search.t.amounttype" value="search.t.amount"></amount></td>
         </tr>
         <tr><td>Planeswalker</td>
-            <td>Starting loyalty&nbsp;<amount type="loy.amounttype" value="loy.amount"></amount></td><td>&nbsp;</td>
+            <td>Starting loyalty&nbsp;<amount type="search.loyalty.amounttype" value="search.loyalty.amount"></amount></td><td>&nbsp;</td>
         </tr>
         <tr><td>Rarity</td>
-            <td colspan="2"><select ng-model="rarity">
+            <td colspan="2"><select ng-model="search.rarity">
                 <option ng-repeat="o in rarityOptions" value="{{o}}">{{o}}</option></select></td>
         </tr>
         <tr><td>Format</td>
-            <td colspan="2"><label ng-repeat="o in formatOptions"><input type="radio" ng-model="format.value" value="{{o}}">{{o}}</label></td>
+            <td colspan="2"><label ng-repeat="o in formatOptions"><input type="radio" ng-model="search.format" value="{{o}}">{{o}}</label></td>
         </tr>
         <tr><td>Flavor text</td>
-            <td colspan="2"><input type="text" ng-model="ft" size="40"></td>
+            <td colspan="2"><input type="text" ng-model="search.ft" size="40"></td>
         </tr>
         <tr><td style="border: 0"><input type="submit" value="Search"></td></tr>
     </table>
