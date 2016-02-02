@@ -61,13 +61,14 @@ public class DeckRestlet {
                 .filter(t -> Objects.equal(t.getParentid(), root.getId()))
                 .map(t -> createNode(t, tags, decks))
                 .collect(Collectors.toList());
-        return new DeckListNode(root.getName(), children, decks.stream()
+        return new DeckListNode(root.getId(), root.getName(), children, decks.stream()
                 .filter(d -> root.getId() == null ? d.getTags().isEmpty() : d.getTags().contains(root.getId()))
                 .collect(Collectors.toList()));
     }
 
     @Data @AllArgsConstructor
     @VisibleForTesting static class DeckListNode {
+        private final UUID tagId;
         private final String tagName;
         private final List<DeckListNode> children;
         private final List<Deck> decks;
@@ -95,6 +96,9 @@ public class DeckRestlet {
         checkUser();
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             Deck created = dao.createDeck(deck.getName(), userManager.getUserId());
+            if (deck.getTags() != null) {
+                deck.getTags().forEach(tag -> dao.addTag(created.getId(), tag));
+            }
             dao.createBoard(new DeckBoard(null, created.getId(), "Mainboard", 0, null));
             return getDeck(created.getId());
         }

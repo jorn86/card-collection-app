@@ -24,5 +24,5 @@
             <input type="checkbox" ng-model="grid.sortDescending">
         </label>
     </form>
-    <div ng-include="'partials/grid/grid.html'"></div>
+    <div ng-if="list.cards.length > 0" ng-include="'partials/grid/grid.html'"></div>
 </div>

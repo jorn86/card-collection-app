@@ -24,9 +24,6 @@
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
 
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor test/protractor-conf.js",
-
     "prewar": "npm run-script test-single-run",
     "war": "jar cmf manifest.mf ROOT.war",
     "postwar": "cd app && npm run-script war"
