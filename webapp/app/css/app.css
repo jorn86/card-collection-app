@@ -206,12 +206,20 @@ img.mana {
 }
 .tree:before {
     content: '\25b6'; /* right arrow */
+    display: inline-block;
+    width: 10px;
 }
 .tree.expanded:before {
     content: '\25bc'; /* down arrow */
+    display: inline-block;
+    width: 10px;
 }
 .pointer {
     cursor: pointer;
+}
+
+.deck-active {
+    background-color: lightgrey;
 }
 
 .iltt a {

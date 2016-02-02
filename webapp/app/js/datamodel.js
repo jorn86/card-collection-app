@@ -37,8 +37,8 @@ var Datamodel = function Datamodel($http) {
     this.createDeck = function(name, tagId) {
         return $http.post(base + 'deck', {name: name, tags: tagId ? [tagId] : []});
     };
-    this.createTag = function(name) {
-        return $http.post(base + 'deck/tag', {name: name});
+    this.createTag = function(name, parentTagId) {
+        return $http.post(base + 'deck/tag', {name: name, parentid: parentTagId});
     };
 
     this.authenticateUser = function(user) {
