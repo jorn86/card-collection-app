@@ -5,6 +5,6 @@
         <decktree node="child"></decktree>
     </div>
     <div ng-show="node.expand" class="indent nowrap" ng-repeat="deck in node.decks">
-        <a ui-sref="app.deck({id: deck.id})"><img src="../img/deck.svg" height="16"> {{deck.name || 'Unnamed deck'}}</a>
+        <a ui-sref="app.deck({id: deck.id})" ui-sref-active="deck-active"><img src="../img/deck.svg" height="16"> {{deck.name || 'Unnamed deck'}}</a>
     </div>
 </div>

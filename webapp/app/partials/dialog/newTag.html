@@ -1,12 +1,12 @@
-<form ng-controller="NewDeckController" ng-submit="createDeck()">
+<form ng-controller="NewDeckController" ng-submit="createTag()">
     <table cellspacing="0">
         <tr>
-            <td>Tag</td>
+            <td>Parent tag</td>
             <td><select ng-model="input.tagId" ng-options="tag.id as tag.name for tag in tags">
                 <option value="">My decks</option>
             </select></td>
         </tr>
-        <tr><td>Deck name</td><td><input type="text" ng-model="input.name"></td></tr>
+        <tr><td>Tag name</td><td><input type="text" ng-model="input.name"></td></tr>
         <tr><td><input type="submit" value="Create"></td></tr>
     </table>
 </form>

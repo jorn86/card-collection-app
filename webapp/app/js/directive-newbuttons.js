@@ -1,17 +1,10 @@
 angular.module('card-app')
-    .directive('newButtons', function($rootScope) {
+    .directive('newButtons', function() {
         return {
             restrict: 'E',
-            template: '<button ng-click="createTag()">+<img src="../img/tag.svg" height="16" alt="New tag"></button>' +
+            template: '<button ng-dialog="partials/dialog/newTag.html">+<img src="../img/tag.svg" height="16" alt="New tag"></button>' +
                 '&nbsp;<button ng-dialog="partials/dialog/newDeck.html">+<img src="../img/deck.svg" height="16" alt="New deck"></button>',
-            scope: {},
-            link: function(scope) {
-                scope.createTag = function() {
-                    $rootScope.datamodel.createTag('New tag').then(function() {
-                        $rootScope.$broadcast('reloadUserDecks');
-                    });
-                };
-            }
+            scope: {}
         };
     })
 
@@ -19,7 +12,7 @@ angular.module('card-app')
         $scope.tags = [];
         $scope.input = {
             tagId: null,
-            deckName: 'New deck'
+            name: ''
         };
         var addTags = function(node) {
             $scope.tags.push({id: node.tagId, name: node.tagName});
@@ -27,13 +20,17 @@ angular.module('card-app')
         };
         $rootScope.datamodel.getDecks().then(function(result) {
             _.forEach(result.data.children, addTags);
-            $scope.input.tagId = null;
         });
 
+        $scope.createTag = function() {
+            $rootScope.datamodel.createTag($scope.input.name, $scope.input.tagId).then(function(result) {
+                $rootScope.$broadcast('reloadUserDecks', {tag: result.data.id});
+            });
+            $scope.closeThisDialog();
+        };
         $scope.createDeck = function() {
-            var tag = /*$scope.input.tagId === 'nullId' ? null :*/ $scope.input.tagId;
-            $rootScope.datamodel.createDeck($scope.input.deckName, tag).then(function(result) {
-                $rootScope.$broadcast('reloadUserDecks');
+            $rootScope.datamodel.createDeck($scope.input.name, $scope.input.tagId).then(function(result) {
+                $rootScope.$broadcast('reloadUserDecks', {deck: result.data.id});
                 $state.go('app.deck', {id: result.data.id});
             });
             $scope.closeThisDialog();

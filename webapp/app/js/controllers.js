@@ -1,12 +1,26 @@
 angular.module('card-app')
 
-    .controller('IndexController', function ($rootScope, $scope, $http, $state) {
+    .controller('IndexController', function ($rootScope, $scope, $http, $state, $stateParams) {
         $rootScope.datamodel = new Datamodel($http);
 
-        $scope.reloadUserDecks = function() {
+        var expandTo = function(node, id) {
+            if (node.tagId === id
+                    || _.any(node.decks, function(deck) { return deck.id === id})
+                    || _.any(node.children, function(node) { return expandTo(node, id)})) {
+                node.expand = true;
+                return true;
+            }
+            return false;
+        };
+
+        $scope.reloadUserDecks = function(event, args) {
             $rootScope.datamodel.getDecks().then(function(result) {
                 $scope.decksForUser = result.data;
                 $scope.decksForUser.expand = true;
+
+                if (args && (args.tag || args.deck)) {
+                    expandTo(result.data, args.tag || args.deck);
+                }
             });
         };
 
@@ -17,7 +31,7 @@ angular.module('card-app')
                 $state.go('app');
             }
 
-            $scope.reloadUserDecks();
+            $scope.reloadUserDecks(null, {deck: $stateParams.id});
         });
         $rootScope.$on('reloadUserDecks', $scope.reloadUserDecks);
 
