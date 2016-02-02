@@ -61,6 +61,9 @@ public interface DeckDao extends AutoCloseable {
     @UseBetterBeanMapper
     List<DeckRow> getDeckRows(@Bind("deckid") UUID deckid, @Bind("cardid") int cardId);
 
+    @SqlUpdate("INSERT INTO decktag (tagid, deckid) VALUES (:tagid, :deckid)")
+    void addTag(@Bind("deckid") UUID deckId, @Bind("tagid") UUID tagId);
+
     void close();
 
 }

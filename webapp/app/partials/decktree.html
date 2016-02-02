@@ -1,10 +1,10 @@
 <div>
     <div class="tree pointer nowrap" ng-class="{expanded: node.expand}" ng-click="node.expand = !node.expand">
-        <img src="../img/tag.svg" height="16"> {{node.tagName || 'Decks'}}<span ng-show="node.decks.length"> ({{node.decks.length}})</span></div>
+        <img src="../img/tag.svg" height="16"> {{node.tagName || 'Unnamed tag'}}<span ng-show="node.decks.length"> ({{node.decks.length}})</span></div>
     <div ng-show="node.expand" class="indent nowrap" ng-repeat="child in node.children | orderBy: 'tagName'">
         <decktree node="child"></decktree>
     </div>
     <div ng-show="node.expand" class="indent nowrap" ng-repeat="deck in node.decks">
-        <a ui-sref="app.deck({id: deck.id})"><img src="../img/deck.svg" height="16"> {{deck.name}}</a>
+        <a ui-sref="app.deck({id: deck.id})"><img src="../img/deck.svg" height="16"> {{deck.name || 'Unnamed deck'}}</a>
     </div>
 </div>
