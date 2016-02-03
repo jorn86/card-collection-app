@@ -73,7 +73,8 @@ public class PreconstructedDecks implements StartupAction {
         importPreconstructedDeckBoard(dao, deckId, deck, defaultSet, "Sideboard", 1, deck.getSideboard());
     }
 
-    private void importPreconstructedDeckBoard(PreconstructedDao dao, UUID deckId, PreconstructedDeck deck, int defaultSet, String boardName, int order, List<PreconstructedDeck.Card> cards) {
+    private void importPreconstructedDeckBoard(PreconstructedDao dao, UUID deckId, PreconstructedDeck deck, int defaultSet,
+                                               String boardName, int order, List<PreconstructedDeck.Card> cards) {
         if (cards == null || cards.isEmpty()) {
             return;
         }
@@ -83,8 +84,10 @@ public class PreconstructedDecks implements StartupAction {
             int setId = card.getEdition() == null ? defaultSet : dao.getSet(card.getEdition());
             Printing printing = dao.getPrinting(setId, card.getName());
             if (printing == null) {
-                log.warn("For preconstructed deck {} ({}), card {} does not exist in set {} ({})", deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet());
-                dao.addCard(boardId, card.getName(), card.getAmount());
+                Printing fallback = dao.getFallbackPrinting(card.getName(), setId);
+                log.trace("For preconstructed deck {} ({}), card {} does not exist in set {} ({}), falling back to {}",
+                        deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet(), fallback.getSetid());
+                dao.addCard(boardId, fallback.getCardid(), fallback.getId(), card.getAmount());
             }
             else {
                 dao.addCard(boardId, printing.getCardid(), printing.getId(), card.getAmount());

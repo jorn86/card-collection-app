@@ -56,4 +56,9 @@ public interface PreconstructedDao extends AutoCloseable {
 
     void close();
 
+    @SqlQuery("SELECT p.* FROM printing p LEFT JOIN \"set\" s ON p.setid = s.id LEFT JOIN card c ON c.id = p.cardid " +
+            "WHERE c.name = :name AND s.releasedate <= (SELECT releasedate FROM \"set\" WHERE id = :set) AND s.priority = 1" +
+            "ORDER BY s.releasedate DESC LIMIT 1")
+    @MapResultAsBean
+    Printing getFallbackPrinting(@Bind("name") String cardName, @Bind("set") int defaultSet);
 }

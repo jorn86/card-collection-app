@@ -20,6 +20,7 @@ angular.module('card-app')
 
                 if (args && (args.tag || args.deck)) {
                     expandTo(result.data, args.tag || args.deck);
+                    expandTo($scope.preconstructedDecks, args.tag || args.deck);
                 }
             });
         };

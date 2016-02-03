@@ -6,8 +6,8 @@
         <div class="grid-cell grid-cell-count">Count</div>
         <div class="grid-cell grid-cell-name">Name</div>
         <div class="grid-cell grid-cell-type">Type</div>
-        <div class="grid-cell grid-cell-set">Set</div>
         <div class="grid-cell grid-cell-cost">Cost</div>
+        <div class="grid-cell grid-cell-set">Set</div>
     </div>
     <div ng-repeat="(key, value) in grid.rows | groupBy: grid.groupBy | toArray: true | orderBy : grid.orderBy ">
         <div class="grid-group-header">{{value.$key}} ({{totalAmount(value)}} cards / {{value.length}} distinct)</div>
