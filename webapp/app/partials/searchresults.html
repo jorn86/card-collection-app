@@ -1,0 +1,22 @@
+<h3>{{results.length}} Results</h3>
+<div ng-show="results">
+    <form ng-submit="search()">
+        <label class="nowrap">Query <input type="text" ng-model="query">&nbsp;<input type="submit" value="Search"></label>
+    </form>
+    <div>Page: <span ng-repeat="n in pages"><a ui-sref="app.searchresults({query: originalQuery, page:n})" ui-sref-active="active"
+            ><span>{{n}}</span></a>, </span></div>
+    <table class="searchresults" cellspacing="0">
+        <tbody ng-repeat="card in pageresults">
+            <tr><td rowspan="4">
+                <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid={{card.multiverseid}}">
+            </td><td linkcard><span class="inlinemtg" data-multiverseid="{{card.multiverseid}}"
+                    data-multiverseid-back="{{card.multiverseidBack}}"
+                    data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}"
+                    >{{card.name}}</span>&nbsp;</td></tr>
+            <tr><td>{{card.fulltype}}, <manacost mana="card.cost"></manacost> ({{card.cmc}})</td></tr>
+            <tr><td>{{card.text}}</td></tr>
+            <tr><td>{{card.artist}}</td></tr>
+        </tbody>
+    </table>
+</div>
+<div ng-hide="results">Loading...</div>

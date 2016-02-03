@@ -107,13 +107,13 @@ public class DeckRestlet {
     @GET
     @Path("{deckId}")
     public Deck getDeck(@PathParam("deckId") UUID deckId) {
-        checkUser();
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             Deck deck = dao.getDeck(deckId);
             if (deck == null) {
                 throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
             }
             if (deck.getUserid() != null) {
+                checkUser();
                 if (!deck.getUserid().equals(userManager.getUserId())) {
                     throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
                 }
