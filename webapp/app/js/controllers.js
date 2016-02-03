@@ -73,6 +73,27 @@ angular.module('card-app')
         };
     })
 
+    .controller('SearchResultsController', function($scope, $stateParams, $state) {
+        $scope.originalQuery = $stateParams.query;
+        $scope.query = $stateParams.query;
+
+        // $scope.datamodel.getSearchResults($stateParams.query);
+        $scope.datamodel.getDeck('c61cb204-3bc6-49c9-9410-df0e850daab1').then(function(result) {
+            $scope.results = result.data.boards[0].cards;
+            $scope.pages = [];
+            var pages = $scope.results.length / 10;
+            for (var i = 0; i < pages; i++) {
+                $scope.pages.push(i+1);
+            }
+            var end = $stateParams.page * 10;
+            $scope.pageresults = $scope.results.slice(end - 10, end - 1);
+        });
+
+        $scope.search = function() {
+            $state.go('app.searchresults', {query: $scope.query, page: 1});
+        };
+    })
+
     .controller('NewDeckController', function($scope, $rootScope, $state) {
         $scope.tags = [];
         $scope.input = {
