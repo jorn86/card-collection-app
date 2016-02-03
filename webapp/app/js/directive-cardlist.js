@@ -8,6 +8,9 @@ angular.module('card-app')
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
                 var typeGrouping = function (card) {
                     if (card.type) {
+                        if (card.type.indexOf('Land') >= 0) {
+                            return 'Land';
+                        }
                         for (var i = 0; i < types.length; i++) {
                             if (card.type.indexOf(types[i]) >= 0) {
                                 return types[i];
