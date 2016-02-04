@@ -1,12 +1,12 @@
 angular.module('card-app')
 
-    .controller('IndexController', function ($rootScope, $scope, $http, $state, $stateParams) {
+    .controller('IndexController', function ($rootScope, $scope, $http, $state, $stateParams, $timeout) {
         $rootScope.datamodel = new Datamodel($http);
 
-        var expandTo = function(node, id) {
-            if (node.tagId === id
-                    || _.any(node.decks, function(deck) { return deck.id === id})
-                    || _.any(node.children, function(node) { return expandTo(node, id)})) {
+        var expandTo = function(node, tagId, deckId) {
+            if (node.tagId === tagId
+                    || _.any(node.decks, function(deck) { return deck.id === deckId})
+                    || _.any(node.children, function(node) { return expandTo(node, tagId, deckId)})) {
                 node.expand = true;
                 return true;
             }
@@ -19,8 +19,7 @@ angular.module('card-app')
                 $scope.decksForUser.expand = true;
 
                 if (args && (args.tag || args.deck)) {
-                    expandTo(result.data, args.tag || args.deck);
-                    expandTo($scope.preconstructedDecks, args.tag || args.deck);
+                    expandTo($scope.decksForUser, args.tag, args.deck);
                 }
             });
         };
@@ -39,6 +38,10 @@ angular.module('card-app')
         $rootScope.datamodel.getPreconstructedDecks().then(function(result) {
             $scope.preconstructedDecks = result.data;
             $scope.preconstructedDecks.expand = true;
+            // wait for $stateParams to realize there is one
+            $timeout(function() {
+                expandTo($scope.preconstructedDecks, null, $stateParams.id);
+            });
         });
     })
 
