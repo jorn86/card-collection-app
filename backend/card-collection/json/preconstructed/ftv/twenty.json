@@ -1,0 +1,89 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Twenty (2013)",
+  "set": "V13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Kessig Wolf Run"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma\u0027s Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Chainer\u0027s Edict"
+    },
+    {
+      "amount": 1,
+      "name": "Chameleon Colossus"
+    },
+    {
+      "amount": 1,
+      "name": "Char"
+    },
+    {
+      "amount": 1,
+      "name": "Cruel Ultimatum"
+    },
+    {
+      "amount": 1,
+      "name": "Dark Ritual"
+    },
+    {
+      "amount": 1,
+      "name": "Fact or Fiction"
+    },
+    {
+      "amount": 1,
+      "name": "Fyndhorn Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Gilded Lotus"
+    },
+    {
+      "amount": 1,
+      "name": "Green Sun\u0027s Zenith"
+    },
+    {
+      "amount": 1,
+      "name": "Hymn to Tourach"
+    },
+    {
+      "amount": 1,
+      "name": "Impulse"
+    },
+    {
+      "amount": 1,
+      "name": "Ink-Eyes, Servant of Oni"
+    },
+    {
+      "amount": 1,
+      "name": "Jace, the Mind Sculptor"
+    },
+    {
+      "amount": 1,
+      "name": "Swords to Plowshares"
+    },
+    {
+      "amount": 1,
+      "name": "Tangle Wire"
+    },
+    {
+      "amount": 1,
+      "name": "Thran Dynamo"
+    },
+    {
+      "amount": 1,
+      "name": "Venser, Shaper Savant"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Blossoms"
+    }
+  ]
+}

@@ -26,14 +26,17 @@ class Views implements StartupAction {
             for (String name : NAMES) {
                 log.debug("Updating view {}", name);
                 String query = CharStreams.toString(new InputStreamReader(Views.class.getResourceAsStream(name + ".sql")));
-                try (Statement create = connection.createStatement()) {
-                    create.execute(query);
+                boolean materialized = query.startsWith("CREATE MATERIALIZED VIEW");
+                try (Statement update = connection.createStatement()) {
+                    update.execute(query);
                 }
                 catch (SQLException e) {
-                    log.debug("Updating view {} failed, retrying", name, e);
+                    if (!materialized) {
+                        log.debug("Updating view {} failed, retrying", name, e);
+                    }
                     try (Statement drop = connection.createStatement();
                          Statement recreate = connection.createStatement()) {
-                        drop.execute("DROP VIEW IF EXISTS " + name + " CASCADE");
+                        drop.execute("DROP " + (materialized ? "MATERIALIZED " : "") + "VIEW IF EXISTS " + name + " CASCADE");
                         recreate.execute(query);
                     }
                 }

@@ -1,0 +1,202 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2009"
+  ],
+  "name": "Elemental Thunder",
+  "set": "HOP",
+  "mainboard": [
+    {
+      "amount": 9,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Gruul Turf"
+    },
+    {
+      "amount": 9,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Shivan Oasis"
+    },
+    {
+      "amount": 2,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Assault / Battery"
+    },
+    {
+      "amount": 1,
+      "name": "Beast Hunt"
+    },
+    {
+      "amount": 1,
+      "name": "Blaze"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Firefiend"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Rager"
+    },
+    {
+      "amount": 1,
+      "name": "Branching Bolt"
+    },
+    {
+      "amount": 1,
+      "name": "Briarhorn"
+    },
+    {
+      "amount": 1,
+      "name": "Browbeat"
+    },
+    {
+      "amount": 1,
+      "name": "Cinder Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Eloren Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Explosive Vegetation"
+    },
+    {
+      "amount": 1,
+      "name": "Feeding Grounds"
+    },
+    {
+      "amount": 1,
+      "name": "Fertile Ground"
+    },
+    {
+      "amount": 1,
+      "name": "Fertilid"
+    },
+    {
+      "amount": 1,
+      "name": "Fires of Yavimaya"
+    },
+    {
+      "amount": 2,
+      "name": "Flamekin Harbinger"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Ancient"
+    },
+    {
+      "amount": 1,
+      "name": "Hull Breach"
+    },
+    {
+      "amount": 1,
+      "name": "Immersturm"
+    },
+    {
+      "amount": 1,
+      "name": "Isle of Vesuva"
+    },
+    {
+      "amount": 1,
+      "name": "Ivy Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Living Hive"
+    },
+    {
+      "amount": 1,
+      "name": "Llanowar"
+    },
+    {
+      "amount": 1,
+      "name": "Mage Slayer"
+    },
+    {
+      "amount": 1,
+      "name": "Mask of Memory"
+    },
+    {
+      "amount": 1,
+      "name": "Murasa"
+    },
+    {
+      "amount": 1,
+      "name": "Naya"
+    },
+    {
+      "amount": 1,
+      "name": "Pyrotechnics"
+    },
+    {
+      "amount": 1,
+      "name": "Rampant Growth"
+    },
+    {
+      "amount": 1,
+      "name": "Relentless Assault"
+    },
+    {
+      "amount": 2,
+      "name": "Rockslide Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Rumbling Slum"
+    },
+    {
+      "amount": 1,
+      "name": "Savage Twister"
+    },
+    {
+      "amount": 1,
+      "name": "Search for Tomorrow"
+    },
+    {
+      "amount": 1,
+      "name": "Silverglade Elemental"
+    },
+    {
+      "amount": 2,
+      "name": "Smokebraider"
+    },
+    {
+      "amount": 1,
+      "name": "Taurean Mauler"
+    },
+    {
+      "amount": 1,
+      "name": "The Great Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Tornado Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Tribal Unity"
+    },
+    {
+      "amount": 1,
+      "name": "Turri Island"
+    },
+    {
+      "amount": 1,
+      "name": "Velis Vel"
+    },
+    {
+      "amount": 1,
+      "name": "Verdant Force"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2009"
+  ],
+  "name": "Zombie Empire",
+  "set": "HOP",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Cabal Coffers"
+    },
+    {
+      "amount": 2,
+      "name": "Leechridden Swamp"
+    },
+    {
+      "amount": 23,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Ascendant Evincar"
+    },
+    {
+      "amount": 1,
+      "name": "Beacon of Unrest"
+    },
+    {
+      "amount": 1,
+      "name": "Beseech the Queen"
+    },
+    {
+      "amount": 2,
+      "name": "Cadaverous Knight"
+    },
+    {
+      "amount": 1,
+      "name": "Cliffside Market"
+    },
+    {
+      "amount": 1,
+      "name": "Consume Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Corpse Harvester"
+    },
+    {
+      "amount": 1,
+      "name": "Cruel Revival"
+    },
+    {
+      "amount": 2,
+      "name": "Dark Ritual"
+    },
+    {
+      "amount": 1,
+      "name": "Death Baron"
+    },
+    {
+      "amount": 1,
+      "name": "Dregscape Zombie"
+    },
+    {
+      "amount": 2,
+      "name": "Festering Goblin"
+    },
+    {
+      "amount": 1,
+      "name": "Fields of Summer"
+    },
+    {
+      "amount": 1,
+      "name": "Grave Pact"
+    },
+    {
+      "amount": 1,
+      "name": "Gravedigger"
+    },
+    {
+      "amount": 1,
+      "name": "Grixis"
+    },
+    {
+      "amount": 1,
+      "name": "Helldozer"
+    },
+    {
+      "amount": 1,
+      "name": "Hideous End"
+    },
+    {
+      "amount": 1,
+      "name": "Incremental Blight"
+    },
+    {
+      "amount": 1,
+      "name": "Innocent Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Lethe Lake"
+    },
+    {
+      "amount": 1,
+      "name": "Nefashu"
+    },
+    {
+      "amount": 1,
+      "name": "Noxious Ghoul"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Arena"
+    },
+    {
+      "amount": 2,
+      "name": "Phyrexian Ghoul"
+    },
+    {
+      "amount": 1,
+      "name": "Pools of Becoming"
+    },
+    {
+      "amount": 1,
+      "name": "Profane Command"
+    },
+    {
+      "amount": 1,
+      "name": "Raven\u0027s Run"
+    },
+    {
+      "amount": 1,
+      "name": "Rotting Rats"
+    },
+    {
+      "amount": 1,
+      "name": "Sea of Sand"
+    },
+    {
+      "amount": 1,
+      "name": "Shepherd of Rot"
+    },
+    {
+      "amount": 1,
+      "name": "Soulless One"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Soul"
+    },
+    {
+      "amount": 1,
+      "name": "The Æther Flues"
+    },
+    {
+      "amount": 1,
+      "name": "The Dark Barony"
+    },
+    {
+      "amount": 1,
+      "name": "The Fourth Sphere"
+    },
+    {
+      "amount": 2,
+      "name": "Undead Warchief"
+    },
+    {
+      "amount": 1,
+      "name": "Withered Wretch"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2012"
+  ],
+  "name": "Night of the Ninja",
+  "set": "PC2",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Dimir Aqueduct"
+    },
+    {
+      "amount": 9,
+      "name": "Island"
+    },
+    {
+      "amount": 2,
+      "name": "Jwar Isle Refuge"
+    },
+    {
+      "amount": 9,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Tainted Isle"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 2,
+      "name": "Assassinate"
+    },
+    {
+      "amount": 2,
+      "name": "Augury Owl"
+    },
+    {
+      "amount": 2,
+      "name": "Baleful Strix"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodhill Bastion"
+    },
+    {
+      "amount": 1,
+      "name": "Cadaver Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Cancel"
+    },
+    {
+      "amount": 1,
+      "name": "Concentrate"
+    },
+    {
+      "amount": 1,
+      "name": "Dark Hatchling"
+    },
+    {
+      "amount": 2,
+      "name": "Dimir Infiltrator"
+    },
+    {
+      "amount": 1,
+      "name": "Farsight Mask"
+    },
+    {
+      "amount": 1,
+      "name": "Fractured Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Gavony"
+    },
+    {
+      "amount": 1,
+      "name": "Glen Elendra"
+    },
+    {
+      "amount": 1,
+      "name": "Glen Elendra Liege"
+    },
+    {
+      "amount": 1,
+      "name": "Higure, the Still Wind"
+    },
+    {
+      "amount": 1,
+      "name": "Ink-Eyes, Servant of Oni"
+    },
+    {
+      "amount": 1,
+      "name": "Inkfathom Witch"
+    },
+    {
+      "amount": 1,
+      "name": "Interplanar Tunnel"
+    },
+    {
+      "amount": 1,
+      "name": "Kharasha Foothills"
+    },
+    {
+      "amount": 1,
+      "name": "Liliana\u0027s Specter"
+    },
+    {
+      "amount": 1,
+      "name": "Mistblade Shinobi"
+    },
+    {
+      "amount": 1,
+      "name": "Morphic Tide"
+    },
+    {
+      "amount": 2,
+      "name": "Ninja of the Deep Hours"
+    },
+    {
+      "amount": 1,
+      "name": "Norn\u0027s Dominion"
+    },
+    {
+      "amount": 1,
+      "name": "Okiba-Gang Shinobi"
+    },
+    {
+      "amount": 1,
+      "name": "Quicksilver Sea"
+    },
+    {
+      "amount": 1,
+      "name": "Quietus Spike"
+    },
+    {
+      "amount": 2,
+      "name": "Sai of the Shinobi"
+    },
+    {
+      "amount": 1,
+      "name": "Sakashima\u0027s Student"
+    },
+    {
+      "amount": 1,
+      "name": "Silent-Blade Oni"
+    },
+    {
+      "amount": 1,
+      "name": "Skullsnatcher"
+    },
+    {
+      "amount": 1,
+      "name": "Takenuma"
+    },
+    {
+      "amount": 1,
+      "name": "The Zephyr Maze"
+    },
+    {
+      "amount": 1,
+      "name": "Throat Slitter"
+    },
+    {
+      "amount": 2,
+      "name": "Tormented Soul"
+    },
+    {
+      "amount": 1,
+      "name": "Vela the Night-Clad"
+    },
+    {
+      "amount": 1,
+      "name": "Walker of Secret Ways"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Frost"
+    },
+    {
+      "amount": 1,
+      "name": "Whispersilk Cloak"
+    }
+  ]
+}

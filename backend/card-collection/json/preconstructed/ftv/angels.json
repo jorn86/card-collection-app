@@ -1,0 +1,69 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Angels (2015)",
+  "set": "V15",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Akroma, Angel of Fury"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma, Angel of Wrath"
+    },
+    {
+      "amount": 1,
+      "name": "Archangel of Strife"
+    },
+    {
+      "amount": 1,
+      "name": "Aurelia, the Warleader"
+    },
+    {
+      "amount": 1,
+      "name": "Avacyn, Angel of Hope"
+    },
+    {
+      "amount": 1,
+      "name": "Baneslayer Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Entreat the Angels"
+    },
+    {
+      "amount": 1,
+      "name": "Exalted Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Iona, Shield of Emeria"
+    },
+    {
+      "amount": 1,
+      "name": "Iridescent Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Jenara, Asura of War"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Platinum Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Serra Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Tariel, Reckoner of Souls"
+    }
+  ]
+}

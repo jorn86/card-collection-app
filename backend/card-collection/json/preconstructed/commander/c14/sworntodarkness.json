@@ -1,0 +1,286 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2014"
+  ],
+  "name": "Sworn to Darkness",
+  "set": "C14",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Skirsdag High Priest"
+    },
+    {
+      "amount": 1,
+      "name": "Nantuko Shade"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Hexmage"
+    },
+    {
+      "amount": 1,
+      "name": "Burnished Hart"
+    },
+    {
+      "amount": 1,
+      "name": "Flesh Carver"
+    },
+    {
+      "amount": 1,
+      "name": "Crypt Ghast"
+    },
+    {
+      "amount": 1,
+      "name": "Disciple of Bolas"
+    },
+    {
+      "amount": 1,
+      "name": "Evernight Shade"
+    },
+    {
+      "amount": 1,
+      "name": "Abyssal Persecutor"
+    },
+    {
+      "amount": 1,
+      "name": "Liliana\u0027s Reaver"
+    },
+    {
+      "amount": 1,
+      "name": "Nekrataal"
+    },
+    {
+      "amount": 1,
+      "name": "Magus of the Coffers"
+    },
+    {
+      "amount": 1,
+      "name": "Raving Dead"
+    },
+    {
+      "amount": 1,
+      "name": "Shriekmaw"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodgift Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Demon of Wailing Agonies"
+    },
+    {
+      "amount": 1,
+      "name": "Drana, Kalastria Bloodchief"
+    },
+    {
+      "amount": 1,
+      "name": "Ghoulcaller Gisa"
+    },
+    {
+      "amount": 1,
+      "name": "Gray Merchant of Asphodel"
+    },
+    {
+      "amount": 1,
+      "name": "Morkrut Banshee"
+    },
+    {
+      "amount": 1,
+      "name": "Grave Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Gargantua"
+    },
+    {
+      "amount": 1,
+      "name": "Pontiff of Blight"
+    },
+    {
+      "amount": 1,
+      "name": "Reaper from the Abyss"
+    },
+    {
+      "amount": 1,
+      "name": "Xathrid Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Butcher of Malakir"
+    },
+    {
+      "amount": 1,
+      "name": "Overseer of the Damned"
+    },
+    {
+      "amount": 1,
+      "name": "Pestilence Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Sign in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Read the Bones"
+    },
+    {
+      "amount": 1,
+      "name": "Victimize"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Dread Return"
+    },
+    {
+      "amount": 1,
+      "name": "Mutilate"
+    },
+    {
+      "amount": 1,
+      "name": "Infernal Offering"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Snap"
+    },
+    {
+      "amount": 1,
+      "name": "Promise of Power"
+    },
+    {
+      "amount": 1,
+      "name": "Necromantic Selection"
+    },
+    {
+      "amount": 1,
+      "name": "Black Sun\u0027s Zenith"
+    },
+    {
+      "amount": 1,
+      "name": "Profane Command"
+    },
+    {
+      "amount": 1,
+      "name": "Dregs of Sorrow"
+    },
+    {
+      "amount": 1,
+      "name": "Spoils of Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Tragic Slip"
+    },
+    {
+      "amount": 1,
+      "name": "Malicious Affliction"
+    },
+    {
+      "amount": 1,
+      "name": "Sudden Spoiling"
+    },
+    {
+      "amount": 1,
+      "name": "Tendrils of Corruption"
+    },
+    {
+      "amount": 1,
+      "name": "Annihilate"
+    },
+    {
+      "amount": 1,
+      "name": "Skeletal Scrying"
+    },
+    {
+      "amount": 1,
+      "name": "Wake the Dead"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Charcoal Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Jet Medallion"
+    },
+    {
+      "amount": 1,
+      "name": "Mind Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Commander\u0027s Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Unstable Obelisk"
+    },
+    {
+      "amount": 1,
+      "name": "Worn Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Lashwrithe"
+    },
+    {
+      "amount": 1,
+      "name": "Bad Moon"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Lighthouse"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Bojuka Bog"
+    },
+    {
+      "amount": 1,
+      "name": "Crypt of Agadeem"
+    },
+    {
+      "amount": 1,
+      "name": "Everglades"
+    },
+    {
+      "amount": 1,
+      "name": "Ghost Quarter"
+    },
+    {
+      "amount": 1,
+      "name": "Myriad Landscape"
+    },
+    {
+      "amount": 1,
+      "name": "Polluted Mire"
+    },
+    {
+      "amount": 32,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Ob Nixilis of the Black Oath"
+    }
+  ]
+}

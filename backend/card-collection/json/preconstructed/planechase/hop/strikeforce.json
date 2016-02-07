@@ -1,0 +1,206 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2009"
+  ],
+  "name": "Strike Force",
+  "set": "HOP",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Boros Garrison"
+    },
+    {
+      "amount": 9,
+      "name": "Mountain"
+    },
+    {
+      "amount": 9,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Sunhome, Fortress of the Legion"
+    },
+    {
+      "amount": 2,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Academy at Tolaria West"
+    },
+    {
+      "amount": 1,
+      "name": "Agyrem"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma\u0027s Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Arc Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Balefire Liege"
+    },
+    {
+      "amount": 1,
+      "name": "Battlegate Mimic"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Signet"
+    },
+    {
+      "amount": 2,
+      "name": "Boros Swiftblade"
+    },
+    {
+      "amount": 1,
+      "name": "Bull Cerodon"
+    },
+    {
+      "amount": 1,
+      "name": "Captain\u0027s Maneuver"
+    },
+    {
+      "amount": 1,
+      "name": "Cerodon Yearling"
+    },
+    {
+      "amount": 1,
+      "name": "Cone of Flame"
+    },
+    {
+      "amount": 1,
+      "name": "Congregate"
+    },
+    {
+      "amount": 1,
+      "name": "Double Cleave"
+    },
+    {
+      "amount": 1,
+      "name": "Duergar Hedge-Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Flametongue Kavu"
+    },
+    {
+      "amount": 1,
+      "name": "Furnace of Rath"
+    },
+    {
+      "amount": 1,
+      "name": "Glimmervoid Basin"
+    },
+    {
+      "amount": 1,
+      "name": "Glory of Warfare"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Offensive"
+    },
+    {
+      "amount": 1,
+      "name": "Hearthfire Hobgoblin"
+    },
+    {
+      "amount": 1,
+      "name": "Insurrection"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Steam Maze"
+    },
+    {
+      "amount": 1,
+      "name": "Keldon Champion"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Sanctifiers"
+    },
+    {
+      "amount": 2,
+      "name": "Lightning Helix"
+    },
+    {
+      "amount": 1,
+      "name": "Menacing Ogre"
+    },
+    {
+      "amount": 1,
+      "name": "Naar Isle"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Order / Chaos"
+    },
+    {
+      "amount": 1,
+      "name": "Orim\u0027s Thunder"
+    },
+    {
+      "amount": 1,
+      "name": "Otaria"
+    },
+    {
+      "amount": 1,
+      "name": "Prison Term"
+    },
+    {
+      "amount": 1,
+      "name": "Razia, Boros Archangel"
+    },
+    {
+      "amount": 1,
+      "name": "Reckless Charge"
+    },
+    {
+      "amount": 1,
+      "name": "Relic of Progenitus"
+    },
+    {
+      "amount": 1,
+      "name": "Rolling Thunder"
+    },
+    {
+      "amount": 1,
+      "name": "Rorix Bladewing"
+    },
+    {
+      "amount": 1,
+      "name": "Shiv"
+    },
+    {
+      "amount": 1,
+      "name": "Skybreen"
+    },
+    {
+      "amount": 1,
+      "name": "Sokenzan"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Warden"
+    },
+    {
+      "amount": 1,
+      "name": "Stronghold Furnace"
+    }
+  ]
+}

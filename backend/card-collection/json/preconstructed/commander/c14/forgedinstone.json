@@ -1,0 +1,286 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2014"
+  ],
+  "name": "Forged in Stone",
+  "set": "C14",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Containment Priest"
+    },
+    {
+      "amount": 1,
+      "name": "Whitemane Lion"
+    },
+    {
+      "amount": 1,
+      "name": "Grand Abolisher"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Sanctifiers"
+    },
+    {
+      "amount": 1,
+      "name": "Mentor of the Meek"
+    },
+    {
+      "amount": 1,
+      "name": "Flickerwisp"
+    },
+    {
+      "amount": 1,
+      "name": "Hallowed Spiritkeeper"
+    },
+    {
+      "amount": 1,
+      "name": "Kemba, Kha Regent"
+    },
+    {
+      "amount": 1,
+      "name": "Silverblade Paladin"
+    },
+    {
+      "amount": 1,
+      "name": "Skyhunter Skirmisher"
+    },
+    {
+      "amount": 1,
+      "name": "Angelic Field Marshal"
+    },
+    {
+      "amount": 1,
+      "name": "Celestial Crusader"
+    },
+    {
+      "amount": 1,
+      "name": "Jazal Goldmane"
+    },
+    {
+      "amount": 1,
+      "name": "Geist-Honored Monk"
+    },
+    {
+      "amount": 1,
+      "name": "Requiem Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Adarkar Valkyrie"
+    },
+    {
+      "amount": 1,
+      "name": "Sun Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Sunblast Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Twilight Shepherd"
+    },
+    {
+      "amount": 1,
+      "name": "Angel of the Dire Hour"
+    },
+    {
+      "amount": 1,
+      "name": "Serra Avatar"
+    },
+    {
+      "amount": 1,
+      "name": "Gift of Estates"
+    },
+    {
+      "amount": 1,
+      "name": "Spectral Procession"
+    },
+    {
+      "amount": 1,
+      "name": "Fell the Mighty"
+    },
+    {
+      "amount": 1,
+      "name": "Nomads\u0027 Assembly"
+    },
+    {
+      "amount": 1,
+      "name": "Deploy to the Front"
+    },
+    {
+      "amount": 1,
+      "name": "Martial Coup"
+    },
+    {
+      "amount": 1,
+      "name": "Decree of Justice"
+    },
+    {
+      "amount": 1,
+      "name": "Brave the Elements"
+    },
+    {
+      "amount": 1,
+      "name": "Condemn"
+    },
+    {
+      "amount": 1,
+      "name": "Afterlife"
+    },
+    {
+      "amount": 1,
+      "name": "Midnight Haunting"
+    },
+    {
+      "amount": 1,
+      "name": "Oblation"
+    },
+    {
+      "amount": 1,
+      "name": "Wing Shards"
+    },
+    {
+      "amount": 1,
+      "name": "Benevolent Offering"
+    },
+    {
+      "amount": 1,
+      "name": "Comeuppance"
+    },
+    {
+      "amount": 1,
+      "name": "Return to Dust"
+    },
+    {
+      "amount": 1,
+      "name": "White Sun\u0027s Zenith"
+    },
+    {
+      "amount": 1,
+      "name": "Masterwork of Ingenuity"
+    },
+    {
+      "amount": 1,
+      "name": "Skullclamp"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Marble Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Mask of Memory"
+    },
+    {
+      "amount": 1,
+      "name": "Pearl Medallion"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Commander\u0027s Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Loxodon Warhammer"
+    },
+    {
+      "amount": 1,
+      "name": "Strata Scythe"
+    },
+    {
+      "amount": 1,
+      "name": "Sword of Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Assault Suit"
+    },
+    {
+      "amount": 1,
+      "name": "Bonehoard"
+    },
+    {
+      "amount": 1,
+      "name": "Moonsilver Spear"
+    },
+    {
+      "amount": 1,
+      "name": "Argentum Armor"
+    },
+    {
+      "amount": 1,
+      "name": "Loreseeker\u0027s Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Armistice"
+    },
+    {
+      "amount": 1,
+      "name": "Mobilization"
+    },
+    {
+      "amount": 1,
+      "name": "Sacred Mesa"
+    },
+    {
+      "amount": 1,
+      "name": "Marshal\u0027s Anthem"
+    },
+    {
+      "amount": 1,
+      "name": "Cathars\u0027 Crusade"
+    },
+    {
+      "amount": 1,
+      "name": "True Conviction"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Lighthouse"
+    },
+    {
+      "amount": 1,
+      "name": "Drifting Meadow"
+    },
+    {
+      "amount": 1,
+      "name": "Emeria, the Sky Ruin"
+    },
+    {
+      "amount": 1,
+      "name": "Ghost Quarter"
+    },
+    {
+      "amount": 1,
+      "name": "Karoo"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 32,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Nahiri, the Lithomancer"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW setstatistics AS (
+CREATE MATERIALIZED VIEW setstatistics AS (
     WITH firstprinting AS (
         SELECT DISTINCT ON (printing.cardid) printing.id AS printingid, printing.cardid AS cardid, "set".id AS setid
       FROM printing LEFT JOIN "set" ON "set".id = printing.setid ORDER BY printing.cardid, "set".priority, "set".releasedate ASC NULLS LAST)

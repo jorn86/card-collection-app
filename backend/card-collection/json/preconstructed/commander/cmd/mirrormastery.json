@@ -1,0 +1,310 @@
+{
+  "tag": [
+    "Commander",
+    "Commander"
+  ],
+  "name": "Mirror Mastery",
+  "set": "CMD",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Riku of Two Reflections"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 13,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Fungal Reaches"
+    },
+    {
+      "amount": 1,
+      "name": "Gruul Turf"
+    },
+    {
+      "amount": 1,
+      "name": "Homeward Path"
+    },
+    {
+      "amount": 7,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Boilerworks"
+    },
+    {
+      "amount": 1,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 8,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Growth Chamber"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Crag"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Creek"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Grove"
+    },
+    {
+      "amount": 1,
+      "name": "Animar, Soul of Elements"
+    },
+    {
+      "amount": 1,
+      "name": "Artisan of Kozilek"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Fury"
+    },
+    {
+      "amount": 1,
+      "name": "Baloth Woodcrasher"
+    },
+    {
+      "amount": 1,
+      "name": "Chartooth Cougar"
+    },
+    {
+      "amount": 1,
+      "name": "Conundrum Sphinx"
+    },
+    {
+      "amount": 1,
+      "name": "Deadwood Treefolk"
+    },
+    {
+      "amount": 1,
+      "name": "Edric, Spymaster of Trest"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Aberration"
+    },
+    {
+      "amount": 1,
+      "name": "Faultgrinder"
+    },
+    {
+      "amount": 1,
+      "name": "Fierce Empath"
+    },
+    {
+      "amount": 1,
+      "name": "Hydra Omnivore"
+    },
+    {
+      "amount": 1,
+      "name": "Intet, the Dreamer"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Tusker"
+    },
+    {
+      "amount": 1,
+      "name": "Magmatic Force"
+    },
+    {
+      "amount": 1,
+      "name": "Magus of the Vineyard"
+    },
+    {
+      "amount": 1,
+      "name": "Nucklavee"
+    },
+    {
+      "amount": 1,
+      "name": "Rapacious One"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Sky Swallower"
+    },
+    {
+      "amount": 1,
+      "name": "Spitebellows"
+    },
+    {
+      "amount": 1,
+      "name": "Trench Gorger"
+    },
+    {
+      "amount": 1,
+      "name": "Valley Rannet"
+    },
+    {
+      "amount": 1,
+      "name": "Veteran Explorer"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Brainstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Call the Skybreaker"
+    },
+    {
+      "amount": 1,
+      "name": "Chain Reaction"
+    },
+    {
+      "amount": 1,
+      "name": "Collective Voyage"
+    },
+    {
+      "amount": 1,
+      "name": "Colossal Might"
+    },
+    {
+      "amount": 1,
+      "name": "Cultivate"
+    },
+    {
+      "amount": 1,
+      "name": "Death by Dragons"
+    },
+    {
+      "amount": 1,
+      "name": "Disaster Radius"
+    },
+    {
+      "amount": 1,
+      "name": "Electrolyze"
+    },
+    {
+      "amount": 1,
+      "name": "Explosive Vegetation"
+    },
+    {
+      "amount": 1,
+      "name": "Fire"
+    },
+    {
+      "amount": 1,
+      "name": "Firespout"
+    },
+    {
+      "amount": 1,
+      "name": "Gruul Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Hull Breach"
+    },
+    {
+      "amount": 1,
+      "name": "Hunting Pack"
+    },
+    {
+      "amount": 1,
+      "name": "Invigorate"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Kodama\u0027s Reach"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Prophetic Bolt"
+    },
+    {
+      "amount": 1,
+      "name": "Prophetic Prism"
+    },
+    {
+      "amount": 1,
+      "name": "Ray of Command"
+    },
+    {
+      "amount": 1,
+      "name": "Ruination"
+    },
+    {
+      "amount": 1,
+      "name": "Savage Twister"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Spell Crumple"
+    },
+    {
+      "amount": 1,
+      "name": "Tribute to the Wild"
+    },
+    {
+      "amount": 1,
+      "name": "Vengeful Rebirth"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Flight"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Wildness"
+    },
+    {
+      "amount": 1,
+      "name": "Garruk Wildspeaker"
+    },
+    {
+      "amount": 1,
+      "name": "Æthersnipe"
+    }
+  ]
+}

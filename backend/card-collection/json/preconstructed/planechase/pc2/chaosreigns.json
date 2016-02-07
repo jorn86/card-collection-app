@@ -1,0 +1,210 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2012"
+  ],
+  "name": "Chaos Reigns",
+  "set": "PC2",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Exotic Orchard"
+    },
+    {
+      "amount": 4,
+      "name": "Forest"
+    },
+    {
+      "amount": 5,
+      "name": "Island"
+    },
+    {
+      "amount": 4,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 2,
+      "name": "Shimmering Grotto"
+    },
+    {
+      "amount": 2,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Creek"
+    },
+    {
+      "amount": 1,
+      "name": "Arc Trail"
+    },
+    {
+      "amount": 2,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Beast Within"
+    },
+    {
+      "amount": 1,
+      "name": "Bituminous Blast"
+    },
+    {
+      "amount": 2,
+      "name": "Bloodbraid Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Brutalizer Exarch"
+    },
+    {
+      "amount": 1,
+      "name": "Cultivate"
+    },
+    {
+      "amount": 1,
+      "name": "Deny Reality"
+    },
+    {
+      "amount": 1,
+      "name": "Enigma Sphinx"
+    },
+    {
+      "amount": 1,
+      "name": "Enlisted Wurm"
+    },
+    {
+      "amount": 1,
+      "name": "Erratic Explosion"
+    },
+    {
+      "amount": 1,
+      "name": "Etherium-Horn Sorcerer"
+    },
+    {
+      "amount": 2,
+      "name": "Fiery Fall"
+    },
+    {
+      "amount": 1,
+      "name": "Fractured Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Fusion Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Grand Ossuary"
+    },
+    {
+      "amount": 1,
+      "name": "Guard Gomazoa"
+    },
+    {
+      "amount": 1,
+      "name": "Hedron Fields of Agadeem"
+    },
+    {
+      "amount": 2,
+      "name": "Illusory Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Kathari Remnant"
+    },
+    {
+      "amount": 1,
+      "name": "Last Stand"
+    },
+    {
+      "amount": 1,
+      "name": "Maelstrom Wanderer"
+    },
+    {
+      "amount": 1,
+      "name": "Mass Mutiny"
+    },
+    {
+      "amount": 1,
+      "name": "Mount Keralia"
+    },
+    {
+      "amount": 1,
+      "name": "Mutual Epiphany"
+    },
+    {
+      "amount": 1,
+      "name": "Nephalia"
+    },
+    {
+      "amount": 1,
+      "name": "Noggle Ransacker"
+    },
+    {
+      "amount": 1,
+      "name": "Ondu Giant"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhova"
+    },
+    {
+      "amount": 1,
+      "name": "Peregrine Drake"
+    },
+    {
+      "amount": 1,
+      "name": "Primal Plasma"
+    },
+    {
+      "amount": 1,
+      "name": "Rivals\u0027 Duel"
+    },
+    {
+      "amount": 2,
+      "name": "See Beyond"
+    },
+    {
+      "amount": 2,
+      "name": "Shardless Agent"
+    },
+    {
+      "amount": 1,
+      "name": "Sunken Hope"
+    },
+    {
+      "amount": 1,
+      "name": "Time Distortion"
+    },
+    {
+      "amount": 1,
+      "name": "Trail of the Mage-Rings"
+    },
+    {
+      "amount": 1,
+      "name": "Truga Jungle"
+    },
+    {
+      "amount": 1,
+      "name": "Whirlpool Warrior"
+    },
+    {
+      "amount": 1,
+      "name": "Windriddle Palaces"
+    }
+  ]
+}

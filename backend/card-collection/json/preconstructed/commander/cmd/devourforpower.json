@@ -1,0 +1,314 @@
+{
+  "tag": [
+    "Commander",
+    "Commander"
+  ],
+  "name": "Devour for Power",
+  "set": "CMD",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "The Mimeoplasm"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Dimir Aqueduct"
+    },
+    {
+      "amount": 1,
+      "name": "Dreadship Reef"
+    },
+    {
+      "amount": 8,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Rot Farm"
+    },
+    {
+      "amount": 8,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Jwar Isle Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Lonely Sandbar"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Growth Chamber"
+    },
+    {
+      "amount": 1,
+      "name": "Svogthos, the Restless Tomb"
+    },
+    {
+      "amount": 11,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Acidic Slime"
+    },
+    {
+      "amount": 1,
+      "name": "Artisan of Kozilek"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Woe"
+    },
+    {
+      "amount": 1,
+      "name": "Brawn"
+    },
+    {
+      "amount": 1,
+      "name": "Butcher of Malakir"
+    },
+    {
+      "amount": 1,
+      "name": "Damia, Sage of Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Dark Hatchling"
+    },
+    {
+      "amount": 1,
+      "name": "Desecrator Hag"
+    },
+    {
+      "amount": 1,
+      "name": "Dreamborn Muse"
+    },
+    {
+      "amount": 1,
+      "name": "Eternal Witness"
+    },
+    {
+      "amount": 1,
+      "name": "Extractor Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Fleshbag Marauder"
+    },
+    {
+      "amount": 1,
+      "name": "Gravedigger"
+    },
+    {
+      "amount": 1,
+      "name": "Lhurgoyf"
+    },
+    {
+      "amount": 1,
+      "name": "Mortivore"
+    },
+    {
+      "amount": 1,
+      "name": "Mulldrifter"
+    },
+    {
+      "amount": 1,
+      "name": "Nezumi Graverobber"
+    },
+    {
+      "amount": 1,
+      "name": "Patron of the Nezumi"
+    },
+    {
+      "amount": 1,
+      "name": "Riddlekeeper"
+    },
+    {
+      "amount": 1,
+      "name": "Scythe Specter"
+    },
+    {
+      "amount": 1,
+      "name": "Sewer Nemesis"
+    },
+    {
+      "amount": 1,
+      "name": "Skullbriar, the Walking Grave"
+    },
+    {
+      "amount": 1,
+      "name": "Slipstream Eel"
+    },
+    {
+      "amount": 1,
+      "name": "Solemn Simulacrum"
+    },
+    {
+      "amount": 1,
+      "name": "Szadek, Lord of Secrets"
+    },
+    {
+      "amount": 1,
+      "name": "Triskelavus"
+    },
+    {
+      "amount": 1,
+      "name": "Troll Ascetic"
+    },
+    {
+      "amount": 1,
+      "name": "Vorosh, the Hunter"
+    },
+    {
+      "amount": 1,
+      "name": "Vulturous Zombie"
+    },
+    {
+      "amount": 1,
+      "name": "Wonder"
+    },
+    {
+      "amount": 1,
+      "name": "Wrexial, the Risen Deep"
+    },
+    {
+      "amount": 1,
+      "name": "Yavimaya Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Buried Alive"
+    },
+    {
+      "amount": 1,
+      "name": "Cultivate"
+    },
+    {
+      "amount": 1,
+      "name": "Dimir Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Fact or Fiction"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Grave Pact"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Living Death"
+    },
+    {
+      "amount": 1,
+      "name": "Memory Erosion"
+    },
+    {
+      "amount": 1,
+      "name": "Minds Aglow"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Relic Crush"
+    },
+    {
+      "amount": 1,
+      "name": "Rise from the Grave"
+    },
+    {
+      "amount": 1,
+      "name": "Shared Trauma"
+    },
+    {
+      "amount": 1,
+      "name": "Sign in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Spell Crumple"
+    },
+    {
+      "amount": 1,
+      "name": "Stitch Together"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Flesh"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Tribute to the Wild"
+    },
+    {
+      "amount": 1,
+      "name": "Unnerve"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Flight"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Malice"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Wildness"
+    },
+    {
+      "amount": 1,
+      "name": "Windfall"
+    }
+  ]
+}

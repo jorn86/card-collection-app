@@ -20,7 +20,6 @@ import org.hertsig.dto.Tag;
 
 import com.google.gson.Gson;
 
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.skife.jdbi.v2.IDBI;
 
@@ -28,7 +27,12 @@ import org.skife.jdbi.v2.IDBI;
 @Singleton
 public class PreconstructedDecks implements StartupAction {
     private final Gson gson = new Gson();
-    @Inject private IDBI dbi;
+    private final IDBI dbi;
+
+    @Inject
+    PreconstructedDecks(IDBI dbi) {
+        this.dbi = dbi;
+    }
 
     @Override
     public void run() throws StartupActionException {
@@ -52,7 +56,7 @@ public class PreconstructedDecks implements StartupAction {
     }
 
     private void importPreconstructedDeck(PreconstructedDao dao, Tag baseTag, Path file) throws IOException {
-        log.debug("Checking file {}", file);
+        log.trace("Checking file {}", file);
         PreconstructedDeck deck = gson.fromJson(Files.newBufferedReader(file), PreconstructedDeck.class);
 
         UUID tagId = ensureTagChain(dao, baseTag, deck.getTag());
@@ -85,9 +89,14 @@ public class PreconstructedDecks implements StartupAction {
             Printing printing = dao.getPrinting(setId, card.getName());
             if (printing == null) {
                 Printing fallback = dao.getFallbackPrinting(card.getName(), setId);
-                log.trace("For preconstructed deck {} ({}), card {} does not exist in set {} ({}), falling back to {}",
-                        deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet(), fallback.getSetid());
-                dao.addCard(boardId, fallback.getCardid(), fallback.getId(), card.getAmount());
+                if (fallback == null) {
+                    log.error("Invalid name for card {} in deck {}", card.getName(), deck.getName());
+                }
+                else {
+                    log.trace("For preconstructed deck {} ({}), card {} does not exist in set {} ({}), falling back to {}",
+                            deck.getName(), boardName, card.getName(), card.getEdition(), deck.getSet(), fallback.getSetid());
+                    dao.addCard(boardId, fallback.getCardid(), fallback.getId(), card.getAmount());
+                }
             }
             else {
                 dao.addCard(boardId, printing.getCardid(), printing.getId(), card.getAmount());
@@ -109,19 +118,4 @@ public class PreconstructedDecks implements StartupAction {
         return parent;
     }
 
-    @Data
-    private static class PreconstructedDeck {
-        private List<String> tag;
-        private String name;
-        private String set;
-        private List<Card> mainboard;
-        private List<Card> sideboard;
-
-        @Data
-        private static class Card {
-            private int amount;
-            private String name;
-            private String edition;
-        }
-    }
 }

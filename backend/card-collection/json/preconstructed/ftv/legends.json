@@ -1,0 +1,69 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Legends (2011)",
+  "set": "V11",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Cao Cao, Lord of Wei"
+    },
+    {
+      "amount": 1,
+      "name": "Captain Sisay"
+    },
+    {
+      "amount": 1,
+      "name": "Doran, the Siege Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Kiki-Jiki, Mirror Breaker"
+    },
+    {
+      "amount": 1,
+      "name": "Kresh the Bloodbraided"
+    },
+    {
+      "amount": 1,
+      "name": "Mikaeus, the Lunarch"
+    },
+    {
+      "amount": 1,
+      "name": "Omnath, Locus of Mana"
+    },
+    {
+      "amount": 1,
+      "name": "Oona, Queen of the Fae"
+    },
+    {
+      "amount": 1,
+      "name": "Progenitus"
+    },
+    {
+      "amount": 1,
+      "name": "Rafiq of the Many"
+    },
+    {
+      "amount": 1,
+      "name": "Sharuum the Hegemon"
+    },
+    {
+      "amount": 1,
+      "name": "Sun Quan, Lord of Wu"
+    },
+    {
+      "amount": 1,
+      "name": "Teferi, Mage of Zhalfir"
+    },
+    {
+      "amount": 1,
+      "name": "Ulamog, the Infinite Gyre"
+    },
+    {
+      "amount": 1,
+      "name": "Visara the Dreadful"
+    }
+  ]
+}

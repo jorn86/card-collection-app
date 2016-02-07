@@ -1,0 +1,326 @@
+{
+  "tag": [
+    "Commander",
+    "Commander"
+  ],
+  "name": "Heavenly Inferno",
+  "set": "CMD",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Kaalia of the Vast"
+    },
+    {
+      "amount": 1,
+      "name": "Akoum Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Bojuka Bog"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Garrison"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Cave"
+    },
+    {
+      "amount": 1,
+      "name": "Molten Slagheap"
+    },
+    {
+      "amount": 8,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Basilica"
+    },
+    {
+      "amount": 8,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Carnarium"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 8,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Meadow"
+    },
+    {
+      "amount": 1,
+      "name": "Zoetic Cavern"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma, Angel of Fury"
+    },
+    {
+      "amount": 1,
+      "name": "Angel of Despair"
+    },
+    {
+      "amount": 1,
+      "name": "Angelic Arbiter"
+    },
+    {
+      "amount": 1,
+      "name": "Anger"
+    },
+    {
+      "amount": 1,
+      "name": "Archangel of Strife"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Slaughter"
+    },
+    {
+      "amount": 1,
+      "name": "Basandra, Battle Seraph"
+    },
+    {
+      "amount": 1,
+      "name": "Bladewing the Risen"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Dragon Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Dread Cacodemon"
+    },
+    {
+      "amount": 1,
+      "name": "Duergar Hedge-Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Fallen Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Furnace Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Gwyllion Hedge-Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Lightkeeper of Emeria"
+    },
+    {
+      "amount": 1,
+      "name": "Malfegor"
+    },
+    {
+      "amount": 1,
+      "name": "Mana-Charged Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Mother of Runes"
+    },
+    {
+      "amount": 1,
+      "name": "Oni of Wild Places"
+    },
+    {
+      "amount": 1,
+      "name": "Oros, the Avenger"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Razorjaw Oni"
+    },
+    {
+      "amount": 1,
+      "name": "Reiver Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Serra Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Shattered Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Tariel, Reckoner of Souls"
+    },
+    {
+      "amount": 1,
+      "name": "Voice of All"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma\u0027s Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Bathe in Light"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Cleansing Beam"
+    },
+    {
+      "amount": 1,
+      "name": "Comet Storm"
+    },
+    {
+      "amount": 1,
+      "name": "Congregate"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Ingot"
+    },
+    {
+      "amount": 1,
+      "name": "Death by Dragons"
+    },
+    {
+      "amount": 1,
+      "name": "Diabolic Tutor"
+    },
+    {
+      "amount": 1,
+      "name": "Earthquake"
+    },
+    {
+      "amount": 1,
+      "name": "Evincar\u0027s Justice"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Master Warcraft"
+    },
+    {
+      "amount": 1,
+      "name": "Mortify"
+    },
+    {
+      "amount": 1,
+      "name": "Orim\u0027s Thunder"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Path to Exile"
+    },
+    {
+      "amount": 1,
+      "name": "Pyrohemia"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Return to Dust"
+    },
+    {
+      "amount": 1,
+      "name": "Righteous Cause"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Snare"
+    },
+    {
+      "amount": 1,
+      "name": "Stranglehold"
+    },
+    {
+      "amount": 1,
+      "name": "Sulfurous Blast"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Flesh"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Terminate"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Duty"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Malice"
+    },
+    {
+      "amount": 1,
+      "name": "Wrecking Ball"
+    }
+  ]
+}

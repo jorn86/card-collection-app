@@ -1,0 +1,69 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Dragons (2008)",
+  "set": "DRB",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Bladewing the Risen"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Draco"
+    },
+    {
+      "amount": 1,
+      "name": "Dragon Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Dragonstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Ebon Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Form of the Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Hellkite Overlord"
+    },
+    {
+      "amount": 1,
+      "name": "Kokusho, the Evening Star"
+    },
+    {
+      "amount": 1,
+      "name": "Nicol Bolas"
+    },
+    {
+      "amount": 1,
+      "name": "Niv-Mizzet, the Firemind"
+    },
+    {
+      "amount": 1,
+      "name": "Rith, the Awakener"
+    },
+    {
+      "amount": 1,
+      "name": "Shivan Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Thunder Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Two-Headed Dragon"
+    }
+  ]
+}
