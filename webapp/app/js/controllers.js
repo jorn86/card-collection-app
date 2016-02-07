@@ -41,7 +41,7 @@ angular.module('card-app')
             // wait for $stateParams to realize there is one
             $timeout(function() {
                 expandTo($scope.preconstructedDecks, null, $stateParams.id);
-            });
+            }, 1000);
         });
     })
 

@@ -1,0 +1,133 @@
+{
+  "tag": [
+    "Premium Deck Series"
+  ],
+  "name": "Fire \u0026 Lightning",
+  "set": "PD2",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Barbarian Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Ghitu Encampment"
+    },
+    {
+      "amount": 21,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Teetering Peaks"
+    },
+    {
+      "amount": 1,
+      "name": "Ball Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Boggart Ram-Gang"
+    },
+    {
+      "amount": 1,
+      "name": "Cinder Pyromancer"
+    },
+    {
+      "amount": 1,
+      "name": "Figure of Destiny"
+    },
+    {
+      "amount": 1,
+      "name": "Fire Servant"
+    },
+    {
+      "amount": 1,
+      "name": "Grim Lavamancer"
+    },
+    {
+      "amount": 1,
+      "name": "Hellspark Elemental"
+    },
+    {
+      "amount": 2,
+      "name": "Jackal Pup"
+    },
+    {
+      "amount": 1,
+      "name": "Jaya Ballard, Task Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Keldon Champion"
+    },
+    {
+      "amount": 2,
+      "name": "Keldon Marauders"
+    },
+    {
+      "amount": 2,
+      "name": "Mogg Fanatic"
+    },
+    {
+      "amount": 2,
+      "name": "Mogg Flunkies"
+    },
+    {
+      "amount": 2,
+      "name": "Spark Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Vulshok Sorcerer"
+    },
+    {
+      "amount": 1,
+      "name": "Browbeat"
+    },
+    {
+      "amount": 1,
+      "name": "Chain Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Fireball"
+    },
+    {
+      "amount": 1,
+      "name": "Fireblast"
+    },
+    {
+      "amount": 1,
+      "name": "Flames of the Blood Hand"
+    },
+    {
+      "amount": 1,
+      "name": "Hammer of Bogardan"
+    },
+    {
+      "amount": 4,
+      "name": "Lightning Bolt"
+    },
+    {
+      "amount": 1,
+      "name": "Pillage"
+    },
+    {
+      "amount": 1,
+      "name": "Price of Progress"
+    },
+    {
+      "amount": 1,
+      "name": "Reverberate"
+    },
+    {
+      "amount": 1,
+      "name": "Sudden Impact"
+    },
+    {
+      "amount": 1,
+      "name": "Thunderbolt"
+    }
+  ]
+}
