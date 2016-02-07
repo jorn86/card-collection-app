@@ -1,0 +1,173 @@
+{
+  "tag": [
+    "Premium Deck Series"
+  ],
+  "name": "Slivers",
+  "set": "H09",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Ancient Ziggurat"
+    },
+    {
+      "amount": 5,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Island"
+    },
+    {
+      "amount": 3,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rootbound Crag"
+    },
+    {
+      "amount": 2,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 2,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 2,
+      "name": "Vivid Creek"
+    },
+    {
+      "amount": 2,
+      "name": "Vivid Grove"
+    },
+    {
+      "amount": 1,
+      "name": "Acidic Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Amoeboid Changeling"
+    },
+    {
+      "amount": 1,
+      "name": "Aphetto Dredging"
+    },
+    {
+      "amount": 1,
+      "name": "Armor Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Barbed Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Brood Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Clot Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Coat of Arms"
+    },
+    {
+      "amount": 1,
+      "name": "Crystalline Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Distant Melody"
+    },
+    {
+      "amount": 1,
+      "name": "Frenzy Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Fungus Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Fury Sliver"
+    },
+    {
+      "amount": 2,
+      "name": "Gemhide Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Heart Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Heartstone"
+    },
+    {
+      "amount": 1,
+      "name": "Hibernation Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Homing Sliver"
+    },
+    {
+      "amount": 2,
+      "name": "Metallic Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Might Sliver"
+    },
+    {
+      "amount": 2,
+      "name": "Muscle Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Necrotic Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Quick Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Sliver Overlord"
+    },
+    {
+      "amount": 2,
+      "name": "Spectral Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Spined Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Victual Sliver"
+    },
+    {
+      "amount": 2,
+      "name": "Virulent Sliver"
+    },
+    {
+      "amount": 1,
+      "name": "Wild Pair"
+    },
+    {
+      "amount": 1,
+      "name": "Winged Sliver"
+    }
+  ]
+}

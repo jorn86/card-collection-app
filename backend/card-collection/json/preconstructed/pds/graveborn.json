@@ -1,0 +1,117 @@
+{
+  "tag": [
+    "Premium Deck Series"
+  ],
+  "name": "Graveborn",
+  "set": "PD3",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Crystal Vein"
+    },
+    {
+      "amount": 1,
+      "name": "Ebon Stronghold"
+    },
+    {
+      "amount": 1,
+      "name": "Polluted Mire"
+    },
+    {
+      "amount": 21,
+      "name": "Swamp"
+    },
+    {
+      "amount": 3,
+      "name": "Animate Dead"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Woe"
+    },
+    {
+      "amount": 1,
+      "name": "Blazing Archon"
+    },
+    {
+      "amount": 2,
+      "name": "Buried Alive"
+    },
+    {
+      "amount": 1,
+      "name": "Cabal Therapy"
+    },
+    {
+      "amount": 1,
+      "name": "Crosis, the Purger"
+    },
+    {
+      "amount": 2,
+      "name": "Diabolic Servitude"
+    },
+    {
+      "amount": 2,
+      "name": "Dread Return"
+    },
+    {
+      "amount": 3,
+      "name": "Duress"
+    },
+    {
+      "amount": 1,
+      "name": "Entomb"
+    },
+    {
+      "amount": 3,
+      "name": "Exhume"
+    },
+    {
+      "amount": 1,
+      "name": "Faceless Butcher"
+    },
+    {
+      "amount": 2,
+      "name": "Hidden Horror"
+    },
+    {
+      "amount": 1,
+      "name": "Inkwell Leviathan"
+    },
+    {
+      "amount": 2,
+      "name": "Last Rites"
+    },
+    {
+      "amount": 2,
+      "name": "Putrid Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Reanimate"
+    },
+    {
+      "amount": 2,
+      "name": "Sickening Dreams"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of the Steel Wind"
+    },
+    {
+      "amount": 1,
+      "name": "Terastodon"
+    },
+    {
+      "amount": 1,
+      "name": "Twisted Abomination"
+    },
+    {
+      "amount": 1,
+      "name": "Verdant Force"
+    },
+    {
+      "amount": 1,
+      "name": "Zombie Infestation"
+    }
+  ]
+}
