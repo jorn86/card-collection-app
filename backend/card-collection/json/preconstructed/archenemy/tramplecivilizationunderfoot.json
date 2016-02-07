@@ -1,0 +1,233 @@
+{
+  "tag": [
+    "Archenemy"
+  ],
+  "name": "Trample Civilization Underfoot",
+  "set": "ARC",
+  "mainboard": [
+    {
+      "amount": 10,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Graypelt Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Khalni Garden"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Verge"
+    },
+    {
+      "amount": 1,
+      "name": "Llanowar Reborn"
+    },
+    {
+      "amount": 1,
+      "name": "Mosswort Bridge"
+    },
+    {
+      "amount": 1,
+      "name": "Nantuko Monastery"
+    },
+    {
+      "amount": 5,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Vitu-Ghazi, the City-Tree"
+    },
+    {
+      "amount": 1,
+      "name": "Armadillo Cloak"
+    },
+    {
+      "amount": 2,
+      "name": "Every Last Vestige Shall Rot"
+    },
+    {
+      "amount": 1,
+      "name": "Evil Comes to Fruition"
+    },
+    {
+      "amount": 1,
+      "name": "Feral Hydra"
+    },
+    {
+      "amount": 2,
+      "name": "Fertilid"
+    },
+    {
+      "amount": 1,
+      "name": "Fog"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Ancient"
+    },
+    {
+      "amount": 1,
+      "name": "Gleeful Sabotage"
+    },
+    {
+      "amount": 1,
+      "name": "Harmonize"
+    },
+    {
+      "amount": 1,
+      "name": "Heroes\u0027 Reunion"
+    },
+    {
+      "amount": 1,
+      "name": "Hunting Moa"
+    },
+    {
+      "amount": 1,
+      "name": "I Call on the Ancient Magics"
+    },
+    {
+      "amount": 1,
+      "name": "I Delight in Your Convulsions"
+    },
+    {
+      "amount": 1,
+      "name": "Into the Earthen Maw"
+    },
+    {
+      "amount": 1,
+      "name": "Introductions Are in Order"
+    },
+    {
+      "amount": 1,
+      "name": "Kamahl, Fist of Krosa"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Tusker"
+    },
+    {
+      "amount": 1,
+      "name": "Leaf Gilder"
+    },
+    {
+      "amount": 1,
+      "name": "May Civilization Collapse"
+    },
+    {
+      "amount": 1,
+      "name": "Molimo, Maro-Sorcerer"
+    },
+    {
+      "amount": 2,
+      "name": "Nature Demands an Offering"
+    },
+    {
+      "amount": 2,
+      "name": "Nature Shields Its Own"
+    },
+    {
+      "amount": 2,
+      "name": "Oblivion Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Pale Recluse"
+    },
+    {
+      "amount": 1,
+      "name": "Path to Exile"
+    },
+    {
+      "amount": 1,
+      "name": "Plummet"
+    },
+    {
+      "amount": 1,
+      "name": "Primal Command"
+    },
+    {
+      "amount": 1,
+      "name": "Rancor"
+    },
+    {
+      "amount": 1,
+      "name": "Realms Befitting My Majesty"
+    },
+    {
+      "amount": 2,
+      "name": "Roots of All Evil"
+    },
+    {
+      "amount": 2,
+      "name": "Sakura-Tribe Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Shinen of Life\u0027s Roar"
+    },
+    {
+      "amount": 1,
+      "name": "Spider Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "The Very Soil Shall Shake"
+    },
+    {
+      "amount": 1,
+      "name": "Thelonite Hermit"
+    },
+    {
+      "amount": 1,
+      "name": "Verdeloth the Ancient"
+    },
+    {
+      "amount": 2,
+      "name": "Wall of Roots"
+    },
+    {
+      "amount": 1,
+      "name": "Watchwolf"
+    },
+    {
+      "amount": 1,
+      "name": "Wax / Wane"
+    },
+    {
+      "amount": 2,
+      "name": "Wickerbough Elder"
+    },
+    {
+      "amount": 2,
+      "name": "Yavimaya Dryad"
+    },
+    {
+      "amount": 1,
+      "name": "Your Fate Is Thrice Sealed"
+    },
+    {
+      "amount": 1,
+      "name": "Your Puny Minds Cannot Fathom"
+    },
+    {
+      "amount": 2,
+      "name": "Your Will Is Not Your Own"
+    }
+  ]
+}

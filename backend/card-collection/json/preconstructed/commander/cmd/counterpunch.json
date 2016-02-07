@@ -1,0 +1,318 @@
+{
+  "tag": [
+    "Commander",
+    "Commander"
+  ],
+  "name": "Counterpunch",
+  "set": "CMD",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Ghave, Guru of Spores"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 10,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Rot Farm"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Basilica"
+    },
+    {
+      "amount": 8,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Sanctuary"
+    },
+    {
+      "amount": 8,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Grove"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Marsh"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Meadow"
+    },
+    {
+      "amount": 1,
+      "name": "Aquastrand Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Celestial Force"
+    },
+    {
+      "amount": 1,
+      "name": "Chorus of the Conclave"
+    },
+    {
+      "amount": 1,
+      "name": "Dark Hatchling"
+    },
+    {
+      "amount": 1,
+      "name": "Deadly Recluse"
+    },
+    {
+      "amount": 1,
+      "name": "Fertilid"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Hornet Queen"
+    },
+    {
+      "amount": 1,
+      "name": "Karador, Ghost Chieftain"
+    },
+    {
+      "amount": 1,
+      "name": "Monk Realist"
+    },
+    {
+      "amount": 1,
+      "name": "Nantuko Husk"
+    },
+    {
+      "amount": 1,
+      "name": "Penumbra Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Sakura-Tribe Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Scavenging Ooze"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Evangel"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Shriekmaw"
+    },
+    {
+      "amount": 1,
+      "name": "Sigil Captain"
+    },
+    {
+      "amount": 1,
+      "name": "Spawnwrithe"
+    },
+    {
+      "amount": 1,
+      "name": "Spike Feeder"
+    },
+    {
+      "amount": 1,
+      "name": "Squallmonger"
+    },
+    {
+      "amount": 1,
+      "name": "Symbiotic Wurm"
+    },
+    {
+      "amount": 1,
+      "name": "Teneb, the Harvester"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Nighthawk"
+    },
+    {
+      "amount": 1,
+      "name": "Vish Kal, Blood Arbiter"
+    },
+    {
+      "amount": 1,
+      "name": "Yavimaya Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Acorn Catapult"
+    },
+    {
+      "amount": 1,
+      "name": "Afterlife"
+    },
+    {
+      "amount": 1,
+      "name": "Alliance of Arms"
+    },
+    {
+      "amount": 1,
+      "name": "Attrition"
+    },
+    {
+      "amount": 1,
+      "name": "Aura Shards"
+    },
+    {
+      "amount": 1,
+      "name": "Awakening Zone"
+    },
+    {
+      "amount": 1,
+      "name": "Bestial Menace"
+    },
+    {
+      "amount": 1,
+      "name": "Cobra Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Cultivate"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Ingot"
+    },
+    {
+      "amount": 1,
+      "name": "Death Mutation"
+    },
+    {
+      "amount": 1,
+      "name": "Doom Blade"
+    },
+    {
+      "amount": 1,
+      "name": "Fists of Ironwood"
+    },
+    {
+      "amount": 1,
+      "name": "Footbottom Feast"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Harmonize"
+    },
+    {
+      "amount": 1,
+      "name": "Hex"
+    },
+    {
+      "amount": 1,
+      "name": "Hour of Reckoning"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Mortify"
+    },
+    {
+      "amount": 1,
+      "name": "Necrogenesis"
+    },
+    {
+      "amount": 1,
+      "name": "Nemesis Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Skullclamp"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Snare"
+    },
+    {
+      "amount": 1,
+      "name": "Storm Herd"
+    },
+    {
+      "amount": 1,
+      "name": "Syphon Flesh"
+    },
+    {
+      "amount": 1,
+      "name": "Tribute to the Wild"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Duty"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Malice"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Wildness"
+    }
+  ]
+}

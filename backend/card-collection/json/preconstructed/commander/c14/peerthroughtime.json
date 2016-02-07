@@ -1,0 +1,290 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2014"
+  ],
+  "name": "Peer through Time",
+  "set": "C14",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Azure Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Fathom Seer"
+    },
+    {
+      "amount": 1,
+      "name": "Fog Bank"
+    },
+    {
+      "amount": 1,
+      "name": "Willbender"
+    },
+    {
+      "amount": 1,
+      "name": "Dulcet Sirens"
+    },
+    {
+      "amount": 1,
+      "name": "Riptide Survivor"
+    },
+    {
+      "amount": 1,
+      "name": "Sea Gate Oracle"
+    },
+    {
+      "amount": 1,
+      "name": "Shaper Parasite"
+    },
+    {
+      "amount": 1,
+      "name": "Reef Worm"
+    },
+    {
+      "amount": 1,
+      "name": "Mulldrifter"
+    },
+    {
+      "amount": 1,
+      "name": "Ixidron"
+    },
+    {
+      "amount": 1,
+      "name": "Stitcher Geralf"
+    },
+    {
+      "amount": 1,
+      "name": "Stormsurge Kraken"
+    },
+    {
+      "amount": 1,
+      "name": "Steel Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Brine Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Frost Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of Jwar Isle"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of Magosi"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Ingester"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of Uthuun"
+    },
+    {
+      "amount": 1,
+      "name": "Hoverguard Sweepers"
+    },
+    {
+      "amount": 1,
+      "name": "Lorthos, the Tidemaker"
+    },
+    {
+      "amount": 1,
+      "name": "Artisan of Kozilek"
+    },
+    {
+      "amount": 1,
+      "name": "Breaching Leviathan"
+    },
+    {
+      "amount": 1,
+      "name": "Deep-Sea Kraken"
+    },
+    {
+      "amount": 1,
+      "name": "Call to Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Compulsive Research"
+    },
+    {
+      "amount": 1,
+      "name": "Concentrate"
+    },
+    {
+      "amount": 1,
+      "name": "Rite of Replication"
+    },
+    {
+      "amount": 1,
+      "name": "Rush of Knowledge"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Gale"
+    },
+    {
+      "amount": 1,
+      "name": "Distorting Wake"
+    },
+    {
+      "amount": 1,
+      "name": "Pongify"
+    },
+    {
+      "amount": 1,
+      "name": "Cyclonic Rift"
+    },
+    {
+      "amount": 1,
+      "name": "Into the Roil"
+    },
+    {
+      "amount": 1,
+      "name": "Turn to Frog"
+    },
+    {
+      "amount": 1,
+      "name": "Exclude"
+    },
+    {
+      "amount": 1,
+      "name": "Cackling Counterpart"
+    },
+    {
+      "amount": 1,
+      "name": "Domineering Will"
+    },
+    {
+      "amount": 1,
+      "name": "Dismiss"
+    },
+    {
+      "amount": 1,
+      "name": "Intellectual Offering"
+    },
+    {
+      "amount": 1,
+      "name": "Stroke of Genius"
+    },
+    {
+      "amount": 1,
+      "name": "Everflowing Chalice"
+    },
+    {
+      "amount": 1,
+      "name": "Tormod\u0027s Crypt"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Mind Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Sapphire Medallion"
+    },
+    {
+      "amount": 1,
+      "name": "Sky Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Commander\u0027s Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Crown of Doom"
+    },
+    {
+      "amount": 1,
+      "name": "Unstable Obelisk"
+    },
+    {
+      "amount": 1,
+      "name": "Worn Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Assault Suit"
+    },
+    {
+      "amount": 1,
+      "name": "Nevinyrral\u0027s Disk"
+    },
+    {
+      "amount": 1,
+      "name": "Thran Dynamo"
+    },
+    {
+      "amount": 1,
+      "name": "Ur-Golem\u0027s Eye"
+    },
+    {
+      "amount": 1,
+      "name": "Dreamstone Hedron"
+    },
+    {
+      "amount": 1,
+      "name": "Fool\u0027s Demise"
+    },
+    {
+      "amount": 1,
+      "name": "Infinite Reflection"
+    },
+    {
+      "amount": 1,
+      "name": "Well of Ideas"
+    },
+    {
+      "amount": 1,
+      "name": "Coral Atoll"
+    },
+    {
+      "amount": 1,
+      "name": "Ghost Quarter"
+    },
+    {
+      "amount": 1,
+      "name": "Lonely Sandbar"
+    },
+    {
+      "amount": 1,
+      "name": "Myriad Landscape"
+    },
+    {
+      "amount": 1,
+      "name": "Remote Isle"
+    },
+    {
+      "amount": 1,
+      "name": "Tectonic Edge"
+    },
+    {
+      "amount": 1,
+      "name": "Zoetic Cavern"
+    },
+    {
+      "amount": 31,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Teferi, Temporal Archmage"
+    }
+  ]
+}

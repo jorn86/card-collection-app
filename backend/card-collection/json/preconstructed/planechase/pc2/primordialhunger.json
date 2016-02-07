@@ -1,0 +1,194 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2012"
+  ],
+  "name": "Primordial Hunger",
+  "set": "PC2",
+  "mainboard": [
+    {
+      "amount": 11,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Gruul Turf"
+    },
+    {
+      "amount": 2,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Khalni Garden"
+    },
+    {
+      "amount": 6,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Skarrg, the Rage Pits"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Awakening Zone"
+    },
+    {
+      "amount": 2,
+      "name": "Beetleback Chief"
+    },
+    {
+      "amount": 2,
+      "name": "Brindle Shoat"
+    },
+    {
+      "amount": 1,
+      "name": "Dragonlair Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Fiery Conclusion"
+    },
+    {
+      "amount": 1,
+      "name": "Fires of Yavimaya"
+    },
+    {
+      "amount": 2,
+      "name": "Flayer Husk"
+    },
+    {
+      "amount": 1,
+      "name": "Fling"
+    },
+    {
+      "amount": 1,
+      "name": "Fractured Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Furnace Layer"
+    },
+    {
+      "amount": 1,
+      "name": "Gluttonous Slime"
+    },
+    {
+      "amount": 1,
+      "name": "Hellion Eruption"
+    },
+    {
+      "amount": 1,
+      "name": "Hellkite Hatchling"
+    },
+    {
+      "amount": 1,
+      "name": "Hissing Iguanar"
+    },
+    {
+      "amount": 1,
+      "name": "Jund"
+    },
+    {
+      "amount": 1,
+      "name": "Kilnspire District"
+    },
+    {
+      "amount": 1,
+      "name": "Lair of the Ashen Idol"
+    },
+    {
+      "amount": 1,
+      "name": "Mark of Mutiny"
+    },
+    {
+      "amount": 1,
+      "name": "Mitotic Slime"
+    },
+    {
+      "amount": 2,
+      "name": "Mudbutton Torchrunner"
+    },
+    {
+      "amount": 1,
+      "name": "Mycoloth"
+    },
+    {
+      "amount": 1,
+      "name": "Nest Invader"
+    },
+    {
+      "amount": 1,
+      "name": "Nullmage Advocate"
+    },
+    {
+      "amount": 1,
+      "name": "Orochi Colony"
+    },
+    {
+      "amount": 1,
+      "name": "Overrun"
+    },
+    {
+      "amount": 1,
+      "name": "Penumbra Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Prahv"
+    },
+    {
+      "amount": 1,
+      "name": "Preyseizer Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Reality Shaping"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Loft Gardens"
+    },
+    {
+      "amount": 1,
+      "name": "Spatial Merging"
+    },
+    {
+      "amount": 1,
+      "name": "Stensia"
+    },
+    {
+      "amount": 1,
+      "name": "Thorn-Thrash Viashino"
+    },
+    {
+      "amount": 1,
+      "name": "Thromok the Insatiable"
+    },
+    {
+      "amount": 2,
+      "name": "Thunder-Thrash Elder"
+    },
+    {
+      "amount": 2,
+      "name": "Tukatongue Thallid"
+    },
+    {
+      "amount": 2,
+      "name": "Viridian Emissary"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Blossoms"
+    },
+    {
+      "amount": 1,
+      "name": "Warstorm Surge"
+    }
+  ]
+}

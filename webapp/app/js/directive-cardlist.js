@@ -5,7 +5,7 @@ angular.module('card-app')
             templateUrl: 'partials/cardlist.html',
             scope: {list: '=', editable: '='},
             controller: function($scope, $rootScope) {
-                var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Other'];
+                var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
                     if (card.type) {
                         if (card.type.indexOf('Land') >= 0) {

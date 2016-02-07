@@ -1,0 +1,69 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Relics (2010)",
+  "set": "V10",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Æther Vial"
+    },
+    {
+      "amount": 1,
+      "name": "Black Vise"
+    },
+    {
+      "amount": 1,
+      "name": "Isochron Scepter"
+    },
+    {
+      "amount": 1,
+      "name": "Ivory Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Jester\u0027s Cap"
+    },
+    {
+      "amount": 1,
+      "name": "Karn, Silver Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Masticore"
+    },
+    {
+      "amount": 1,
+      "name": "Memory Jar"
+    },
+    {
+      "amount": 1,
+      "name": "Mirari"
+    },
+    {
+      "amount": 1,
+      "name": "Mox Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Nevinyrral\u0027s Disk"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Sundering Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Sword of Body and Mind"
+    },
+    {
+      "amount": 1,
+      "name": "Zuran Orb"
+    }
+  ]
+}

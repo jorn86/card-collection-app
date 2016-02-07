@@ -24,6 +24,7 @@ public class StartupActions implements Runnable {
                 log.info("Running startup action {}", action.getClass().getSimpleName());
                 action.run();
             }
+            log.info("Startup actions finished");
         }
         catch (StartupActionException e) {
             log.error("Exception running startup action", e);

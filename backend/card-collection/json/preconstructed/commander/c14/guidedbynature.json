@@ -1,0 +1,314 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2014"
+  ],
+  "name": "Guided by Nature",
+  "set": "C14",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Elvish Mystic"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Skysweeper"
+    },
+    {
+      "amount": 1,
+      "name": "Essence Warden"
+    },
+    {
+      "amount": 1,
+      "name": "Joraga Warcaller"
+    },
+    {
+      "amount": 1,
+      "name": "Llanowar Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Sylvan Safekeeper"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Visionary"
+    },
+    {
+      "amount": 1,
+      "name": "Priest of Titania"
+    },
+    {
+      "amount": 1,
+      "name": "Sylvan Ranger"
+    },
+    {
+      "amount": 1,
+      "name": "Thornweald Archer"
+    },
+    {
+      "amount": 1,
+      "name": "Wellwisher"
+    },
+    {
+      "amount": 1,
+      "name": "Farhaven Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Imperious Perfect"
+    },
+    {
+      "amount": 1,
+      "name": "Reclamation Sage"
+    },
+    {
+      "amount": 1,
+      "name": "Timberwatch Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Titania\u0027s Chosen"
+    },
+    {
+      "amount": 1,
+      "name": "Wood Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Archdruid"
+    },
+    {
+      "amount": 1,
+      "name": "Ezuri, Renegade Leader"
+    },
+    {
+      "amount": 1,
+      "name": "Drove of Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Immaculate Magistrate"
+    },
+    {
+      "amount": 1,
+      "name": "Wren\u0027s Run Packmaster"
+    },
+    {
+      "amount": 1,
+      "name": "Lys Alana Huntmaster"
+    },
+    {
+      "amount": 1,
+      "name": "Masked Admirers"
+    },
+    {
+      "amount": 1,
+      "name": "Wolfbriar Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Creeperhulk"
+    },
+    {
+      "amount": 1,
+      "name": "Silklash Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Titania, Protector of Argoth"
+    },
+    {
+      "amount": 1,
+      "name": "Grave Sifter"
+    },
+    {
+      "amount": 1,
+      "name": "Primordial Sage"
+    },
+    {
+      "amount": 1,
+      "name": "Rampaging Baloths"
+    },
+    {
+      "amount": 1,
+      "name": "Soul of the Harvest"
+    },
+    {
+      "amount": 1,
+      "name": "Thunderfoot Baloth"
+    },
+    {
+      "amount": 1,
+      "name": "Siege Behemoth"
+    },
+    {
+      "amount": 1,
+      "name": "Tornado Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Terastodon"
+    },
+    {
+      "amount": 1,
+      "name": "Lifeblood Hydra"
+    },
+    {
+      "amount": 1,
+      "name": "Hunting Triad"
+    },
+    {
+      "amount": 1,
+      "name": "Whirlwind"
+    },
+    {
+      "amount": 1,
+      "name": "Overwhelming Stampede"
+    },
+    {
+      "amount": 1,
+      "name": "Overrun"
+    },
+    {
+      "amount": 1,
+      "name": "Grim Flowering"
+    },
+    {
+      "amount": 1,
+      "name": "Collective Unconscious"
+    },
+    {
+      "amount": 1,
+      "name": "Desert Twister"
+    },
+    {
+      "amount": 1,
+      "name": "Wave of Vitriol"
+    },
+    {
+      "amount": 1,
+      "name": "Praetor\u0027s Counsel"
+    },
+    {
+      "amount": 1,
+      "name": "Sylvan Offering"
+    },
+    {
+      "amount": 1,
+      "name": "Harrow"
+    },
+    {
+      "amount": 1,
+      "name": "Fresh Meat"
+    },
+    {
+      "amount": 1,
+      "name": "Skullclamp"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Emerald Medallion"
+    },
+    {
+      "amount": 1,
+      "name": "Moss Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Commander\u0027s Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Assault Suit"
+    },
+    {
+      "amount": 1,
+      "name": "Seer\u0027s Sundial"
+    },
+    {
+      "amount": 1,
+      "name": "Predator, Flagship"
+    },
+    {
+      "amount": 1,
+      "name": "Loreseeker\u0027s Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Beastmaster Ascension"
+    },
+    {
+      "amount": 1,
+      "name": "Song of the Dryads"
+    },
+    {
+      "amount": 1,
+      "name": "Wolfcaller\u0027s Howl"
+    },
+    {
+      "amount": 1,
+      "name": "Crystal Vein"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Gargoyle Castle"
+    },
+    {
+      "amount": 1,
+      "name": "Ghost Quarter"
+    },
+    {
+      "amount": 1,
+      "name": "Haunted Fengraf"
+    },
+    {
+      "amount": 1,
+      "name": "Havenwood Battleground"
+    },
+    {
+      "amount": 1,
+      "name": "Jungle Basin"
+    },
+    {
+      "amount": 1,
+      "name": "Myriad Landscape"
+    },
+    {
+      "amount": 1,
+      "name": "Oran-Rief, the Vastwood"
+    },
+    {
+      "amount": 1,
+      "name": "Slippery Karst"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 25,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Freyalise, Llanowar\u0027s Fury"
+    }
+  ]
+}

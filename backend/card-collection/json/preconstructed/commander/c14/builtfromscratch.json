@@ -1,0 +1,298 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2014"
+  ],
+  "name": "Built from Scratch",
+  "set": "C14",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Goblin Welder"
+    },
+    {
+      "amount": 1,
+      "name": "Epochrasite"
+    },
+    {
+      "amount": 1,
+      "name": "Myr Retriever"
+    },
+    {
+      "amount": 1,
+      "name": "Myr Sire"
+    },
+    {
+      "amount": 1,
+      "name": "Bottle Gnomes"
+    },
+    {
+      "amount": 1,
+      "name": "Cathodion"
+    },
+    {
+      "amount": 1,
+      "name": "Junk Diver"
+    },
+    {
+      "amount": 1,
+      "name": "Palladium Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Pilgrim\u0027s Eye"
+    },
+    {
+      "amount": 1,
+      "name": "Tuktuk the Explorer"
+    },
+    {
+      "amount": 1,
+      "name": "Dualcaster Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Feldon of the Third Path"
+    },
+    {
+      "amount": 1,
+      "name": "Solemn Simulacrum"
+    },
+    {
+      "amount": 1,
+      "name": "Flametongue Kavu"
+    },
+    {
+      "amount": 1,
+      "name": "Beetleback Chief"
+    },
+    {
+      "amount": 1,
+      "name": "Ingot Chewer"
+    },
+    {
+      "amount": 1,
+      "name": "Steel Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Wurmcoil Engine"
+    },
+    {
+      "amount": 1,
+      "name": "Spitebellows"
+    },
+    {
+      "amount": 1,
+      "name": "Hoard-Smelter Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Warmonger Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Myr Battlesphere"
+    },
+    {
+      "amount": 1,
+      "name": "Pentavus"
+    },
+    {
+      "amount": 1,
+      "name": "Tyrant\u0027s Familiar"
+    },
+    {
+      "amount": 1,
+      "name": "Bosh, Iron Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Faithless Looting"
+    },
+    {
+      "amount": 1,
+      "name": "Whipflare"
+    },
+    {
+      "amount": 1,
+      "name": "Scrap Mastery"
+    },
+    {
+      "amount": 1,
+      "name": "Incite Rebellion"
+    },
+    {
+      "amount": 1,
+      "name": "Blasphemous Act"
+    },
+    {
+      "amount": 1,
+      "name": "Impact Resonance"
+    },
+    {
+      "amount": 1,
+      "name": "Chaos Warp"
+    },
+    {
+      "amount": 1,
+      "name": "Volcanic Offering"
+    },
+    {
+      "amount": 1,
+      "name": "Word of Seizing"
+    },
+    {
+      "amount": 1,
+      "name": "Magmaquake"
+    },
+    {
+      "amount": 1,
+      "name": "Starstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Everflowing Chalice"
+    },
+    {
+      "amount": 1,
+      "name": "Panic Spellbomb"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Wayfarer\u0027s Bauble"
+    },
+    {
+      "amount": 1,
+      "name": "Fire Diamond"
+    },
+    {
+      "amount": 1,
+      "name": "Ichor Wellspring"
+    },
+    {
+      "amount": 1,
+      "name": "Liquimetal Coating"
+    },
+    {
+      "amount": 1,
+      "name": "Mind Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Mycosynth Wellspring"
+    },
+    {
+      "amount": 1,
+      "name": "Ruby Medallion"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Commander\u0027s Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Jalum Tome"
+    },
+    {
+      "amount": 1,
+      "name": "Pristine Talisman"
+    },
+    {
+      "amount": 1,
+      "name": "Unstable Obelisk"
+    },
+    {
+      "amount": 1,
+      "name": "Trading Post"
+    },
+    {
+      "amount": 1,
+      "name": "Caged Sun"
+    },
+    {
+      "amount": 1,
+      "name": "Dreamstone Hedron"
+    },
+    {
+      "amount": 1,
+      "name": "Loreseeker\u0027s Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Spine of Ish Sah"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Citadel"
+    },
+    {
+      "amount": 1,
+      "name": "Great Furnace"
+    },
+    {
+      "amount": 1,
+      "name": "Bitter Feud"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Lighthouse"
+    },
+    {
+      "amount": 1,
+      "name": "Buried Ruin"
+    },
+    {
+      "amount": 1,
+      "name": "Dormant Volcano"
+    },
+    {
+      "amount": 1,
+      "name": "Flamekin Village"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Cave"
+    },
+    {
+      "amount": 1,
+      "name": "Ghost Quarter"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexia\u0027s Core"
+    },
+    {
+      "amount": 1,
+      "name": "Reliquary Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Smoldering Crater"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 29,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Daretti, Scrap Savant"
+    }
+  ]
+}

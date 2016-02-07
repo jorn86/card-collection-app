@@ -1,0 +1,197 @@
+{
+  "tag": [
+    "Archenemy"
+  ],
+  "name": "Scorch the World with Dragonfire",
+  "set": "ARC",
+  "mainboard": [
+    {
+      "amount": 5,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 17,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "All Shall Smolder in My Wake"
+    },
+    {
+      "amount": 1,
+      "name": "Approach My Molten Realm"
+    },
+    {
+      "amount": 1,
+      "name": "Battering Craghorn"
+    },
+    {
+      "amount": 2,
+      "name": "Branching Bolt"
+    },
+    {
+      "amount": 1,
+      "name": "Breath of Darigaaz"
+    },
+    {
+      "amount": 1,
+      "name": "Chameleon Colossus"
+    },
+    {
+      "amount": 1,
+      "name": "Chandra\u0027s Outrage"
+    },
+    {
+      "amount": 1,
+      "name": "Colossal Might"
+    },
+    {
+      "amount": 1,
+      "name": "Dragon Breath"
+    },
+    {
+      "amount": 2,
+      "name": "Dragon Fodder"
+    },
+    {
+      "amount": 2,
+      "name": "Dragon Whelp"
+    },
+    {
+      "amount": 2,
+      "name": "Dragonspeaker Shaman"
+    },
+    {
+      "amount": 1,
+      "name": "Fierce Empath"
+    },
+    {
+      "amount": 1,
+      "name": "Fireball"
+    },
+    {
+      "amount": 1,
+      "name": "Fires of Yavimaya"
+    },
+    {
+      "amount": 1,
+      "name": "Flameblast Dragon"
+    },
+    {
+      "amount": 2,
+      "name": "Furnace Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Gathan Raiders"
+    },
+    {
+      "amount": 2,
+      "name": "Gruul Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Hellkite Charger"
+    },
+    {
+      "amount": 2,
+      "name": "I Bask in Your Silent Awe"
+    },
+    {
+      "amount": 1,
+      "name": "I Delight in Your Convulsions"
+    },
+    {
+      "amount": 1,
+      "name": "Imperial Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Introductions Are in Order"
+    },
+    {
+      "amount": 1,
+      "name": "Kilnmouth Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Know Naught but Fire"
+    },
+    {
+      "amount": 2,
+      "name": "Look Skyward and Despair"
+    },
+    {
+      "amount": 1,
+      "name": "My Crushing Masterstroke"
+    },
+    {
+      "amount": 2,
+      "name": "My Wish Is Your Command"
+    },
+    {
+      "amount": 1,
+      "name": "Realms Befitting My Majesty"
+    },
+    {
+      "amount": 1,
+      "name": "Ryusei, the Falling Star"
+    },
+    {
+      "amount": 1,
+      "name": "Savage Twister"
+    },
+    {
+      "amount": 2,
+      "name": "Seething Song"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Commando"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Marauder"
+    },
+    {
+      "amount": 1,
+      "name": "Taurean Mauler"
+    },
+    {
+      "amount": 1,
+      "name": "The Fate of the Flammable"
+    },
+    {
+      "amount": 1,
+      "name": "Thran Dynamo"
+    },
+    {
+      "amount": 1,
+      "name": "Tooth, Claw, and Tail"
+    },
+    {
+      "amount": 1,
+      "name": "Two-Headed Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Volcanic Fallout"
+    },
+    {
+      "amount": 2,
+      "name": "Which of You Burns Brightest?"
+    },
+    {
+      "amount": 1,
+      "name": "Your Fate Is Thrice Sealed"
+    },
+    {
+      "amount": 1,
+      "name": "Your Puny Minds Cannot Fathom"
+    }
+  ]
+}

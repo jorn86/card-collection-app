@@ -1,0 +1,326 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2013"
+  ],
+  "name": "Eternal Bargain",
+  "set": "C13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Ajani\u0027s Pridemate"
+    },
+    {
+      "amount": 1,
+      "name": "Augury Adept"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Herald"
+    },
+    {
+      "amount": 1,
+      "name": "Disciple of Griselbrand"
+    },
+    {
+      "amount": 1,
+      "name": "Diviner Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Divinity of Pride"
+    },
+    {
+      "amount": 1,
+      "name": "Filigree Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Hooded Horror"
+    },
+    {
+      "amount": 1,
+      "name": "Kongming, \"Sleeping Dragon\""
+    },
+    {
+      "amount": 1,
+      "name": "Marrow Bats"
+    },
+    {
+      "amount": 1,
+      "name": "Myr Battlesphere"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Delver"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Gargantua"
+    },
+    {
+      "amount": 1,
+      "name": "Raven Familiar"
+    },
+    {
+      "amount": 1,
+      "name": "Razor Hippogriff"
+    },
+    {
+      "amount": 1,
+      "name": "Serene Master"
+    },
+    {
+      "amount": 1,
+      "name": "Serra Avatar"
+    },
+    {
+      "amount": 1,
+      "name": "Sharding Sphinx"
+    },
+    {
+      "amount": 1,
+      "name": "Sharuum the Hegemon"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of the Steel Wind"
+    },
+    {
+      "amount": 1,
+      "name": "Stormscape Battlemage"
+    },
+    {
+      "amount": 1,
+      "name": "Sydri, Galvanic Genius"
+    },
+    {
+      "amount": 1,
+      "name": "Tidal Force"
+    },
+    {
+      "amount": 1,
+      "name": "Tidehollow Strix"
+    },
+    {
+      "amount": 1,
+      "name": "Tower Gargoyle"
+    },
+    {
+      "amount": 1,
+      "name": "Vizkopa Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Reverence"
+    },
+    {
+      "amount": 1,
+      "name": "Brilliant Plan"
+    },
+    {
+      "amount": 1,
+      "name": "Death Grasp"
+    },
+    {
+      "amount": 1,
+      "name": "Deep Analysis"
+    },
+    {
+      "amount": 1,
+      "name": "Famine"
+    },
+    {
+      "amount": 1,
+      "name": "Order of Succession"
+    },
+    {
+      "amount": 1,
+      "name": "Survival Cache"
+    },
+    {
+      "amount": 1,
+      "name": "Tempt with Immortality"
+    },
+    {
+      "amount": 1,
+      "name": "Toxic Deluge"
+    },
+    {
+      "amount": 1,
+      "name": "Dromar\u0027s Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Lim-Dûl\u0027s Vault"
+    },
+    {
+      "amount": 1,
+      "name": "Reckless Spite"
+    },
+    {
+      "amount": 1,
+      "name": "Spinal Embrace"
+    },
+    {
+      "amount": 1,
+      "name": "Crawlspace"
+    },
+    {
+      "amount": 1,
+      "name": "Nevinyrral\u0027s Disk"
+    },
+    {
+      "amount": 1,
+      "name": "Nihil Spellbomb"
+    },
+    {
+      "amount": 1,
+      "name": "Obelisk of Esper"
+    },
+    {
+      "amount": 1,
+      "name": "Pristine Talisman"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Sun Droplet"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Thopter Foundry"
+    },
+    {
+      "amount": 1,
+      "name": "Well of Lost Dreams"
+    },
+    {
+      "amount": 1,
+      "name": "Act of Authority"
+    },
+    {
+      "amount": 1,
+      "name": "Cradle of Vitality"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Inertia"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Shallow Graves"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of the Forsaken"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Mutation"
+    },
+    {
+      "amount": 1,
+      "name": "Greed"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Reclamation"
+    },
+    {
+      "amount": 1,
+      "name": "Sanguine Bond"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Sanctum"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Chancery"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Dimir Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Esper Panorama"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 6,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Jwar Isle Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Lonely Sandbar"
+    },
+    {
+      "amount": 1,
+      "name": "Opal Palace"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Basilica"
+    },
+    {
+      "amount": 1,
+      "name": "Orzhov Guildgate"
+    },
+    {
+      "amount": 9,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Springjack Pasture"
+    },
+    {
+      "amount": 9,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Transguild Promenade"
+    },
+    {
+      "amount": 1,
+      "name": "Oloro, Ageless Ascetic"
+    }
+  ]
+}

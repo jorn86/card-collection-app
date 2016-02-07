@@ -1,0 +1,222 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2009"
+  ],
+  "name": "Metallic Dreams",
+  "set": "HOP",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Ancient Den"
+    },
+    {
+      "amount": 1,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Great Furnace"
+    },
+    {
+      "amount": 8,
+      "name": "Island"
+    },
+    {
+      "amount": 2,
+      "name": "Mountain"
+    },
+    {
+      "amount": 3,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Seat of the Synod"
+    },
+    {
+      "amount": 3,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Tree of Tales"
+    },
+    {
+      "amount": 1,
+      "name": "Vault of Whispers"
+    },
+    {
+      "amount": 1,
+      "name": "Arcbound Crusher"
+    },
+    {
+      "amount": 1,
+      "name": "Arcbound Slith"
+    },
+    {
+      "amount": 1,
+      "name": "Arsenal Thresher"
+    },
+    {
+      "amount": 1,
+      "name": "Bant"
+    },
+    {
+      "amount": 1,
+      "name": "Bosh, Iron Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Broodstar"
+    },
+    {
+      "amount": 1,
+      "name": "Copper Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Cranial Plating"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Forge"
+    },
+    {
+      "amount": 1,
+      "name": "Door to Nothingness"
+    },
+    {
+      "amount": 2,
+      "name": "Etched Oracle"
+    },
+    {
+      "amount": 1,
+      "name": "Fabricate"
+    },
+    {
+      "amount": 1,
+      "name": "Gold Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Goldmeadow"
+    },
+    {
+      "amount": 1,
+      "name": "Iron Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Keep Watch"
+    },
+    {
+      "amount": 1,
+      "name": "Krosa"
+    },
+    {
+      "amount": 1,
+      "name": "Leaden Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Lodestone Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Loxodon Warhammer"
+    },
+    {
+      "amount": 1,
+      "name": "Master of Etherium"
+    },
+    {
+      "amount": 1,
+      "name": "Minamo"
+    },
+    {
+      "amount": 2,
+      "name": "Myr Enforcer"
+    },
+    {
+      "amount": 1,
+      "name": "Nuisance Engine"
+    },
+    {
+      "amount": 1,
+      "name": "Panopticon"
+    },
+    {
+      "amount": 2,
+      "name": "Pentad Prism"
+    },
+    {
+      "amount": 1,
+      "name": "Pentavus"
+    },
+    {
+      "amount": 1,
+      "name": "Qumulox"
+    },
+    {
+      "amount": 1,
+      "name": "Sanctum of Serra"
+    },
+    {
+      "amount": 1,
+      "name": "Sarcomite Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Serum Tank"
+    },
+    {
+      "amount": 1,
+      "name": "Silver Myr"
+    },
+    {
+      "amount": 2,
+      "name": "Skeleton Shard"
+    },
+    {
+      "amount": 1,
+      "name": "Sludge Strider"
+    },
+    {
+      "amount": 1,
+      "name": "Suntouched Myr"
+    },
+    {
+      "amount": 1,
+      "name": "The Eon Fog"
+    },
+    {
+      "amount": 1,
+      "name": "The Hippodrome"
+    },
+    {
+      "amount": 1,
+      "name": "The Maelstrom"
+    },
+    {
+      "amount": 1,
+      "name": "Thirst for Knowledge"
+    },
+    {
+      "amount": 1,
+      "name": "Undercity Reaches"
+    },
+    {
+      "amount": 1,
+      "name": "Vedalken Engineer"
+    },
+    {
+      "amount": 1,
+      "name": "Whiplash Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Wizard Replica"
+    }
+  ]
+}

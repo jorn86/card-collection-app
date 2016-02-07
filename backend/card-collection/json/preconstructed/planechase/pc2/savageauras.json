@@ -1,0 +1,198 @@
+{
+  "tag": [
+    "Planechase",
+    "Planechase 2012"
+  ],
+  "name": "Savage Aura\u0027s",
+  "set": "PC2",
+  "mainboard": [
+    {
+      "amount": 9,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Graypelt Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Verge"
+    },
+    {
+      "amount": 8,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Selesnya Sanctuary"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Vitu-Ghazi, the City-Tree"
+    },
+    {
+      "amount": 1,
+      "name": "Akoum"
+    },
+    {
+      "amount": 1,
+      "name": "Aretopolis"
+    },
+    {
+      "amount": 2,
+      "name": "Armored Griffin"
+    },
+    {
+      "amount": 1,
+      "name": "Astral Arena"
+    },
+    {
+      "amount": 2,
+      "name": "Aura Gnarlid"
+    },
+    {
+      "amount": 1,
+      "name": "Auramancer"
+    },
+    {
+      "amount": 1,
+      "name": "Auratouched Mage"
+    },
+    {
+      "amount": 2,
+      "name": "Boar Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Bramble Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Cage of Hands"
+    },
+    {
+      "amount": 1,
+      "name": "Celestial Ancient"
+    },
+    {
+      "amount": 1,
+      "name": "Chaotic Æther"
+    },
+    {
+      "amount": 1,
+      "name": "Dowsing Shaman"
+    },
+    {
+      "amount": 2,
+      "name": "Dreampod Druid"
+    },
+    {
+      "amount": 1,
+      "name": "Edge of Malacol"
+    },
+    {
+      "amount": 1,
+      "name": "Elderwood Scion"
+    },
+    {
+      "amount": 2,
+      "name": "Felidar Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Fractured Powerstone"
+    },
+    {
+      "amount": 1,
+      "name": "Ghostly Prison"
+    },
+    {
+      "amount": 1,
+      "name": "Grove of the Dreampods"
+    },
+    {
+      "amount": 1,
+      "name": "Hyena Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Indrik Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Kessig"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Spiritdancer"
+    },
+    {
+      "amount": 1,
+      "name": "Krond the Dawn-Clad"
+    },
+    {
+      "amount": 2,
+      "name": "Lumberknot"
+    },
+    {
+      "amount": 1,
+      "name": "Mammoth Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Onakke Catacomb"
+    },
+    {
+      "amount": 1,
+      "name": "Planewide Disaster"
+    },
+    {
+      "amount": 1,
+      "name": "Pollenbright Wings"
+    },
+    {
+      "amount": 1,
+      "name": "Predatory Urge"
+    },
+    {
+      "amount": 1,
+      "name": "Quiet Disrepair"
+    },
+    {
+      "amount": 1,
+      "name": "Rancor"
+    },
+    {
+      "amount": 1,
+      "name": "Sigil of the Empty Throne"
+    },
+    {
+      "amount": 1,
+      "name": "Silhana Ledgewalker"
+    },
+    {
+      "amount": 1,
+      "name": "Snake Umbra"
+    },
+    {
+      "amount": 1,
+      "name": "Spirit Mantle"
+    },
+    {
+      "amount": 1,
+      "name": "Talon Gates"
+    },
+    {
+      "amount": 1,
+      "name": "Thran Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Three Dreams"
+    }
+  ]
+}

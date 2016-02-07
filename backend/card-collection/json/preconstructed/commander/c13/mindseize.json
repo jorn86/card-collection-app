@@ -1,0 +1,334 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2013"
+  ],
+  "name": "Mind Seize",
+  "set": "C13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Akoum Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Bojuka Bog"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Crumbling Necropolis"
+    },
+    {
+      "amount": 1,
+      "name": "Dimir Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Grixis Panorama"
+    },
+    {
+      "amount": 9,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Boilerworks"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Molten Slagheap"
+    },
+    {
+      "amount": 5,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Carnarium"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 8,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Creek"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Marsh"
+    },
+    {
+      "amount": 1,
+      "name": "Augur of Bolas"
+    },
+    {
+      "amount": 1,
+      "name": "Baleful Force"
+    },
+    {
+      "amount": 1,
+      "name": "Baleful Strix"
+    },
+    {
+      "amount": 1,
+      "name": "Charmbreaker Devils"
+    },
+    {
+      "amount": 1,
+      "name": "Diviner Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Echo Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Fog Bank"
+    },
+    {
+      "amount": 1,
+      "name": "Guard Gomazoa"
+    },
+    {
+      "amount": 1,
+      "name": "Guttersnipe"
+    },
+    {
+      "amount": 1,
+      "name": "Hooded Horror"
+    },
+    {
+      "amount": 1,
+      "name": "Jace\u0027s Archivist"
+    },
+    {
+      "amount": 1,
+      "name": "Mnemonic Wall"
+    },
+    {
+      "amount": 1,
+      "name": "Nekusar, the Mindrazer"
+    },
+    {
+      "amount": 1,
+      "name": "Nightscape Familiar"
+    },
+    {
+      "amount": 1,
+      "name": "Nivix Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Terra Ravager"
+    },
+    {
+      "amount": 1,
+      "name": "Thraximundar"
+    },
+    {
+      "amount": 1,
+      "name": "True-Name Nemesis"
+    },
+    {
+      "amount": 1,
+      "name": "Uyo, Silent Prophet"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Nighthawk"
+    },
+    {
+      "amount": 1,
+      "name": "Viseling"
+    },
+    {
+      "amount": 1,
+      "name": "Annihilate"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Melee"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Army of the Damned"
+    },
+    {
+      "amount": 1,
+      "name": "Crosis\u0027s Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Cruel Ultimatum"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Chaos"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Inertia"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Shallow Graves"
+    },
+    {
+      "amount": 1,
+      "name": "Decree of Pain"
+    },
+    {
+      "amount": 1,
+      "name": "Dismiss"
+    },
+    {
+      "amount": 1,
+      "name": "Eye of Doom"
+    },
+    {
+      "amount": 1,
+      "name": "Fissure Vent"
+    },
+    {
+      "amount": 1,
+      "name": "Grixis Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Illusionist\u0027s Gambit"
+    },
+    {
+      "amount": 1,
+      "name": "Incendiary Command"
+    },
+    {
+      "amount": 1,
+      "name": "Infest"
+    },
+    {
+      "amount": 1,
+      "name": "Mirari"
+    },
+    {
+      "amount": 1,
+      "name": "Molten Disaster"
+    },
+    {
+      "amount": 1,
+      "name": "Obelisk of Grixis"
+    },
+    {
+      "amount": 1,
+      "name": "Opal Palace"
+    },
+    {
+      "amount": 1,
+      "name": "Opportunity"
+    },
+    {
+      "amount": 1,
+      "name": "Phthisis"
+    },
+    {
+      "amount": 1,
+      "name": "Price of Knowledge"
+    },
+    {
+      "amount": 1,
+      "name": "Propaganda"
+    },
+    {
+      "amount": 1,
+      "name": "Prosperity"
+    },
+    {
+      "amount": 1,
+      "name": "Skyscribing"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Manipulation"
+    },
+    {
+      "amount": 1,
+      "name": "Spiteful Visions"
+    },
+    {
+      "amount": 1,
+      "name": "Starstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Strategic Planning"
+    },
+    {
+      "amount": 1,
+      "name": "Sudden Spoiling"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Temple Bell"
+    },
+    {
+      "amount": 1,
+      "name": "Tempt with Reflections"
+    },
+    {
+      "amount": 1,
+      "name": "Urza\u0027s Factory"
+    },
+    {
+      "amount": 1,
+      "name": "Vision Skeins"
+    },
+    {
+      "amount": 1,
+      "name": "Wayfarer\u0027s Bauble"
+    },
+    {
+      "amount": 1,
+      "name": "Wild Ricochet"
+    },
+    {
+      "amount": 1,
+      "name": "Jeleva, Nephalia\u0027s Scourge"
+    }
+  ]
+}

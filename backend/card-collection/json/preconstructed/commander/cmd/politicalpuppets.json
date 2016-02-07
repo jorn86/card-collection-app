@@ -1,0 +1,310 @@
+{
+  "tag": [
+    "Commander",
+    "Commander"
+  ],
+  "name": "Political Puppets",
+  "set": "CMD",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Zedruu the Greathearted"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Chancery"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Garrison"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 12,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Boilerworks"
+    },
+    {
+      "amount": 8,
+      "name": "Mountain"
+    },
+    {
+      "amount": 8,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Arbiter of Knollridge"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Brion Stoutarm"
+    },
+    {
+      "amount": 1,
+      "name": "Chromeshell Crab"
+    },
+    {
+      "amount": 1,
+      "name": "Court Hussar"
+    },
+    {
+      "amount": 1,
+      "name": "Dominus of Fealty"
+    },
+    {
+      "amount": 1,
+      "name": "False Prophet"
+    },
+    {
+      "amount": 1,
+      "name": "Flametongue Kavu"
+    },
+    {
+      "amount": 1,
+      "name": "Fog Bank"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Cadets"
+    },
+    {
+      "amount": 1,
+      "name": "Gomazoa"
+    },
+    {
+      "amount": 1,
+      "name": "Guard Gomazoa"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Chronarch"
+    },
+    {
+      "amount": 1,
+      "name": "Jötun Grunt"
+    },
+    {
+      "amount": 1,
+      "name": "Nin, the Pain Artist"
+    },
+    {
+      "amount": 1,
+      "name": "Numot, the Devastator"
+    },
+    {
+      "amount": 1,
+      "name": "Plumeveil"
+    },
+    {
+      "amount": 1,
+      "name": "Rapacious One"
+    },
+    {
+      "amount": 1,
+      "name": "Ruhan of the Fomori"
+    },
+    {
+      "amount": 1,
+      "name": "Spurnmage Advocate"
+    },
+    {
+      "amount": 1,
+      "name": "Vedalken Plotter"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Denial"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Omens"
+    },
+    {
+      "amount": 1,
+      "name": "Windborn Muse"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Austere Command"
+    },
+    {
+      "amount": 1,
+      "name": "Brainstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Breath of Darigaaz"
+    },
+    {
+      "amount": 1,
+      "name": "Champion\u0027s Helm"
+    },
+    {
+      "amount": 1,
+      "name": "Chaos Warp"
+    },
+    {
+      "amount": 1,
+      "name": "Crescendo of War"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Ingot"
+    },
+    {
+      "amount": 1,
+      "name": "Death by Dragons"
+    },
+    {
+      "amount": 1,
+      "name": "Dreamstone Hedron"
+    },
+    {
+      "amount": 1,
+      "name": "Fellwar Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Flusterstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Ghostly Prison"
+    },
+    {
+      "amount": 1,
+      "name": "Howling Mine"
+    },
+    {
+      "amount": 1,
+      "name": "Insurrection"
+    },
+    {
+      "amount": 1,
+      "name": "Journey to Nowhere"
+    },
+    {
+      "amount": 1,
+      "name": "Lash Out"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Martyr\u0027s Bond"
+    },
+    {
+      "amount": 1,
+      "name": "Murmurs from Beyond"
+    },
+    {
+      "amount": 1,
+      "name": "Oblation"
+    },
+    {
+      "amount": 1,
+      "name": "Perilous Research"
+    },
+    {
+      "amount": 1,
+      "name": "Pollen Lullaby"
+    },
+    {
+      "amount": 1,
+      "name": "Prison Term"
+    },
+    {
+      "amount": 1,
+      "name": "Propaganda"
+    },
+    {
+      "amount": 1,
+      "name": "Prophetic Prism"
+    },
+    {
+      "amount": 1,
+      "name": "Punishing Fire"
+    },
+    {
+      "amount": 1,
+      "name": "Reins of Power"
+    },
+    {
+      "amount": 1,
+      "name": "Repulse"
+    },
+    {
+      "amount": 1,
+      "name": "Scattering Stroke"
+    },
+    {
+      "amount": 1,
+      "name": "Skyscribing"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Snare"
+    },
+    {
+      "amount": 1,
+      "name": "Spell Crumple"
+    },
+    {
+      "amount": 1,
+      "name": "Trade Secrets"
+    },
+    {
+      "amount": 1,
+      "name": "Vision Skeins"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Duty"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Flight"
+    },
+    {
+      "amount": 1,
+      "name": "Vow of Lightning"
+    },
+    {
+      "amount": 1,
+      "name": "Whirlpool Whelm"
+    },
+    {
+      "amount": 1,
+      "name": "Wild Ricochet"
+    }
+  ]
+}

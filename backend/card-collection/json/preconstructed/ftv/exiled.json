@@ -1,0 +1,69 @@
+{
+  "tag": [
+    "From the Vault"
+  ],
+  "name": "Exiled (2009)",
+  "set": "V09",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Balance"
+    },
+    {
+      "amount": 1,
+      "name": "Berserk"
+    },
+    {
+      "amount": 1,
+      "name": "Channel"
+    },
+    {
+      "amount": 1,
+      "name": "Gifts Ungiven"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Lackey"
+    },
+    {
+      "amount": 1,
+      "name": "Kird Ape"
+    },
+    {
+      "amount": 1,
+      "name": "Lotus Petal"
+    },
+    {
+      "amount": 1,
+      "name": "Mystical Tutor"
+    },
+    {
+      "amount": 1,
+      "name": "Necropotence"
+    },
+    {
+      "amount": 1,
+      "name": "Sensei\u0027s Divining Top"
+    },
+    {
+      "amount": 1,
+      "name": "Serendib Efreet"
+    },
+    {
+      "amount": 1,
+      "name": "Skullclamp"
+    },
+    {
+      "amount": 1,
+      "name": "Strip Mine"
+    },
+    {
+      "amount": 1,
+      "name": "Tinker"
+    },
+    {
+      "amount": 1,
+      "name": "Trinisphere"
+    }
+  ]
+}

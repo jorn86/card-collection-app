@@ -1,0 +1,342 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2013"
+  ],
+  "name": "Evasive Maneuvers",
+  "set": "C13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Azorius Chancery"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Bant Panorama"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Faerie Conclave"
+    },
+    {
+      "amount": 6,
+      "name": "Forest"
+    },
+    {
+      "amount": 7,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Opal Palace"
+    },
+    {
+      "amount": 7,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Saltcrusted Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Seaside Citadel"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Sejiri Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Sanctuary"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Transguild Promenade"
+    },
+    {
+      "amount": 1,
+      "name": "Acidic Slime"
+    },
+    {
+      "amount": 1,
+      "name": "Aerie Mystics"
+    },
+    {
+      "amount": 1,
+      "name": "Angel of Finality"
+    },
+    {
+      "amount": 1,
+      "name": "Azami, Lady of Scrolls"
+    },
+    {
+      "amount": 1,
+      "name": "Bane of Progress"
+    },
+    {
+      "amount": 1,
+      "name": "Deceiver Exarch"
+    },
+    {
+      "amount": 1,
+      "name": "Diviner Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Djinn of Infinite Deceits"
+    },
+    {
+      "amount": 1,
+      "name": "Dungeon Geists"
+    },
+    {
+      "amount": 1,
+      "name": "Farhaven Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Fiend Hunter"
+    },
+    {
+      "amount": 1,
+      "name": "Flickerwisp"
+    },
+    {
+      "amount": 1,
+      "name": "Hada Spy Patrol"
+    },
+    {
+      "amount": 1,
+      "name": "Karmic Guide"
+    },
+    {
+      "amount": 1,
+      "name": "Kazandu Tuskcaller"
+    },
+    {
+      "amount": 1,
+      "name": "Lu Xun, Scholar General"
+    },
+    {
+      "amount": 1,
+      "name": "Mirror Entity"
+    },
+    {
+      "amount": 1,
+      "name": "Mistmeadow Witch"
+    },
+    {
+      "amount": 1,
+      "name": "Murkfiend Liege"
+    },
+    {
+      "amount": 1,
+      "name": "Phantom Nantuko"
+    },
+    {
+      "amount": 1,
+      "name": "Pilgrim\u0027s Eye"
+    },
+    {
+      "amount": 1,
+      "name": "Roon of the Hidden Realm"
+    },
+    {
+      "amount": 1,
+      "name": "Rubinia Soulsinger"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Skyward Eye Prophets"
+    },
+    {
+      "amount": 1,
+      "name": "Stonecloaker"
+    },
+    {
+      "amount": 1,
+      "name": "Thornwind Faeries"
+    },
+    {
+      "amount": 1,
+      "name": "Winged Coatl"
+    },
+    {
+      "amount": 1,
+      "name": "Wonder"
+    },
+    {
+      "amount": 1,
+      "name": "Æthermage\u0027s Touch"
+    },
+    {
+      "amount": 1,
+      "name": "Arcane Denial"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Keyrune"
+    },
+    {
+      "amount": 1,
+      "name": "Basalt Monolith"
+    },
+    {
+      "amount": 1,
+      "name": "Blue Sun\u0027s Zenith"
+    },
+    {
+      "amount": 1,
+      "name": "Borrowing 100,000 Arrows"
+    },
+    {
+      "amount": 1,
+      "name": "Conjurer\u0027s Closet"
+    },
+    {
+      "amount": 1,
+      "name": "Control Magic"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Inertia"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Predation"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of the Forsaken"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Ingot"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Mutation"
+    },
+    {
+      "amount": 1,
+      "name": "Flickerform"
+    },
+    {
+      "amount": 1,
+      "name": "Kirtar\u0027s Wrath"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Grip"
+    },
+    {
+      "amount": 1,
+      "name": "Leafdrake Roost"
+    },
+    {
+      "amount": 1,
+      "name": "Leonin Bladetrap"
+    },
+    {
+      "amount": 1,
+      "name": "Presence of Gond"
+    },
+    {
+      "amount": 1,
+      "name": "Restore"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Surveyor\u0027s Scope"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Sword of the Paruns"
+    },
+    {
+      "amount": 1,
+      "name": "Tempt with Glory"
+    },
+    {
+      "amount": 1,
+      "name": "Thousand-Year Elixir"
+    },
+    {
+      "amount": 1,
+      "name": "Thunderstaff"
+    },
+    {
+      "amount": 1,
+      "name": "Unexpectedly Absent"
+    },
+    {
+      "amount": 1,
+      "name": "Wash Out"
+    },
+    {
+      "amount": 1,
+      "name": "Derevi, Empyrial Tactician"
+    }
+  ]
+}

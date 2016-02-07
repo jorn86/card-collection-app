@@ -1,0 +1,209 @@
+{
+  "tag": [
+    "Archenemy"
+  ],
+  "name": "Bring about the Undead Apocalypse",
+  "set": "ARC",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 7,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Rakdos Carnarium"
+    },
+    {
+      "amount": 13,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "A Display of My Dark Power"
+    },
+    {
+      "amount": 1,
+      "name": "Artisan of Kozilek"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Discord"
+    },
+    {
+      "amount": 1,
+      "name": "Avatar of Woe"
+    },
+    {
+      "amount": 1,
+      "name": "Beacon of Unrest"
+    },
+    {
+      "amount": 1,
+      "name": "Bituminous Blast"
+    },
+    {
+      "amount": 1,
+      "name": "Bog Witch"
+    },
+    {
+      "amount": 1,
+      "name": "Cemetery Reaper"
+    },
+    {
+      "amount": 2,
+      "name": "Choose Your Champion"
+    },
+    {
+      "amount": 1,
+      "name": "Corpse Connoisseur"
+    },
+    {
+      "amount": 1,
+      "name": "Dance, Pathetic Marionette"
+    },
+    {
+      "amount": 1,
+      "name": "Dregscape Zombie"
+    },
+    {
+      "amount": 2,
+      "name": "Every Hope Shall Vanish"
+    },
+    {
+      "amount": 1,
+      "name": "Extractor Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Festering Goblin"
+    },
+    {
+      "amount": 1,
+      "name": "I Delight in Your Convulsions"
+    },
+    {
+      "amount": 1,
+      "name": "Incremental Blight"
+    },
+    {
+      "amount": 2,
+      "name": "Infectious Horror"
+    },
+    {
+      "amount": 1,
+      "name": "Inferno Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Infest"
+    },
+    {
+      "amount": 1,
+      "name": "Introductions Are in Order"
+    },
+    {
+      "amount": 1,
+      "name": "Kaervek the Merciless"
+    },
+    {
+      "amount": 1,
+      "name": "Makeshift Mannequin"
+    },
+    {
+      "amount": 1,
+      "name": "Mortal Flesh Is Weak"
+    },
+    {
+      "amount": 1,
+      "name": "My Undead Horde Awakens"
+    },
+    {
+      "amount": 2,
+      "name": "Only Blood Ends Your Nightmares"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Guildmage"
+    },
+    {
+      "amount": 2,
+      "name": "Rakdos Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Realms Befitting My Majesty"
+    },
+    {
+      "amount": 1,
+      "name": "Reanimate"
+    },
+    {
+      "amount": 1,
+      "name": "Reassembling Skeleton"
+    },
+    {
+      "amount": 2,
+      "name": "Rotted Ones, Lay Siege"
+    },
+    {
+      "amount": 1,
+      "name": "Scion of Darkness"
+    },
+    {
+      "amount": 1,
+      "name": "Shriekmaw"
+    },
+    {
+      "amount": 2,
+      "name": "Sign in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Surrender Your Thoughts"
+    },
+    {
+      "amount": 2,
+      "name": "Terminate"
+    },
+    {
+      "amount": 2,
+      "name": "The Dead Shall Serve"
+    },
+    {
+      "amount": 1,
+      "name": "Torrent of Souls"
+    },
+    {
+      "amount": 2,
+      "name": "Twisted Abomination"
+    },
+    {
+      "amount": 1,
+      "name": "Urborg Syphon-Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Vampiric Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Your Fate Is Thrice Sealed"
+    },
+    {
+      "amount": 1,
+      "name": "Your Puny Minds Cannot Fathom"
+    },
+    {
+      "amount": 1,
+      "name": "Zombie Infestation"
+    },
+    {
+      "amount": 1,
+      "name": "Zombify"
+    }
+  ]
+}

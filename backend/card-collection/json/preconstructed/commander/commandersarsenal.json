@@ -1,0 +1,81 @@
+{
+  "tag": [
+    "Commander"
+  ],
+  "name": "Commander\u0027s Arsenal",
+  "set": "CM1",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Chaos Warp"
+    },
+    {
+      "amount": 1,
+      "name": "Decree of Pain"
+    },
+    {
+      "amount": 1,
+      "name": "Desertion"
+    },
+    {
+      "amount": 1,
+      "name": "Diaochan, Artful Beauty"
+    },
+    {
+      "amount": 1,
+      "name": "Dragonlair Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Duplicant"
+    },
+    {
+      "amount": 1,
+      "name": "Edric, Spymaster of Trest"
+    },
+    {
+      "amount": 1,
+      "name": "Kaalia of the Vast"
+    },
+    {
+      "amount": 1,
+      "name": "Loyal Retainers"
+    },
+    {
+      "amount": 1,
+      "name": "Maelstrom Wanderer"
+    },
+    {
+      "amount": 1,
+      "name": "Mind\u0027s Eye"
+    },
+    {
+      "amount": 1,
+      "name": "Mirari\u0027s Wake"
+    },
+    {
+      "amount": 1,
+      "name": "Rhystic Study"
+    },
+    {
+      "amount": 1,
+      "name": "Scroll Rack"
+    },
+    {
+      "amount": 1,
+      "name": "Sylvan Library"
+    },
+    {
+      "amount": 1,
+      "name": "The Mimeoplasm"
+    },
+    {
+      "amount": 1,
+      "name": "Vela the Night-Clad"
+    }
+  ]
+}

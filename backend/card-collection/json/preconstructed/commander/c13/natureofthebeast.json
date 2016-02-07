@@ -1,0 +1,354 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2013"
+  ],
+  "name": "Nature of the Beast",
+  "set": "C13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Archangel"
+    },
+    {
+      "amount": 1,
+      "name": "Avenger of Zendikar"
+    },
+    {
+      "amount": 1,
+      "name": "Baloth Woodcrasher"
+    },
+    {
+      "amount": 1,
+      "name": "Crater Hellion"
+    },
+    {
+      "amount": 1,
+      "name": "Deadwood Treefolk"
+    },
+    {
+      "amount": 1,
+      "name": "Drumhunter"
+    },
+    {
+      "amount": 1,
+      "name": "Eternal Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Grazing Gladehart"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Tusker"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Warchief"
+    },
+    {
+      "amount": 1,
+      "name": "Magus of the Arena"
+    },
+    {
+      "amount": 1,
+      "name": "Mayael the Anima"
+    },
+    {
+      "amount": 1,
+      "name": "Mold Shambler"
+    },
+    {
+      "amount": 1,
+      "name": "Rakeclaw Gargantuan"
+    },
+    {
+      "amount": 1,
+      "name": "Rampaging Baloths"
+    },
+    {
+      "amount": 1,
+      "name": "Ravenous Baloth"
+    },
+    {
+      "amount": 1,
+      "name": "Spellbreaker Behemoth"
+    },
+    {
+      "amount": 1,
+      "name": "Spitebellows"
+    },
+    {
+      "amount": 1,
+      "name": "Valley Rannet"
+    },
+    {
+      "amount": 1,
+      "name": "Cultivate"
+    },
+    {
+      "amount": 1,
+      "name": "Fiery Justice"
+    },
+    {
+      "amount": 1,
+      "name": "Fireball"
+    },
+    {
+      "amount": 1,
+      "name": "Harmonize"
+    },
+    {
+      "amount": 1,
+      "name": "Hull Breach"
+    },
+    {
+      "amount": 1,
+      "name": "One Dozen Eyes"
+    },
+    {
+      "amount": 1,
+      "name": "Rain of Thorns"
+    },
+    {
+      "amount": 1,
+      "name": "Savage Twister"
+    },
+    {
+      "amount": 1,
+      "name": "Slice and Dice"
+    },
+    {
+      "amount": 1,
+      "name": "Wrath of God"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Naya Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Slice in Twain"
+    },
+    {
+      "amount": 1,
+      "name": "Sprouting Vines"
+    },
+    {
+      "amount": 1,
+      "name": "Street Spasm"
+    },
+    {
+      "amount": 1,
+      "name": "Behemoth Sledge"
+    },
+    {
+      "amount": 1,
+      "name": "Druidic Satchel"
+    },
+    {
+      "amount": 1,
+      "name": "Seer\u0027s Sundial"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Tower of Fortunes"
+    },
+    {
+      "amount": 1,
+      "name": "Fires of Yavimaya"
+    },
+    {
+      "amount": 1,
+      "name": "War Cadence"
+    },
+    {
+      "amount": 1,
+      "name": "Warstorm Surge"
+    },
+    {
+      "amount": 1,
+      "name": "Where Ancients Tread"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Garrison"
+    },
+    {
+      "amount": 1,
+      "name": "Boros Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Contested Cliffs"
+    },
+    {
+      "amount": 1,
+      "name": "Drifting Meadow"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 8,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Cave"
+    },
+    {
+      "amount": 1,
+      "name": "Gruul Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Homeward Path"
+    },
+    {
+      "amount": 1,
+      "name": "Jungle Shrine"
+    },
+    {
+      "amount": 1,
+      "name": "Khalni Garden"
+    },
+    {
+      "amount": 1,
+      "name": "Mosswort Bridge"
+    },
+    {
+      "amount": 5,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Naya Panorama"
+    },
+    {
+      "amount": 1,
+      "name": "New Benalia"
+    },
+    {
+      "amount": 4,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Selesnya Sanctuary"
+    },
+    {
+      "amount": 1,
+      "name": "Slippery Karst"
+    },
+    {
+      "amount": 1,
+      "name": "Smoldering Crater"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Vitu-Ghazi, the City-Tree"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Crag"
+    },
+    {
+      "amount": 1,
+      "name": "Marath, Will of the Wild"
+    },
+    {
+      "amount": 1,
+      "name": "Gahiji, Honored One"
+    },
+    {
+      "amount": 1,
+      "name": "Naya Soulbeast"
+    },
+    {
+      "amount": 1,
+      "name": "Terra Ravager"
+    },
+    {
+      "amount": 1,
+      "name": "From the Ashes"
+    },
+    {
+      "amount": 1,
+      "name": "Restore"
+    },
+    {
+      "amount": 1,
+      "name": "Tempt with Discovery"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Chaos"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Predation"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Mutation"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of the Forsaken"
+    },
+    {
+      "amount": 1,
+      "name": "Mystic Barrier"
+    },
+    {
+      "amount": 1,
+      "name": "Spawning Grounds"
+    },
+    {
+      "amount": 1,
+      "name": "Witch Hunt"
+    },
+    {
+      "amount": 1,
+      "name": "Opal Palace"
+    }
+  ]
+}

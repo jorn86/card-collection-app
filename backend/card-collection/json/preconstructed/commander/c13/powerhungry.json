@@ -1,0 +1,342 @@
+{
+  "tag": [
+    "Commander",
+    "Commander 2013"
+  ],
+  "name": "Power Hungry",
+  "set": "C13",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Akoum Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Command Tower"
+    },
+    {
+      "amount": 1,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 7,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Rot Farm"
+    },
+    {
+      "amount": 1,
+      "name": "Grim Backwoods"
+    },
+    {
+      "amount": 1,
+      "name": "Gruul Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Jund Panorama"
+    },
+    {
+      "amount": 1,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Khalni Garden"
+    },
+    {
+      "amount": 1,
+      "name": "Kher Keep"
+    },
+    {
+      "amount": 1,
+      "name": "Llanowar Reborn"
+    },
+    {
+      "amount": 7,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Opal Palace"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 1,
+      "name": "Savage Lands"
+    },
+    {
+      "amount": 6,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 1,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Vivid Grove"
+    },
+    {
+      "amount": 1,
+      "name": "Brooding Saurian"
+    },
+    {
+      "amount": 1,
+      "name": "Capricious Efreet"
+    },
+    {
+      "amount": 1,
+      "name": "Charnelhoard Wurm"
+    },
+    {
+      "amount": 1,
+      "name": "Deathbringer Thoctar"
+    },
+    {
+      "amount": 1,
+      "name": "Deepfire Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Skysweeper"
+    },
+    {
+      "amount": 1,
+      "name": "Endless Cockroaches"
+    },
+    {
+      "amount": 1,
+      "name": "Endrek Sahr, Master Breeder"
+    },
+    {
+      "amount": 1,
+      "name": "Fell Shepherd"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Sharpshooter"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Hooded Horror"
+    },
+    {
+      "amount": 1,
+      "name": "Hua Tuo, Honored Physician"
+    },
+    {
+      "amount": 1,
+      "name": "Hunted Troll"
+    },
+    {
+      "amount": 1,
+      "name": "Inferno Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Jade Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Ophiomancer"
+    },
+    {
+      "amount": 1,
+      "name": "Quagmire Druid"
+    },
+    {
+      "amount": 1,
+      "name": "Sakura-Tribe Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Scarland Thrinax"
+    },
+    {
+      "amount": 1,
+      "name": "Sek\u0027Kuar, Deathkeeper"
+    },
+    {
+      "amount": 1,
+      "name": "Shattergang Brothers"
+    },
+    {
+      "amount": 1,
+      "name": "Silklash Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Sprouting Thrinax"
+    },
+    {
+      "amount": 1,
+      "name": "Stalking Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Stronghold Assassin"
+    },
+    {
+      "amount": 1,
+      "name": "Terra Ravager"
+    },
+    {
+      "amount": 1,
+      "name": "Viscera Seer"
+    },
+    {
+      "amount": 1,
+      "name": "Walker of the Grove"
+    },
+    {
+      "amount": 1,
+      "name": "Wight of Precinct Six"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Blood Rites"
+    },
+    {
+      "amount": 1,
+      "name": "Carnage Altar"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Chaos"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Predation"
+    },
+    {
+      "amount": 1,
+      "name": "Curse of Shallow Graves"
+    },
+    {
+      "amount": 1,
+      "name": "Dirge of Dread"
+    },
+    {
+      "amount": 1,
+      "name": "Fecundity"
+    },
+    {
+      "amount": 1,
+      "name": "Foster"
+    },
+    {
+      "amount": 1,
+      "name": "Furnace Celebration"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Bombardment"
+    },
+    {
+      "amount": 1,
+      "name": "Jar of Eyeballs"
+    },
+    {
+      "amount": 1,
+      "name": "Jund Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Mass Mutiny"
+    },
+    {
+      "amount": 1,
+      "name": "Night Soil"
+    },
+    {
+      "amount": 1,
+      "name": "Obelisk of Jund"
+    },
+    {
+      "amount": 1,
+      "name": "Plague Boiler"
+    },
+    {
+      "amount": 1,
+      "name": "Primal Vigor"
+    },
+    {
+      "amount": 1,
+      "name": "Reincarnation"
+    },
+    {
+      "amount": 1,
+      "name": "Restore"
+    },
+    {
+      "amount": 1,
+      "name": "Rough / Tumble"
+    },
+    {
+      "amount": 1,
+      "name": "Sol Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Spine of Ish Sah"
+    },
+    {
+      "amount": 1,
+      "name": "Spoils of Victory"
+    },
+    {
+      "amount": 1,
+      "name": "Sudden Demise"
+    },
+    {
+      "amount": 1,
+      "name": "Swiftfoot Boots"
+    },
+    {
+      "amount": 1,
+      "name": "Tempt with Vengeance"
+    },
+    {
+      "amount": 1,
+      "name": "Tooth and Claw"
+    },
+    {
+      "amount": 1,
+      "name": "Vile Requiem"
+    },
+    {
+      "amount": 1,
+      "name": "Widespread Panic"
+    },
+    {
+      "amount": 1,
+      "name": "Prossh, Skyraider of Kher"
+    }
+  ]
+}
