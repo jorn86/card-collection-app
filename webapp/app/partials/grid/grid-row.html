@@ -6,6 +6,10 @@
     <input class="grid-input" type="number" min="0" size="4" ng-model="card.amount" ng-change="updateAmount(card)" ng-disabled="!editable">
 </div>
 
+<div class="grid-cell grid-cell-inventorycount">
+    <span>{{card.inventorycount}}</span>
+</div>
+
 <div class="grid-cell grid-cell-name" linkcard>
     <div class="inlinemtg" data-multiverseid="{{card.multiverseid}}" data-multiverseid-back="{{card.multiverseidBack}}"
          data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>&nbsp;
@@ -18,3 +22,4 @@
 <div class="grid-cell grid-cell-cost"><manacost mana="card.cost"></manacost>&nbsp;</div>
 
 <div class="grid-cell grid-cell-set"><setimage set="card.setcode" rarity="card.rarity"></setimage></div>
+<div ng-if="card.setisfallback" class="grid-cell grid-cell-set" style="background-color: #ffffff80"></div>

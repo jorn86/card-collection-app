@@ -59,14 +59,16 @@ angular.module('card-app')
             });
         };
 
+        $scope.uploadStatus = 'Import';
         var fileUploadControl = document.getElementById('fileupload');
         $scope.uploadDeckboxImport = function() {
             if (fileUploadControl.files) {
+                $scope.uploadStatus = 'Working...';
                 $scope.datamodel.uploadDeckboxImport($scope.deckId, fileUploadControl.files[0]).then(function(result) {
-                    $scope.warnings = result.data;
+                    $scope.warnings = result.data.length > 0 ? result.data : null;
+                    $scope.uploadStatus = 'Succeeded' + ($scope.warnings ? ' with warnings' : '');
                     $scope.reload();
                 });
-                fileUploadControl.files = [];
             }
         };
 

@@ -8,9 +8,10 @@ CREATE OR REPLACE VIEW deckentryview AS (
     backprinting.multiverseid AS multiverseidBack,
     printing.multiverseid IS NULL AS setisfallback,
     set.gatherercode AS setcode,
-    card.layout = 'split' OR card.layout = 'split-parent' AS split
+    card.layout = 'split' OR card.layout = 'split-parent' AS split,
+    (SELECT SUM(amount) FROM inventoryview WHERE userid = board.userid AND cardid = card.id) AS inventorycount
   FROM deckrow
-    LEFT JOIN board ON board.id = deckrow.boardid
+    LEFT JOIN deckboardview board ON board.id = deckrow.boardid
     LEFT JOIN card ON card.id = deckrow.cardid
     LEFT JOIN printing ON printing.id = deckrow.printingid
     LEFT JOIN latestprinting ON latestprinting.cardid = deckrow.cardid

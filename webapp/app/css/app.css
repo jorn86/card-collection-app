@@ -23,16 +23,6 @@ table.search td {
     border-bottom: 1px dashed lightgrey;
 }
 
-ul, ol, dl {
-    padding-left: 15px;
-    list-style-position: inside;
-}
-li {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .menubar {
     position: absolute;
     width: 100%;
@@ -151,16 +141,19 @@ li {
     width: 40px;
 }
 .grid-cell-count {
-    width: 60px;
+    width: 50px;
+}
+.grid-cell-inventorycount {
+    width: 30px;
 }
 .grid-cell-name {
     min-width: 155px;
-    width: calc((100% - 306px) * 0.4);
+    width: calc((100% - 326px) * 0.4);
     text-overflow: ellipsis;
 }
 .grid-cell-type {
     min-width: 240px;
-    width: calc(((100% - 306px) * 0.6) - 5px);
+    width: calc(((100% - 326px) * 0.6) - 5px);
     padding-left: 5px;
     text-overflow: ellipsis;
 }
