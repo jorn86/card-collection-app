@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.function.Function;
 
@@ -81,6 +84,16 @@ public class ContentUpgradeIT {
         assertNotEquals(printings.get(0).getSetid(), printings.get(1).getSetid());
     }
 
+    private void refreshSetStatisticsView() {
+        try (Connection connection = databaseResource.getDatasource().getConnection();
+             Statement statement = connection.createStatement()) {
+            statement.execute("REFRESH MATERIALIZED VIEW setstatistics");
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private <T extends AutoCloseable, R> R query(Class<T> daoType, Function<T, R> query) {
         try (T dao = databaseResource.getDbi().open(daoType)) {
             return query.apply(dao);
@@ -92,21 +105,25 @@ public class ContentUpgradeIT {
     }
 
     private ContentUpgrade contentFromString(String content) {
-        return run(new ContentUpgrade(databaseResource.getDbi()) {
+        ContentUpgrade contentUpgrade = run(new ContentUpgrade(databaseResource.getDbi()) {
             @Override
             Reader ensureSetFile() throws IOException {
                 return new StringReader(content);
             }
         });
+        refreshSetStatisticsView();
+        return contentUpgrade;
     }
 
     private ContentUpgrade contentFromResource(String fileName) {
-        return run(new ContentUpgrade(databaseResource.getDbi()) {
+        ContentUpgrade upgrade = run(new ContentUpgrade(databaseResource.getDbi()) {
             @Override
             Reader ensureSetFile() throws IOException {
                 return new InputStreamReader(ContentUpgradeIT.class.getResourceAsStream(fileName));
             }
         });
+        refreshSetStatisticsView();
+        return upgrade;
     }
 
     private static ContentUpgrade run(ContentUpgrade contentUpgrade) {
