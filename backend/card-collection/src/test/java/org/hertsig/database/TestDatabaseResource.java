@@ -36,6 +36,11 @@ public class TestDatabaseResource extends ExternalResource {
         return injector.getInstance(IDBI.class);
     }
 
+    public DataSource getDatasource() {
+        assertNotNull("Resource not initialized or already closed", injector);
+        return injector.getInstance(DataSource.class);
+    }
+
     @Override
     protected void before() throws Throwable {
         this.adminDatasource = new PGSimpleDataSource();
