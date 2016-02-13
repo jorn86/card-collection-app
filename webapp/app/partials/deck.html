@@ -2,7 +2,7 @@
     <h3>{{deck.name}}</h3>
     <form ng-submit="uploadDeckboxImport()">
         <label>Deckbox import <input id="fileupload" type="file" accept="text/csv"></label>
-        <label><input type="submit" value="Upload now"></label>
+        <label><input type="submit" value="{{uploadStatus}}" ng-disabled="uploadStatus != 'Import'"></label>
     </form>
     <div ng-show="warnings">
         Import warnings

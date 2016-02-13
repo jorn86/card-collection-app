@@ -1,9 +1,14 @@
 package org.hertsig.logic;
 
+import com.google.common.base.Charsets;
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.escape.Escaper;
+import com.google.common.escape.Escapers;
 import com.opencsv.CSVReader;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.CharSet;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.ImportDao;
 import org.hertsig.user.HttpRequestException;
@@ -24,6 +29,8 @@ import java.util.UUID;
 @Slf4j
 @Singleton
 public class DeckboxImport {
+    private static final Escaper LIKE_ESCAPER = Escapers.builder().addEscape('_', "\\_").addEscape('%', "\\%").build();
+
     private final IDBI dbi;
     private final DeckManager deckManager;
 
@@ -35,7 +42,7 @@ public class DeckboxImport {
 
     public List<String> importCsv(UUID collectionId, InputStream file) throws IOException {
         List<String> messages = Lists.newArrayList();
-        try (CSVReader csv = new CSVReader(new InputStreamReader(file));
+        try (CSVReader csv = new CSVReader(new InputStreamReader(file, Charsets.UTF_8));
              ImportDao dao = dbi.open(ImportDao.class);
              DeckDao deckDao = dbi.open(DeckDao.class)) {
 
@@ -80,16 +87,22 @@ public class DeckboxImport {
             return;
         }
 
-        if (editionName == null) {
+        if (Strings.isNullOrEmpty(editionName)) {
             deckManager.addCard(deckDao, board, count, card, null);
         }
         else {
             Integer edition = dao.getEditionByName(editionName);
             if (edition == null) {
+                edition = dao.getEditionFallback('%' + LIKE_ESCAPER.escape(editionName) + '%', editionName);
+            }
+            if (edition == null) {
                 messages.add(String.format("Cannot find edition %s for card %s", editionName, name));
                 return;
             }
-            int printing = dao.getPrinting(card, edition);
+            Integer printing = dao.getPrinting(card, edition);
+            if (printing == null) {
+                messages.add(String.format("Card %s was not printed in edition %s, importing without specific edition", name, editionName));
+            }
             deckManager.addCard(deckDao, board, count, card, printing);
         }
     }

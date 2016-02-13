@@ -23,4 +23,5 @@ public class DeckEntry {
     private String rarity;
     private boolean setisfallback;
     private boolean split;
+    private int inventorycount;
 }
