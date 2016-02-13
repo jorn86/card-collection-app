@@ -3,8 +3,8 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
-            scope: {list: '=', editable: '='},
-            controller: function($scope, $rootScope) {
+            scope: {list: '=', editable: '=', inventory: '='},
+            controller: function($scope, $rootScope, $filter) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
                     if (card.type) {
@@ -60,8 +60,15 @@ angular.module('card-app')
                     return _.indexOf(_.values($scope.setNames), group.$key);
                 };
 
+                var noneGrouping = function() {
+                    return 'All';
+                };
+                var noneOrder = function () {
+                    return 0;
+                };
+
                 $scope.grid = {
-                    rows: $scope.list.cards,
+                    rows: [],
 
                     groupingOptions: [{
                         name: 'Type', group: typeGrouping, order: typeOrder
@@ -70,14 +77,10 @@ angular.module('card-app')
                     }, {
                         name: 'Set', group: setGrouping, order: setOrder
                     }, {
-                        name: 'None', group: function () {
-                            return 'All';
-                        }, order: function () {
-                            return 0;
-                        }
+                        name: 'None', group: noneGrouping, order: noneOrder
                     }],
-                    groupBy: typeGrouping,
-                    orderBy: typeOrder,
+                    groupBy: $scope.inventory ? noneGrouping : typeGrouping,
+                    orderBy: $scope.inventory ? noneOrder : typeOrder,
 
                     sortingOptions: [
                         {name: 'Count', field: 'amount'},
@@ -91,20 +94,19 @@ angular.module('card-app')
                     allSelected: false
                 };
 
-                $scope.grid.currentGrouping = $scope.grid.groupingOptions[0];
+                $scope.grid.currentGrouping = $scope.grid.groupingOptions[$scope.inventory ? 3 : 0];
                 $scope.onGroupingChange = function () {
                     $scope.grid.orderBy = $scope.grid.currentGrouping.order;
                     $scope.grid.groupBy = $scope.grid.currentGrouping.group;
                 };
 
-                $scope.grid.currentSorting = $scope.grid.sortingOptions[4];
+                $scope.grid.currentSorting = $scope.grid.sortingOptions[$scope.inventory ? 1 : 4];
 
                 $scope.updateAmount = function (data) {
                     var promise = $rootScope.datamodel.updateAmount($scope.list.id, data.id, data.amount);
                     if (data.amount == 0) {
                         promise.then(function(updatedBoard) {
                             $scope.list.cards = updatedBoard.data;
-                            $scope.grid.rows = updatedBoard.data;
                         });
                     }
                 };
@@ -141,9 +143,9 @@ angular.module('card-app')
                         return;
                     }
 
+                    $scope.cardSearchValue = '';
                     $rootScope.datamodel.addCardToDeck($scope.list.id, searchResult.id, 1).then(function(updatedBoard) {
                         $scope.list.cards = updatedBoard.data;
-                        $scope.grid.rows = updatedBoard.data;
                     });
 
                     searchResult = null;
@@ -160,6 +162,24 @@ angular.module('card-app')
                         $scope.setNames[s.gatherercode] = s.name;
                     }
                 });
+
+                $scope.paging = {
+                    page: 1,
+                    update: function() {
+                        var end = $scope.paging.page * 100;
+                        var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'name'], false);
+                        $scope.grid.rows = cards.slice(end - 100, end);
+                    }
+                };
+                $scope.$watch('list.cards', function(cards) {
+                    $scope.paging.list = [];
+                    for (var p = 1; p <= cards.length / 100; p++) {
+                        $scope.paging.list.push(p);
+                    }
+                    $scope.paging.update();
+                });
+                $scope.$watch('paging.page', $scope.paging.update);
+                $scope.$watch('grid.currentSorting', $scope.paging.update);
             }
         }
     });

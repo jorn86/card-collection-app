@@ -24,5 +24,8 @@
             <input type="checkbox" ng-model="grid.sortDescending">
         </label>
     </form>
+    <div ng-show="paging.list.length > 1">
+        Page: [<a ng-repeat="p in paging.list" ng-click="paging.page = p" ng-class="{'deck-active': paging.page == p}" class="pointer"><span>{{p}}</span><span ng-hide="$last">, </span></a>]
+    </div>
     <div ng-if="list.cards.length > 0" ng-include="'partials/grid/grid.html'"></div>
 </div>
