@@ -6,6 +6,7 @@ import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.database.DatabaseModule;
+import org.hertsig.logic.LogicModule;
 import org.hertsig.startup.StartupActionModule;
 import org.postgresql.ds.PGPoolingDataSource;
 
@@ -24,13 +25,16 @@ public class GuiceServletConfig extends GuiceServletContextListener {
 
     @Override
     protected Injector getInjector() {
-        return Guice.createInjector(new RestletModule(), new DatabaseModule(), new StartupActionModule(), new AbstractModule() {
-            @Override
-            protected void configure() {
-                binder().disableCircularProxies();
-                binder().requireExactBindingAnnotations();
-                binder().requireExplicitBindings();
-            }
-        });
+        return Guice.createInjector(new RestletModule(), new DatabaseModule(), new StartupActionModule(),
+                new LogicModule(), new GuiceSettingsModule());
+    }
+
+    private static class GuiceSettingsModule extends AbstractModule {
+        @Override
+        protected void configure() {
+            binder().disableCircularProxies();
+            binder().requireExactBindingAnnotations();
+            binder().requireExplicitBindings();
+        }
     }
 }

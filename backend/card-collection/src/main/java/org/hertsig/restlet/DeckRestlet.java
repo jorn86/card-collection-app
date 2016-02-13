@@ -5,6 +5,8 @@ import com.google.common.base.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.hertsig.logic.DeckManager;
+import org.hertsig.logic.DeckboxImport;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
 import org.hertsig.dto.*;
@@ -13,11 +15,14 @@ import org.hertsig.user.UserManager;
 import org.skife.jdbi.v2.IDBI;
 
 import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -27,11 +32,15 @@ import java.util.stream.Collectors;
 public class DeckRestlet {
     private final UserManager userManager;
     private final IDBI dbi;
+    private final DeckboxImport deckboxImport;
+    private final DeckManager deckManager;
 
     @Inject
-    public DeckRestlet(IDBI dbi, UserManager userManager) {
+    public DeckRestlet(IDBI dbi, UserManager userManager, DeckboxImport inventoryImport, DeckManager deckManager) {
         this.dbi = dbi;
         this.userManager = userManager;
+        this.deckboxImport = inventoryImport;
+        this.deckManager = deckManager;
     }
 
     private void checkUser() {
@@ -156,21 +165,22 @@ public class DeckRestlet {
             if (card.getAmount() < 1) {
                 card.setAmount(1);
             }
-
-            List<DeckRow> rows = dao.getBoardRows(card.getBoardid(), card.getCardid());
-            Optional<DeckRow> existingPrinting = rows.stream().filter(row -> Objects.equal(row.getPrintingid(), card.getPrintingid())).findAny();
-            if (existingPrinting.isPresent()) {
-                DeckRow existing = existingPrinting.get();
-                dao.updateRow(new DeckRow(existing.getId(), null, 0, null, existing.getAmount() + card.getAmount()));
-            }
-            else if (rows.size() > 0 && card.getPrintingid() == null) {
-                DeckRow existing = rows.get(0);
-                dao.updateRow(new DeckRow(existing.getId(), null, 0, null, existing.getAmount() + card.getAmount()));
-            }
-            else {
-                dao.addCardToDeck(card);
-            }
+            deckManager.addCard(dao, card.getBoardid(), card.getAmount(), card.getCardid(), card.getPrintingid());
             return dao.getCardsForBoard(card.getBoardid());
+        }
+    }
+
+    @POST
+    @Path("{deckId}/deckboximport")
+    @Consumes("text/csv")
+    public List<String> importFromDeckbox(@PathParam("deckId") UUID deckId, @Context HttpServletRequest request) throws IOException, ServletException {
+        checkUser();
+        try {
+            return deckboxImport.importCsv(deckId, request.getInputStream());
+        }
+        catch (IOException e) {
+            log.error("Exception reading input stream for Deckbox csv import", e);
+            throw new HttpRequestException(Response.Status.INTERNAL_SERVER_ERROR, "Error reading file");
         }
     }
 

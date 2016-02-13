@@ -1,5 +1,15 @@
-<h3>{{deck.name}}</h3>
-<div ng-show="deck" ng-repeat="board in deck.boards">
-    <cardlist list="board" editable="editable"></cardlist>
+<div ng-show="deck">
+    <h3>{{deck.name}}</h3>
+    <form ng-submit="uploadDeckboxImport()">
+        <label>Deckbox import <input id="fileupload" type="file" accept="text/csv"></label>
+        <label><input type="submit" value="Upload now"></label>
+    </form>
+    <div ng-show="warnings">
+        Import warnings
+        <div ng-repeat="warning in warnings">{{warning}}</div>
+    </div>
+    <div ng-repeat="board in deck.boards">
+        <cardlist list="board" editable="editable" inventory="inventory"></cardlist>
+    </div>
 </div>
 <div ng-hide="deck">Loading...</div>

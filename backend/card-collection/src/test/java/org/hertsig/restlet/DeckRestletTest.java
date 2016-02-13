@@ -1,6 +1,8 @@
 package org.hertsig.restlet;
 
 import com.google.common.collect.Lists;
+import org.hertsig.logic.DeckManager;
+import org.hertsig.logic.DeckboxImport;
 import org.hertsig.dao.DeckDao;
 import org.hertsig.dao.DecklistDao;
 import org.hertsig.dao.UserDao;
@@ -22,7 +24,8 @@ import static org.mockito.Mockito.when;
 public class DeckRestletTest {
     private final MockDbi mock = new MockDbi();
     private final UserManager userManager = new UserManager(mock.getDbi());
-    private final DeckRestlet restlet = new DeckRestlet(mock.getDbi(), userManager);
+    private final DeckManager deckManager = new DeckManager(mock.getDbi());
+    private final DeckRestlet restlet = new DeckRestlet(mock.getDbi(), userManager, new DeckboxImport(mock.getDbi(), deckManager), deckManager);
     private UUID userId;
 
     @Rule public final ExpectedException expectedException = ExpectedException.none();

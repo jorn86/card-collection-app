@@ -26,6 +26,8 @@
 
     "prewar": "npm run-script test-single-run",
     "war": "jar cmf manifest.mf ROOT.war",
-    "postwar": "cd app && npm run-script war"
+    "postwar": "cd app && npm run-script war",
+    "quick-war": "jar cmf manifest.mf ROOT.war",
+    "postquick-war": "cd app && npm run-script war"
   }
 }

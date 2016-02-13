@@ -13,11 +13,6 @@ var Datamodel = function Datamodel($http) {
         return $http.get(base + 'deck/' + id);
     };
 
-    this.getInventory = function() {
-        $http.get(base + 'deck/inventory');
-        return $http.get('content/inventory.json');
-    };
-
     this.searchCardsByName = function(name) {
         return $http.get(base + 'database/search/?name=' + name);
     };
@@ -46,5 +41,9 @@ var Datamodel = function Datamodel($http) {
             $http.defaults.headers.common['X-UserId'] = response.data.id;
             return response.data;
         });
+    };
+
+    this.uploadDeckboxImport = function(deckId, file) {
+        return $http.post(base + 'deck/' + deckId + '/deckboximport', file, { headers: {'Content-Type': 'text/csv'}});
     };
 };

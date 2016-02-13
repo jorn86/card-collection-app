@@ -47,13 +47,35 @@ angular.module('card-app')
 
     .controller('DeckController', function ($scope, $stateParams) {
         $scope.deckId = $stateParams.id;
+
         $scope.reload = function() {
             $scope.datamodel.getDeck($scope.deckId).then(function (result) {
                 $scope.deck = result.data;
+                $scope.deck = result.data;
                 $scope.editable = $scope.deck.userid === $scope.currentUserId;
+            }, function (error) {
+                console.log(error);
+                $scope.deck = null;
             });
         };
-        $scope.$on('user', $scope.reload);
+
+        var fileUploadControl = document.getElementById('fileupload');
+        $scope.uploadDeckboxImport = function() {
+            if (fileUploadControl.files) {
+                $scope.datamodel.uploadDeckboxImport($scope.deckId, fileUploadControl.files[0]).then(function(result) {
+                    $scope.warnings = result.data;
+                    $scope.reload();
+                });
+                fileUploadControl.files = [];
+            }
+        };
+
+        $scope.inventory = $scope.user && $scope.deckId === $scope.user.inventoryid;
+        $scope.$on('user', function(event, user) {
+            $scope.inventory = $scope.deckId === user.inventoryid;
+            $scope.reload();
+        });
+
         $scope.reload();
     })
 
@@ -79,9 +101,8 @@ angular.module('card-app')
     .controller('SearchResultsController', function($scope, $stateParams, $state) {
         $scope.originalQuery = $stateParams.query;
         $scope.query = $stateParams.query;
-
         // $scope.datamodel.getSearchResults($stateParams.query);
-        $scope.datamodel.getDeck('c61cb204-3bc6-49c9-9410-df0e850daab1').then(function(result) {
+        $scope.datamodel.getDeck('9df0810e-78bc-439c-8c40-0463bdee2e32').then(function(result) {
             $scope.results = result.data.boards[0].cards;
             $scope.pages = [];
             var pages = $scope.results.length / 10;

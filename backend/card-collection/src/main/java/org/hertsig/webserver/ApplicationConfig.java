@@ -3,6 +3,7 @@ package org.hertsig.webserver;
 import javax.inject.Inject;
 
 import org.glassfish.hk2.api.ServiceLocator;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.jvnet.hk2.guice.bridge.api.GuiceBridge;
 import org.jvnet.hk2.guice.bridge.api.GuiceIntoHK2Bridge;
@@ -19,6 +20,7 @@ public class ApplicationConfig extends ResourceConfig {
     public ApplicationConfig(ServiceLocator serviceLocator) {
         packages("org.hertsig");
         register(new JacksonJaxbJsonProvider(new ObjectMapper(), JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS));
+        register(MultiPartFeature.class);
 
         GuiceBridge.getGuiceBridge().initializeGuiceBridge(serviceLocator);
         serviceLocator.getService(GuiceIntoHK2Bridge.class).bridgeGuiceInjector(JerseyWorkaround.injector);

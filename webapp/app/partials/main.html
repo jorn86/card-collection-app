@@ -1,7 +1,8 @@
 <div class="list">
     <div ng-show="currentUserId">
         <h2>My decks</h2>
-        <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})"><img src="../img/inventory.svg" height="16"> Inventory</a>
+        <a ng-show="currentUserId" ui-sref="app.deck({id: user.inventoryid})" ui-sref-active="deck-active">
+            <img src="../img/inventory.svg" height="16"><span> Inventory</span></a>
         <div style="margin: 5px 0">
             <button ng-dialog="partials/dialog/newTag.html">+<img src="../img/tag.svg" height="16" alt="New tag"></button>&nbsp;
             <button ng-dialog="partials/dialog/newDeck.html">+<img src="../img/deck.svg" height="16" alt="New deck"></button>
