@@ -55,13 +55,13 @@ angular.module('card-app')
         $scope.createQuery = function() {
             var parts = [];
             if ($scope.search.name) {
-                parts.push($scope.search.name);
+                parts.push('"' + $scope.search.name + '"');
             }
             if ($scope.search.text) {
                 parts.push('o:"' + $scope.search.text + '"');
             }
             if ($scope.search.types) {
-                parts.push(_.map($scope.search.types.split(/\s+/), function(type) { return 't:' + type}));
+                parts.push(_.map($scope.search.types.split(/\s+/), function(type) { return 't:"' + type + '"'}));
             }
             if ($scope.search.p.amount) {
                 parts.push('pow' + parseAmount($scope.search.p));
@@ -79,7 +79,7 @@ angular.module('card-app')
                 parts.push('f:' + $scope.search.format);
             }
             if ($scope.search.ft) {
-                parts.push('ft:' + $scope.search.ft);
+                parts.push('ft:"' + $scope.search.ft + '"');
             }
             return parts.join(' ');
         };

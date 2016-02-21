@@ -238,3 +238,32 @@ h3 {
     font-size: 16px;
     margin: 0;
 }
+
+ul.pagination {
+    margin: 5px 0;
+    padding: 0;
+}
+.pagination li {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid lightgrey;
+    border-left: none;
+}
+.pagination li:hover {
+    background-color: whitesmoke;
+}
+.pagination li:first-child {
+    border-left: 1px solid lightgrey;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.pagination li:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.pagination a {
+    text-decoration: none;
+}
+.pagination .active {
+    background-color: lightgrey;
+}

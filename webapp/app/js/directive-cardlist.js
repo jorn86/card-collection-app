@@ -163,23 +163,17 @@ angular.module('card-app')
                     }
                 });
 
-                $scope.paging = {
-                    page: 1,
-                    update: function() {
-                        var end = $scope.paging.page * 100;
-                        var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'name'], false);
-                        $scope.grid.rows = cards.slice(end - 100, end);
+                $scope.update = function(page) {
+                    if (typeof page === 'number') {
+                        $scope.page = page;
                     }
+                    var end = $scope.page * 100;
+                    var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'name'], false);
+                    $scope.grid.rows = cards.slice(end - 100, end);
                 };
-                $scope.$watch('list.cards', function(cards) {
-                    $scope.paging.list = [];
-                    for (var p = 1; p <= cards.length / 100; p++) {
-                        $scope.paging.list.push(p);
-                    }
-                    $scope.paging.update();
-                });
-                $scope.$watch('paging.page', $scope.paging.update);
-                $scope.$watch('grid.currentSorting', $scope.paging.update);
+                $scope.$watch('grid.currentSorting', $scope.update);
+                $scope.$watch('list.cards', $scope.update);
+                $scope.update(1);
             }
         }
     });
