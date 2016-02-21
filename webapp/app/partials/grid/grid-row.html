@@ -21,5 +21,4 @@
 
 <div class="grid-cell grid-cell-cost"><manacost mana="card.cost"></manacost>&nbsp;</div>
 
-<div class="grid-cell grid-cell-set"><setimage set="card.setcode" rarity="card.rarity"></setimage></div>
-<div ng-if="card.setisfallback" class="grid-cell grid-cell-set" style="background-color: #ffffff80"></div>
+<div class="grid-cell grid-cell-set"><setimage ng-class="{fallback: card.setisfallback}" set="card.setcode" rarity="card.rarity"></setimage></div>
