@@ -3,8 +3,7 @@
     <form ng-submit="search()">
         <label class="nowrap">Query <input type="text" ng-model="query">&nbsp;<input type="submit" value="Search"></label>
     </form>
-    <div>Page: <span ng-repeat="n in pages"><a ui-sref="app.searchresults({query: originalQuery, page:n})" ui-sref-active="active"
-            ><span>{{n}}</span></a>, </span></div>
+    <paging total="results.length" page-size="10" paging-action="update(page)" show-prev-next="true" hide-if-empty="true"></paging>
     <table class="searchresults" cellspacing="0">
         <tbody ng-repeat="card in pageresults">
             <tr><td rowspan="4">
@@ -15,6 +14,7 @@
                     >{{card.name}}</span>&nbsp;</td></tr>
             <tr><td>{{card.fulltype}}, <manacost mana="card.cost"></manacost> ({{card.cmc}})</td></tr>
             <tr><td>{{card.text}}</td></tr>
+            <tr><td>{{card.flavortext}}</td></tr>
             <tr><td>{{card.artist}}</td></tr>
         </tbody>
     </table>
