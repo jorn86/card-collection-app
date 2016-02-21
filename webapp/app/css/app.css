@@ -145,6 +145,10 @@ table.search td {
 }
 .grid-cell-inventorycount {
     width: 30px;
+    text-align: center;
+}
+.notenough {
+    background-color: orange;
 }
 .grid-cell-name {
     min-width: 155px;

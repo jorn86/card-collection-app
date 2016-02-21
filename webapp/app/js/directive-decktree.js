@@ -17,11 +17,8 @@ angular.module('card-app')
                         _.each($scope.node.children, function (child) { child.expand = false; });
                     }
                 });
-                $scope.onDrop = function(data, event) {
-                    $scope.updateDeckParent(data['json/deckid'].deck);
-                };
-                $scope.updateDeckParent = function(deckId) {
-                    $rootScope.datamodel.updateDeckTags(deckId, $scope.node.tagId).then(function(result) {
+                $scope.onDrop = function(data) {
+                    $rootScope.datamodel.updateDeckTags(data['json/deckid'].deck, $scope.node.tagId).then(function(result) {
                         $rootScope.$broadcast('reloadUserDecks', {deck: result.data.id});
                     });
                 };

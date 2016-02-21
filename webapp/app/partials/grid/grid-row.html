@@ -6,7 +6,7 @@
     <input class="grid-input" type="number" min="0" size="4" ng-model="card.amount" ng-change="updateAmount(card)" ng-disabled="!editable">
 </div>
 
-<div class="grid-cell grid-cell-inventorycount">
+<div class="grid-cell grid-cell-inventorycount" ng-class="{'notenough': card.inventorycount < card.amount}">
     <span>{{card.inventorycount}}</span>
 </div>
 
