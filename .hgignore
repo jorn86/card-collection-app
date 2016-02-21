@@ -1,11 +1,14 @@
 syntax:glob
-bower_components/
 node_modules/
 temp/
-json/AllSets-x.json
+
+json/AllSets*.json
+
 *.iml
 *.iws
 *.ipr
 .idea/
+
+test-output/
 target/
 *.war

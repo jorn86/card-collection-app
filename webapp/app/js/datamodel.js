@@ -50,4 +50,8 @@ var Datamodel = function Datamodel($http) {
     this.updateDeckTags = function(deckId, tagId) {
         return $http.put(base + 'deck/' + deckId, {tags: tagId ? [tagId] : []});
     };
+
+    this.getSearchResults = function(query) {
+        return $http.get(base + 'search?query=' + encodeURIComponent(query));
+    }
 };
