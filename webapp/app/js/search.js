@@ -81,7 +81,7 @@ angular.module('card-app')
             if ($scope.search.ft) {
                 parts.push('ft:' + $scope.search.ft);
             }
-            return parts.join('+');
+            return parts.join(' ');
         };
 
         $scope.doSearch = function() {

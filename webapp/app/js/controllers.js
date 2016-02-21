@@ -102,10 +102,10 @@ angular.module('card-app')
 
     .controller('SearchResultsController', function($scope, $stateParams, $state) {
         $scope.originalQuery = $stateParams.query;
-        $scope.query = $stateParams.query;
-        // $scope.datamodel.getSearchResults($stateParams.query);
-        $scope.datamodel.getDeck('9df0810e-78bc-439c-8c40-0463bdee2e32').then(function(result) {
-            $scope.results = result.data.boards[0].cards;
+        $scope.query = $scope.originalQuery;
+        $scope.datamodel.getSearchResults($scope.query);
+        $scope.datamodel.getDeck('e84c72b5-fc08-47fd-8be2-7ea917bd2b34').then(function(result) {
+            $scope.results = result.data.boards[1].cards;
             $scope.pages = [];
             var pages = $scope.results.length / 10;
             for (var i = 0; i < pages; i++) {

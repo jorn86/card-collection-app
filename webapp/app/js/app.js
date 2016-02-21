@@ -2,8 +2,14 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
     //.config(function ($locationProvider) {
     //    $locationProvider.html5Mode(true);
     //})
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
         $urlRouterProvider.otherwise('/');
+
+        $urlMatcherFactoryProvider.type("nonURIEncoded", {
+            encode: function(item) { return item || ''; },
+            decode: function(item) { return item || ''; },
+            is: function() { return true; }
+        });
 
         $stateProvider
             .state('app', {
