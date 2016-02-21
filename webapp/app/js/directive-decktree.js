@@ -3,9 +3,9 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/decktree.html',
-            scope: {node: '='},
+            scope: {node: '=', readonly: '='},
             compile: RecursionHelper.compile,
-            controller: function ($scope) {
+            controller: function ($scope, $rootScope) {
                 $scope.$watch('node.expand', function(expanded) {
                     if (!$scope.node) return;
                     if (expanded) {
@@ -17,6 +17,14 @@ angular.module('card-app')
                         _.each($scope.node.children, function (child) { child.expand = false; });
                     }
                 });
+                $scope.onDrop = function(data, event) {
+                    $scope.updateDeckParent(data['json/deckid'].deck);
+                };
+                $scope.updateDeckParent = function(deckId) {
+                    $rootScope.datamodel.updateDeckTags(deckId, $scope.node.tagId).then(function(result) {
+                        $rootScope.$broadcast('reloadUserDecks', {deck: result.data.id});
+                    });
+                };
             }
         };
     });

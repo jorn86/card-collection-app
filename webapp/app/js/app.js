@@ -1,4 +1,4 @@
-angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-array', 'directive.g+signin', 'ngDialog'])
+angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-array', 'directive.g+signin', 'ngDialog', 'draganddrop'])
     //.config(function ($locationProvider) {
     //    $locationProvider.html5Mode(true);
     //})

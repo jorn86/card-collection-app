@@ -209,6 +209,9 @@ img.mana {
 .pointer {
     cursor: pointer;
 }
+.droptarget {
+    background-color: orange;
+}
 
 .deck-active span {
     background-color: lightgrey;

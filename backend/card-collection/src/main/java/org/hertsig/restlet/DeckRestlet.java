@@ -184,6 +184,28 @@ public class DeckRestlet {
         }
     }
 
+    @PUT
+    @Path("{deckId}")
+    public Deck updateDeck(@PathParam("deckId") UUID deckId, Deck update) {
+        checkUser();
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            Deck deck = dao.getDeck(deckId);
+            if (!Objects.equal(deck.getUserid(), userManager.getUserId())) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
+            }
+
+            if (update.getTags() != null) {
+                dao.clearTags(deckId);
+                update.getTags().forEach(tag -> dao.addTag(deckId, tag));
+            }
+            if (update.getName() != null) {
+                dao.updateDeckName(deckId, update.getName());
+            }
+
+            return dao.getDeck(deckId);
+        }
+    }
+
     private Deck getDeckForUser(DeckDao dao, UUID boardId) {
         checkUser();
 
