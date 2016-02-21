@@ -64,6 +64,12 @@ public interface DeckDao extends AutoCloseable {
     @SqlUpdate("INSERT INTO decktag (tagid, deckid) VALUES (:tagid, :deckid)")
     void addTag(@Bind("deckid") UUID deckId, @Bind("tagid") UUID tagId);
 
+    @SqlUpdate("DELETE FROM decktag WHERE deckid = :deckid")
+    void clearTags(@Bind("deckid") UUID deckId);
+
+    @SqlUpdate("UPDATE deck SET name = :name WHERE deckid = :deckid")
+    void updateDeckName(@Bind("deckid") UUID deckId, @Bind("name") String name);
+
     void close();
 
 }

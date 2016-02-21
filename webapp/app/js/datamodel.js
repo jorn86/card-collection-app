@@ -46,4 +46,8 @@ var Datamodel = function Datamodel($http) {
     this.uploadDeckboxImport = function(deckId, file) {
         return $http.post(base + 'deck/' + deckId + '/deckboximport', file, { headers: {'Content-Type': 'text/csv'}});
     };
+
+    this.updateDeckTags = function(deckId, tagId) {
+        return $http.put(base + 'deck/' + deckId, {tags: tagId ? [tagId] : []});
+    };
 };
