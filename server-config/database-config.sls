@@ -9,6 +9,6 @@ cardcollection.tester:
     - name: tester
     - superuser: True
 
-card-collection:
+cardcollection:
   postgres_database.present:
     - owner: cardcollection
