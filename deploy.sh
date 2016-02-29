@@ -16,6 +16,7 @@ build() {
 
 deploy_backend() {
     echo "Deploying Backend..."
+    chmod +r backend/card-collection/target/backend.war
     tomcat_deploy "backend/card-collection/target/backend.war" "/backend"
 }
 
