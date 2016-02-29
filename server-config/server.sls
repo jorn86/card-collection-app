@@ -1,6 +1,3 @@
-include:
-  - nodejs4
-
 server.pkgs:
   pkg.installed:
     - pkgs:
@@ -10,5 +7,8 @@ server.pkgs:
       - mercurial
       - openjdk-8-jdk
       - maven
-      - tomcat8
-      - tomcat8-admin
+
+include:
+  - nodejs4
+  - tomcat8
+  - database-config
