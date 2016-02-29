@@ -26,7 +26,7 @@
 
     "prewar": "npm run-script test-single-run",
     "war": "npm run-script quick-war",
-    "quick-war": "jar cmf manifest.mf ROOT.war",
+    "quick-war": "jar cmf manifest.mf ROOT.war WEB-INF",
     "postquick-war": "cd app && npm run-script war"
   }
 }
