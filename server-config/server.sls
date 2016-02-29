@@ -1,3 +1,6 @@
+include:
+  - nodejs4
+
 server.pkgs:
   pkg.installed:
     - pkgs:
@@ -5,10 +8,7 @@ server.pkgs:
       - postgresql-contrib-9.3
       - postgresql-client
       - mercurial
-      - oracle-java8-installer
+      - openjdk-8-jdk
       - maven
       - tomcat8
-
-include:
-  - nodejs4
-  - java8
+      - tomcat8-admin
