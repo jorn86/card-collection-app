@@ -1,7 +1,3 @@
-include:
-  - nodejs4
-  - java8
-
 server.pkgs:
   pkg.installed:
     - pkgs:
@@ -11,3 +7,8 @@ server.pkgs:
       - mercurial
       - oracle-java8-installer
       - maven
+      - tomcat8
+
+include:
+  - nodejs4
+  - java8
