@@ -1,8 +1,9 @@
 package org.hertsig.restlet;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hertsig.parser.QueryNode;
-import org.hertsig.parser.QueryParser;
+import org.hertsig.logic.QueryExecutor;
+import org.hertsig.query.QueryNode;
+import org.hertsig.query.QueryParser;
 import org.hertsig.user.HttpRequestException;
 import org.parboiled.errors.ParsingException;
 
@@ -16,13 +17,6 @@ import javax.ws.rs.core.Response;
 public class SearchRestlet {
     @GET
     public QueryNode query(@QueryParam("query") String query) {
-        try {
-            QueryNode node = new QueryParser().parse(query);
-            log.debug("Parsed {}", node);
-            return node;
-        }
-        catch (ParsingException e) {
-            throw new HttpRequestException(Response.Status.BAD_REQUEST, e.getMessage());
-        }
+        return QueryExecutor.parse(query);
     }
 }
