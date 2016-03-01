@@ -1,4 +1,4 @@
-package org.hertsig.parser
+package org.hertsig.query
 
 import org.parboiled.errors.{ErrorUtils, ParsingException}
 import org.parboiled.scala._
@@ -10,6 +10,7 @@ case class QueryNode(conditions: List[ConditionNode]) extends AstNode
 sealed abstract class ConditionNode() extends AstNode
 case class SubconditionNode(conditions: List[ConditionNode]) extends ConditionNode
 case class OrSubconditionNode(conditions: List[ConditionNode]) extends ConditionNode
+
 case class NameConditionNode(name: StringNode) extends ConditionNode
 case class OracleConditionNode(text: StringNode) extends ConditionNode
 case class FlavorTextConditionNode(text: StringNode) extends ConditionNode
@@ -18,7 +19,7 @@ case class ToughnessConditionNode(condition: AmountTypeNode, amount: Int) extend
 case class LoyaltyConditionNode(condition: AmountTypeNode, amount: Int) extends ConditionNode
 case class CmcConditionNode(condition: AmountTypeNode, amount: Int) extends ConditionNode
 case class FormatConditionNode(format: String) extends ConditionNode
-case class ColorConditionNode(condition: String) extends ConditionNode
+case class ColorConditionNode(color: String) extends ConditionNode
 case class TypeConditionNode(condition: StringNode) extends ConditionNode
 
 case class AmountTypeNode(condition: String) extends AstNode
@@ -44,6 +45,7 @@ class QueryParser extends Parser {
 
   def Subcondition: Rule1[SubconditionNode] = rule { "(" ~ oneOrMore(Condition, oneOrMore(" ")) ~~> SubconditionNode ~ ")" }
   def OrSubcondition: Rule1[OrSubconditionNode] = rule { "(" ~ oneOrMore(Condition, OrSeparator) ~~> OrSubconditionNode ~ ")" }
+
   def NameCondition: Rule1[NameConditionNode] = rule { StringValue ~~> NameConditionNode }
   def OracleCondition: Rule1[OracleConditionNode] = rule { "o:" ~ StringValue ~~> OracleConditionNode }
   def FlavorTextCondition: Rule1[FlavorTextConditionNode] = rule { "ft:" ~ StringValue ~~> FlavorTextConditionNode }
@@ -61,6 +63,7 @@ class QueryParser extends Parser {
 
   def OrSeparator: Rule0 = rule { oneOrMore(" ") ~ "or" ~ oneOrMore(" ") }
 
+  @throws(classOf[ParsingException])
   def parse(input: String): QueryNode = {
     val parsingResult = ReportingParseRunner(Query).run(input)
     parsingResult.result match {
