@@ -13,8 +13,5 @@
     "ng-dialog": "0.5.6",
     "q": "1.0.1",
     "underscore": "1.8.3"
-  },
-  "scripts": {
-    "war": "jar uf ../ROOT.war *"
   }
 }
