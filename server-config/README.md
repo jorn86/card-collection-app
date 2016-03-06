@@ -14,3 +14,5 @@ log_level: warning
 ```
 
 run salt: `sudo salt-call state.highstate`
+
+deploy to the tomcat that was just installed: run `deploy.sh` in `..`
