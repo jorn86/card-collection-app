@@ -1,4 +1,4 @@
-package org.hertsig.startup;
+package org.hertsig.preconstructed;
 
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;

@@ -3,6 +3,7 @@ package org.hertsig.startup;
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 import com.google.inject.multibindings.Multibinder;
+import org.hertsig.preconstructed.PreconstructedDecks;
 
 public class StartupActionModule extends AbstractModule {
     @Override
