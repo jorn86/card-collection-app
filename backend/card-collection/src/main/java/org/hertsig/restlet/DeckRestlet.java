@@ -61,7 +61,9 @@ public class DeckRestlet {
     @Path("preconstructedlist")
     public DeckListNode getPreconstructedList() {
         try (DecklistDao dao = dbi.open(DecklistDao.class)) {
-            return createNode(dao.getPreconstructedTags().get(0), dao.getPreconstructedTags(), dao.getPreconstructedDecks());
+            List<Tag> tags = dao.getPreconstructedTags();
+            if (tags.isEmpty()) return null;
+            return createNode(tags.get(0), tags, dao.getPreconstructedDecks());
         }
     }
 

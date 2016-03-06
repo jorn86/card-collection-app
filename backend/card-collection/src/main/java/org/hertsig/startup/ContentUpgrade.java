@@ -38,7 +38,7 @@ import java.util.zip.ZipInputStream;
 @Slf4j
 @Singleton
 public class ContentUpgrade implements StartupAction {
-    private static final Pattern PATTERN = Pattern.compile("\\{.+?\\}");
+    private static final Pattern MANA_PATTERN = Pattern.compile("\\{.+?\\}");
     private final IDBI dbi;
 
     @Inject
@@ -151,7 +151,7 @@ public class ContentUpgrade implements StartupAction {
         if (manaCost == null) return null;
 
         StringBuilder result = new StringBuilder();
-        for (Matcher m = PATTERN.matcher(manaCost); m.find();) {
+        for (Matcher m = MANA_PATTERN.matcher(manaCost); m.find();) {
             String symbol = m.group();
             symbol = symbol.substring(1, symbol.length() - 1);
             if (symbol.length() == 1 || symbol.matches("\\d+")) {
@@ -215,17 +215,30 @@ public class ContentUpgrade implements StartupAction {
 
     @VisibleForTesting Reader ensureSetFile() throws IOException {
         Path folder = Paths.get("json");
+        boolean inMemory = false;
         if (!Files.isDirectory(folder)) {
-            Files.createDirectory(folder);
+            try {
+                Files.createDirectory(folder);
+            }
+            catch (IOException e) {
+                log.debug("No permission to write to file system, falling back to in memory", e);
+                inMemory = true;
+            }
         }
 
         Path file = folder.resolve("AllSets-x.json");
         if (!Files.isRegularFile(file)) {
             log.debug("Downloading sets file");
-            try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
-                    FileOutputStream outputStream = new FileOutputStream(file.toFile())) {
+            try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream())) {
                 Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"), "Invalid zip file contents");
-                ByteStreams.copy(zipInputStream, outputStream);
+                if (inMemory) {
+                    return new InputStreamReader(zipInputStream);
+                }
+                else {
+                    try (FileOutputStream outputStream = new FileOutputStream(file.toFile())) {
+                        ByteStreams.copy(zipInputStream, outputStream);
+                    }
+                }
             }
         }
 
