@@ -1,6 +1,9 @@
-package org.hertsig.startup;
+package org.hertsig.preconstructed;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,6 +11,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
+import java.util.Scanner;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -21,6 +25,8 @@ import org.hertsig.dto.Tag;
 import com.google.gson.Gson;
 
 import lombok.extern.slf4j.Slf4j;
+import org.hertsig.startup.StartupAction;
+import org.hertsig.startup.StartupActionException;
 import org.skife.jdbi.v2.IDBI;
 
 @Slf4j
@@ -36,28 +42,28 @@ public class PreconstructedDecks implements StartupAction {
 
     @Override
     public void run() throws StartupActionException {
-        try (PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
+
+        try (Scanner files = new Scanner(PreconstructedDecks.class.getResourceAsStream("list"));
+                PreconstructedDao dao = dbi.open(PreconstructedDao.class)) {
             if (dao.getPreconstructedTag() == null) {
                 dao.createPreconstructedTag();
             }
             Tag baseTag = dao.getPreconstructedTag();
 
-            Files.walkFileTree(Paths.get("json", "preconstructed"), new SimpleFileVisitor<Path>() {
-                @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                    importPreconstructedDeck(dao, baseTag, file);
-                    return FileVisitResult.CONTINUE;
+            while (files.hasNext()) {
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(PreconstructedDecks.class.getResourceAsStream(files.nextLine())))) {
+                    importPreconstructedDeck(dao, baseTag, reader);
                 }
-            });
+            }
         }
         catch (IOException e) {
             throw new StartupActionException("Exception while loading preconstructed decks", e);
         }
     }
 
-    private void importPreconstructedDeck(PreconstructedDao dao, Tag baseTag, Path file) throws IOException {
+    private void importPreconstructedDeck(PreconstructedDao dao, Tag baseTag, BufferedReader file) throws IOException {
         log.trace("Checking file {}", file);
-        PreconstructedDeck deck = gson.fromJson(Files.newBufferedReader(file), PreconstructedDeck.class);
+        PreconstructedDeck deck = gson.fromJson(file, PreconstructedDeck.class);
 
         UUID tagId = ensureTagChain(dao, baseTag, deck.getTag());
         UUID existingDeck = dao.getPreconstructedDeck(tagId, deck.getName());
