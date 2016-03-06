@@ -51,7 +51,8 @@ public class PreconstructedDecks implements StartupAction {
             Tag baseTag = dao.getPreconstructedTag();
 
             while (files.hasNext()) {
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader(PreconstructedDecks.class.getResourceAsStream(files.nextLine())))) {
+                String name = files.nextLine();
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(PreconstructedDecks.class.getResourceAsStream(name)))) {
                     importPreconstructedDeck(dao, baseTag, reader);
                 }
             }
