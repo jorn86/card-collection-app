@@ -24,6 +24,6 @@
 
     "prewar": "npm install && npm run test-single-run",
     "war": "npm run quick-war",
-    "quick-war": "jar cmf manifest.mf ROOT.war -C app/ ."
+    "quick-war": "jar cmf manifest.mf ROOT.war WEB-INF -C app/ ."
   }
 }
