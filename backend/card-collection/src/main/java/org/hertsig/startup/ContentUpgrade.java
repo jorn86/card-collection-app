@@ -229,16 +229,16 @@ public class ContentUpgrade implements StartupAction {
         Path file = folder.resolve("AllSets-x.json");
         if (!Files.isRegularFile(file)) {
             log.debug("Downloading sets file");
-            try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream())) {
+            if (inMemory) {
+                ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
                 Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"), "Invalid zip file contents");
-                if (inMemory) {
-                    return new InputStreamReader(zipInputStream);
-                }
-                else {
-                    try (FileOutputStream outputStream = new FileOutputStream(file.toFile())) {
-                        ByteStreams.copy(zipInputStream, outputStream);
-                    }
-                }
+                return new InputStreamReader(zipInputStream);
+            }
+
+            try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
+                    FileOutputStream outputStream = new FileOutputStream(file.toFile())) {
+                Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"), "Invalid zip file contents");
+                ByteStreams.copy(zipInputStream, outputStream);
             }
         }
 
