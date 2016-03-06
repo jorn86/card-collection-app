@@ -85,12 +85,23 @@ table.search td {
 
 .deck {
     float: left;
-    width: calc(100% - 215px);
+    width: calc(100% - 385px);
     height: 100%;
     padding: 0 10px 0 5px;
     overflow: auto;
 }
 
+.adsbygoogle {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 150px;
+    padding: 10px;
+    overflow: auto;
+    background-color: #cacaca;
+}
+
+/* Deck content */
 .grid {
     border: 2px outset black;
     overflow: auto;
