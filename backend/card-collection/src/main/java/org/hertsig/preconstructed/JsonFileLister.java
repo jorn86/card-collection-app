@@ -18,7 +18,7 @@ public class JsonFileLister {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                     if (file.toString().endsWith(".json")) {
-                        writer.append(json.relativize(file).toString()).append("\n");
+                        writer.append(json.relativize(file).toString().replace('\\', '/')).append("\n");
                     }
                     return super.visitFile(file, attrs);
                 }
