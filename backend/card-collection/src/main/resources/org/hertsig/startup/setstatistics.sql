@@ -3,7 +3,8 @@ CREATE MATERIALIZED VIEW setstatistics AS (
         SELECT DISTINCT ON (printing.cardid) cardid, setid
         FROM printing LEFT JOIN "set" ON "set".id = printing.setid
         ORDER BY printing.cardid, "set".priority, "set".releasedate ASC NULLS LAST),
-    cards AS (SELECT COUNT(id) AS count, cardid, setid FROM printing GROUP BY cardid, setid),
+    cards AS (SELECT COUNT(printing.id) AS count, cardid, setid FROM printing LEFT JOIN card ON cardid = card.id
+        WHERE layout != 'token' GROUP BY cardid, setid),
     prints AS (SELECT c.*, EXISTS(SELECT 1 FROM firstprinting f WHERE f.cardid = c.cardid AND f.setid = c.setid) AS isnew FROM cards c)
   SELECT s.*,
     SUM(p.count) AS prints,

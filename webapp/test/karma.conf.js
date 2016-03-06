@@ -11,6 +11,7 @@ module.exports = function(config) {
             'app/node_modules/angular-filter/dist/angular-filter.js',
             'app/node_modules/angular-mocks/angular-mocks.js',
             'app/node_modules/ng-dialog/js/ngDialog.js',
+            'app/node_modules/angular-paging/dist/paging.min.js',
             'app/lib/**/*.js',
             'app/js/**/*.js',
             'test/unit/**/*.js'
