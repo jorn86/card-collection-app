@@ -141,6 +141,26 @@ public class DeckRestlet {
         }
     }
 
+    @GET
+    @Path("board/{id}")
+    public DeckBoard getBoard(@PathParam("id") UUID boardId) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, boardId);
+            DeckBoard board = dao.getBoard(boardId);
+            board.setCards(dao.getCardsForBoard(boardId));
+            return board;
+        }
+    }
+
+    @GET
+    @Path("otherboards/{id}")
+    public List<DeckBoard> getOtherBoards(@PathParam("id") UUID boardId) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            Deck deck = getDeckForUser(dao, boardId);
+            return dao.getOtherBoards(deck.getId(), boardId);
+        }
+    }
+
     @PUT
     @Path("card")
     public List<DeckEntry> updateRow(DeckRow row) {
@@ -205,6 +225,36 @@ public class DeckRestlet {
             }
 
             return dao.getDeck(deckId);
+        }
+    }
+
+    @PUT
+    @Path("board/{id}")
+    public void updateBoard(@PathParam("id") UUID boardId, DeckBoard board) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, boardId);
+            dao.updateBoardName(boardId, board.getName());
+        }
+    }
+
+    @DELETE
+    @Path("board/{id}")
+    public void deleteBoard(@PathParam("id") UUID boardId) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, boardId);
+            dao.deleteBoard(boardId);
+        }
+    }
+
+    @POST
+    @Path("board/merge/{source}/{target}")
+    public void mergeBoard(@PathParam("source") UUID source, @PathParam("target") UUID target) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, source);
+            getDeckForUser(dao, target);
+            // TODO actual merge, this might result in duplicate entries
+            dao.mergeBoard(source, target);
+            dao.deleteBoard(source);
         }
     }
 

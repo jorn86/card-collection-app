@@ -4,7 +4,7 @@ angular.module('card-app')
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
             scope: {list: '=', editable: '=', inventory: '='},
-            controller: function($scope, $rootScope, $filter) {
+            controller: function($scope, $rootScope, $filter, ngDialog) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
                     if (card.type) {
@@ -162,6 +162,13 @@ angular.module('card-app')
                         $scope.setNames[s.gatherercode] = s.name;
                     }
                 });
+
+                $scope.editBoard = function() {
+                    ngDialog.open({
+                        template: 'partials/dialog/editBoard.html',
+                        data: { id: $scope.list.id }
+                    });
+                };
 
                 $scope.update = function(page) {
                     if (typeof page === 'number') {

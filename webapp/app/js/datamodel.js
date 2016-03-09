@@ -13,6 +13,26 @@ var Datamodel = function Datamodel($http) {
         return $http.get(base + 'deck/' + id);
     };
 
+    this.getBoard = function(id) {
+        return $http.get(base + 'deck/board/' + id);
+    };
+
+    this.getOtherBoards = function(boardId) {
+        return $http.get(base + 'deck/otherboards/' + boardId);
+    };
+
+    this.updateBoard = function(id, board) {
+        return $http.put(base + 'deck/board/' + id, board);
+    };
+
+    this.mergeBoard = function(sourceId, targetId) {
+        return $http.post(base + 'deck/board/merge/' + sourceId + '/' + targetId);
+    };
+
+    this.deleteBoard = function(id) {
+        return $http.delete(base + 'deck/board/' + id);
+    };
+
     this.searchCardsByName = function(name) {
         return $http.get(base + 'database/search/?name=' + name);
     };
@@ -32,6 +52,7 @@ var Datamodel = function Datamodel($http) {
     this.createDeck = function(name, tagId) {
         return $http.post(base + 'deck', {name: name, tags: tagId ? [tagId] : []});
     };
+
     this.createTag = function(name, parentTagId) {
         return $http.post(base + 'deck/tag', {name: name, parentid: parentTagId});
     };

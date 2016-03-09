@@ -18,7 +18,15 @@ public interface DeckDao extends AutoCloseable {
     @GetGeneratedKeys(UuidMapper.class)
     UUID createBoard(@BindBean DeckBoard board);
 
-    @SqlQuery("SELECT * FROM board WHERE deckid = :deck")
+    @SqlQuery("SELECT * FROM board WHERE id = :board")
+    @MapResultAsBean
+    DeckBoard getBoard(@Bind("board") UUID boardId);
+
+    @SqlQuery("SELECT * FROM board WHERE deckid = :deck AND id != :board ORDER BY board.order")
+    @MapResultAsBean
+    List<DeckBoard> getOtherBoards(@Bind("deck") UUID deckId, @Bind("board") UUID boardId);
+
+    @SqlQuery("SELECT * FROM board WHERE deckid = :deck ORDER BY board.order")
     @MapResultAsBean
     List<DeckBoard> getBoards(@Bind("deck") UUID deckId);
 
@@ -67,8 +75,17 @@ public interface DeckDao extends AutoCloseable {
     @SqlUpdate("DELETE FROM decktag WHERE deckid = :deckid")
     void clearTags(@Bind("deckid") UUID deckId);
 
-    @SqlUpdate("UPDATE deck SET name = :name WHERE deckid = :deckid")
+    @SqlUpdate("UPDATE deck SET name = :name WHERE id = :deckid")
     void updateDeckName(@Bind("deckid") UUID deckId, @Bind("name") String name);
+
+    @SqlUpdate("UPDATE board SET name = :name WHERE id = :boardid")
+    void updateBoardName(@Bind("boardid") UUID boardId, @Bind("name") String name);
+
+    @SqlUpdate("DELETE FROM board WHERE id = :board")
+    void deleteBoard(@Bind("board") UUID boardId);
+
+    @SqlUpdate("UPDATE deckrow SET boardid = :target WHERE boardid = :source")
+    void mergeBoard(@Bind("source") UUID source, @Bind("target") UUID target);
 
     void close();
 

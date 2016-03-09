@@ -1,0 +1,13 @@
+<form ng-controller="EditBoardController">
+    <table cellspacing="0">
+        <tr><td><label for="name">Name</label></td>
+            <td><input id="name" type="text" ng-model="fields.name"></td>
+            <td><input type="button" ng-click="submitName()" value="Submit"></td>
+        </tr>
+        <tr><td>Delete and...</td>
+            <td style="margin-right: 5px" class="nowrap" ng-show="boards.length > 0"><input type="button" ng-click="submitMerge()" value="merge rows into">
+                <select ng-model="fields.targetBoard" ng-options="board.id as board.name for board in boards"></select></td>
+            <td><input type="button" ng-click="submitDelete()" value="delete rows"></td>
+        </tr>
+    </table>
+</form>
