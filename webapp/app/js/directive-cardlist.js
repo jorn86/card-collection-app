@@ -84,7 +84,7 @@ angular.module('card-app')
 
                     sortingOptions: [
                         {name: 'Count', field: 'amount'},
-                        {name: 'Name', field: 'name'},
+                        {name: 'Name', field: 'normalizedname'},
                         {name: 'Type', field: 'fulltype'},
                         {name: 'Set', field: 'setcode'},
                         {name: 'Converted Mana Cost', field: 'cmc'}
@@ -179,7 +179,7 @@ angular.module('card-app')
                         $scope.page = page;
                     }
                     var end = $scope.page * 100;
-                    var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'name'], false);
+                    var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'normalizedname'], false);
                     $scope.grid.rows = cards.slice(end - 100, end);
                 };
                 $scope.$watch('grid.currentSorting', $scope.update);

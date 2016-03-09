@@ -86,7 +86,6 @@ table.search td {
 .deck {
     float: left;
     width: calc((100% - 215px) * 0.85);
-    max-width: 1021px;
     height: 100%;
     padding: 0 10px 0 5px;
     overflow: auto;
