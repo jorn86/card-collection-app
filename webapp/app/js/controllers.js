@@ -151,4 +151,27 @@ angular.module('card-app')
             });
             $scope.closeThisDialog();
         };
+    })
+
+    .controller('EditBoardController', function($scope, $rootScope) {
+        var id = $scope.ngDialogData.id;
+        $scope.fields = { name: '', targetBoard: null };
+        $rootScope.datamodel.getBoard(id).then(function(result) {
+            $scope.fields.name = result.data.name;
+        });
+        $rootScope.datamodel.getOtherBoards(id).then(function(result) {
+            $scope.boards = result.data;
+            if ($scope.boards.length > 0) {
+                $scope.fields.targetBoard = $scope.boards[0].id;
+            }
+        });
+        $scope.submitName = function() {
+            $scope.datamodel.updateBoard(id, {name: $scope.fields.name}).then($scope.closeThisDialog);
+        };
+        $scope.submitDelete = function() {
+            $scope.datamodel.deleteBoard(id).then($scope.closeThisDialog);
+        };
+        $scope.submitMerge = function() {
+            $scope.datamodel.mergeBoard(id, $scope.fields.targetBoard).then($scope.closeThisDialog);
+        };
     });
