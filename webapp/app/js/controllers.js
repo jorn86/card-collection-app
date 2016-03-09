@@ -73,6 +73,7 @@ angular.module('card-app')
         };
 
         $scope.inventory = $scope.user && $scope.deckId === $scope.user.inventoryid;
+        $scope.$on('reloadDeck', $scope.reload);
         $scope.$on('user', function(event, user) {
             $scope.inventory = $scope.deckId === user.inventoryid;
             $scope.reload();

@@ -164,10 +164,14 @@ angular.module('card-app')
                 });
 
                 $scope.editBoard = function() {
-                    ngDialog.open({
+                    var dialog = ngDialog.open({
                         template: 'partials/dialog/editBoard.html',
                         data: { id: $scope.list.id }
                     });
+                    dialog.closePromise.then(function(value) {
+                        console.log('close', value);
+                        $rootScope.$broadcast('reloadDeck');
+                    })
                 };
 
                 $scope.update = function(page) {
