@@ -3,6 +3,7 @@ package org.hertsig.dto;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ public class Card {
     private List<String> subtypes;
     private String cost;
     private double cmc;
-    private List<Color> colors;
+    @JsonIgnore  private List<Color> colors;
     private String text;
     private String power;
     private String toughness;

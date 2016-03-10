@@ -7,6 +7,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import org.hertsig.dto.Format;
+import org.hertsig.dto.Legality;
 
 @ToString
 public class FullSet {
@@ -48,6 +50,7 @@ public class FullSet {
         List<Integer> variations;
         String originalText;
         String originalType;
+        List<Legality> legalities;
         String imageName;
         String watermark;
         Border border;
@@ -56,6 +59,14 @@ public class FullSet {
         // vanguard only
         int hand;
         int life;
+    }
+
+    @Data
+    @FieldDefaults(level=AccessLevel.PRIVATE)
+    public static class Legality {
+        Format format;
+        org.hertsig.dto.Legality legality;
+        String condition;
     }
 
     public enum Border {

@@ -60,8 +60,9 @@
     <div class="menubar" ng-controller="UserController">
         <div class="menutitle"><h1>Card Collection App</h1></div>
 
-        <div class="menuitem" style="margin-left: 20px"><button ng-click="goToSearch()"><img src="img/search.svg" alt="Search" height="30px"></button></div>
-        <div class="menuitem"><button ng-click="goToSets()">Available sets</button></div>
+        <div class="menuitem" style="margin-left: 20px"><button ui-sref="app.search"><img src="img/search.svg" alt="Search" height="30px"></button></div>
+        <div class="menuitem"><button ui-sref="app.sets">Available sets</button></div>
+        <div class="menuitem"><button ui-sref="app.formats">Formats</button></div>
 
         <div class="menuitem-right" ng-hide="userInfo">
             <google-plus-signin clientid="1037739193811-rus02skk6058rm7k7bqf38trafthugdj" theme="dark" language="en"></google-plus-signin>

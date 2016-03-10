@@ -175,4 +175,13 @@ angular.module('card-app')
         $scope.submitMerge = function() {
             $scope.datamodel.mergeBoard(id, $scope.fields.targetBoard).then($scope.closeThisDialog);
         };
+    })
+
+    .controller('FormatController', function($scope, $rootScope) {
+        $scope.formats = {};
+        _.forEach(['Commander', 'Legacy', 'Modern', 'Standard', 'Vintage'], function(f) {
+            $rootScope.datamodel.getFormat(f).then(function(result) {
+                $scope.formats[f] = result.data;
+            });
+        })
     });

@@ -12,9 +12,7 @@ import com.google.gson.GsonBuilder;
 import com.google.inject.util.Types;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.ContentUpgradeDao;
-import org.hertsig.dto.Card;
-import org.hertsig.dto.Color;
-import org.hertsig.dto.Printing;
+import org.hertsig.dto.*;
 import org.hertsig.dto.Set;
 import org.skife.jdbi.v2.IDBI;
 import org.skife.jdbi.v2.exceptions.DBIException;
@@ -26,10 +24,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -62,12 +57,28 @@ public class ContentUpgrade implements StartupAction {
                     }
                     int cardId = ensureCard(dao, card);
                     ensurePrinting(dao, cardId, setId, card);
+                    ensureLegalities(dao, cardId, card.getLegalities());
                 }
                 ensureSplitCards(dao, setId, splitCards);
             }
         }
         catch (IOException e) {
             throw new StartupActionException("Exception during content upgrade", e);
+        }
+    }
+
+    private void ensureLegalities(ContentUpgradeDao dao, int cardId, List<FullSet.Legality> legalities) {
+        if (legalities != null) {
+            EnumSet<Format> formats = EnumSet.allOf(Format.class);
+            legalities.forEach(l -> {
+                if (l != null && l.getFormat() != null) {
+                    if (l.getLegality() != null) {
+                        formats.remove(l.getFormat());
+                        dao.ensureLegality(cardId, l.getFormat(), l.getLegality());
+                    }
+                }
+            });
+            formats.forEach(f -> dao.removeLegality(cardId, f));
         }
     }
 

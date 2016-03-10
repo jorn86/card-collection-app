@@ -10,9 +10,13 @@ html,body {
 table.sets {
     border-collapse: collapse;
     border: 1px solid black;
+    margin-bottom: 10px;
 }
-table.sets th td {
-    border: 1px solid lightgrey;
+table.sets tr {
+    border-bottom: 1px solid lightgrey;
+}
+table.sets tr:last-child {
+    border-bottom: 1px solid black;
 }
 
 table.search {

@@ -1,4 +1,6 @@
 CREATE TYPE color AS ENUM ('W', 'U', 'B', 'R', 'G');
+CREATE TYPE "format" AS ENUM ('Commander', 'Legacy', 'Modern', 'Standard', 'Vintage');
+CREATE TYPE legalityoption AS ENUM ('Legal', 'Restricted', 'Banned');
 
 CREATE TABLE "set" (
   id SERIAL PRIMARY KEY,
@@ -33,6 +35,15 @@ CREATE TABLE card (
 );
 
 CREATE INDEX ON card (fulltype);
+
+CREATE TABLE legality (
+  id SERIAL PRIMARY KEY,
+  cardid INT NOT NULL REFERENCES "card",
+  "format" "format" NOT NULL,
+  legality legalityoption NOT NULL
+);
+
+CREATE UNIQUE INDEX ON legality (cardid, "format");
 
 CREATE TABLE printing (
   id SERIAL PRIMARY KEY,

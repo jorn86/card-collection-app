@@ -9,7 +9,8 @@ CREATE TABLE deck (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   name VARCHAR(128) NOT NULL,
   userid UUID REFERENCES "user",
-  inventory BOOLEAN DEFAULT FALSE
+  inventory BOOLEAN DEFAULT FALSE,
+  "format" "format"
 );
 
 CREATE TABLE decktag (
