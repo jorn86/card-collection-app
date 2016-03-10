@@ -74,5 +74,9 @@ var Datamodel = function Datamodel($http) {
 
     this.getSearchResults = function(query) {
         return $http.get(base + 'search?query=' + encodeURIComponent(query));
-    }
+    };
+
+    this.getFormat = function(format) {
+        return $http.get(base + 'database/format/' + format);
+    };
 };

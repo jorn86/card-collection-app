@@ -33,7 +33,7 @@ public class Webserver {
         deploymentManager.addAppProvider(webappProvider);
         deploymentManager.addAppProvider(backendProvider);
 
-        Server server = new Server(8080);
+        Server server = new Server(8082);
         server.setHandler(contexts);
         server.addBean(deploymentManager);
         server.start();

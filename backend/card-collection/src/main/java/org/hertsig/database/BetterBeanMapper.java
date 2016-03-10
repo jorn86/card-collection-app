@@ -34,6 +34,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
@@ -41,6 +42,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  * A result set mapper which maps the fields in a statement into a JavaBean. This uses
  * the JDK's built in bean mapping facilities, so it does not support nested properties.
  */
+@Slf4j
 class BetterBeanMapper<T> implements ResultSetMapper<T>
 {
     private final Class<T> type;

@@ -5,9 +5,7 @@ import java.util.UUID;
 
 import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.database.UuidMapper;
-import org.hertsig.dto.Card;
-import org.hertsig.dto.Printing;
-import org.hertsig.dto.Set;
+import org.hertsig.dto.*;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
@@ -54,6 +52,15 @@ public interface ContentUpgradeDao extends AutoCloseable {
 
     @SqlUpdate("UPDATE card SET doublefacefront = :front WHERE id = :back")
     void setFlipFront(@Bind("front") int front, @Bind("back") int back);
+
+    // see http://stackoverflow.com/questions/1109061 for why this is wrong
+    @SqlUpdate("UPDATE legality SET legality = :legality\\:\\:legalityoption WHERE cardid = :cardid AND \"format\" = :format\\:\\:format; " +
+            "INSERT INTO legality (cardid, \"format\", legality) " +
+                "SELECT :cardid, :format\\:\\:format, :legality\\:\\:legalityoption WHERE NOT EXISTS (SELECT 1 FROM legality WHERE cardid = :cardid AND \"format\" = :format\\:\\:format)")
+    void ensureLegality(@Bind("cardid") int cardId, @Bind("format") Format format, @Bind("legality") Legality legality);
+
+    @SqlUpdate("DELETE FROM legality WHERE cardid = :cardid AND format = :format\\:\\:format")
+    void removeLegality(@Bind("cardid") int cardId, @Bind("format") Format format);
 
     void close();
 

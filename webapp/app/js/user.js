@@ -25,10 +25,13 @@ angular.module('card-app')
             $rootScope.$broadcast('user', null);
         });
 
-        $scope.goToSearch = function() {
-            $state.go('app.search');
-        };
-        $scope.goToSets = function() {
-            $state.go('app.sets');
-        };
+        //$scope.goToSearch = function() {
+        //    $state.go('app.search');
+        //};
+        //$scope.goToSets = function() {
+        //    $state.go('app.sets');
+        //};
+        //$scope.goToFormats = function() {
+        //    $state.go('app.formats')
+        //};
     });

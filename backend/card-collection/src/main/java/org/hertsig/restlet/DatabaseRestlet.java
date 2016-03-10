@@ -4,11 +4,14 @@ import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.dao.SearchDao;
+import org.hertsig.dto.Format;
+import org.hertsig.dto.FormatCard;
 import org.skife.jdbi.v2.IDBI;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Slf4j
 @Path("database")
@@ -36,6 +39,16 @@ public class DatabaseRestlet {
     public Object getSetStatistics() {
         try (SearchDao dao = dbi.open(SearchDao.class)) {
             return dao.getSetStatistics();
+        }
+    }
+
+    @GET
+    @Path("format/{format}")
+    public Object getFormat(@PathParam("format") Format format) {
+        try (SearchDao dao = dbi.open(SearchDao.class)) {
+            List<FormatCard> format1 = dao.getFormat(format);
+            log.debug("Got {}", format1.size());
+            return format1;
         }
     }
 }

@@ -29,5 +29,9 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
             .state('app.sets', {
                 url: 'sets',
                 templateUrl: 'partials/setstatistics.html'
+            })
+            .state('app.formats', {
+                url: 'formats',
+                templateUrl: 'partials/formats.html'
             });
     });
