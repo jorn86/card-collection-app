@@ -47,6 +47,11 @@ public class DeckboxImport {
              DeckDao deckDao = dbi.open(DeckDao.class)) {
 
             Iterator<String[]> iterator = csv.iterator();
+            if (!iterator.hasNext()) {
+                messages.add("File is empty");
+                return messages;
+            }
+
             List<String> titles = Lists.newArrayList(iterator.next());
             int count = titles.indexOf("Count");
             int name = titles.indexOf("Name");
