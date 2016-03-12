@@ -33,9 +33,11 @@ angular.module('card-app')
                     'M': 'Multicolored'
                 };
                 var colorGrouping = function (card) {
+                    if (card.type === 'Land') return 'Land';
                     return colors[color(card.cost)];
                 };
                 var colorOrder = function (group) {
+                    if (group.$key === 'Land') return colors.length;
                     return _.indexOf(_.keys(colors), color(group.$key));
                 };
                 var color = function (mana) {
@@ -169,7 +171,6 @@ angular.module('card-app')
                         data: { id: $scope.list.id }
                     });
                     dialog.closePromise.then(function(value) {
-                        console.log('close', value);
                         $rootScope.$broadcast('reloadDeck');
                     })
                 };

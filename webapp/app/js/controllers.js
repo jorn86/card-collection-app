@@ -112,7 +112,6 @@ angular.module('card-app')
         });
 
         $scope.update = function(page) {
-            console.log('update', page);
             if (page) {
                 $scope.page = page;
             }
