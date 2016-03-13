@@ -22,7 +22,7 @@ public interface ImportDao extends AutoCloseable {
     Integer getPrinting(@Bind("card") int card, @Bind("set") int edition);
 
     @SqlUpdate("INSERT INTO board (name, deckid, \"order\") VALUES (:name, :deck, " +
-            "(SELECT \"order\"+1 FROM board WHERE deckid = :deck ORDER BY \"order\" DESC LIMIT 1))")
+            "(SELECT COALESCE(\"order\"+1,1) FROM board WHERE deckid = :deck ORDER BY \"order\" DESC LIMIT 1))")
     @GetGeneratedKeys(UuidMapper.class)
     UUID createBoard(@Bind("deck") UUID collectionId, @Bind("name") String name);
 

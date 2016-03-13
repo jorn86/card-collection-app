@@ -115,20 +115,20 @@ public class DeckRestlet {
         }
     }
 
+    @POST
+    @Path("{deckId}/board")
+    public UUID createBoard(@PathParam("deckId") UUID deckId, DeckBoard board) {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, deckId);
+            return dao.createBoard(new DeckBoard(null, deckId, board.getName(), board.getOrder(), null));
+        }
+    }
+
     @GET
     @Path("{deckId}")
     public Deck getDeck(@PathParam("deckId") UUID deckId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            Deck deck = dao.getDeck(deckId);
-            if (deck == null) {
-                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
-            }
-            if (deck.getUserid() != null) {
-                checkUser();
-                if (!deck.getUserid().equals(userManager.getUserId())) {
-                    throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
-                }
-            }
+            Deck deck = getDeckForUser(dao, deckId);
 
             List<DeckBoard> boards = dao.getBoards(deck.getId());
             for (DeckBoard board : boards) {
@@ -145,7 +145,7 @@ public class DeckRestlet {
     @Path("board/{id}")
     public DeckBoard getBoard(@PathParam("id") UUID boardId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, boardId);
+            getDeckByBoardForUser(dao, boardId);
             DeckBoard board = dao.getBoard(boardId);
             board.setCards(dao.getCardsForBoard(boardId));
             return board;
@@ -156,7 +156,7 @@ public class DeckRestlet {
     @Path("otherboards/{id}")
     public List<DeckBoard> getOtherBoards(@PathParam("id") UUID boardId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            Deck deck = getDeckForUser(dao, boardId);
+            Deck deck = getDeckByBoardForUser(dao, boardId);
             return dao.getOtherBoards(deck.getId(), boardId);
         }
     }
@@ -165,7 +165,7 @@ public class DeckRestlet {
     @Path("card")
     public List<DeckEntry> updateRow(DeckRow row) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, row.getBoardid());
+            getDeckByBoardForUser(dao, row.getBoardid());
 
             if (row.getAmount() < 1) {
                 handleUpdate(dao.deleteRow(row.getId()), "Row with id " + row.getId() + " not found");
@@ -182,7 +182,7 @@ public class DeckRestlet {
     @Path("card")
     public List<DeckEntry> addCard(DeckRow card) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, card.getBoardid());
+            getDeckByBoardForUser(dao, card.getBoardid());
 
             if (card.getAmount() < 1) {
                 card.setAmount(1);
@@ -232,7 +232,7 @@ public class DeckRestlet {
     @Path("board/{id}")
     public void updateBoard(@PathParam("id") UUID boardId, DeckBoard board) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, boardId);
+            getDeckByBoardForUser(dao, boardId);
             dao.updateBoardName(boardId, board.getName());
         }
     }
@@ -241,7 +241,7 @@ public class DeckRestlet {
     @Path("board/{id}")
     public void deleteBoard(@PathParam("id") UUID boardId) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, boardId);
+            getDeckByBoardForUser(dao, boardId);
             dao.deleteBoard(boardId);
         }
     }
@@ -250,15 +250,29 @@ public class DeckRestlet {
     @Path("board/merge/{source}/{target}")
     public void mergeBoard(@PathParam("source") UUID source, @PathParam("target") UUID target) {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            getDeckForUser(dao, source);
-            getDeckForUser(dao, target);
+            getDeckByBoardForUser(dao, source);
+            getDeckByBoardForUser(dao, target);
             // TODO actual merge, this might result in duplicate entries
             dao.mergeBoard(source, target);
             dao.deleteBoard(source);
         }
     }
 
-    private Deck getDeckForUser(DeckDao dao, UUID boardId) {
+    private Deck getDeckForUser(DeckDao dao, UUID deckId) {
+        Deck deck = dao.getDeck(deckId);
+        if (deck == null) {
+            throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist");
+        }
+        if (deck.getUserid() != null) {
+            checkUser();
+            if (!deck.getUserid().equals(userManager.getUserId())) {
+                throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
+            }
+        }
+        return deck;
+    }
+
+    private Deck getDeckByBoardForUser(DeckDao dao, UUID boardId) {
         checkUser();
 
         Deck deck = dao.getDeckByBoard(boardId);

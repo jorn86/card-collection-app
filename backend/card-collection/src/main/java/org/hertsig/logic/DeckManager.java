@@ -38,6 +38,5 @@ public class DeckManager {
         else {
             dao.addCardToDeck(new DeckRow(null, boardId, card, printing, count));
         }
-
     }
 }
