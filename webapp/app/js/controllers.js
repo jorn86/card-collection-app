@@ -82,8 +82,8 @@ angular.module('card-app')
         $scope.reload();
     })
 
-    .controller('StatisticsController', function($scope) {
-        $scope.datamodel.getSetStatistics().then(function (result) {
+    .controller('StatisticsController', function($scope, sets) {
+        sets.sets.then(function (result) {
             $scope.data = result.data;
         });
 

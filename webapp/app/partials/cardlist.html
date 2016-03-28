@@ -13,7 +13,7 @@
                 live-search-select-callback="searchSelectCallback"
                 ng-model="cardSearchValue"></live-search>
         </label>
-        <label class="nowrap">
+        <label class="nowrap" ng-hide="inventory">
             Group by
             <select ng-options="grouping.name for grouping in grid.groupingOptions" ng-model="grid.currentGrouping" ng-change="onGroupingChange()"></select>
         </label>
@@ -21,7 +21,7 @@
             Sort by
             <select ng-options="sorting.name for sorting in grid.sortingOptions" ng-model="grid.currentSorting"></select>
         </label>
-        <label class="nowrap">
+        <label class="nowrap" ng-hide="inventory">
             Descending
             <input type="checkbox" ng-model="grid.sortDescending">
         </label>
