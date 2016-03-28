@@ -4,7 +4,7 @@ angular.module('card-app')
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
             scope: {list: '=', editable: '=', inventory: '='},
-            controller: function($scope, $rootScope, $filter, ngDialog) {
+            controller: function($scope, $rootScope, $filter, ngDialog, sets) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
                     if (card.type) {
@@ -59,7 +59,7 @@ angular.module('card-app')
                     return $scope.setNames[card.setcode];
                 };
                 var setOrder = function(group) {
-                    return _.indexOf(_.values($scope.setNames), group.$key);
+                    return _.indexOf($scope.setOrder, group[0].setcode);
                 };
 
                 var noneGrouping = function() {
@@ -88,7 +88,7 @@ angular.module('card-app')
                         {name: 'Count', field: 'amount'},
                         {name: 'Name', field: 'normalizedname'},
                         {name: 'Type', field: 'fulltype'},
-                        {name: 'Set', field: 'setcode'},
+                        {name: 'Set', field: function(card) { return _.indexOf($scope.setOrder, card.setcode); }},
                         {name: 'Converted Mana Cost', field: 'cmc'}
                     ],
                     sortDescending: false,
@@ -157,12 +157,11 @@ angular.module('card-app')
                     return _.map(group, function(value) { return value.amount; }).reduce(function(a,b) { return a+b; }, 0);
                 };
 
-                $scope.setNames = {};
-                $rootScope.datamodel.getSetStatistics().then(function(sets) {
-                    for (var index in sets.data) {
-                        var s = sets.data[index];
-                        $scope.setNames[s.gatherercode] = s.name;
-                    }
+                sets.sets.then(function(sets) {
+                    var chain = _.chain(sets.data).sortBy('releasedate');
+                    $scope.setOrder = chain.pluck('gatherercode').value();
+                    $scope.setNames = chain.indexBy('gatherercode').mapObject('name').value();
+                    console.log($scope.setOrder, $scope.setNames);
                 });
 
                 $scope.editBoard = function() {
