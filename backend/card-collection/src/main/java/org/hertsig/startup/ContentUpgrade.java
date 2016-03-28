@@ -243,7 +243,7 @@ public class ContentUpgrade implements StartupAction {
             if (inMemory) {
                 ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
                 Preconditions.checkState(zipInputStream.getNextEntry().getName().equals("AllSets-x.json"), "Invalid zip file contents");
-                return new InputStreamReader(zipInputStream);
+                return new InputStreamReader(zipInputStream, Charsets.UTF_8);
             }
 
             try (ZipInputStream zipInputStream = new ZipInputStream(new URL("http", "mtgjson.com", "/json/AllSets-x.json.zip").openStream());
