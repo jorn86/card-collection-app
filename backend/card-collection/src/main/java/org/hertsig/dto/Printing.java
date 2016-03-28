@@ -15,4 +15,5 @@ public class Printing {
     private String originaltext;
     private String originaltype;
     private String flavortext;
+    private String artist;
 }

@@ -124,7 +124,7 @@ public class ContentUpgrade implements StartupAction {
         if (printing.isEmpty()) {
             Printing leftPrinting = dao.getPrintings(setId, left.getId()).get(0);
             dao.createPrinting(new Printing(0, setId, parentId, leftPrinting.getMultiverseid(),
-                    null, leftPrinting.getRarity(), null, null, null));
+                    null, leftPrinting.getRarity(), null, null, null, null));
         }
     }
 
@@ -139,7 +139,7 @@ public class ContentUpgrade implements StartupAction {
             return printing.get().getId();
         }
         return dao.createPrinting(new Printing(0, setId, cardId, card.getMultiverseid(), card.getNumber(),
-                card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor()));
+                card.getRarity(), card.getOriginalText(), card.getOriginalType(), card.getFlavor(), card.getArtist()));
     }
 
     private int ensureCard(ContentUpgradeDao dao, FullSet.Card card) {

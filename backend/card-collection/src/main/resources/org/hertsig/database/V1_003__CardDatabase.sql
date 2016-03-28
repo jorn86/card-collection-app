@@ -55,5 +55,6 @@ CREATE TABLE printing (
   originaltext CITEXT,
   originaltype VARCHAR(128),
   flavortext CITEXT,
+  artist VARCHAR(128),
   UNIQUE (setid, cardid, number)
 );
