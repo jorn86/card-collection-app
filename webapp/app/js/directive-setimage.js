@@ -20,12 +20,13 @@ angular.module('card-app')
                 case 'Uncommon': return 'uncommon';
                 case 'Rare': return 'rare';
                 case 'Mythic Rare': return 'mythic';
+                case 'Special': return 'timeshifted';
             }
         };
 
         return {
             scope: {'set': '=', rarity: '='},
-            template: '&nbsp;<span class="set"><i class="mtg {{setClass}} {{rarityClass}}"></i></span>',
+            template: '<span class="set"><i class="mtg {{setClass}} {{rarityClass}}"></i></span>&nbsp;',
             link: function($scope) {
                 if ($scope.set) {
                     if ($scope.set.slice(0, 1) === 'p' || promoSets.indexOf($scope.set) >= 0) {

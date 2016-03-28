@@ -200,6 +200,21 @@ img.mana {
 .e-ex {
     font-size: 15px !important;
 }
+.set .mtg.e-tsp.timeshifted:before {
+    content: "";
+    display: block;
+    height: 18px;
+    width: 18px;
+    margin: 2px 0 0 -1px;
+    background: url(../img/symbols/Timeshifted.svg) no-repeat;
+    background-size: 18px 18px;
+}
+.fallback .set .mtg.e-tsp.timeshifted:before {
+    background-image: url(../img/symbols/Timeshifted-transparent.svg);
+}
+.set .mtg.e-tsp.timeshifted:after {
+    content: none;
+}
 
 .sortorder:after {
     content: '\25b2'; /* up arrow */
