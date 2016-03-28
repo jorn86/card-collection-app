@@ -46,9 +46,7 @@ public class DatabaseRestlet {
     @Path("format/{format}")
     public Object getFormat(@PathParam("format") Format format) {
         try (SearchDao dao = dbi.open(SearchDao.class)) {
-            List<FormatCard> format1 = dao.getFormat(format);
-            log.debug("Got {}", format1.size());
-            return format1;
+            return dao.getFormat(format);
         }
     }
 }

@@ -17,6 +17,7 @@ import java.util.UUID;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.google.common.base.Charsets;
 import org.hertsig.dao.PreconstructedDao;
 import org.hertsig.dto.DeckBoard;
 import org.hertsig.dto.Printing;
@@ -52,7 +53,7 @@ public class PreconstructedDecks implements StartupAction {
 
             while (files.hasNext()) {
                 String name = files.nextLine();
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader(PreconstructedDecks.class.getResourceAsStream(name)))) {
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(PreconstructedDecks.class.getResourceAsStream(name), Charsets.UTF_8))) {
                     importPreconstructedDeck(dao, baseTag, reader);
                 }
             }
@@ -124,5 +125,4 @@ public class PreconstructedDecks implements StartupAction {
         }
         return parent;
     }
-
 }
