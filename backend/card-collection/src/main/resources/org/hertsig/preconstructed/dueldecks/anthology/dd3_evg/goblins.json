@@ -1,0 +1,123 @@
+{
+  "tag": [
+    "Duel decks",
+    "Anthology",
+    "Elves vs. Goblins"
+  ],
+  "name": "Goblins",
+  "set": "DD3_EVG",
+  "mainboard": [
+    {
+      "amount": 22,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Cave"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Burrows"
+    },
+    {
+      "amount": 1,
+      "name": "Akki Coalflinger"
+    },
+    {
+      "amount": 1,
+      "name": "Clickslither"
+    },
+    {
+      "amount": 3,
+      "name": "Emberwilde Augur"
+    },
+    {
+      "amount": 1,
+      "name": "Flamewave Invoker"
+    },
+    {
+      "amount": 1,
+      "name": "Gempalm Incinerator"
+    },
+    {
+      "amount": 3,
+      "name": "Goblin Cohort"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Matron"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Ringleader"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Sledder"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Warchief"
+    },
+    {
+      "amount": 1,
+      "name": "Ib Halfheart, Goblin Tactician"
+    },
+    {
+      "amount": 1,
+      "name": "Mogg Fanatic"
+    },
+    {
+      "amount": 2,
+      "name": "Mogg War Marshal"
+    },
+    {
+      "amount": 2,
+      "name": "Mudbutton Torchrunner"
+    },
+    {
+      "amount": 2,
+      "name": "Raging Goblin"
+    },
+    {
+      "amount": 1,
+      "name": "Reckless One"
+    },
+    {
+      "amount": 1,
+      "name": "Siege-Gang Commander"
+    },
+    {
+      "amount": 2,
+      "name": "Skirk Drill Sergeant"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Fire Marshal"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Prospector"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Shaman"
+    },
+    {
+      "amount": 1,
+      "name": "Tar Pitcher"
+    },
+    {
+      "amount": 3,
+      "name": "Tarfire"
+    },
+    {
+      "amount": 1,
+      "name": "Spitting Earth"
+    },
+    {
+      "amount": 2,
+      "name": "Boggart Shenanigans"
+    }
+  ]
+}

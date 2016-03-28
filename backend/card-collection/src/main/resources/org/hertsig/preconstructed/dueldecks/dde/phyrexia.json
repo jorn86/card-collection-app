@@ -1,0 +1,138 @@
+{
+  "tag": [
+    "Duel decks",
+    "Phyrexia vs. The Coalition"
+  ],
+  "name": "Phyrexia",
+  "set": "DDE",
+  "mainboard": [
+    {
+      "amount": 25,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Bone Shredder"
+    },
+    {
+      "amount": 1,
+      "name": "Carrion Feeder"
+    },
+    {
+      "amount": 1,
+      "name": "Order of Yawgmoth"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Battleflies"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Broodlings"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Colossus"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Debaser"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Defiler"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Denouncer"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Gargantua"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Ghoul"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Hulk"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Negator"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Plaguelord"
+    },
+    {
+      "amount": 2,
+      "name": "Priest of Gix"
+    },
+    {
+      "amount": 1,
+      "name": "Sanguine Guard"
+    },
+    {
+      "amount": 2,
+      "name": "Dark Ritual"
+    },
+    {
+      "amount": 1,
+      "name": "Hideous End"
+    },
+    {
+      "amount": 1,
+      "name": "Slay"
+    },
+    {
+      "amount": 2,
+      "name": "Tendrils of Corruption"
+    },
+    {
+      "amount": 1,
+      "name": "Living Death"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Arena"
+    },
+    {
+      "amount": 1,
+      "name": "Hornet Cannon"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Greaves"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Processor"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Totem"
+    },
+    {
+      "amount": 1,
+      "name": "Phyrexian Vault"
+    },
+    {
+      "amount": 2,
+      "name": "Puppet Strings"
+    },
+    {
+      "amount": 1,
+      "name": "Voltaic Key"
+    },
+    {
+      "amount": 1,
+      "name": "Whispersilk Cloak"
+    },
+    {
+      "amount": 1,
+      "name": "Worn Powerstone"
+    }
+  ]
+}

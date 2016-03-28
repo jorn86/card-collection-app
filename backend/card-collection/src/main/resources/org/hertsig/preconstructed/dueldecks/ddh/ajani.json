@@ -1,0 +1,170 @@
+{
+  "tag": [
+    "Duel decks",
+    "Ajani vs. Nicol Bolas"
+  ],
+  "name": "Ajani",
+  "set": "DDH",
+  "mainboard": [
+    {
+      "amount": 8,
+      "name": "Forest"
+    },
+    {
+      "amount": 3,
+      "name": "Mountain"
+    },
+    {
+      "amount": 6,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Graypelt Refuge"
+    },
+    {
+      "amount": 2,
+      "name": "Jungle Shrine"
+    },
+    {
+      "amount": 1,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Sapseep Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Vitu-Ghazi, the City-Tree"
+    },
+    {
+      "amount": 1,
+      "name": "Ageless Entity"
+    },
+    {
+      "amount": 2,
+      "name": "Ajani\u0027s Pridemate"
+    },
+    {
+      "amount": 1,
+      "name": "Briarhorn"
+    },
+    {
+      "amount": 1,
+      "name": "Canyon Wildcat"
+    },
+    {
+      "amount": 1,
+      "name": "Essence Warden"
+    },
+    {
+      "amount": 1,
+      "name": "Firemane Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Fleetfoot Panther"
+    },
+    {
+      "amount": 1,
+      "name": "Grazing Gladehart"
+    },
+    {
+      "amount": 1,
+      "name": "Jade Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Kird Ape"
+    },
+    {
+      "amount": 1,
+      "name": "Loam Lion"
+    },
+    {
+      "amount": 1,
+      "name": "Loxodon Hierarch"
+    },
+    {
+      "amount": 1,
+      "name": "Marisi\u0027s Twinclaws"
+    },
+    {
+      "amount": 1,
+      "name": "Nacatl Hunt-Pride"
+    },
+    {
+      "amount": 1,
+      "name": "Pride of Lions"
+    },
+    {
+      "amount": 1,
+      "name": "Qasali Pridemage"
+    },
+    {
+      "amount": 1,
+      "name": "Spitemare"
+    },
+    {
+      "amount": 2,
+      "name": "Sylvan Ranger"
+    },
+    {
+      "amount": 1,
+      "name": "Wild Nacatl"
+    },
+    {
+      "amount": 1,
+      "name": "Woolly Thoctar"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Helix"
+    },
+    {
+      "amount": 1,
+      "name": "Naya Charm"
+    },
+    {
+      "amount": 2,
+      "name": "Sylvan Bounty"
+    },
+    {
+      "amount": 1,
+      "name": "Lead the Stampede"
+    },
+    {
+      "amount": 1,
+      "name": "Titanic Ultimatum"
+    },
+    {
+      "amount": 1,
+      "name": "Ajani\u0027s Mantra"
+    },
+    {
+      "amount": 1,
+      "name": "Griffin Guide"
+    },
+    {
+      "amount": 2,
+      "name": "Recumbent Bliss"
+    },
+    {
+      "amount": 1,
+      "name": "Searing Meditation"
+    },
+    {
+      "amount": 1,
+      "name": "Behemoth Sledge"
+    },
+    {
+      "amount": 1,
+      "name": "Ajani Vengeant"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "tag": [
+    "Duel decks",
+    "Divine vs. Demonic"
+  ],
+  "name": "Divine",
+  "set": "DDC",
+  "mainboard": [
+    {
+      "amount": 24,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 1,
+      "name": "Akroma, Angel of Wrath"
+    },
+    {
+      "amount": 2,
+      "name": "Angel of Mercy"
+    },
+    {
+      "amount": 2,
+      "name": "Angelic Page"
+    },
+    {
+      "amount": 1,
+      "name": "Angelic Protector"
+    },
+    {
+      "amount": 2,
+      "name": "Charging Paladin"
+    },
+    {
+      "amount": 2,
+      "name": "Icatian Priest"
+    },
+    {
+      "amount": 1,
+      "name": "Luminous Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Reya Dawnbringer"
+    },
+    {
+      "amount": 2,
+      "name": "Serra Advocate"
+    },
+    {
+      "amount": 1,
+      "name": "Serra Angel"
+    },
+    {
+      "amount": 2,
+      "name": "Sustainer of the Realm"
+    },
+    {
+      "amount": 1,
+      "name": "Twilight Shepherd"
+    },
+    {
+      "amount": 2,
+      "name": "Venerable Monk"
+    },
+    {
+      "amount": 1,
+      "name": "Angelsong"
+    },
+    {
+      "amount": 1,
+      "name": "Healing Salve"
+    },
+    {
+      "amount": 2,
+      "name": "Otherworldly Journey"
+    },
+    {
+      "amount": 1,
+      "name": "Angelic Benediction"
+    },
+    {
+      "amount": 2,
+      "name": "Faith\u0027s Fetters"
+    },
+    {
+      "amount": 1,
+      "name": "Pacifism"
+    },
+    {
+      "amount": 1,
+      "name": "Righteous Cause"
+    },
+    {
+      "amount": 1,
+      "name": "Serra\u0027s Boon"
+    },
+    {
+      "amount": 1,
+      "name": "Serra\u0027s Embrace"
+    },
+    {
+      "amount": 1,
+      "name": "Angel\u0027s Feather"
+    },
+    {
+      "amount": 2,
+      "name": "Marble Diamond"
+    }
+  ]
+}

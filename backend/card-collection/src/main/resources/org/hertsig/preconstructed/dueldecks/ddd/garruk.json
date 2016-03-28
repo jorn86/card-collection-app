@@ -1,0 +1,122 @@
+{
+  "tag": [
+    "Duel decks",
+    "Garruk vs. Liliana"
+  ],
+  "name": "Garruk",
+  "set": "DDD",
+  "mainboard": [
+    {
+      "amount": 21,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Slippery Karst"
+    },
+    {
+      "amount": 1,
+      "name": "Treetop Village"
+    },
+    {
+      "amount": 2,
+      "name": "Albino Troll"
+    },
+    {
+      "amount": 2,
+      "name": "Basking Rootwalla"
+    },
+    {
+      "amount": 2,
+      "name": "Blastoderm"
+    },
+    {
+      "amount": 2,
+      "name": "Indrik Stomphowler"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Tusker"
+    },
+    {
+      "amount": 1,
+      "name": "Plated Slagwurm"
+    },
+    {
+      "amount": 1,
+      "name": "Ravenous Baloth"
+    },
+    {
+      "amount": 1,
+      "name": "Stampeding Wildebeests"
+    },
+    {
+      "amount": 2,
+      "name": "Vine Trellis"
+    },
+    {
+      "amount": 2,
+      "name": "Wild Mongrel"
+    },
+    {
+      "amount": 2,
+      "name": "Wirewood Savage"
+    },
+    {
+      "amount": 1,
+      "name": "Beast Attack"
+    },
+    {
+      "amount": 1,
+      "name": "Giant Growth"
+    },
+    {
+      "amount": 1,
+      "name": "Invigorate"
+    },
+    {
+      "amount": 1,
+      "name": "Windstorm"
+    },
+    {
+      "amount": 2,
+      "name": "Harmonize"
+    },
+    {
+      "amount": 2,
+      "name": "Nature\u0027s Lore"
+    },
+    {
+      "amount": 1,
+      "name": "Overrun"
+    },
+    {
+      "amount": 1,
+      "name": "Rude Awakening"
+    },
+    {
+      "amount": 1,
+      "name": "Elephant Guide"
+    },
+    {
+      "amount": 1,
+      "name": "Genju of the Cedars"
+    },
+    {
+      "amount": 1,
+      "name": "Lignify"
+    },
+    {
+      "amount": 2,
+      "name": "Rancor"
+    },
+    {
+      "amount": 2,
+      "name": "Serrated Arrows"
+    },
+    {
+      "amount": 1,
+      "name": "Garruk Wildspeaker"
+    }
+  ]
+}

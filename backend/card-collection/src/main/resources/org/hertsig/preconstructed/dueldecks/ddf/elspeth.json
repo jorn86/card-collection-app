@@ -1,0 +1,150 @@
+{
+  "tag": [
+    "Duel decks",
+    "Elspeth vs. Tezzeret"
+  ],
+  "name": "Elspeth",
+  "set": "DDF",
+  "mainboard": [
+    {
+      "amount": 22,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Daru Encampment"
+    },
+    {
+      "amount": 1,
+      "name": "Kabira Crossroads"
+    },
+    {
+      "amount": 1,
+      "name": "Rustic Clachan"
+    },
+    {
+      "amount": 1,
+      "name": "Angel of Salvation"
+    },
+    {
+      "amount": 1,
+      "name": "Burrenton Bombardier"
+    },
+    {
+      "amount": 1,
+      "name": "Catapult Master"
+    },
+    {
+      "amount": 1,
+      "name": "Celestial Crusader"
+    },
+    {
+      "amount": 1,
+      "name": "Conclave Equenaut"
+    },
+    {
+      "amount": 1,
+      "name": "Conclave Phalanx"
+    },
+    {
+      "amount": 2,
+      "name": "Elite Vanguard"
+    },
+    {
+      "amount": 1,
+      "name": "Glory Seeker"
+    },
+    {
+      "amount": 1,
+      "name": "Goldmeadow Harrier"
+    },
+    {
+      "amount": 1,
+      "name": "Infantry Veteran"
+    },
+    {
+      "amount": 1,
+      "name": "Kemba\u0027s Skyguard"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Æronaut"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Hookmaster"
+    },
+    {
+      "amount": 2,
+      "name": "Kor Skyfisher"
+    },
+    {
+      "amount": 1,
+      "name": "Loyal Sentry"
+    },
+    {
+      "amount": 1,
+      "name": "Mosquito Guard"
+    },
+    {
+      "amount": 1,
+      "name": "Seasoned Marshal"
+    },
+    {
+      "amount": 1,
+      "name": "Stormfront Riders"
+    },
+    {
+      "amount": 1,
+      "name": "Temple Acolyte"
+    },
+    {
+      "amount": 1,
+      "name": "Abolish"
+    },
+    {
+      "amount": 1,
+      "name": "Blinding Beam"
+    },
+    {
+      "amount": 1,
+      "name": "Mighty Leap"
+    },
+    {
+      "amount": 2,
+      "name": "Raise the Alarm"
+    },
+    {
+      "amount": 1,
+      "name": "Razor Barrier"
+    },
+    {
+      "amount": 1,
+      "name": "Swell of Courage"
+    },
+    {
+      "amount": 2,
+      "name": "Swords to Plowshares"
+    },
+    {
+      "amount": 1,
+      "name": "Saltblast"
+    },
+    {
+      "amount": 1,
+      "name": "Sunlance"
+    },
+    {
+      "amount": 1,
+      "name": "Crusade"
+    },
+    {
+      "amount": 1,
+      "name": "Journey to Nowhere"
+    },
+    {
+      "amount": 1,
+      "name": "Elspeth, Knight-Errant"
+    }
+  ]
+}

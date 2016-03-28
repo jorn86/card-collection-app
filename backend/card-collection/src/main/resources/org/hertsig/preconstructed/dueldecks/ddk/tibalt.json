@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Sorin vs. Tibalt"
+  ],
+  "name": "Tibalt",
+  "set": "DDK",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Akoum Refuge"
+    },
+    {
+      "amount": 14,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Rakdos Carnarium"
+    },
+    {
+      "amount": 6,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Ashmouth Hound"
+    },
+    {
+      "amount": 1,
+      "name": "Coal Stoker"
+    },
+    {
+      "amount": 1,
+      "name": "Corpse Connoisseur"
+    },
+    {
+      "amount": 1,
+      "name": "Gang of Devils"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Arsonist"
+    },
+    {
+      "amount": 1,
+      "name": "Hellrider"
+    },
+    {
+      "amount": 2,
+      "name": "Hellspark Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Lavaborn Muse"
+    },
+    {
+      "amount": 1,
+      "name": "Mad Prophet"
+    },
+    {
+      "amount": 1,
+      "name": "Reassembling Skeleton"
+    },
+    {
+      "amount": 1,
+      "name": "Scorched Rusalka"
+    },
+    {
+      "amount": 1,
+      "name": "Scourge Devil"
+    },
+    {
+      "amount": 1,
+      "name": "Shambling Remains"
+    },
+    {
+      "amount": 1,
+      "name": "Skirsdag Cultist"
+    },
+    {
+      "amount": 2,
+      "name": "Vithian Stinger"
+    },
+    {
+      "amount": 1,
+      "name": "Blazing Salvo"
+    },
+    {
+      "amount": 1,
+      "name": "Flame Javelin"
+    },
+    {
+      "amount": 1,
+      "name": "Geistflame"
+    },
+    {
+      "amount": 1,
+      "name": "Strangling Soot"
+    },
+    {
+      "amount": 1,
+      "name": "Terminate"
+    },
+    {
+      "amount": 1,
+      "name": "Blightning"
+    },
+    {
+      "amount": 1,
+      "name": "Breaking Point"
+    },
+    {
+      "amount": 2,
+      "name": "Browbeat"
+    },
+    {
+      "amount": 1,
+      "name": "Bump in the Night"
+    },
+    {
+      "amount": 1,
+      "name": "Devil\u0027s Play"
+    },
+    {
+      "amount": 1,
+      "name": "Faithless Looting"
+    },
+    {
+      "amount": 1,
+      "name": "Flame Slash"
+    },
+    {
+      "amount": 1,
+      "name": "Pyroclasm"
+    },
+    {
+      "amount": 1,
+      "name": "Recoup"
+    },
+    {
+      "amount": 1,
+      "name": "Torrent of Souls"
+    },
+    {
+      "amount": 1,
+      "name": "Sulfuric Vortex"
+    },
+    {
+      "amount": 1,
+      "name": "Tibalt, the Fiend-Blooded"
+    }
+  ]
+}

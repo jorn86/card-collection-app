@@ -1,0 +1,130 @@
+{
+  "tag": [
+    "Duel decks",
+    "Elspeth vs. Kiora"
+  ],
+  "name": "Elspeth",
+  "set": "DDO",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Elspeth, Sun\u0027s Champion"
+    },
+    {
+      "amount": 2,
+      "name": "Secluded Steppe"
+    },
+    {
+      "amount": 22,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Icatian Javelineers"
+    },
+    {
+      "amount": 1,
+      "name": "Mother of Runes"
+    },
+    {
+      "amount": 2,
+      "name": "Kinsbaile Skirmisher"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Skyfisher"
+    },
+    {
+      "amount": 1,
+      "name": "Precinct Captain"
+    },
+    {
+      "amount": 2,
+      "name": "Veteran Armorsmith"
+    },
+    {
+      "amount": 1,
+      "name": "Court Street Denizen"
+    },
+    {
+      "amount": 1,
+      "name": "Standing Troops"
+    },
+    {
+      "amount": 2,
+      "name": "Veteran Swordsmith"
+    },
+    {
+      "amount": 1,
+      "name": "Banisher Priest"
+    },
+    {
+      "amount": 2,
+      "name": "Gustcloak Harrier"
+    },
+    {
+      "amount": 1,
+      "name": "Gustcloak Skirmisher"
+    },
+    {
+      "amount": 1,
+      "name": "Gustcloak Sentinel"
+    },
+    {
+      "amount": 1,
+      "name": "Gustcloak Savior"
+    },
+    {
+      "amount": 2,
+      "name": "Loxodon Partisan"
+    },
+    {
+      "amount": 1,
+      "name": "Gempalm Avenger"
+    },
+    {
+      "amount": 1,
+      "name": "Noble Templar"
+    },
+    {
+      "amount": 1,
+      "name": "Captain of the Watch"
+    },
+    {
+      "amount": 1,
+      "name": "Mortal\u0027s Ardor"
+    },
+    {
+      "amount": 2,
+      "name": "Sunlance"
+    },
+    {
+      "amount": 1,
+      "name": "Mighty Leap"
+    },
+    {
+      "amount": 2,
+      "name": "Raise the Alarm"
+    },
+    {
+      "amount": 1,
+      "name": "Soul Parry"
+    },
+    {
+      "amount": 1,
+      "name": "Celestial Flare"
+    },
+    {
+      "amount": 1,
+      "name": "Dauntless Onslaught"
+    },
+    {
+      "amount": 1,
+      "name": "Dictate of Heliod"
+    },
+    {
+      "amount": 1,
+      "name": "Decree of Justice"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "tag": [
+    "Duel decks",
+    "Speed vs. Cunning"
+  ],
+  "name": "Speed",
+  "set": "DDN",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Ghitu Encampment"
+    },
+    {
+      "amount": 10,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Nomad Outpost"
+    },
+    {
+      "amount": 3,
+      "name": "Plains"
+    },
+    {
+      "amount": 6,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Beetleback Chief"
+    },
+    {
+      "amount": 2,
+      "name": "Dregscape Zombie"
+    },
+    {
+      "amount": 1,
+      "name": "Flame-Kin Zealot"
+    },
+    {
+      "amount": 1,
+      "name": "Fleshbag Marauder"
+    },
+    {
+      "amount": 1,
+      "name": "Frenzied Goblin"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Deathraiders"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Warchief"
+    },
+    {
+      "amount": 1,
+      "name": "Hellraiser Goblin"
+    },
+    {
+      "amount": 1,
+      "name": "Hell\u0027s Thunder"
+    },
+    {
+      "amount": 1,
+      "name": "Infantry Veteran"
+    },
+    {
+      "amount": 1,
+      "name": "Kathari Bomber"
+    },
+    {
+      "amount": 1,
+      "name": "Krenko, Mob Boss"
+    },
+    {
+      "amount": 2,
+      "name": "Leonin Snarecaster"
+    },
+    {
+      "amount": 1,
+      "name": "Mardu Heart-Piercer"
+    },
+    {
+      "amount": 1,
+      "name": "Ogre Battledriver"
+    },
+    {
+      "amount": 1,
+      "name": "Oni of Wild Places"
+    },
+    {
+      "amount": 1,
+      "name": "Scourge Devil"
+    },
+    {
+      "amount": 1,
+      "name": "Shambling Remains"
+    },
+    {
+      "amount": 1,
+      "name": "Zurgo Helmsmasher"
+    },
+    {
+      "amount": 1,
+      "name": "Act of Treason"
+    },
+    {
+      "amount": 1,
+      "name": "Arc Trail"
+    },
+    {
+      "amount": 1,
+      "name": "Banefire"
+    },
+    {
+      "amount": 1,
+      "name": "Bone Splinters"
+    },
+    {
+      "amount": 1,
+      "name": "Dauntless Onslaught"
+    },
+    {
+      "amount": 2,
+      "name": "Fiery Fall"
+    },
+    {
+      "amount": 1,
+      "name": "Fury of the Horde"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Bombardment"
+    },
+    {
+      "amount": 2,
+      "name": "Krenko\u0027s Command"
+    },
+    {
+      "amount": 1,
+      "name": "Orcish Cannonade"
+    },
+    {
+      "amount": 1,
+      "name": "Reckless Abandon"
+    },
+    {
+      "amount": 1,
+      "name": "Shock"
+    }
+  ]
+}

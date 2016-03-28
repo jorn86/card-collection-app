@@ -1,0 +1,130 @@
+{
+  "tag": [
+    "Duel decks",
+    "Divine vs. Demonic"
+  ],
+  "name": "Demonic",
+  "set": "DDC",
+  "mainboard": [
+    {
+      "amount": 24,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Abyssal Gatekeeper"
+    },
+    {
+      "amount": 1,
+      "name": "Abyssal Specter"
+    },
+    {
+      "amount": 1,
+      "name": "Cackling Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Daggerclaw Imp"
+    },
+    {
+      "amount": 2,
+      "name": "Demon\u0027s Jester"
+    },
+    {
+      "amount": 2,
+      "name": "Dusk Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Fallen Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Foul Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Kuro, Pitlord"
+    },
+    {
+      "amount": 1,
+      "name": "Lord of the Pit"
+    },
+    {
+      "amount": 2,
+      "name": "Overeager Apprentice"
+    },
+    {
+      "amount": 1,
+      "name": "Reiver Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Soot Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Souldrinker"
+    },
+    {
+      "amount": 1,
+      "name": "Stinkweed Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Dark Banishing"
+    },
+    {
+      "amount": 2,
+      "name": "Dark Ritual"
+    },
+    {
+      "amount": 1,
+      "name": "Barter in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Consume Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Corrupt"
+    },
+    {
+      "amount": 1,
+      "name": "Cruel Edict"
+    },
+    {
+      "amount": 1,
+      "name": "Demonic Tutor"
+    },
+    {
+      "amount": 1,
+      "name": "Duress"
+    },
+    {
+      "amount": 1,
+      "name": "Promise of Power"
+    },
+    {
+      "amount": 2,
+      "name": "Breeding Pit"
+    },
+    {
+      "amount": 1,
+      "name": "Oni Possession"
+    },
+    {
+      "amount": 2,
+      "name": "Unholy Strength"
+    },
+    {
+      "amount": 1,
+      "name": "Demon\u0027s Horn"
+    }
+  ]
+}

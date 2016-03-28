@@ -1,0 +1,138 @@
+{
+  "tag": [
+    "Duel decks",
+    "Blessed vs. Cursed"
+  ],
+  "name": "Cursed",
+  "set": "DDQ",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Diregraf Ghoul"
+    },
+    {
+      "amount": 1,
+      "name": "Gravecrawler"
+    },
+    {
+      "amount": 2,
+      "name": "Butcher Ghoul"
+    },
+    {
+      "amount": 3,
+      "name": "Screeching Skaab"
+    },
+    {
+      "amount": 1,
+      "name": "Unbreathing Horde"
+    },
+    {
+      "amount": 1,
+      "name": "Scrapskin Drake"
+    },
+    {
+      "amount": 2,
+      "name": "Ghoulraiser"
+    },
+    {
+      "amount": 2,
+      "name": "Stitched Drake"
+    },
+    {
+      "amount": 2,
+      "name": "Diregraf Captain"
+    },
+    {
+      "amount": 1,
+      "name": "Abattoir Ghoul"
+    },
+    {
+      "amount": 1,
+      "name": "Driver of the Dead"
+    },
+    {
+      "amount": 1,
+      "name": "Falkenrath Noble"
+    },
+    {
+      "amount": 1,
+      "name": "Makeshift Mauler"
+    },
+    {
+      "amount": 1,
+      "name": "Havengul Runebinder"
+    },
+    {
+      "amount": 1,
+      "name": "Relentless Skaabs"
+    },
+    {
+      "amount": 1,
+      "name": "Harvester of Souls"
+    },
+    {
+      "amount": 1,
+      "name": "Tooth Collector"
+    },
+    {
+      "amount": 1,
+      "name": "Mindwrack Demon"
+    },
+    {
+      "amount": 1,
+      "name": "Appetite for Brains"
+    },
+    {
+      "amount": 1,
+      "name": "Sever the Bloodline"
+    },
+    {
+      "amount": 1,
+      "name": "Barter in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Dread Return"
+    },
+    {
+      "amount": 2,
+      "name": "Moan of the Unhallowed"
+    },
+    {
+      "amount": 1,
+      "name": "Human Frailty"
+    },
+    {
+      "amount": 1,
+      "name": "Victim of Night"
+    },
+    {
+      "amount": 1,
+      "name": "Tribute to Hunger"
+    },
+    {
+      "amount": 1,
+      "name": "Forbidden Alchemy"
+    },
+    {
+      "amount": 1,
+      "name": "Compelling Deterrence"
+    },
+    {
+      "amount": 1,
+      "name": "Cobbled Wings"
+    },
+    {
+      "amount": 4,
+      "name": "Dismal Backwater"
+    },
+    {
+      "amount": 12,
+      "name": "Swamp"
+    },
+    {
+      "amount": 8,
+      "name": "Island"
+    }
+  ]
+}

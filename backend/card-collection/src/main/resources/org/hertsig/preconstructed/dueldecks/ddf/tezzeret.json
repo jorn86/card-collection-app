@@ -1,0 +1,162 @@
+{
+  "tag": [
+    "Duel decks",
+    "Elspeth vs. Tezzeret"
+  ],
+  "name": "Tezzeret",
+  "set": "DDF",
+  "mainboard": [
+    {
+      "amount": 20,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Darksteel Citadel"
+    },
+    {
+      "amount": 1,
+      "name": "Mishra\u0027s Factory"
+    },
+    {
+      "amount": 1,
+      "name": "Seat of the Synod"
+    },
+    {
+      "amount": 1,
+      "name": "Stalking Stones"
+    },
+    {
+      "amount": 1,
+      "name": "Arcbound Worker"
+    },
+    {
+      "amount": 1,
+      "name": "Assembly-Worker"
+    },
+    {
+      "amount": 1,
+      "name": "Clockwork Condor"
+    },
+    {
+      "amount": 1,
+      "name": "Clockwork Hydra"
+    },
+    {
+      "amount": 1,
+      "name": "Esperzoa"
+    },
+    {
+      "amount": 1,
+      "name": "Faerie Mechanist"
+    },
+    {
+      "amount": 1,
+      "name": "Frogmite"
+    },
+    {
+      "amount": 1,
+      "name": "Juggernaut"
+    },
+    {
+      "amount": 1,
+      "name": "Master of Etherium"
+    },
+    {
+      "amount": 1,
+      "name": "Pentavus"
+    },
+    {
+      "amount": 1,
+      "name": "Qumulox"
+    },
+    {
+      "amount": 1,
+      "name": "Razormane Masticore"
+    },
+    {
+      "amount": 2,
+      "name": "Runed Servitor"
+    },
+    {
+      "amount": 1,
+      "name": "Serrated Biskelion"
+    },
+    {
+      "amount": 1,
+      "name": "Silver Myr"
+    },
+    {
+      "amount": 1,
+      "name": "Steel Overseer"
+    },
+    {
+      "amount": 1,
+      "name": "Steel Wall"
+    },
+    {
+      "amount": 1,
+      "name": "Synod Centurion"
+    },
+    {
+      "amount": 1,
+      "name": "Trinket Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Triskelion"
+    },
+    {
+      "amount": 1,
+      "name": "Echoing Truth"
+    },
+    {
+      "amount": 1,
+      "name": "Foil"
+    },
+    {
+      "amount": 2,
+      "name": "Thirst for Knowledge"
+    },
+    {
+      "amount": 1,
+      "name": "Argivian Restoration"
+    },
+    {
+      "amount": 1,
+      "name": "Thoughtcast"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Spellbomb"
+    },
+    {
+      "amount": 1,
+      "name": "Contagion Clasp"
+    },
+    {
+      "amount": 1,
+      "name": "Elixir of Immortality"
+    },
+    {
+      "amount": 1,
+      "name": "Energy Chamber"
+    },
+    {
+      "amount": 2,
+      "name": "Everflowing Chalice"
+    },
+    {
+      "amount": 1,
+      "name": "Moonglove Extract"
+    },
+    {
+      "amount": 1,
+      "name": "Trip Noose"
+    },
+    {
+      "amount": 1,
+      "name": "Tezzeret the Seeker"
+    }
+  ]
+}

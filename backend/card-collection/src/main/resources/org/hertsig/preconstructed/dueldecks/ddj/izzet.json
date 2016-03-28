@@ -1,0 +1,162 @@
+{
+  "tag": [
+    "Duel decks",
+    "Izzet vs. Golgari"
+  ],
+  "name": "Izzet",
+  "set": "DDJ",
+  "mainboard": [
+    {
+      "amount": 10,
+      "name": "Island"
+    },
+    {
+      "amount": 9,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Forgotten Cave"
+    },
+    {
+      "amount": 2,
+      "name": "Izzet Boilerworks"
+    },
+    {
+      "amount": 1,
+      "name": "Lonely Sandbar"
+    },
+    {
+      "amount": 1,
+      "name": "Nivix, Ærie of the Firemind"
+    },
+    {
+      "amount": 1,
+      "name": "Djinn Illuminatus"
+    },
+    {
+      "amount": 1,
+      "name": "Galvanoth"
+    },
+    {
+      "amount": 1,
+      "name": "Gelectrode"
+    },
+    {
+      "amount": 1,
+      "name": "Goblin Electromancer"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Chronarch"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Guildmage"
+    },
+    {
+      "amount": 2,
+      "name": "Kiln Fiend"
+    },
+    {
+      "amount": 1,
+      "name": "Niv-Mizzet, the Firemind"
+    },
+    {
+      "amount": 1,
+      "name": "Ogre Savant"
+    },
+    {
+      "amount": 2,
+      "name": "Shrewd Hatchling"
+    },
+    {
+      "amount": 1,
+      "name": "Steamcore Weird"
+    },
+    {
+      "amount": 2,
+      "name": "Wee Dragonauts"
+    },
+    {
+      "amount": 1,
+      "name": "Brainstorm"
+    },
+    {
+      "amount": 1,
+      "name": "Call to Heel"
+    },
+    {
+      "amount": 1,
+      "name": "Dissipate"
+    },
+    {
+      "amount": 1,
+      "name": "Fire / Ice"
+    },
+    {
+      "amount": 1,
+      "name": "Force Spike"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Magma Spray"
+    },
+    {
+      "amount": 1,
+      "name": "Overwhelming Intellect"
+    },
+    {
+      "amount": 1,
+      "name": "Prophetic Bolt"
+    },
+    {
+      "amount": 2,
+      "name": "Pyromatics"
+    },
+    {
+      "amount": 1,
+      "name": "Street Spasm"
+    },
+    {
+      "amount": 1,
+      "name": "Thunderheads"
+    },
+    {
+      "amount": 1,
+      "name": "Invoke the Firemind"
+    },
+    {
+      "amount": 1,
+      "name": "Reminisce"
+    },
+    {
+      "amount": 1,
+      "name": "Train of Thought"
+    },
+    {
+      "amount": 1,
+      "name": "Vacuumelt"
+    },
+    {
+      "amount": 1,
+      "name": "Quicksilver Dagger"
+    },
+    {
+      "amount": 1,
+      "name": "Isochron Scepter"
+    },
+    {
+      "amount": 1,
+      "name": "Izzet Signet"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx-Bone Wand"
+    }
+  ]
+}

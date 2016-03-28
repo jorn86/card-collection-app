@@ -1,0 +1,162 @@
+{
+  "tag": [
+    "Duel decks",
+    "Ajani vs. Nicol Bolas"
+  ],
+  "name": "Nicol Bolas",
+  "set": "DDH",
+  "mainboard": [
+    {
+      "amount": 7,
+      "name": "Island"
+    },
+    {
+      "amount": 5,
+      "name": "Mountain"
+    },
+    {
+      "amount": 9,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Crumbling Necropolis"
+    },
+    {
+      "amount": 1,
+      "name": "Rupture Spire"
+    },
+    {
+      "amount": 2,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Blazing Specter"
+    },
+    {
+      "amount": 1,
+      "name": "Brackwater Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Dimir Cutpurse"
+    },
+    {
+      "amount": 1,
+      "name": "Fire-Field Ogre"
+    },
+    {
+      "amount": 2,
+      "name": "Hellfire Mongrel"
+    },
+    {
+      "amount": 1,
+      "name": "Igneous Pouncer"
+    },
+    {
+      "amount": 1,
+      "name": "Jhessian Zombies"
+    },
+    {
+      "amount": 1,
+      "name": "Morgue Toad"
+    },
+    {
+      "amount": 1,
+      "name": "Moroii"
+    },
+    {
+      "amount": 1,
+      "name": "Nightscape Familiar"
+    },
+    {
+      "amount": 1,
+      "name": "Ogre Savant"
+    },
+    {
+      "amount": 1,
+      "name": "Shriekmaw"
+    },
+    {
+      "amount": 1,
+      "name": "Slavering Nulls"
+    },
+    {
+      "amount": 1,
+      "name": "Steamcore Weird"
+    },
+    {
+      "amount": 1,
+      "name": "Surveilling Sprite"
+    },
+    {
+      "amount": 1,
+      "name": "Agonizing Demise"
+    },
+    {
+      "amount": 1,
+      "name": "Countersquall"
+    },
+    {
+      "amount": 1,
+      "name": "Grixis Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Recoil"
+    },
+    {
+      "amount": 1,
+      "name": "Spite / Malice"
+    },
+    {
+      "amount": 1,
+      "name": "Undermine"
+    },
+    {
+      "amount": 1,
+      "name": "Vapor Snag"
+    },
+    {
+      "amount": 1,
+      "name": "Cruel Ultimatum"
+    },
+    {
+      "amount": 1,
+      "name": "Deep Analysis"
+    },
+    {
+      "amount": 1,
+      "name": "Pain / Suffering"
+    },
+    {
+      "amount": 1,
+      "name": "Profane Command"
+    },
+    {
+      "amount": 1,
+      "name": "Rise / Fall"
+    },
+    {
+      "amount": 1,
+      "name": "Slave of Bolas"
+    },
+    {
+      "amount": 1,
+      "name": "Elder Mastery"
+    },
+    {
+      "amount": 1,
+      "name": "Icy Manipulator"
+    },
+    {
+      "amount": 2,
+      "name": "Obelisk of Grixis"
+    },
+    {
+      "amount": 1,
+      "name": "Nicol Bolas, Planeswalker"
+    }
+  ]
+}

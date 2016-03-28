@@ -1,0 +1,114 @@
+{
+  "tag": [
+    "Duel decks",
+    "Jace vs. Chandra"
+  ],
+  "name": "Chandra",
+  "set": "DD2",
+  "mainboard": [
+    {
+      "amount": 24,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Keldon Megaliths"
+    },
+    {
+      "amount": 1,
+      "name": "Chartooth Cougar"
+    },
+    {
+      "amount": 1,
+      "name": "Fireslinger"
+    },
+    {
+      "amount": 2,
+      "name": "Flamekin Brawler"
+    },
+    {
+      "amount": 1,
+      "name": "Flametongue Kavu"
+    },
+    {
+      "amount": 1,
+      "name": "Flamewave Invoker"
+    },
+    {
+      "amount": 2,
+      "name": "Furnace Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Hostility"
+    },
+    {
+      "amount": 1,
+      "name": "Ingot Chewer"
+    },
+    {
+      "amount": 2,
+      "name": "Inner-Flame Acolyte"
+    },
+    {
+      "amount": 2,
+      "name": "Oxidda Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Pyre Charger"
+    },
+    {
+      "amount": 1,
+      "name": "Rakdos Pit Dragon"
+    },
+    {
+      "amount": 2,
+      "name": "Slith Firewalker"
+    },
+    {
+      "amount": 2,
+      "name": "Soulbright Flamekin"
+    },
+    {
+      "amount": 2,
+      "name": "Fireblast"
+    },
+    {
+      "amount": 1,
+      "name": "Flame Javelin"
+    },
+    {
+      "amount": 2,
+      "name": "Incinerate"
+    },
+    {
+      "amount": 1,
+      "name": "Magma Jet"
+    },
+    {
+      "amount": 1,
+      "name": "Cone of Flame"
+    },
+    {
+      "amount": 1,
+      "name": "Demonfire"
+    },
+    {
+      "amount": 2,
+      "name": "Fireball"
+    },
+    {
+      "amount": 2,
+      "name": "Firebolt"
+    },
+    {
+      "amount": 2,
+      "name": "Seal of Fire"
+    },
+    {
+      "amount": 1,
+      "name": "Chandra Nalaar"
+    }
+  ]
+}

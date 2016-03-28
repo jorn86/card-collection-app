@@ -1,0 +1,166 @@
+{
+  "tag": [
+    "Duel decks",
+    "Venser vs. Koth"
+  ],
+  "name": "Venser",
+  "set": "DDI",
+  "mainboard": [
+    {
+      "amount": 11,
+      "name": "Island"
+    },
+    {
+      "amount": 7,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Azorius Chancery"
+    },
+    {
+      "amount": 1,
+      "name": "Flood Plain"
+    },
+    {
+      "amount": 1,
+      "name": "New Benalia"
+    },
+    {
+      "amount": 2,
+      "name": "Sejiri Refuge"
+    },
+    {
+      "amount": 1,
+      "name": "Soaring Seacliff"
+    },
+    {
+      "amount": 1,
+      "name": "Whitemane Lion"
+    },
+    {
+      "amount": 1,
+      "name": "Augury Owl"
+    },
+    {
+      "amount": 1,
+      "name": "Coral Fighters"
+    },
+    {
+      "amount": 1,
+      "name": "Minamo Sightbender"
+    },
+    {
+      "amount": 1,
+      "name": "Mistmeadow Witch"
+    },
+    {
+      "amount": 2,
+      "name": "Scroll Thief"
+    },
+    {
+      "amount": 1,
+      "name": "Neurok Invisimancer"
+    },
+    {
+      "amount": 2,
+      "name": "Slith Strider"
+    },
+    {
+      "amount": 1,
+      "name": "Sky Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Denial"
+    },
+    {
+      "amount": 1,
+      "name": "Galepowder Mage"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Cartographer"
+    },
+    {
+      "amount": 1,
+      "name": "Clone"
+    },
+    {
+      "amount": 1,
+      "name": "Cryptic Annelid"
+    },
+    {
+      "amount": 1,
+      "name": "Primal Plasma"
+    },
+    {
+      "amount": 1,
+      "name": "Sawtooth Loon"
+    },
+    {
+      "amount": 1,
+      "name": "Cache Raiders"
+    },
+    {
+      "amount": 1,
+      "name": "Windreaver"
+    },
+    {
+      "amount": 1,
+      "name": "Jedit\u0027s Dragoons"
+    },
+    {
+      "amount": 1,
+      "name": "Sunblast Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of Uthuun"
+    },
+    {
+      "amount": 1,
+      "name": "Path to Exile"
+    },
+    {
+      "amount": 1,
+      "name": "Safe Passage"
+    },
+    {
+      "amount": 1,
+      "name": "Vanish into Memory"
+    },
+    {
+      "amount": 2,
+      "name": "Overrule"
+    },
+    {
+      "amount": 2,
+      "name": "Preordain"
+    },
+    {
+      "amount": 1,
+      "name": "Revoke Existence"
+    },
+    {
+      "amount": 1,
+      "name": "Sigil of Sleep"
+    },
+    {
+      "amount": 1,
+      "name": "Angelic Shield"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Steel of the Godhead"
+    },
+    {
+      "amount": 1,
+      "name": "Venser, the Sojourner"
+    }
+  ]
+}

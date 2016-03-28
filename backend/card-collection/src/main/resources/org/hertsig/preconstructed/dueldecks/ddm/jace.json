@@ -1,0 +1,158 @@
+{
+  "tag": [
+    "Duel decks",
+    "Jace vs. Vraska"
+  ],
+  "name": "Jace",
+  "set": "DDM",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Jace, Architect of Thought"
+    },
+    {
+      "amount": 1,
+      "name": "Dread Statuary"
+    },
+    {
+      "amount": 2,
+      "name": "Halimar Depths"
+    },
+    {
+      "amount": 21,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Æon Chronicler"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Adept"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Figment"
+    },
+    {
+      "amount": 1,
+      "name": "Archaeomancer"
+    },
+    {
+      "amount": 1,
+      "name": "Body Double"
+    },
+    {
+      "amount": 1,
+      "name": "Chronomaton"
+    },
+    {
+      "amount": 1,
+      "name": "Crosstown Courier"
+    },
+    {
+      "amount": 1,
+      "name": "Dream Stalker"
+    },
+    {
+      "amount": 1,
+      "name": "Errant Ephemeron"
+    },
+    {
+      "amount": 1,
+      "name": "Jace\u0027s Mindseeker"
+    },
+    {
+      "amount": 1,
+      "name": "Jace\u0027s Phantasm"
+    },
+    {
+      "amount": 2,
+      "name": "Krovikan Mist"
+    },
+    {
+      "amount": 1,
+      "name": "Leyline Phantom"
+    },
+    {
+      "amount": 1,
+      "name": "Merfolk Wayfinder"
+    },
+    {
+      "amount": 1,
+      "name": "Phantasmal Bear"
+    },
+    {
+      "amount": 1,
+      "name": "Phantasmal Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Riftwing Cloudskate"
+    },
+    {
+      "amount": 1,
+      "name": "Sea Gate Oracle"
+    },
+    {
+      "amount": 1,
+      "name": "Stealer of Secrets"
+    },
+    {
+      "amount": 1,
+      "name": "Agoraphobia"
+    },
+    {
+      "amount": 1,
+      "name": "Claustrophobia"
+    },
+    {
+      "amount": 1,
+      "name": "Control Magic"
+    },
+    {
+      "amount": 1,
+      "name": "Future Sight"
+    },
+    {
+      "amount": 1,
+      "name": "Griptide"
+    },
+    {
+      "amount": 1,
+      "name": "Into the Roil"
+    },
+    {
+      "amount": 1,
+      "name": "Jace\u0027s Ingenuity"
+    },
+    {
+      "amount": 1,
+      "name": "Memory Lapse"
+    },
+    {
+      "amount": 1,
+      "name": "Prohibit"
+    },
+    {
+      "amount": 1,
+      "name": "Ray of Command"
+    },
+    {
+      "amount": 1,
+      "name": "Remand"
+    },
+    {
+      "amount": 1,
+      "name": "Spelltwine"
+    },
+    {
+      "amount": 1,
+      "name": "Summoner\u0027s Bane"
+    },
+    {
+      "amount": 2,
+      "name": "Thought Scour"
+    }
+  ]
+}

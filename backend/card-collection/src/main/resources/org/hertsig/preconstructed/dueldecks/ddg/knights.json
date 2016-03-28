@@ -1,0 +1,170 @@
+{
+  "tag": [
+    "Duel decks",
+    "Knights vs. Dragons"
+  ],
+  "name": "Knights",
+  "set": "DDG",
+  "mainboard": [
+    {
+      "amount": 6,
+      "name": "Forest"
+    },
+    {
+      "amount": 12,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Grasslands"
+    },
+    {
+      "amount": 1,
+      "name": "Sejiri Steppe"
+    },
+    {
+      "amount": 2,
+      "name": "Selesnya Sanctuary"
+    },
+    {
+      "amount": 1,
+      "name": "Treetop Village"
+    },
+    {
+      "amount": 1,
+      "name": "Caravan Escort"
+    },
+    {
+      "amount": 2,
+      "name": "Lionheart Maverick"
+    },
+    {
+      "amount": 2,
+      "name": "Knight of Cliffhaven"
+    },
+    {
+      "amount": 1,
+      "name": "Knight of Meadowgrain"
+    },
+    {
+      "amount": 1,
+      "name": "Knight of the White Orchid"
+    },
+    {
+      "amount": 1,
+      "name": "Leonin Skyhunter"
+    },
+    {
+      "amount": 1,
+      "name": "Silver Knight"
+    },
+    {
+      "amount": 1,
+      "name": "White Knight"
+    },
+    {
+      "amount": 1,
+      "name": "Knotvine Paladin"
+    },
+    {
+      "amount": 1,
+      "name": "Steward of Valeron"
+    },
+    {
+      "amount": 1,
+      "name": "Benalish Lancer"
+    },
+    {
+      "amount": 1,
+      "name": "Zhalfirin Commander"
+    },
+    {
+      "amount": 1,
+      "name": "Knight Exemplar"
+    },
+    {
+      "amount": 1,
+      "name": "Knight of the Reliquary"
+    },
+    {
+      "amount": 1,
+      "name": "Wilt-Leaf Cavaliers"
+    },
+    {
+      "amount": 1,
+      "name": "Kabira Vindicator"
+    },
+    {
+      "amount": 1,
+      "name": "Kinsbaile Cavalier"
+    },
+    {
+      "amount": 1,
+      "name": "Alaborn Cavalier"
+    },
+    {
+      "amount": 1,
+      "name": "Skyhunter Patrol"
+    },
+    {
+      "amount": 1,
+      "name": "Plover Knights"
+    },
+    {
+      "amount": 1,
+      "name": "Juniper Order Ranger"
+    },
+    {
+      "amount": 1,
+      "name": "Paladin of Prahv"
+    },
+    {
+      "amount": 1,
+      "name": "Harm\u0027s Way"
+    },
+    {
+      "amount": 1,
+      "name": "Reciprocate"
+    },
+    {
+      "amount": 1,
+      "name": "Mighty Leap"
+    },
+    {
+      "amount": 1,
+      "name": "Reprisal"
+    },
+    {
+      "amount": 1,
+      "name": "Test of Faith"
+    },
+    {
+      "amount": 1,
+      "name": "Heroes\u0027 Reunion"
+    },
+    {
+      "amount": 1,
+      "name": "Sigil Blessing"
+    },
+    {
+      "amount": 1,
+      "name": "Edge of Autumn"
+    },
+    {
+      "amount": 1,
+      "name": "Spidersilk Armor"
+    },
+    {
+      "amount": 1,
+      "name": "Griffin Guide"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Ring"
+    },
+    {
+      "amount": 1,
+      "name": "Loxodon Warhammer"
+    }
+  ]
+}
