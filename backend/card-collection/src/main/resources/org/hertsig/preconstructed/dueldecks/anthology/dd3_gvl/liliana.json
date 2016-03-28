@@ -1,0 +1,127 @@
+{
+  "tag": [
+    "Duel decks",
+    "Anthology",
+    "Garruk vs. Liliana"
+  ],
+  "name": "Liliana",
+  "set": "DD3_GVL",
+  "mainboard": [
+    {
+      "amount": 23,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Polluted Mire"
+    },
+    {
+      "amount": 1,
+      "name": "Deathgreeter"
+    },
+    {
+      "amount": 1,
+      "name": "Drudge Skeletons"
+    },
+    {
+      "amount": 1,
+      "name": "Faerie Macabre"
+    },
+    {
+      "amount": 2,
+      "name": "Fleshbag Marauder"
+    },
+    {
+      "amount": 2,
+      "name": "Ghost-Lit Stalker"
+    },
+    {
+      "amount": 1,
+      "name": "Howling Banshee"
+    },
+    {
+      "amount": 1,
+      "name": "Keening Banshee"
+    },
+    {
+      "amount": 2,
+      "name": "Phyrexian Rager"
+    },
+    {
+      "amount": 1,
+      "name": "Ravenous Rats"
+    },
+    {
+      "amount": 1,
+      "name": "Skeletal Vampire"
+    },
+    {
+      "amount": 2,
+      "name": "Twisted Abomination"
+    },
+    {
+      "amount": 1,
+      "name": "Urborg Syphon-Mage"
+    },
+    {
+      "amount": 2,
+      "name": "Vampire Bats"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Bone"
+    },
+    {
+      "amount": 1,
+      "name": "Hideous End"
+    },
+    {
+      "amount": 1,
+      "name": "Snuff Out"
+    },
+    {
+      "amount": 2,
+      "name": "Tendrils of Corruption"
+    },
+    {
+      "amount": 2,
+      "name": "Corrupt"
+    },
+    {
+      "amount": 1,
+      "name": "Ichor Slick"
+    },
+    {
+      "amount": 1,
+      "name": "Mutilate"
+    },
+    {
+      "amount": 1,
+      "name": "Rise from the Grave"
+    },
+    {
+      "amount": 2,
+      "name": "Sign in Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Vicious Hunger"
+    },
+    {
+      "amount": 1,
+      "name": "Bad Moon"
+    },
+    {
+      "amount": 1,
+      "name": "Enslave"
+    },
+    {
+      "amount": 1,
+      "name": "Genju of the Fens"
+    },
+    {
+      "amount": 1,
+      "name": "Liliana Vess"
+    }
+  ]
+}

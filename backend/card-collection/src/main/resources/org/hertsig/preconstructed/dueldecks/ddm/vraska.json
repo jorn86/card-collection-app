@@ -1,0 +1,166 @@
+{
+  "tag": [
+    "Duel decks",
+    "Jace vs. Vraska"
+  ],
+  "name": "Vraska",
+  "set": "DDM",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Vraska the Unseen"
+    },
+    {
+      "amount": 9,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Guildgate"
+    },
+    {
+      "amount": 1,
+      "name": "Rogue\u0027s Passage"
+    },
+    {
+      "amount": 11,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Tainted Wood"
+    },
+    {
+      "amount": 1,
+      "name": "Acidic Slime"
+    },
+    {
+      "amount": 1,
+      "name": "Corpse Traders"
+    },
+    {
+      "amount": 1,
+      "name": "Death-Hood Cobra"
+    },
+    {
+      "amount": 1,
+      "name": "Drooling Groodion"
+    },
+    {
+      "amount": 1,
+      "name": "Festerhide Boar"
+    },
+    {
+      "amount": 2,
+      "name": "Gatecreeper Vine"
+    },
+    {
+      "amount": 1,
+      "name": "Highway Robber"
+    },
+    {
+      "amount": 1,
+      "name": "Mold Shambler"
+    },
+    {
+      "amount": 1,
+      "name": "Nekrataal"
+    },
+    {
+      "amount": 1,
+      "name": "Ohran Viper"
+    },
+    {
+      "amount": 1,
+      "name": "Oran-Rief Recluse"
+    },
+    {
+      "amount": 1,
+      "name": "Pulse Tracker"
+    },
+    {
+      "amount": 1,
+      "name": "Putrid Leech"
+    },
+    {
+      "amount": 1,
+      "name": "Reaper of the Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "River Boa"
+    },
+    {
+      "amount": 1,
+      "name": "Sadistic Augermage"
+    },
+    {
+      "amount": 1,
+      "name": "Shadow Alley Denizen"
+    },
+    {
+      "amount": 1,
+      "name": "Slate Street Ruffian"
+    },
+    {
+      "amount": 1,
+      "name": "Spawnwrithe"
+    },
+    {
+      "amount": 1,
+      "name": "Stonefare Crocodile"
+    },
+    {
+      "amount": 1,
+      "name": "Tavern Swindler"
+    },
+    {
+      "amount": 1,
+      "name": "Vinelasher Kudzu"
+    },
+    {
+      "amount": 1,
+      "name": "Wight of Precinct Six"
+    },
+    {
+      "amount": 1,
+      "name": "Consume Strength"
+    },
+    {
+      "amount": 1,
+      "name": "Grisly Spectacle"
+    },
+    {
+      "amount": 1,
+      "name": "Hypnotic Cloud"
+    },
+    {
+      "amount": 1,
+      "name": "Last Kiss"
+    },
+    {
+      "amount": 1,
+      "name": "Marsh Casualties"
+    },
+    {
+      "amount": 1,
+      "name": "Night\u0027s Whisper"
+    },
+    {
+      "amount": 1,
+      "name": "Stab Wound"
+    },
+    {
+      "amount": 2,
+      "name": "Tragic Slip"
+    },
+    {
+      "amount": 1,
+      "name": "Treasured Find"
+    },
+    {
+      "amount": 1,
+      "name": "Underworld Connections"
+    }
+  ]
+}

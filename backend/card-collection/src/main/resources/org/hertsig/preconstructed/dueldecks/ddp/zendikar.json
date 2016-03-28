@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Zendikar vs. Eldrazi"
+  ],
+  "name": "Zendikar",
+  "set": "DDP",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Stirring Wildwood"
+    },
+    {
+      "amount": 2,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 2,
+      "name": "Graypelt Refuge"
+    },
+    {
+      "amount": 2,
+      "name": "Turntimber Grove"
+    },
+    {
+      "amount": 9,
+      "name": "Plains"
+    },
+    {
+      "amount": 10,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Affa Guard Hound"
+    },
+    {
+      "amount": 1,
+      "name": "Avenger of Zendikar"
+    },
+    {
+      "amount": 1,
+      "name": "Beastbreaker of Bala Ged"
+    },
+    {
+      "amount": 1,
+      "name": "Daggerback Basilisk"
+    },
+    {
+      "amount": 1,
+      "name": "Frontier Guide"
+    },
+    {
+      "amount": 1,
+      "name": "Grazing Gladehart"
+    },
+    {
+      "amount": 1,
+      "name": "Joraga Bard"
+    },
+    {
+      "amount": 1,
+      "name": "Kabira Vindicator"
+    },
+    {
+      "amount": 1,
+      "name": "Knight of Cliffhaven"
+    },
+    {
+      "amount": 1,
+      "name": "Makindi Griffin"
+    },
+    {
+      "amount": 1,
+      "name": "Ondu Giant"
+    },
+    {
+      "amount": 1,
+      "name": "Scute Mob"
+    },
+    {
+      "amount": 1,
+      "name": "Stonework Puma"
+    },
+    {
+      "amount": 1,
+      "name": "Tajuru Archer"
+    },
+    {
+      "amount": 1,
+      "name": "Turntimber Basilisk"
+    },
+    {
+      "amount": 1,
+      "name": "Veteran Warleader"
+    },
+    {
+      "amount": 1,
+      "name": "Wildheart Invoker"
+    },
+    {
+      "amount": 2,
+      "name": "Caravan Escort"
+    },
+    {
+      "amount": 2,
+      "name": "Graypelt Hunter"
+    },
+    {
+      "amount": 2,
+      "name": "Territorial Baloth"
+    },
+    {
+      "amount": 1,
+      "name": "Explorer\u0027s Scope"
+    },
+    {
+      "amount": 1,
+      "name": "Seer\u0027s Sundial"
+    },
+    {
+      "amount": 1,
+      "name": "Khalni Heart Expedition"
+    },
+    {
+      "amount": 1,
+      "name": "Retreat to Kazandu"
+    },
+    {
+      "amount": 1,
+      "name": "Groundswell"
+    },
+    {
+      "amount": 1,
+      "name": "Harrow"
+    },
+    {
+      "amount": 1,
+      "name": "Repel the Darkness"
+    },
+    {
+      "amount": 1,
+      "name": "Oust"
+    },
+    {
+      "amount": 1,
+      "name": "Primal Command"
+    },
+    {
+      "amount": 2,
+      "name": "Sheer Drop"
+    }
+  ]
+}

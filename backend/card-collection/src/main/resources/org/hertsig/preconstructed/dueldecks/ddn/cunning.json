@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Speed vs. Cunning"
+  ],
+  "name": "Cunning",
+  "set": "DDN",
+  "mainboard": [
+    {
+      "amount": 10,
+      "name": "Island"
+    },
+    {
+      "amount": 3,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Mystic Monastery"
+    },
+    {
+      "amount": 7,
+      "name": "Plains"
+    },
+    {
+      "amount": 2,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 2,
+      "name": "Aquamorph Entity"
+    },
+    {
+      "amount": 1,
+      "name": "Arcanis the Omnipotent"
+    },
+    {
+      "amount": 2,
+      "name": "Coral Trickster"
+    },
+    {
+      "amount": 1,
+      "name": "Echo Tracer"
+    },
+    {
+      "amount": 2,
+      "name": "Faerie Impostor"
+    },
+    {
+      "amount": 1,
+      "name": "Faerie Invaders"
+    },
+    {
+      "amount": 2,
+      "name": "Fathom Seer"
+    },
+    {
+      "amount": 1,
+      "name": "Hussar Patrol"
+    },
+    {
+      "amount": 1,
+      "name": "Jeskai Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Kor Hookmaster"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Lone Missionary"
+    },
+    {
+      "amount": 1,
+      "name": "Master Decoy"
+    },
+    {
+      "amount": 1,
+      "name": "Sparkmage Apprentice"
+    },
+    {
+      "amount": 1,
+      "name": "Sphinx of Uthuun"
+    },
+    {
+      "amount": 1,
+      "name": "Stonecloaker"
+    },
+    {
+      "amount": 1,
+      "name": "Thousand Winds"
+    },
+    {
+      "amount": 1,
+      "name": "Willbender"
+    },
+    {
+      "amount": 1,
+      "name": "Arrow Volley Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Fleeting Distraction"
+    },
+    {
+      "amount": 1,
+      "name": "Hold the Line"
+    },
+    {
+      "amount": 1,
+      "name": "Impulse"
+    },
+    {
+      "amount": 1,
+      "name": "Inferno Trap"
+    },
+    {
+      "amount": 1,
+      "name": "Lightning Helix"
+    },
+    {
+      "amount": 1,
+      "name": "Mana Leak"
+    },
+    {
+      "amount": 1,
+      "name": "Repeal"
+    },
+    {
+      "amount": 1,
+      "name": "Stave Off"
+    },
+    {
+      "amount": 1,
+      "name": "Steam Augury"
+    },
+    {
+      "amount": 1,
+      "name": "Swift Justice"
+    },
+    {
+      "amount": 2,
+      "name": "Traumatic Visions"
+    },
+    {
+      "amount": 1,
+      "name": "Whiplash Trap"
+    }
+  ]
+}

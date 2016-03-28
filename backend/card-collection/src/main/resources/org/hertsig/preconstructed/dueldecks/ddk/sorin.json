@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Sorin vs. Tibalt"
+  ],
+  "name": "Sorin",
+  "set": "DDK",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 9,
+      "name": "Plains"
+    },
+    {
+      "amount": 12,
+      "name": "Swamp"
+    },
+    {
+      "amount": 2,
+      "name": "Tainted Field"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodrage Vampire"
+    },
+    {
+      "amount": 1,
+      "name": "Butcher of Malakir"
+    },
+    {
+      "amount": 1,
+      "name": "Child of Night"
+    },
+    {
+      "amount": 2,
+      "name": "Doomed Traveler"
+    },
+    {
+      "amount": 2,
+      "name": "Duskhunter Bat"
+    },
+    {
+      "amount": 1,
+      "name": "Fiend Hunter"
+    },
+    {
+      "amount": 1,
+      "name": "Gatekeeper of Malakir"
+    },
+    {
+      "amount": 1,
+      "name": "Mausoleum Guard"
+    },
+    {
+      "amount": 1,
+      "name": "Mesmeric Fiend"
+    },
+    {
+      "amount": 1,
+      "name": "Phantom General"
+    },
+    {
+      "amount": 1,
+      "name": "Revenant Patriarch"
+    },
+    {
+      "amount": 1,
+      "name": "Sengir Vampire"
+    },
+    {
+      "amount": 1,
+      "name": "Twilight Drover"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Lacerator"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Nighthawk"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Outcasts"
+    },
+    {
+      "amount": 1,
+      "name": "Wall of Omens"
+    },
+    {
+      "amount": 1,
+      "name": "Mortify"
+    },
+    {
+      "amount": 1,
+      "name": "Sorin\u0027s Thirst"
+    },
+    {
+      "amount": 1,
+      "name": "Unmake"
+    },
+    {
+      "amount": 1,
+      "name": "Urge to Feed"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire\u0027s Bite"
+    },
+    {
+      "amount": 1,
+      "name": "Zealous Persecution"
+    },
+    {
+      "amount": 1,
+      "name": "Absorb Vis"
+    },
+    {
+      "amount": 1,
+      "name": "Ancient Craving"
+    },
+    {
+      "amount": 1,
+      "name": "Death Grasp"
+    },
+    {
+      "amount": 1,
+      "name": "Decompose"
+    },
+    {
+      "amount": 1,
+      "name": "Lingering Souls"
+    },
+    {
+      "amount": 2,
+      "name": "Spectral Procession"
+    },
+    {
+      "amount": 1,
+      "name": "Field of Souls"
+    },
+    {
+      "amount": 1,
+      "name": "Mark of the Vampire"
+    },
+    {
+      "amount": 1,
+      "name": "Sorin, Lord of Innistrad"
+    }
+  ]
+}

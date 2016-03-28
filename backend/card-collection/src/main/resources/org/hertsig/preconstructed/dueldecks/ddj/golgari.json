@@ -1,0 +1,170 @@
+{
+  "tag": [
+    "Duel decks",
+    "Izzet vs. Golgari"
+  ],
+  "name": "Golgari",
+  "set": "DDJ",
+  "mainboard": [
+    {
+      "amount": 8,
+      "name": "Forest"
+    },
+    {
+      "amount": 10,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Barren Moor"
+    },
+    {
+      "amount": 1,
+      "name": "Dakmor Salvage"
+    },
+    {
+      "amount": 2,
+      "name": "Golgari Rot Farm"
+    },
+    {
+      "amount": 1,
+      "name": "Svogthos, the Restless Tomb"
+    },
+    {
+      "amount": 1,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Boneyard Wurm"
+    },
+    {
+      "amount": 1,
+      "name": "Brain Weevil"
+    },
+    {
+      "amount": 1,
+      "name": "Doomgape"
+    },
+    {
+      "amount": 1,
+      "name": "Dreg Mangler"
+    },
+    {
+      "amount": 2,
+      "name": "Elves of Deep Shadow"
+    },
+    {
+      "amount": 1,
+      "name": "Eternal Witness"
+    },
+    {
+      "amount": 1,
+      "name": "Gleancrawler"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Grave-Troll"
+    },
+    {
+      "amount": 2,
+      "name": "Golgari Rotwurm"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Thug"
+    },
+    {
+      "amount": 1,
+      "name": "Greater Mossdog"
+    },
+    {
+      "amount": 1,
+      "name": "Jarad, Golgari Lich Lord"
+    },
+    {
+      "amount": 1,
+      "name": "Korozda Guildmage"
+    },
+    {
+      "amount": 1,
+      "name": "Plagued Rusalka"
+    },
+    {
+      "amount": 1,
+      "name": "Putrid Leech"
+    },
+    {
+      "amount": 1,
+      "name": "Ravenous Rats"
+    },
+    {
+      "amount": 1,
+      "name": "Reassembling Skeleton"
+    },
+    {
+      "amount": 1,
+      "name": "Sadistic Hypnotist"
+    },
+    {
+      "amount": 1,
+      "name": "Shambling Shell"
+    },
+    {
+      "amount": 1,
+      "name": "Stingerfling Spider"
+    },
+    {
+      "amount": 1,
+      "name": "Stinkweed Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Feast or Famine"
+    },
+    {
+      "amount": 1,
+      "name": "Ghoul\u0027s Feast"
+    },
+    {
+      "amount": 2,
+      "name": "Putrefy"
+    },
+    {
+      "amount": 1,
+      "name": "Grim Flowering"
+    },
+    {
+      "amount": 1,
+      "name": "Life / Death"
+    },
+    {
+      "amount": 1,
+      "name": "Life from the Loam"
+    },
+    {
+      "amount": 1,
+      "name": "Nightmare Void"
+    },
+    {
+      "amount": 1,
+      "name": "Twilight\u0027s Call"
+    },
+    {
+      "amount": 1,
+      "name": "Vigor Mortis"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Germination"
+    },
+    {
+      "amount": 1,
+      "name": "Yoke of the Damned"
+    },
+    {
+      "amount": 1,
+      "name": "Golgari Signet"
+    }
+  ]
+}

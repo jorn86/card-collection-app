@@ -1,0 +1,134 @@
+{
+  "tag": [
+    "Duel decks",
+    "Venser vs. Koth"
+  ],
+  "name": "Koth",
+  "set": "DDI",
+  "mainboard": [
+    {
+      "amount": 25,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "Plated Geopede"
+    },
+    {
+      "amount": 1,
+      "name": "Pygmy Pyrosaur"
+    },
+    {
+      "amount": 2,
+      "name": "Pilgrim\u0027s Eye"
+    },
+    {
+      "amount": 1,
+      "name": "Æther Membrane"
+    },
+    {
+      "amount": 2,
+      "name": "Fiery Hellhound"
+    },
+    {
+      "amount": 1,
+      "name": "Vulshok Sorcerer"
+    },
+    {
+      "amount": 1,
+      "name": "Anger"
+    },
+    {
+      "amount": 1,
+      "name": "Cosi\u0027s Ravager"
+    },
+    {
+      "amount": 1,
+      "name": "Vulshok Berserker"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodfire Kavu"
+    },
+    {
+      "amount": 1,
+      "name": "Stone Giant"
+    },
+    {
+      "amount": 1,
+      "name": "Geyser Glider"
+    },
+    {
+      "amount": 1,
+      "name": "Lithophage"
+    },
+    {
+      "amount": 1,
+      "name": "Torchling"
+    },
+    {
+      "amount": 1,
+      "name": "Chartooth Cougar"
+    },
+    {
+      "amount": 1,
+      "name": "Earth Servant"
+    },
+    {
+      "amount": 1,
+      "name": "Greater Stone Spirit"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodfire Colossus"
+    },
+    {
+      "amount": 1,
+      "name": "Downhill Charge"
+    },
+    {
+      "amount": 1,
+      "name": "Searing Blaze"
+    },
+    {
+      "amount": 2,
+      "name": "Seismic Strike"
+    },
+    {
+      "amount": 1,
+      "name": "Jaws of Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Spire Barrage"
+    },
+    {
+      "amount": 1,
+      "name": "Volley of Boulders"
+    },
+    {
+      "amount": 1,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Journeyer\u0027s Kite"
+    },
+    {
+      "amount": 1,
+      "name": "Vulshok Battlegear"
+    },
+    {
+      "amount": 1,
+      "name": "Vulshok Morningstar"
+    },
+    {
+      "amount": 2,
+      "name": "Wayfarer\u0027s Bauble"
+    },
+    {
+      "amount": 1,
+      "name": "Koth of the Hammer"
+    }
+  ]
+}

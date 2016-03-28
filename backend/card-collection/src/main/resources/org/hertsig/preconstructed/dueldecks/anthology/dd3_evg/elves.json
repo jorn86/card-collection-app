@@ -1,0 +1,123 @@
+{
+  "tag": [
+    "Duel decks",
+    "Anthology",
+    "Elves vs. Goblins"
+  ],
+  "name": "Elves",
+  "set": "DD3_EVG",
+  "mainboard": [
+    {
+      "amount": 19,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Tranquil Thicket"
+    },
+    {
+      "amount": 1,
+      "name": "Wirewood Lodge"
+    },
+    {
+      "amount": 1,
+      "name": "Ambush Commander"
+    },
+    {
+      "amount": 1,
+      "name": "Allosaurus Rider"
+    },
+    {
+      "amount": 2,
+      "name": "Elvish Eulogist"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Harbinger"
+    },
+    {
+      "amount": 3,
+      "name": "Elvish Warrior"
+    },
+    {
+      "amount": 2,
+      "name": "Gempalm Strider"
+    },
+    {
+      "amount": 1,
+      "name": "Heedless One"
+    },
+    {
+      "amount": 2,
+      "name": "Imperious Perfect"
+    },
+    {
+      "amount": 3,
+      "name": "Llanowar Elves"
+    },
+    {
+      "amount": 2,
+      "name": "Lys Alana Huntmaster"
+    },
+    {
+      "amount": 1,
+      "name": "Stonewood Invoker"
+    },
+    {
+      "amount": 1,
+      "name": "Sylvan Messenger"
+    },
+    {
+      "amount": 1,
+      "name": "Timberwatch Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Voice of the Woods"
+    },
+    {
+      "amount": 2,
+      "name": "Wellwisher"
+    },
+    {
+      "amount": 1,
+      "name": "Wirewood Herald"
+    },
+    {
+      "amount": 1,
+      "name": "Wirewood Symbiote"
+    },
+    {
+      "amount": 2,
+      "name": "Wood Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Wren\u0027s Run Vanquisher"
+    },
+    {
+      "amount": 2,
+      "name": "Giant Growth"
+    },
+    {
+      "amount": 1,
+      "name": "Wildsize"
+    },
+    {
+      "amount": 1,
+      "name": "Elvish Promenade"
+    },
+    {
+      "amount": 1,
+      "name": "Harmonize"
+    },
+    {
+      "amount": 3,
+      "name": "Moonglove Extract"
+    },
+    {
+      "amount": 1,
+      "name": "Slate of Ancestry"
+    }
+  ]
+}

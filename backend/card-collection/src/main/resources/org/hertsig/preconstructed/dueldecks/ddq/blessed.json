@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Blessed vs. Cursed"
+  ],
+  "name": "Blessed",
+  "set": "DDQ",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Cathedral Sanctifier"
+    },
+    {
+      "amount": 1,
+      "name": "Champion of the Parish"
+    },
+    {
+      "amount": 1,
+      "name": "Doomed Traveler"
+    },
+    {
+      "amount": 1,
+      "name": "Nephalia Smuggler"
+    },
+    {
+      "amount": 1,
+      "name": "Moorland Inquisitor"
+    },
+    {
+      "amount": 1,
+      "name": "Thraben Heretic"
+    },
+    {
+      "amount": 2,
+      "name": "Elder Cathar"
+    },
+    {
+      "amount": 1,
+      "name": "Village Bell-Ringer"
+    },
+    {
+      "amount": 1,
+      "name": "Captain of the Mists"
+    },
+    {
+      "amount": 1,
+      "name": "Tandem Lookout"
+    },
+    {
+      "amount": 1,
+      "name": "Chapel Geist"
+    },
+    {
+      "amount": 1,
+      "name": "Emancipation Angel"
+    },
+    {
+      "amount": 1,
+      "name": "Fiend Hunter"
+    },
+    {
+      "amount": 1,
+      "name": "Geist of Saint Traft"
+    },
+    {
+      "amount": 1,
+      "name": "Slayer of the Wicked"
+    },
+    {
+      "amount": 1,
+      "name": "Tower Geist"
+    },
+    {
+      "amount": 1,
+      "name": "Mist Raven"
+    },
+    {
+      "amount": 1,
+      "name": "Spectral Gateguards"
+    },
+    {
+      "amount": 1,
+      "name": "Gryff Vanguard"
+    },
+    {
+      "amount": 1,
+      "name": "Dearly Departed"
+    },
+    {
+      "amount": 1,
+      "name": "Goldnight Redeemer"
+    },
+    {
+      "amount": 1,
+      "name": "Voice of the Provinces"
+    },
+    {
+      "amount": 2,
+      "name": "Topplegeist"
+    },
+    {
+      "amount": 2,
+      "name": "Gather the Townsfolk"
+    },
+    {
+      "amount": 1,
+      "name": "Increasing Devotion"
+    },
+    {
+      "amount": 1,
+      "name": "Pore Over the Pages"
+    },
+    {
+      "amount": 1,
+      "name": "Momentary Blink"
+    },
+    {
+      "amount": 2,
+      "name": "Rebuke"
+    },
+    {
+      "amount": 1,
+      "name": "Eerie Interlude"
+    },
+    {
+      "amount": 1,
+      "name": "Sharpened Pitchfork"
+    },
+    {
+      "amount": 1,
+      "name": "Butcher\u0027s Cleaver"
+    },
+    {
+      "amount": 1,
+      "name": "Bonds of Faith"
+    },
+    {
+      "amount": 1,
+      "name": "Seraph Sanctuary"
+    },
+    {
+      "amount": 4,
+      "name": "Tranquil Cove"
+    },
+    {
+      "amount": 12,
+      "name": "Plains"
+    },
+    {
+      "amount": 7,
+      "name": "Island"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Heroes vs. Monsters"
+  ],
+  "name": "Heroes",
+  "set": "DDL",
+  "mainboard": [
+    {
+      "amount": 2,
+      "name": "Boros Guildgate"
+    },
+    {
+      "amount": 11,
+      "name": "Mountain"
+    },
+    {
+      "amount": 2,
+      "name": "New Benalia"
+    },
+    {
+      "amount": 9,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Anax and Cymede"
+    },
+    {
+      "amount": 2,
+      "name": "Armory Guard"
+    },
+    {
+      "amount": 1,
+      "name": "Auramancer"
+    },
+    {
+      "amount": 1,
+      "name": "Cavalry Pegasus"
+    },
+    {
+      "amount": 1,
+      "name": "Dawnstrike Paladin"
+    },
+    {
+      "amount": 1,
+      "name": "Fencing Ace"
+    },
+    {
+      "amount": 1,
+      "name": "Figure of Destiny"
+    },
+    {
+      "amount": 2,
+      "name": "Freewind Equenaut"
+    },
+    {
+      "amount": 1,
+      "name": "Gustcloak Sentinel"
+    },
+    {
+      "amount": 1,
+      "name": "Kamahl, Pit Fighter"
+    },
+    {
+      "amount": 1,
+      "name": "Nobilis of War"
+    },
+    {
+      "amount": 1,
+      "name": "Somberwald Vigilante"
+    },
+    {
+      "amount": 2,
+      "name": "Stun Sniper"
+    },
+    {
+      "amount": 1,
+      "name": "Sun Titan"
+    },
+    {
+      "amount": 1,
+      "name": "Thraben Valiant"
+    },
+    {
+      "amount": 1,
+      "name": "Truefire Paladin"
+    },
+    {
+      "amount": 1,
+      "name": "Battle Mastery"
+    },
+    {
+      "amount": 1,
+      "name": "Bonds of Faith"
+    },
+    {
+      "amount": 2,
+      "name": "Condemn"
+    },
+    {
+      "amount": 1,
+      "name": "Daily Regimen"
+    },
+    {
+      "amount": 1,
+      "name": "Griffin Guide"
+    },
+    {
+      "amount": 1,
+      "name": "Magma Jet"
+    },
+    {
+      "amount": 1,
+      "name": "Miraculous Recovery"
+    },
+    {
+      "amount": 1,
+      "name": "Moment of Heroism"
+    },
+    {
+      "amount": 1,
+      "name": "Ordeal of Purphoros"
+    },
+    {
+      "amount": 1,
+      "name": "Pay No Heed"
+    },
+    {
+      "amount": 1,
+      "name": "Pyrokinesis"
+    },
+    {
+      "amount": 1,
+      "name": "Righteousness"
+    },
+    {
+      "amount": 1,
+      "name": "Smite the Monstrous"
+    },
+    {
+      "amount": 1,
+      "name": "Stand Firm"
+    },
+    {
+      "amount": 1,
+      "name": "Undying Rage"
+    },
+    {
+      "amount": 1,
+      "name": "Winds of Rath"
+    }
+  ]
+}

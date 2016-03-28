@@ -1,0 +1,130 @@
+{
+  "tag": [
+    "Duel decks",
+    "Jace vs. Chandra"
+  ],
+  "name": "Jace",
+  "set": "DD2",
+  "mainboard": [
+    {
+      "amount": 23,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Terrain Generator"
+    },
+    {
+      "amount": 1,
+      "name": "Æthersnipe"
+    },
+    {
+      "amount": 1,
+      "name": "Air Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Bottle Gnomes"
+    },
+    {
+      "amount": 1,
+      "name": "Brine Elemental"
+    },
+    {
+      "amount": 1,
+      "name": "Errant Ephemeron"
+    },
+    {
+      "amount": 2,
+      "name": "Fathom Seer"
+    },
+    {
+      "amount": 1,
+      "name": "Fledgling Mawcor"
+    },
+    {
+      "amount": 1,
+      "name": "Guile"
+    },
+    {
+      "amount": 2,
+      "name": "Man-o\u0027-War"
+    },
+    {
+      "amount": 1,
+      "name": "Martyr of Frost"
+    },
+    {
+      "amount": 2,
+      "name": "Mulldrifter"
+    },
+    {
+      "amount": 1,
+      "name": "Ophidian"
+    },
+    {
+      "amount": 1,
+      "name": "Quicksilver Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Riftwing Cloudskate"
+    },
+    {
+      "amount": 2,
+      "name": "Spire Golem"
+    },
+    {
+      "amount": 1,
+      "name": "Voidmage Apprentice"
+    },
+    {
+      "amount": 2,
+      "name": "Wall of Deceit"
+    },
+    {
+      "amount": 1,
+      "name": "Waterspout Djinn"
+    },
+    {
+      "amount": 1,
+      "name": "Willbender"
+    },
+    {
+      "amount": 2,
+      "name": "Condescend"
+    },
+    {
+      "amount": 2,
+      "name": "Counterspell"
+    },
+    {
+      "amount": 1,
+      "name": "Daze"
+    },
+    {
+      "amount": 1,
+      "name": "Fact or Fiction"
+    },
+    {
+      "amount": 1,
+      "name": "Gush"
+    },
+    {
+      "amount": 2,
+      "name": "Repulse"
+    },
+    {
+      "amount": 1,
+      "name": "Ancestral Vision"
+    },
+    {
+      "amount": 1,
+      "name": "Mind Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Jace Beleren"
+    }
+  ]
+}

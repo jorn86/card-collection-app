@@ -1,0 +1,154 @@
+{
+  "tag": [
+    "Duel decks",
+    "Phyrexia vs. The Coalition"
+  ],
+  "name": "The Coalition",
+  "set": "DDE",
+  "mainboard": [
+    {
+      "amount": 10,
+      "name": "Forest"
+    },
+    {
+      "amount": 1,
+      "name": "Island"
+    },
+    {
+      "amount": 4,
+      "name": "Mountain"
+    },
+    {
+      "amount": 4,
+      "name": "Plains"
+    },
+    {
+      "amount": 1,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Elfhame Palace"
+    },
+    {
+      "amount": 1,
+      "name": "Shivan Oasis"
+    },
+    {
+      "amount": 3,
+      "name": "Terramorphic Expanse"
+    },
+    {
+      "amount": 1,
+      "name": "Charging Troll"
+    },
+    {
+      "amount": 1,
+      "name": "Darigaaz, the Igniter"
+    },
+    {
+      "amount": 1,
+      "name": "Gerrard Capashen"
+    },
+    {
+      "amount": 2,
+      "name": "Nomadic Elf"
+    },
+    {
+      "amount": 1,
+      "name": "Quirion Elves"
+    },
+    {
+      "amount": 1,
+      "name": "Rith, the Awakener"
+    },
+    {
+      "amount": 1,
+      "name": "Sunscape Battlemage"
+    },
+    {
+      "amount": 2,
+      "name": "Thornscape Apprentice"
+    },
+    {
+      "amount": 2,
+      "name": "Thornscape Battlemage"
+    },
+    {
+      "amount": 1,
+      "name": "Thunderscape Battlemage"
+    },
+    {
+      "amount": 1,
+      "name": "Treva, the Renewer"
+    },
+    {
+      "amount": 1,
+      "name": "Verduran Emissary"
+    },
+    {
+      "amount": 2,
+      "name": "Yavimaya Elder"
+    },
+    {
+      "amount": 1,
+      "name": "Darigaaz\u0027s Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Evasive Action"
+    },
+    {
+      "amount": 1,
+      "name": "Gerrard\u0027s Command"
+    },
+    {
+      "amount": 2,
+      "name": "Harrow"
+    },
+    {
+      "amount": 1,
+      "name": "Narrow Escape"
+    },
+    {
+      "amount": 1,
+      "name": "Rith\u0027s Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Treva\u0027s Charm"
+    },
+    {
+      "amount": 1,
+      "name": "Urza\u0027s Rage"
+    },
+    {
+      "amount": 1,
+      "name": "Allied Strategies"
+    },
+    {
+      "amount": 1,
+      "name": "Tribal Flames"
+    },
+    {
+      "amount": 2,
+      "name": "Armadillo Cloak"
+    },
+    {
+      "amount": 1,
+      "name": "Exotic Curse"
+    },
+    {
+      "amount": 2,
+      "name": "Fertile Ground"
+    },
+    {
+      "amount": 1,
+      "name": "Coalition Relic"
+    },
+    {
+      "amount": 1,
+      "name": "Power Armor"
+    }
+  ]
+}

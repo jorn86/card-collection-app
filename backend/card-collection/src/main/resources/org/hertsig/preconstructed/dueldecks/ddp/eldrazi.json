@@ -1,0 +1,134 @@
+{
+  "tag": [
+    "Duel decks",
+    "Zendikar vs. Eldrazi"
+  ],
+  "name": "Eldrazi",
+  "set": "DDP",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Eldrazi Temple"
+    },
+    {
+      "amount": 2,
+      "name": "Rocky Tar Pit"
+    },
+    {
+      "amount": 3,
+      "name": "Akoum Refuge"
+    },
+    {
+      "amount": 7,
+      "name": "Mountain"
+    },
+    {
+      "amount": 13,
+      "name": "Swamp"
+    },
+    {
+      "amount": 1,
+      "name": "Artisan of Kozilek"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodrite Invoker"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodthrone Vampire"
+    },
+    {
+      "amount": 1,
+      "name": "Butcher of Malakir"
+    },
+    {
+      "amount": 1,
+      "name": "Cadaver Imp"
+    },
+    {
+      "amount": 1,
+      "name": "Forerunner of Slaughter"
+    },
+    {
+      "amount": 1,
+      "name": "It That Betrays"
+    },
+    {
+      "amount": 1,
+      "name": "Magmaw"
+    },
+    {
+      "amount": 1,
+      "name": "Oblivion Sower"
+    },
+    {
+      "amount": 1,
+      "name": "Pawn of Ulamog"
+    },
+    {
+      "amount": 1,
+      "name": "Torch Slinger"
+    },
+    {
+      "amount": 1,
+      "name": "Ulamog\u0027s Crusher"
+    },
+    {
+      "amount": 1,
+      "name": "Vampire Nighthawk"
+    },
+    {
+      "amount": 2,
+      "name": "Dominator Drone"
+    },
+    {
+      "amount": 2,
+      "name": "Heartstabber Mosquito"
+    },
+    {
+      "amount": 2,
+      "name": "Runed Servitor"
+    },
+    {
+      "amount": 3,
+      "name": "Emrakul\u0027s Hatcher"
+    },
+    {
+      "amount": 2,
+      "name": "Mind Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Consume the Meek"
+    },
+    {
+      "amount": 1,
+      "name": "Induce Despair"
+    },
+    {
+      "amount": 1,
+      "name": "Smother"
+    },
+    {
+      "amount": 1,
+      "name": "Corpsehatch"
+    },
+    {
+      "amount": 1,
+      "name": "Hellion Eruption"
+    },
+    {
+      "amount": 1,
+      "name": "Marsh Casualties"
+    },
+    {
+      "amount": 2,
+      "name": "Forked Bolt"
+    },
+    {
+      "amount": 2,
+      "name": "Read the Bones"
+    }
+  ]
+}

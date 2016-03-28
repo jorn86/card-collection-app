@@ -1,0 +1,142 @@
+{
+  "tag": [
+    "Duel decks",
+    "Heroes vs. Monsters"
+  ],
+  "name": "Monsters",
+  "set": "DDL",
+  "mainboard": [
+    {
+      "amount": 11,
+      "name": "Forest"
+    },
+    {
+      "amount": 2,
+      "name": "Kazandu Refuge"
+    },
+    {
+      "amount": 2,
+      "name": "Llanowar Reborn"
+    },
+    {
+      "amount": 10,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Skarrg, the Rage Pits"
+    },
+    {
+      "amount": 2,
+      "name": "Blood Ogre"
+    },
+    {
+      "amount": 1,
+      "name": "Conquering Manticore"
+    },
+    {
+      "amount": 1,
+      "name": "Crater Hellion"
+    },
+    {
+      "amount": 1,
+      "name": "Crowned Ceratok"
+    },
+    {
+      "amount": 2,
+      "name": "Deadly Recluse"
+    },
+    {
+      "amount": 1,
+      "name": "Deus of Calamity"
+    },
+    {
+      "amount": 1,
+      "name": "Ghor-Clan Savage"
+    },
+    {
+      "amount": 2,
+      "name": "Gorehorn Minotaurs"
+    },
+    {
+      "amount": 1,
+      "name": "Kavu Predator"
+    },
+    {
+      "amount": 1,
+      "name": "Krosan Tusker"
+    },
+    {
+      "amount": 1,
+      "name": "Orcish Lumberjack"
+    },
+    {
+      "amount": 1,
+      "name": "Polukranos, World Eater"
+    },
+    {
+      "amount": 1,
+      "name": "Satyr Hedonist"
+    },
+    {
+      "amount": 1,
+      "name": "Skarrgan Firebird"
+    },
+    {
+      "amount": 1,
+      "name": "Skarrgan Skybreaker"
+    },
+    {
+      "amount": 1,
+      "name": "Troll Ascetic"
+    },
+    {
+      "amount": 2,
+      "name": "Valley Rannet"
+    },
+    {
+      "amount": 1,
+      "name": "Zhur-Taa Druid"
+    },
+    {
+      "amount": 1,
+      "name": "Beast Within"
+    },
+    {
+      "amount": 1,
+      "name": "Destructive Revelry"
+    },
+    {
+      "amount": 1,
+      "name": "Dragon Blood"
+    },
+    {
+      "amount": 1,
+      "name": "Fires of Yavimaya"
+    },
+    {
+      "amount": 2,
+      "name": "Prey Upon"
+    },
+    {
+      "amount": 1,
+      "name": "Pyroclasm"
+    },
+    {
+      "amount": 1,
+      "name": "Regrowth"
+    },
+    {
+      "amount": 1,
+      "name": "Shower of Sparks"
+    },
+    {
+      "amount": 1,
+      "name": "Terrifying Presence"
+    },
+    {
+      "amount": 2,
+      "name": "Volt Charge"
+    }
+  ]
+}

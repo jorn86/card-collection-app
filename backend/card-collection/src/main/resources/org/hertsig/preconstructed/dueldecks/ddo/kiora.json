@@ -1,0 +1,122 @@
+{
+  "tag": [
+    "Duel decks",
+    "Elspeth vs. Kiora"
+  ],
+  "name": "Kiora",
+  "set": "DDO",
+  "mainboard": [
+    {
+      "amount": 1,
+      "name": "Kiora, the Crashing Wave"
+    },
+    {
+      "amount": 2,
+      "name": "Evolving Wilds"
+    },
+    {
+      "amount": 1,
+      "name": "Temple of the False God"
+    },
+    {
+      "amount": 11,
+      "name": "Forest"
+    },
+    {
+      "amount": 11,
+      "name": "Island"
+    },
+    {
+      "amount": 1,
+      "name": "Omenspeaker"
+    },
+    {
+      "amount": 2,
+      "name": "Coiling Oracle"
+    },
+    {
+      "amount": 1,
+      "name": "Kiora\u0027s Follower"
+    },
+    {
+      "amount": 2,
+      "name": "Grazing Gladehart"
+    },
+    {
+      "amount": 2,
+      "name": "Netcaster Spider"
+    },
+    {
+      "amount": 2,
+      "name": "Man-o\u0027-War"
+    },
+    {
+      "amount": 2,
+      "name": "Lorescale Coatl"
+    },
+    {
+      "amount": 1,
+      "name": "Nessian Asp"
+    },
+    {
+      "amount": 2,
+      "name": "Surrakar Banisher"
+    },
+    {
+      "amount": 1,
+      "name": "Sealock Monster"
+    },
+    {
+      "amount": 1,
+      "name": "Scourge of Fleets"
+    },
+    {
+      "amount": 1,
+      "name": "Simic Sky Swallower"
+    },
+    {
+      "amount": 1,
+      "name": "Inkwell Leviathan"
+    },
+    {
+      "amount": 1,
+      "name": "Nimbus Swimmer"
+    },
+    {
+      "amount": 2,
+      "name": "Explore"
+    },
+    {
+      "amount": 4,
+      "name": "Accumulated Knowledge"
+    },
+    {
+      "amount": 1,
+      "name": "Peel from Reality"
+    },
+    {
+      "amount": 2,
+      "name": "Time to Feed"
+    },
+    {
+      "amount": 1,
+      "name": "Explosive Vegetation"
+    },
+    {
+      "amount": 1,
+      "name": "Ætherize"
+    },
+    {
+      "amount": 1,
+      "name": "Whelming Wave"
+    },
+    {
+      "amount": 1,
+      "name": "Plasm Capture"
+    },
+    {
+      "amount": 1,
+      "name": "Urban Evolution"
+    }
+  ]
+}

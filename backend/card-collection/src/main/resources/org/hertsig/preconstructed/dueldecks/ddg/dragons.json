@@ -1,0 +1,138 @@
+{
+  "tag": [
+    "Duel decks",
+    "Knights vs. Dragons"
+  ],
+  "name": "Dragons",
+  "set": "DDG",
+  "mainboard": [
+    {
+      "amount": 24,
+      "name": "Mountain"
+    },
+    {
+      "amount": 1,
+      "name": "Cinder Wall"
+    },
+    {
+      "amount": 1,
+      "name": "Skirk Prospector"
+    },
+    {
+      "amount": 1,
+      "name": "Bloodmark Mentor"
+    },
+    {
+      "amount": 1,
+      "name": "Fire-Belly Changeling"
+    },
+    {
+      "amount": 2,
+      "name": "Mudbutton Torchrunner"
+    },
+    {
+      "amount": 1,
+      "name": "Dragonspeaker Shaman"
+    },
+    {
+      "amount": 2,
+      "name": "Dragon Whelp"
+    },
+    {
+      "amount": 1,
+      "name": "Henge Guardian"
+    },
+    {
+      "amount": 1,
+      "name": "Voracious Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Rager"
+    },
+    {
+      "amount": 1,
+      "name": "Mordant Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Kilnmouth Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Shivan Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Thunder Dragon"
+    },
+    {
+      "amount": 1,
+      "name": "Bogardan Hellkite"
+    },
+    {
+      "amount": 1,
+      "name": "Punishing Fire"
+    },
+    {
+      "amount": 1,
+      "name": "Ghostfire"
+    },
+    {
+      "amount": 1,
+      "name": "Seething Song"
+    },
+    {
+      "amount": 1,
+      "name": "Seismic Strike"
+    },
+    {
+      "amount": 1,
+      "name": "Temporary Insanity"
+    },
+    {
+      "amount": 2,
+      "name": "Fiery Fall"
+    },
+    {
+      "amount": 1,
+      "name": "Breath of Darigaaz"
+    },
+    {
+      "amount": 2,
+      "name": "Dragon Fodder"
+    },
+    {
+      "amount": 1,
+      "name": "Spitting Earth"
+    },
+    {
+      "amount": 1,
+      "name": "Cone of Flame"
+    },
+    {
+      "amount": 1,
+      "name": "Jaws of Stone"
+    },
+    {
+      "amount": 1,
+      "name": "Captive Flame"
+    },
+    {
+      "amount": 1,
+      "name": "Claws of Valakut"
+    },
+    {
+      "amount": 1,
+      "name": "Shiv\u0027s Embrace"
+    },
+    {
+      "amount": 2,
+      "name": "Armillary Sphere"
+    },
+    {
+      "amount": 1,
+      "name": "Dragon\u0027s Claw"
+    }
+  ]
+}
