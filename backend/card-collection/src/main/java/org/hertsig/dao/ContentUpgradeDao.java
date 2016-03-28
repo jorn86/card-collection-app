@@ -42,8 +42,8 @@ public interface ContentUpgradeDao extends AutoCloseable {
     @MapResultAsBean
     List<Printing> getPrintings(@Bind("cardid") int cardId);
 
-    @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext) " +
-            "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext)")
+    @SqlUpdate("INSERT INTO printing (setid, cardid, multiverseid, number, rarity, originaltext, originaltype, flavortext, artist) " +
+            "VALUES (:setid, :cardid, :multiverseid, :number, :rarity, :originaltext, :originaltype, :flavortext, :artist)")
     @GetGeneratedKeys
     int createPrinting(@BindBean Printing printing);
 
