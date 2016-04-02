@@ -27,15 +27,15 @@ class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
   }
 
   @Test
-  def testSubcondition() {
+  def testAnd() {
     val result = parser.parse("c:w (c:u c:b) c:r")
-    assertEquals(result, QueryNode(List(ColorConditionNode("w"), SubconditionNode(List(ColorConditionNode("u"), ColorConditionNode("b"))), ColorConditionNode("r"))))
+    assertEquals(result, QueryNode(List(ColorConditionNode("w"), SubconditionNode(not = false, AndNode(List(ColorConditionNode("u"), ColorConditionNode("b")))), ColorConditionNode("r"))))
   }
 
   @Test
-  def testOrSubcondition() {
+  def testOr() {
     val result = parser.parse("c:w (c:u or c:b) c:r")
-    assertEquals(result, QueryNode(List(ColorConditionNode("w"), OrSubconditionNode(List(ColorConditionNode("u"), ColorConditionNode("b"))), ColorConditionNode("r"))))
+    assertEquals(result, QueryNode(List(ColorConditionNode("w"), SubconditionNode(not = false, OrNode(List(ColorConditionNode("u"), ColorConditionNode("b")))), ColorConditionNode("r"))))
   }
 
   @Test

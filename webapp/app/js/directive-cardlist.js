@@ -3,7 +3,7 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
-            scope: {list: '=', editable: '=', inventory: '='},
+            scope: {list: '=', editable: '=', inventory: '=', showgroup: '=', showcount: '='},
             controller: function($scope, $rootScope, $filter, ngDialog, sets) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {

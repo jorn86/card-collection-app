@@ -110,7 +110,13 @@ angular.module('card-app')
             $scope.results.cards = result.data;
             $scope.update();
         }, function(err) {
-            $scope.message = err.data;
+            console.log(err)
+            if (err.status === 400) {
+                $scope.message = err.data;
+            }
+            else {
+                $scope.message = null;
+            }
         });
 
         $scope.update = function(page) {

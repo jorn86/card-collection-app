@@ -8,8 +8,10 @@ sealed abstract class AstNode
 case class QueryNode(conditions: List[ConditionNode]) extends AstNode
 
 sealed abstract class ConditionNode() extends AstNode
-case class SubconditionNode(conditions: List[ConditionNode]) extends ConditionNode
-case class OrSubconditionNode(conditions: List[ConditionNode]) extends ConditionNode
+case class SubconditionNode(not: Boolean, subcondition: ConditionNode) extends ConditionNode
+
+case class AndNode(conditions: List[ConditionNode]) extends ConditionNode
+case class OrNode(conditions: List[ConditionNode]) extends ConditionNode
 
 case class NameConditionNode(name: StringNode) extends ConditionNode
 case class OracleConditionNode(text: StringNode) extends ConditionNode
@@ -29,7 +31,6 @@ class QueryParser extends Parser {
   def Query: Rule1[QueryNode] = rule { zeroOrMore(" ") ~ oneOrMore(Condition, oneOrMore(" ")) ~~> QueryNode ~ zeroOrMore(" ") ~ EOI }
 
   def Condition: Rule1[ConditionNode] = rule {
-    OrSubcondition |
     Subcondition |
     OracleCondition |
     FlavorTextCondition |
@@ -43,8 +44,9 @@ class QueryParser extends Parser {
     NameCondition
   }
 
-  def Subcondition: Rule1[SubconditionNode] = rule { "(" ~ oneOrMore(Condition, oneOrMore(" ")) ~~> SubconditionNode ~ ")" }
-  def OrSubcondition: Rule1[OrSubconditionNode] = rule { "(" ~ oneOrMore(Condition, OrSeparator) ~~> OrSubconditionNode ~ ")" }
+  def Subcondition: Rule1[SubconditionNode] = rule { optional("not") ~> (!_.isEmpty) ~ "(" ~ (AndSubcondition | OrSubcondition) ~ ")" ~~> SubconditionNode }
+  def AndSubcondition: Rule1[AndNode] = rule { oneOrMore(Condition, oneOrMore(" ")) ~~> AndNode }
+  def OrSubcondition: Rule1[OrNode] = rule { oneOrMore(Condition, OrSeparator) ~~> OrNode }
 
   def NameCondition: Rule1[NameConditionNode] = rule { StringValue ~~> NameConditionNode }
   def OracleCondition: Rule1[OracleConditionNode] = rule { "o:" ~ StringValue ~~> OracleConditionNode }

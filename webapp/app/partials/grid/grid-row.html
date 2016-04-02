@@ -3,10 +3,10 @@
 </div>
 
 <div class="grid-cell grid-cell-inventorycount" ng-class="{'notenough': card.inventorycount < card.amount}" ng-hide="inventory">
-    <span>{{card.inventorycount}}</span>
+    <span>{{card.inventorycount}}</span>&nbsp;
 </div>
 
-<div class="grid-cell grid-cell-count">
+<div class="grid-cell grid-cell-count" ng-show="showcount">
     <input class="grid-input" type="number" min="0" size="4" ng-model="card.amount" ng-change="updateAmount(card)" ng-disabled="!editable">
 </div>
 

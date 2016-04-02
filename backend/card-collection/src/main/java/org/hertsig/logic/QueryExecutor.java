@@ -4,8 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import org.hertsig.database.BetterBeanMapper;
-import org.hertsig.database.UseBetterBeanMapper;
-import org.hertsig.dto.Card;
+import org.hertsig.dto.SearchCard;
 import org.hertsig.query.QueryNode;
 import org.hertsig.query.QueryParser;
 import org.hertsig.query.QueryWithArguments;
@@ -31,13 +30,13 @@ public class QueryExecutor {
         this.dbi = dbi;
     }
 
-    public List<Card> executeQuery(String query) {
+    public List<SearchCard> executeQuery(String query) {
         QueryWithArguments parsedQuery = SqlQueryCreator.toPostgres(parse(query));
         log.debug("Parsed query {} with {}", parsedQuery.query(), parsedQuery.values());
         try (Handle handle = dbi.open()) {
             Query<Map<String, Object>> jdbiQuery = handle.createQuery(parsedQuery.query());
             JavaConversions.mapAsJavaMap(parsedQuery.values()).forEach(jdbiQuery::bind);
-            return jdbiQuery.map(new BetterBeanMapper<>(Card.class)).list();
+            return jdbiQuery.map(new BetterBeanMapper<>(SearchCard.class)).list();
         }
     }
 
