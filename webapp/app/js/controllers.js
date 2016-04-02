@@ -103,12 +103,14 @@ angular.module('card-app')
 
     .controller('SearchResultsController', function($scope, $stateParams, $state) {
         $scope.originalQuery = $stateParams.query;
-        $scope.query = $scope.originalQuery;
+        $scope.model = {query: $scope.originalQuery};
 
-        $scope.datamodel.getSearchResults($scope.query);
-        $scope.datamodel.getDeck('3376d0d9-490e-4c99-b269-7bf0e48887b7').then(function(result) {
-            $scope.results = result.data.boards[1].cards;
+        $scope.results = {};
+        $scope.datamodel.getSearchResults($scope.originalQuery).then(function(result) {
+            $scope.results.cards = result.data;
             $scope.update();
+        }, function(err) {
+            $scope.message = err.data;
         });
 
         $scope.update = function(page) {
@@ -116,11 +118,12 @@ angular.module('card-app')
                 $scope.page = page;
             }
             var end = $scope.page * 10;
-            $scope.pageresults = $scope.results ? $scope.results.slice(end - 10, end - 1) : null;
+            $scope.pageresults = $scope.results.cards ? $scope.results.cards.slice(end - 10, end - 1) : null;
         };
 
         $scope.search = function() {
-            $state.go('app.searchresults', {query: $scope.query, page: 1});
+            console.log($scope.model.query)
+            $state.go('app.searchresults', {query: $scope.model.query});
         };
     })
 

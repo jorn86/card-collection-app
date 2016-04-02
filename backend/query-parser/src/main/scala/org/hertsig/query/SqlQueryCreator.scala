@@ -10,7 +10,8 @@ object SqlQueryCreator {
 
   def toPostgres(node: QueryNode): QueryWithArguments = {
     val values: mutable.Map[String, Object] = mutable.Map()
-    val query = "SELECT * FROM searchview WHERE " + toPostgres(node.conditions, values)
+    val query = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, layout" +
+      " FROM searchview WHERE " + toPostgres(node.conditions, values)
     QueryWithArguments(query, values)
   }
 
@@ -22,9 +23,9 @@ object SqlQueryCreator {
     node match {
       case SubconditionNode(condition) => "(" + toPostgres(condition, values) + ")"
       case OrSubconditionNode(conditions) => "(" + conditions.map(toPostgres(_, values)).mkString(" OR ") + ")"
-      case NameConditionNode(name) => "normalizedname LIKE " + arg(values, escape(name) + "%")
-      case OracleConditionNode(text) => "text LIKE " + arg(values, "%" + escape(text) + "%")
-      case FlavorTextConditionNode(text) => "flavortext LIKE " + "%" + arg(values, escape(text) + "%")
+      case NameConditionNode(name) => "normalizedname LIKE " + arg(values, "%" + escape(name) + "%")
+      case OracleConditionNode(text) => "text_without_reminder LIKE " + arg(values, "%" + escape(text) + "%")
+      case FlavorTextConditionNode(text) => "flavortext LIKE " + "%" + arg(values, "%" + escape(text) + "%")
       case TypeConditionNode(condition) => "type LIKE " + arg(values, condition)
       case ColorConditionNode(color) => ""
       case PowerConditionNode(condition, amount) => s"power $condition $amount"
@@ -40,8 +41,8 @@ object SqlQueryCreator {
   }
 
   private def arg(values: mutable.Map[String, Object], value: Object): String = {
-    val argName = ":arg" + values.size
+    val argName = "arg" + values.size
     values.put(argName, value)
-    argName
+    ":" + argName
   }
 }

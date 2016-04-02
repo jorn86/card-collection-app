@@ -3,6 +3,8 @@ package org.hertsig.logic;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
+import org.hertsig.database.BetterBeanMapper;
+import org.hertsig.database.UseBetterBeanMapper;
 import org.hertsig.dto.Card;
 import org.hertsig.query.QueryNode;
 import org.hertsig.query.QueryParser;
@@ -35,15 +37,13 @@ public class QueryExecutor {
         try (Handle handle = dbi.open()) {
             Query<Map<String, Object>> jdbiQuery = handle.createQuery(parsedQuery.query());
             JavaConversions.mapAsJavaMap(parsedQuery.values()).forEach(jdbiQuery::bind);
-            return jdbiQuery.mapTo(Card.class).list();
+            return jdbiQuery.map(new BetterBeanMapper<>(Card.class)).list();
         }
     }
 
     public static QueryNode parse(String query) {
         try {
-            QueryNode node = new QueryParser().parse(query);
-            log.debug("Parsed {}", node);
-            return node;
+            return new QueryParser().parse(query);
         }
         catch (ParsingException e) {
             throw new HttpRequestException(Response.Status.BAD_REQUEST, e.getMessage());

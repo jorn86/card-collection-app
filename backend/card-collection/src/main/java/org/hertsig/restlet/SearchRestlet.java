@@ -1,22 +1,27 @@
 package org.hertsig.restlet;
 
 import lombok.extern.slf4j.Slf4j;
+import org.hertsig.dto.Card;
 import org.hertsig.logic.QueryExecutor;
-import org.hertsig.query.QueryNode;
-import org.hertsig.query.QueryParser;
-import org.hertsig.user.HttpRequestException;
-import org.parboiled.errors.ParsingException;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Slf4j
 @Path("search")
 @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 public class SearchRestlet {
+    private final QueryExecutor queryExecutor;
+
+    @Inject
+    public SearchRestlet(QueryExecutor queryExecutor) {
+        this.queryExecutor = queryExecutor;
+    }
+
     @GET
-    public QueryNode query(@QueryParam("query") String query) {
-        return QueryExecutor.parse(query);
+    public List<Card> query(@QueryParam("query") String query) {
+        return queryExecutor.executeQuery(query);
     }
 }
