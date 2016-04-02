@@ -17,7 +17,7 @@ import java.util.List;
 @Slf4j
 @Singleton
 class Views implements StartupAction {
-    private static final List<String> NAMES = ImmutableList.of("latestprinting", "setstatistics",
+    private static final List<String> NAMES = ImmutableList.of("latestprinting", "setstatistics", "searchview",
             "deckboardview", "inventoryview", "deckentryview");
     @Inject private DataSource dataSource;
 

@@ -1,8 +1,10 @@
 <h3>{{results.length}} Results</h3>
-<div ng-show="results">
+<div ng-if="results">
     <form ng-submit="search()">
-        <label class="nowrap">Query <input type="text" ng-model="query">&nbsp;<input type="submit" value="Search"></label>
+        <label class="nowrap">Query <input type="text" ng-model="model.query" autofocus>&nbsp;<input type="submit" value="Search"></label>
     </form>
+    <div ng-show="message" class="error">{{message}}</div>
+    <!--
     <paging total="results.length" page-size="10" paging-action="update(page)" show-prev-next="true" hide-if-empty="true"></paging>
     <table class="searchresults" cellspacing="0">
         <tbody ng-repeat="card in pageresults">
@@ -18,5 +20,7 @@
             <tr><td>{{card.artist}}</td></tr>
         </tbody>
     </table>
+    -->
+    <cardlist list="results" editable="false" inventory="false"></cardlist>
 </div>
 <div ng-hide="results">Loading...</div>

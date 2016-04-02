@@ -8,5 +8,6 @@ public class LogicModule extends AbstractModule {
     protected void configure() {
         bind(DeckManager.class).in(Scopes.SINGLETON);
         bind(DeckboxImport.class).in(Scopes.SINGLETON);
+        bind(QueryExecutor.class).in(Scopes.SINGLETON);
     }
 }

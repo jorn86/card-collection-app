@@ -161,7 +161,6 @@ angular.module('card-app')
                     var chain = _.chain(sets.data).sortBy('releasedate');
                     $scope.setOrder = chain.pluck('gatherercode').value();
                     $scope.setNames = chain.indexBy('gatherercode').mapObject('name').value();
-                    console.log($scope.setOrder, $scope.setNames);
                 });
 
                 $scope.editBoard = function() {
@@ -178,12 +177,16 @@ angular.module('card-app')
                     if (typeof page === 'number') {
                         $scope.page = page;
                     }
+                    if (!$scope.list.cards) return;
+
                     var end = $scope.page * 100;
                     var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'normalizedname'], false);
                     $scope.grid.rows = cards.slice(end - 100, end);
                 };
                 $scope.$watch('grid.currentSorting', $scope.update);
-                $scope.$watch('list.cards', $scope.update);
+                $scope.$watch('list.cards', function() {
+                    $scope.update();
+                });
                 $scope.update(1);
             }
         }

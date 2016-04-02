@@ -269,6 +269,10 @@ h3 {
     margin: 0;
 }
 
+.error {
+    color: red;
+}
+
 ul.pagination {
     margin: 5px 0;
     padding: 0;

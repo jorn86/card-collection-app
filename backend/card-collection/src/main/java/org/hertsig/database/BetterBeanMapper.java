@@ -43,7 +43,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  * the JDK's built in bean mapping facilities, so it does not support nested properties.
  */
 @Slf4j
-class BetterBeanMapper<T> implements ResultSetMapper<T>
+public class BetterBeanMapper<T> implements ResultSetMapper<T>
 {
     private final Class<T> type;
     private final Map<String, PropertyDescriptor> properties = new HashMap<>();
