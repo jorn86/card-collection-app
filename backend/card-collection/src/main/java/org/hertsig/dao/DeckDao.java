@@ -42,13 +42,15 @@ public interface DeckDao extends AutoCloseable {
     @UseBetterBeanMapper
     Deck createDeck(@Bind("name") String name, @Bind("user") UUID userId);
 
-    @SqlQuery("SELECT * FROM deckentryview WHERE deckid = :deck")
+    @SqlQuery("SELECT *, (SELECT SUM(amount) FROM inventoryview WHERE :userid = userid AND cardid = deckentryview.cardid) AS inventorycount " +
+            "FROM deckentryview WHERE deckid = :deck")
     @MapResultAsBean
-    List<DeckEntry> getCardsForDeck(@Bind("deck") UUID deckId);
+    List<DeckEntry> getCardsForDeck(@Bind("deck") UUID deckId, @Bind("userid") UUID userId);
 
-    @SqlQuery("SELECT * FROM deckentryview WHERE boardid = :board")
+    @SqlQuery("SELECT *, (SELECT SUM(amount) FROM inventoryview WHERE :userid = userid AND cardid = deckentryview.cardid) AS inventorycount " +
+            "FROM deckentryview WHERE boardid = :board")
     @MapResultAsBean
-    List<DeckEntry> getCardsForBoard(@Bind("board") UUID boardId);
+    List<DeckEntry> getCardsForBoard(@Bind("board") UUID boardId, @Bind("userid") UUID userId);
 
     @SqlQuery("INSERT INTO deckrow (boardid, cardid, printingid, amount) VALUES (:boardid, :cardid, :printingid, :amount) RETURNING *")
     @MapResultAsBean
