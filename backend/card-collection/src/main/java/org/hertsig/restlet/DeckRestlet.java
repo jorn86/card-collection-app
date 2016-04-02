@@ -132,7 +132,7 @@ public class DeckRestlet {
 
             List<DeckBoard> boards = dao.getBoards(deck.getId());
             for (DeckBoard board : boards) {
-                List<DeckEntry> cards = dao.getCardsForBoard(board.getId());
+                List<DeckEntry> cards = dao.getCardsForBoard(board.getId(), userManager.isAvailable() ? userManager.getUserId() : null);
                 board.setCards(cards);
             }
 
@@ -147,7 +147,7 @@ public class DeckRestlet {
         try (DeckDao dao = dbi.open(DeckDao.class)) {
             getDeckByBoardForUser(dao, boardId);
             DeckBoard board = dao.getBoard(boardId);
-            board.setCards(dao.getCardsForBoard(boardId));
+            board.setCards(dao.getCardsForBoard(boardId, userManager.isAvailable() ? userManager.getUserId() : null));
             return board;
         }
     }
@@ -174,7 +174,7 @@ public class DeckRestlet {
                 dao.updateRow(row);
             }
 
-            return dao.getCardsForBoard(row.getBoardid());
+            return dao.getCardsForBoard(row.getBoardid(), userManager.getUserId());
         }
     }
 
@@ -188,7 +188,7 @@ public class DeckRestlet {
                 card.setAmount(1);
             }
             deckManager.addCard(dao, card.getBoardid(), card.getAmount(), card.getCardid(), card.getPrintingid());
-            return dao.getCardsForBoard(card.getBoardid());
+            return dao.getCardsForBoard(card.getBoardid(), userManager.getUserId());
         }
     }
 
