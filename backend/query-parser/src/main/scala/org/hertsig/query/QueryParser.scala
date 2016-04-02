@@ -21,11 +21,13 @@ case class ToughnessConditionNode(condition: AmountTypeNode, amount: Int) extend
 case class LoyaltyConditionNode(condition: AmountTypeNode, amount: Int) extends ConditionNode
 case class CmcConditionNode(condition: AmountTypeNode, amount: Int) extends ConditionNode
 case class FormatConditionNode(format: String) extends ConditionNode
-case class ColorConditionNode(color: String) extends ConditionNode
+case class ColorConditionNode(condition: AmountTypeNode, color: ColorNode) extends ConditionNode
+case class ColorIdentityConditionNode(color: ColorNode) extends ConditionNode
 case class TypeConditionNode(condition: StringNode) extends ConditionNode
 
 case class AmountTypeNode(condition: String) extends AstNode
 case class StringNode(text: String) extends AstNode
+case class ColorNode(colors: String) extends AstNode
 
 class QueryParser extends Parser {
   def Query: Rule1[QueryNode] = rule { zeroOrMore(" ") ~ oneOrMore(Condition, oneOrMore(" ")) ~~> QueryNode ~ zeroOrMore(" ") ~ EOI }
@@ -40,6 +42,7 @@ class QueryParser extends Parser {
     LoyaltyCondition |
     CmcCondition |
     ColorCondition |
+    ColorIdentityCondition |
     FormatCondition |
     NameCondition
   }
@@ -56,11 +59,13 @@ class QueryParser extends Parser {
   def ToughnessCondition: Rule1[ToughnessConditionNode] = rule { "tou" ~ AmountType ~ Number ~~> ToughnessConditionNode }
   def LoyaltyCondition: Rule1[LoyaltyConditionNode] = rule { "loyalty" ~ AmountType ~ Number ~~> LoyaltyConditionNode }
   def CmcCondition: Rule1[CmcConditionNode] = rule { "cmc" ~ AmountType ~ Number ~~> CmcConditionNode }
-  def ColorCondition: Rule1[ColorConditionNode] = rule { "c:" ~ oneOrMore(anyOf("wubrgc")) ~> ColorConditionNode }
+  def ColorCondition: Rule1[ColorConditionNode] = rule { "c" ~ AmountType ~ Color ~~> ColorConditionNode }
+  def ColorIdentityCondition: Rule1[ColorIdentityConditionNode] = rule { "ci:" ~ Color ~~> ColorIdentityConditionNode }
   def FormatCondition: Rule1[FormatConditionNode] = rule { "f:" ~ ("All" | "Vintage" | "Legacy" | "Extended" | "Modern" | "Standard" | "Commander" | "MTGO") ~> FormatConditionNode }
 
   def AmountType: Rule1[AmountTypeNode] = rule { (">=" | ">" | "=" | "<=" | "<") ~> AmountTypeNode }
-  def Number: Rule1[Int] = rule { oneOrMore("0"-"9") ~> (_.toInt) }
+  def Color: Rule1[ColorNode] = rule {oneOrMore(anyOf("wubrgc")) ~> ColorNode}
+  def Number: Rule1[Int] = rule { optional("-") ~ oneOrMore("0"-"9") ~> (_.toInt) }
   def StringValue: Rule1[StringNode] = rule { oneOrMore("a"-"z" | "A"-"Z") ~> StringNode | "\"" ~ oneOrMore(!anyOf("\"") ~ ANY) ~> StringNode ~ "\"" }
 
   def OrSeparator: Rule0 = rule { oneOrMore(" ") ~ "or" ~ oneOrMore(" ") }

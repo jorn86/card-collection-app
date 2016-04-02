@@ -8,10 +8,11 @@ angular.module('card-app')
             t: {},
             loyalty: {},
             c: {
-                type: 'any'
+                type: 'any',
+                amount:{}
             },
             ci: {
-                c: true
+                amount:{}
             },
             cost: '',
             cmc: {},
@@ -50,7 +51,17 @@ angular.module('card-app')
         };
 
         var parseAmount = function(amount) {
-            return amount.amounttype || '=' + amount.amount;
+            return (amount.amounttype || '=') + amount.amount;
+        };
+        var color = function(color) {
+            if (color.c) return 'c';
+            var c = '';
+            if (color.w) c += 'w';
+            if (color.u) c += 'u';
+            if (color.b) c += 'b';
+            if (color.r) c += 'r';
+            if (color.g) c += 'g';
+            return c;
         };
         $scope.createQuery = function() {
             var parts = [];
@@ -80,6 +91,30 @@ angular.module('card-app')
             }
             if ($scope.search.ft) {
                 parts.push('ft:"' + $scope.search.ft + '"');
+            }
+            if (color($scope.search.ci)) {
+                parts.push('ci:' + color($scope.search.ci));
+            }
+            if ($scope.search.ci.amount.amount) {
+                parts.push('cia' + parseAmount($scope.search.ci.amount));
+            }
+            if (color($scope.search.c)) {
+                if ($scope.search.c.type === 'any') {
+                    var query = _.map(color($scope.search.c).split(''), function(c) { return "c>=" + c }).join(' OR ');
+                    parts.push('(' + query + ')');
+                }
+                else if ($scope.search.c.type === 'all') {
+                    parts.push('c>=' + color($scope.search.c));
+                }
+                else if ($scope.search.c.type === 'only') {
+                    parts.push('c<=' + color($scope.search.c));
+                }
+                else if ($scope.search.c.type === 'exact') {
+                    parts.push('c=' + color($scope.search.c));
+                }
+            }
+            if ($scope.search.c.amount.amount) {
+                parts.push('ca' + parseAmount($scope.search.c.amount));
             }
             return parts.join(' ');
         };
