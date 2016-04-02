@@ -47,9 +47,9 @@ class QueryParser extends Parser {
     NameCondition
   }
 
-  def Subcondition: Rule1[SubconditionNode] = rule { optional("not") ~> (!_.isEmpty) ~ "(" ~ (AndSubcondition | OrSubcondition) ~ ")" ~~> SubconditionNode }
-  def AndSubcondition: Rule1[AndNode] = rule { oneOrMore(Condition, oneOrMore(" ")) ~~> AndNode }
+  def Subcondition: Rule1[SubconditionNode] = rule { optional("not") ~> (!_.isEmpty) ~ "(" ~ (OrSubcondition | AndSubcondition) ~ ")" ~~> SubconditionNode }
   def OrSubcondition: Rule1[OrNode] = rule { oneOrMore(Condition, OrSeparator) ~~> OrNode }
+  def AndSubcondition: Rule1[AndNode] = rule { oneOrMore(Condition, oneOrMore(" ")) ~~> AndNode }
 
   def NameCondition: Rule1[NameConditionNode] = rule { StringValue ~~> NameConditionNode }
   def OracleCondition: Rule1[OracleConditionNode] = rule { "o:" ~ StringValue ~~> OracleConditionNode }
@@ -63,12 +63,13 @@ class QueryParser extends Parser {
   def ColorIdentityCondition: Rule1[ColorIdentityConditionNode] = rule { "ci:" ~ Color ~~> ColorIdentityConditionNode }
   def FormatCondition: Rule1[FormatConditionNode] = rule { "f:" ~ ("All" | "Vintage" | "Legacy" | "Extended" | "Modern" | "Standard" | "Commander" | "MTGO") ~> FormatConditionNode }
 
+  def OrSeparator: Rule0 = rule { oneOrMore(" ") ~ "or" ~ oneOrMore(" ") }
+
   def AmountType: Rule1[AmountTypeNode] = rule { (">=" | ">" | "=" | "<=" | "<") ~> AmountTypeNode }
   def Color: Rule1[ColorNode] = rule {oneOrMore(anyOf("wubrgc")) ~> ColorNode}
-  def Number: Rule1[Int] = rule { optional("-") ~ oneOrMore("0"-"9") ~> (_.toInt) }
+  def Number: Rule1[Int] = rule { "-" ~ oneOrMore("0"-"9") ~> (-_.toInt) | oneOrMore("0"-"9") ~> (_.toInt)}
   def StringValue: Rule1[StringNode] = rule { oneOrMore("a"-"z" | "A"-"Z") ~> StringNode | "\"" ~ oneOrMore(!anyOf("\"") ~ ANY) ~> StringNode ~ "\"" }
 
-  def OrSeparator: Rule0 = rule { oneOrMore(" ") ~ "or" ~ oneOrMore(" ") }
 
   @throws(classOf[ParsingException])
   def parse(input: String): QueryNode = {
