@@ -32,7 +32,6 @@ public class QueryExecutor {
 
     public List<SearchCard> executeQuery(String query) {
         QueryWithArguments parsedQuery = SqlQueryCreator.toPostgres(parse(query));
-        log.debug("Parsed query {} with {}", parsedQuery.query(), parsedQuery.values());
         try (Handle handle = dbi.open()) {
             Query<Map<String, Object>> jdbiQuery = handle.createQuery(parsedQuery.query());
             JavaConversions.mapAsJavaMap(parsedQuery.values()).forEach(jdbiQuery::bind);

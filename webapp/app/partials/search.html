@@ -8,7 +8,7 @@
             <td rowspan="5">Colors</td>
             <td><label><input type="checkbox" ng-model="search.c.w"><mana s="w"></mana></label></td>
             <td><label><input type="radio" value="any" ng-model="search.c.type">Any <i>
-                (Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but no <mana s="c"></mana> cards)</i></label></td>
+                (Check <manacost mana="'WU'"></manacost> to find <mana s="w"></mana>, <mana s="u"></mana>, <manacost mana="'WU'"></manacost>, <manacost mana="'WUB'"></manacost> cards, but no <mana s="c"></mana> or <mana s="b"></mana> cards)</i></label></td>
         </tr>
         <tr>
             <td><label><input type="checkbox" ng-model="search.c.u"><mana s="u"></mana></label></td>
@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td><label><input type="checkbox" ng-model="search.c.g"><mana s="g"></mana></label></td>
-            <td><label>Amount of colors <amount type="search.c.amounttype" value="search.c.amount"></amount></label></td>
+            <td><label>Amount of colors <amount value="search.c.amount"></amount></label></td>
         </tr>
         <tr>
             <td rowspan="2">Mana cost</td>
@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <td>Converted <amount type="search.cmc.amounttype" value="search.cmc.amount"></amount></td><td>&nbsp;</td>
+            <td>Converted <amount value="search.cmc"></amount></td><td>&nbsp;</td>
         </tr>
         <tr><td>Color identity</td><td>
             <label><input type="checkbox" ng-model="search.ci.w"><mana s="w"></mana></label>
@@ -46,16 +46,16 @@
             <label><input type="checkbox" ng-model="search.ci.r"><mana s="r"></mana></label>
             <label><input type="checkbox" ng-model="search.ci.g"><mana s="g"></mana></label>
             <label><input type="radio" ng-model="search.ci.c" value="true"><mana s="c"></mana></label></td>
-            <td><label>&nbsp;Amount of colors <amount type="search.ci.amounttype" value="search.ci.amount"></amount></label></td>
+            <td><label>&nbsp;Amount of colors <amount value="search.ci.amount"></amount></label></td>
         </tr>
         <tr><td>Creature</td>
-            <td>Power <amount type="search.p.amounttype" value="search.p.amount"></amount>
+            <td>Power <amount value="search.p"></amount>
                 <label><input type="checkbox" ng-model="search.p.star"> Contains *</label></td>
-            <td>Toughness <amount type="search.t.amounttype" value="search.t.amount"></amount>
+            <td>Toughness <amount value="search.t"></amount>
                 <label><input type="checkbox" ng-model="search.t.star"> Contains *</label></td>
         </tr>
         <tr><td>Planeswalker</td>
-            <td>Starting loyalty&nbsp;<amount type="search.loyalty.amounttype" value="search.loyalty.amount"></amount></td><td>&nbsp;</td>
+            <td>Starting loyalty&nbsp;<amount value="search.loyalty"></amount></td><td>&nbsp;</td>
         </tr>
         <tr><td>Rarity</td>
             <td colspan="2"><select ng-model="search.rarity">
