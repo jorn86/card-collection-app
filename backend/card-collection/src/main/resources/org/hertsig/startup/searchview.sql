@@ -12,9 +12,19 @@ CREATE MATERIALIZED VIEW searchview AS (
         cost LIKE '%R%' AS c_r,
         cost LIKE '%G%' AS c_g
         FROM card
+    ), numbers AS (
+      SELECT id,
+        array(SELECT array_to_string(regexp_matches(power, '-?\d+', 'g'), '')) AS power,
+        array(SELECT array_to_string(regexp_matches(toughness, '-?\d+', 'g'), '')) AS toughness
+      FROM card
     )
-    SELECT card.*,
-      regexp_replace(text,'\(.+\)','') AS text_without_reminder,
+    SELECT card.id, card.name, card.normalizedname, card.fulltype, card.supertypes, card.types, card.subtypes, card.cost, card.cmc, card.loyalty,
+      latestprinting.multiverseid, latestprinting.rarity,
+      backprinting.multiverseid AS multiverseidBack,
+      set.gatherercode AS setcode,
+      replace(regexp_replace(card.text,'\(.+\)',''), card.name, '~') AS text,
+      CASE WHEN array_length(numbers.power,1) > 0 THEN to_number(numbers.power[1], 'S99') WHEN card.power LIKE '%*%' THEN 0 ELSE NULL END AS power,
+      CASE WHEN array_length(numbers.toughness,1) > 0 THEN to_number(numbers.toughness[1], 'S99') WHEN card.toughness LIKE '%*%' THEN 0 ELSE NULL END AS toughness,
       COALESCE(c1.ci_w OR c2.ci_w OR c3.ci_w OR c4.ci_w, FALSE) AS ci_w,
       COALESCE(c1.ci_u OR c2.ci_u OR c3.ci_u OR c4.ci_u, FALSE) AS ci_u,
       COALESCE(c1.ci_b OR c2.ci_b OR c3.ci_b OR c4.ci_b, FALSE) AS ci_b,
@@ -30,5 +40,9 @@ CREATE MATERIALIZED VIEW searchview AS (
       LEFT JOIN colors c2 ON c2.id = (SELECT id FROM card c2 WHERE c2.doublefacefront = card.id)
       LEFT JOIN colors c3 ON c3.id = (SELECT id FROM card c2 WHERE splitcardparent = card.id ORDER BY id ASC LIMIT 1)
       LEFT JOIN colors c4 ON c4.id = (SELECT id FROM card c2 WHERE splitcardparent = card.id ORDER BY id DESC LIMIT 1)
-    WHERE card.doublefacefront IS NULL AND card.splitcardparent IS NULL
+      LEFT JOIN numbers ON numbers.id = card.id
+      LEFT JOIN latestprinting ON latestprinting.cardid = card.id
+      LEFT JOIN card backcard ON card.id = backcard.doublefacefront LEFT JOIN latestprinting backprinting ON backprinting.cardid = backcard.id
+      LEFT JOIN set ON latestprinting.setid = set.id
+    WHERE card.doublefacefront IS NULL AND card.splitcardparent IS NULL AND card.layout != 'token' AND card.layout != 'vanguard'
 );

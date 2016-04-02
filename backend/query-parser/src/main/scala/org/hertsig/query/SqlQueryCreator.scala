@@ -10,7 +10,8 @@ object SqlQueryCreator {
 
   def toPostgres(node: QueryNode): QueryWithArguments = {
     val values: mutable.Map[String, Object] = mutable.Map()
-    val query = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, layout" +
+    val query = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, " +
+      "multiverseid, rarity, multiverseidBack, setcode" +
       " FROM searchview WHERE " + toPostgres(node.conditions, values)
     QueryWithArguments(query, values)
   }
@@ -21,17 +22,20 @@ object SqlQueryCreator {
 
   private def toPostgres(node: ConditionNode, values: mutable.Map[String, Object]): String = {
     node match {
-      case SubconditionNode(condition) => "(" + toPostgres(condition, values) + ")"
-      case OrSubconditionNode(conditions) => "(" + conditions.map(toPostgres(_, values)).mkString(" OR ") + ")"
-      case NameConditionNode(name) => "normalizedname LIKE " + arg(values, "%" + escape(name) + "%")
-      case OracleConditionNode(text) => "text_without_reminder LIKE " + arg(values, "%" + escape(text) + "%")
-      case FlavorTextConditionNode(text) => "flavortext LIKE " + "%" + arg(values, "%" + escape(text) + "%")
-      case TypeConditionNode(condition) => "type LIKE " + arg(values, condition)
+      case SubconditionNode(not, conditions) => "NOT (" + toPostgres(conditions, values) + ")"
+
+      case OrNode(conditions) => "(" + conditions.map(toPostgres(_, values)).mkString(" OR ") + ")"
+      case AndNode(conditions) => "(" + conditions.map(toPostgres(_, values)).mkString(" AND ") + ")"
+
+      case NameConditionNode(name) => "normalizedname ILIKE " + arg(values, "%" + escape(name) + "%")
+      case OracleConditionNode(text) => "text ILIKE " + arg(values, "%" + escape(text) + "%")
+      case FlavorTextConditionNode(text) => "flavortext ILIKE " + "%" + arg(values, "%" + escape(text) + "%")
+      case TypeConditionNode(condition) => "fulltype ILIKE " + arg(values, '%' + escape(condition) + '%')
       case ColorConditionNode(color) => ""
-      case PowerConditionNode(condition, amount) => s"power $condition $amount"
-      case ToughnessConditionNode(condition, amount) => s"toughness $condition $amount"
-      case LoyaltyConditionNode(condition, amount) => s"loyalty $condition $amount"
-      case CmcConditionNode(condition, amount) => s"cmc $condition $amount"
+      case PowerConditionNode(condition, amount) => s"power ${condition.condition} $amount"
+      case ToughnessConditionNode(condition, amount) => s"toughness ${condition.condition} $amount"
+      case LoyaltyConditionNode(condition, amount) => s"loyalty ${condition.condition} $amount"
+      case CmcConditionNode(condition, amount) => s"cmc ${condition.condition} $amount"
       case FormatConditionNode(format) => "format = " + arg(values, format)
     }
   }

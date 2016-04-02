@@ -49,8 +49,10 @@
             <td><label>&nbsp;Amount of colors <amount type="search.ci.amounttype" value="search.ci.amount"></amount></label></td>
         </tr>
         <tr><td>Creature</td>
-            <td>Power <amount type="search.p.amounttype" value="search.p.amount"></amount></td>
-            <td>Toughness <amount type="search.t.amounttype" value="search.t.amount"></amount></td>
+            <td>Power <amount type="search.p.amounttype" value="search.p.amount"></amount>
+                <label><input type="checkbox" ng-model="search.p.star"> Contains *</label></td>
+            <td>Toughness <amount type="search.t.amounttype" value="search.t.amount"></amount>
+                <label><input type="checkbox" ng-model="search.t.star"> Contains *</label></td>
         </tr>
         <tr><td>Planeswalker</td>
             <td>Starting loyalty&nbsp;<amount type="search.loyalty.amounttype" value="search.loyalty.amount"></amount></td><td>&nbsp;</td>

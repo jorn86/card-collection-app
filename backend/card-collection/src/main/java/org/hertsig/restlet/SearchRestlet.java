@@ -1,7 +1,7 @@
 package org.hertsig.restlet;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hertsig.dto.Card;
+import org.hertsig.dto.SearchCard;
 import org.hertsig.logic.QueryExecutor;
 
 import javax.inject.Inject;
@@ -21,7 +21,7 @@ public class SearchRestlet {
     }
 
     @GET
-    public List<Card> query(@QueryParam("query") String query) {
+    public List<SearchCard> query(@QueryParam("query") String query) {
         return queryExecutor.executeQuery(query);
     }
 }
