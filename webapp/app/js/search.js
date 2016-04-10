@@ -18,7 +18,11 @@ angular.module('card-app')
             cmc: {},
             format: 'All',
             rarity: null,
-            ft: ''
+            ft: '',
+            exclude: {
+                pc: true,
+                un: true
+            }
         };
         $scope.costOptions = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', 'x',
@@ -28,7 +32,7 @@ angular.module('card-app')
             '2w', '2u', '2b', '2r', '2g'
         ];
         $scope.rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic Rare', 'Special', 'Basic Land'];
-        $scope.formatOptions = ['All', 'Vintage', 'Legacy', 'Extended', 'Modern', 'Standard', 'Commander', 'MTGO'];
+        $scope.formatOptions = ['All', 'Vintage', 'Legacy', 'Modern', 'Standard', 'Commander'];
 
         $scope.$watch('search.ci.c', function(value) {
             if (value) {
@@ -93,14 +97,14 @@ angular.module('card-app')
                 parts.push('ft:"' + $scope.search.ft + '"');
             }
             if (color($scope.search.ci)) {
-                parts.push('ci:' + color($scope.search.ci));
+                parts.push('ci=' + color($scope.search.ci));
             }
             if ($scope.search.ci.amount.amount) {
                 parts.push('cia' + parseAmount($scope.search.ci.amount));
             }
             if (color($scope.search.c)) {
                 if ($scope.search.c.type === 'any') {
-                    var query = _.map(color($scope.search.c).split(''), function(c) { return "c>=" + c }).join(' OR ');
+                    var query = _.map(color($scope.search.c).split(''), function(c) { return "c>=" + c }).join(' or ');
                     parts.push('(' + query + ')');
                 }
                 else if ($scope.search.c.type === 'all') {
@@ -115,6 +119,12 @@ angular.module('card-app')
             }
             if ($scope.search.c.amount.amount) {
                 parts.push('ca' + parseAmount($scope.search.c.amount));
+            }
+            if ($scope.search.exclude.pc) {
+                parts.push('not:(t:plane or t:phenomenon)')
+            }
+            if ($scope.search.exclude.un) {
+                parts.push('not:(e:unh or e:ug)')
             }
             return parts.join(' ');
         };

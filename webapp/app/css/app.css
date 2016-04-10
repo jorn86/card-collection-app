@@ -26,6 +26,19 @@ table.search td {
     padding: 2px 5px;
     border-bottom: 1px dashed lightgrey;
 }
+table.search select {
+    height: 19px;
+}
+table.search input {
+    height: 14px;
+}
+table.search input[type="number"] {
+    width: 40px;
+}
+table.search input[type="submit"] {
+    height: 30px;
+    width: 100px;
+}
 
 .menubar {
     position: absolute;
