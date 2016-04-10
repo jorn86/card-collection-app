@@ -67,14 +67,11 @@ angular.module('card-app')
                     return;
                 }
 
-                var index = $scope.mana.indexOf('/');
-                if (index >= 0) {
-                    append(element, parse($scope.mana.substring(0, index)));
+                var result = $scope.mana.split('/');
+                append(element, parse(result[0]));
+                for (var i = 1; i < result.length; i++) {
                     element.append(' / ');
-                    append(element, parse($scope.mana.substring(index + 1)));
-                }
-                else {
-                    append(element, parse($scope.mana));
+                    append(element, parse(result[i]));
                 }
             }
         };

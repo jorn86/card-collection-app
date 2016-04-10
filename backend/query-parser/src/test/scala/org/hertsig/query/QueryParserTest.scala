@@ -6,7 +6,7 @@ import org.testng.Assert._
 import org.testng.annotations.Test
 
 class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
-  val parser = new QueryParser()
+  val parser = new QueryParser
 
   @Test
   def testColorCondition() {

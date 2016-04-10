@@ -2,8 +2,8 @@ package org.hertsig.startup;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Charsets;
+import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.ByteStreams;
@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.zip.ZipInputStream;
 
@@ -52,14 +53,16 @@ public class ContentUpgrade implements StartupAction {
                 int setId = ensureSet(dao, fullSet);
                 java.util.Set<List<String>> splitCards = Sets.newHashSet();
                 for (FullSet.Card card : fullSet.cards) {
-                    if (card.getNames() != null) {
+                    if (card.getNames() != null && !card.getNames().isEmpty()) {
                         splitCards.add(card.getNames());
                     }
                     int cardId = ensureCard(dao, card);
                     ensurePrinting(dao, cardId, setId, card);
                     ensureLegalities(dao, cardId, card.getLegalities());
                 }
-                ensureSplitCards(dao, setId, splitCards);
+                if (!fullSet.name.equals("Unglued")) {
+                    ensureSplitCards(dao, setId, splitCards);
+                }
             }
         }
         catch (IOException e) {
@@ -90,46 +93,43 @@ public class ContentUpgrade implements StartupAction {
         log.debug("Ensuring {} split cards", splitCards.size());
 
         for (List<String> splitCard : splitCards) {
-            if (splitCard.size() != 2) {
-                log.debug("Ignoring split card {}", splitCard);
-                continue;
-            }
+            Card first = dao.getCard(splitCard.get(0));
 
-            Card left = dao.getCard(splitCard.get(0));
-            Card right = dao.getCard(splitCard.get(1));
-
-            if (left.getLayout().equals("split")) {
-                String name = left.getName() + " / " + right.getName();
+            if (first.getLayout().equals("split")) {
+                List<Card> cards = Lists.transform(splitCard, dao::getCard);
+                String name = Joiner.on(" / ").join(Lists.transform(cards, Card::getName));
                 Card parent = dao.getCard(name);
                 if (parent == null) {
-                    parent = new Card(0, name, left.getFulltype(), left.getSupertypes(), left.getTypes(), left.getSubtypes(),
-                        left.getCost() + "/" + right.getCost(), left.getCmc() + right.getCmc(),
-                        joinColors(left.getColors(), right.getColors()), null, null, null, null, "split-parent", null, null);
+                    String cost = Joiner.on("/").join(Lists.transform(cards, Card::getCost));
+                    double cmc = cards.stream().mapToDouble(Card::getCmc).sum();
+                    List<Color> colors = Lists.newArrayList(cards.stream().flatMap(c -> c.getColors().stream()).collect(Collectors.toSet()));
+                    parent = new Card(0, name, first.getFulltype(), first.getSupertypes(), first.getTypes(), first.getSubtypes(),
+                        cost, cmc, colors, null, null, null, null, "split-parent", null, null);
 
                     int parentId = dao.createCard(parent);
-                    dao.setParent(left.getId(), parentId);
-                    dao.setParent(right.getId(), parentId);
+                    cards.forEach(c -> dao.setParent(c.getId(), parentId));
                     parent.setId(parentId);
                 }
-                ensureSplitPrinting(dao, parent.getId(), setId, left, right);
+                ensureSplitPrinting(dao, parent.getId(), setId, first);
             }
-            else if (left.getLayout().equals("flip") || left.getLayout().equals("double-faced")) {
-                dao.setFlipFront(left.getId(), right.getId());
+            else if (first.getLayout().equals("double-faced") || first.getLayout().equals("flip")) {
+                if (splitCard.size() != 2) {
+                    log.debug("Ignoring split card {}", splitCard);
+                    continue;
+                }
+                Card right = dao.getCard(splitCard.get(1));
+                dao.setDoubleFaceFront(first.getId(), right.getId());
             }
         }
     }
 
-    private void ensureSplitPrinting(ContentUpgradeDao dao, int parentId, int setId, Card left, Card right) {
+    private void ensureSplitPrinting(ContentUpgradeDao dao, int parentId, int setId, Card first) {
         List<Printing> printing = dao.getPrintings(setId, parentId);
         if (printing.isEmpty()) {
-            Printing leftPrinting = dao.getPrintings(setId, left.getId()).get(0);
+            Printing leftPrinting = dao.getPrintings(setId, first.getId()).get(0);
             dao.createPrinting(new Printing(0, setId, parentId, leftPrinting.getMultiverseid(),
                     null, leftPrinting.getRarity(), null, null, null, null));
         }
-    }
-
-    private List<Color> joinColors(List<Color> leftColors, List<Color> rightColors) {
-        return Lists.newArrayList(Sets.newTreeSet(Iterables.concat(leftColors, rightColors)));
     }
 
     private int ensurePrinting(ContentUpgradeDao dao, int cardId, int setId, FullSet.Card card) {
@@ -143,10 +143,14 @@ public class ContentUpgrade implements StartupAction {
     }
 
     private int ensureCard(ContentUpgradeDao dao, FullSet.Card card) {
-        Card existingCard = dao.getCard(card.getName());
+        String name = card.getName();
+        if (name.equals("B.F.M. (Big Furry Monster)")) {
+            name += card.getNumber().startsWith("28") ? " (Left)" : " (Right)";
+        }
+        Card existingCard = dao.getCard(name);
         if (existingCard == null) {
             try {
-                return dao.createCard(new Card(0, card.getName(), card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
+                return dao.createCard(new Card(0, name, card.getType(), card.getSupertypes(), card.getTypes(), card.getSubtypes(),
                         mapManaCost(card.getManaCost()), d(card.getCmc(), 0d), mapColors(card.getColors()), card.getText(),
                         card.getPower(), card.getToughness(), card.getLoyalty(), card.getLayout(), null, null));
             }
