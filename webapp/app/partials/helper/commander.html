@@ -1,0 +1,13 @@
+<h2>Commander helper</h2>
+<div>Find a Commander based on the deck's color identity</div>
+<div>Colors:
+    <label><input type="checkbox" ng-model="colors.w"><mana s="w"></label>
+    <label><input type="checkbox" ng-model="colors.u"><mana s="u"></label>
+    <label><input type="checkbox" ng-model="colors.b"><mana s="b"></label>
+    <label><input type="checkbox" ng-model="colors.r"><mana s="r"></label>
+    <label><input type="checkbox" ng-model="colors.g"><mana s="g"></label>
+</div>
+<div>
+    <label>Query <input type="text" disabled="true" ng-model="query"></label>
+</div>
+<cardlist list="results" editable="false" inventory="false" showgroup="false" showcount="false"></cardlist>

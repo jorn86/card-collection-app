@@ -189,4 +189,52 @@ angular.module('card-app')
                 $scope.formats[f] = result.data;
             });
         })
+    })
+
+    .controller('DeckHelperLandController', function($scope) {
+        console.log($scope)
+    })
+    .controller('DeckHelperCommanderController', function($scope, $rootScope) {
+        $scope.colors = {
+            w: true,
+            u: true,
+            b: true,
+            r: true,
+            g: true
+        };
+
+        $scope.query = '';
+
+        var canbe = 'o:"~ can be your commander"';
+        var update = function() {
+            var cols = '';
+            for (var c in $scope.colors) {
+                if ($scope.colors.hasOwnProperty(c) && $scope.colors[c]) {
+                    cols += c;
+                }
+            }
+            $scope.results = {};
+            var colorQuery = '';
+            if (cols === '') {
+                colorQuery = 'c:c'
+            }
+            else if (cols === 'wubrg') {
+                colorQuery = 'ci=wubrg';
+            }
+            else {
+                colorQuery = 'c<=' + cols + ' ci>=' + cols;
+            }
+            $scope.query = colorQuery + ' f:commander (t:legendary or ' + canbe + ') (t:creature or ' + canbe + ')';
+            $rootScope.datamodel.getSearchResults($scope.query).then(function(results) {
+                $scope.results.cards = results.data;
+            }, function(err) {
+                console.log(err);
+            });
+        };
+
+        $scope.$watch('colors.w', update);
+        $scope.$watch('colors.u', update);
+        $scope.$watch('colors.b', update);
+        $scope.$watch('colors.r', update);
+        $scope.$watch('colors.g', update);
     });

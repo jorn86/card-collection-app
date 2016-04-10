@@ -37,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <td>Converted <amount value="search.cmc"></amount></td><td>&nbsp;</td>
+            <td colspan="2">Converted <amount value="search.cmc"></amount></td>
         </tr>
         <tr><td>Color identity</td><td>
             <label><input type="checkbox" ng-model="search.ci.w"><mana s="w"></mana></label>
@@ -46,7 +46,7 @@
             <label><input type="checkbox" ng-model="search.ci.r"><mana s="r"></mana></label>
             <label><input type="checkbox" ng-model="search.ci.g"><mana s="g"></mana></label>
             <label><input type="radio" ng-model="search.ci.c" value="true"><mana s="c"></mana></label></td>
-            <td><label>&nbsp;Amount of colors <amount value="search.ci.amount"></amount></label></td>
+            <td><label>Amount of colors <amount value="search.ci.amount"></amount></label></td>
         </tr>
         <tr><td>Creature</td>
             <td>Power <amount value="search.p"></amount>
@@ -55,11 +55,12 @@
                 <label ng-hide="true"><input type="checkbox" ng-model="search.t.star"> Contains *</label></td>
         </tr>
         <tr><td>Planeswalker</td>
-            <td>Starting loyalty&nbsp;<amount value="search.loyalty"></amount></td><td>&nbsp;</td>
+            <td colspan="2">Starting loyalty <amount value="search.loyalty"></amount></td>
         </tr>
-        <tr><td>Rarity</td>
+        <tr  ng-hide="true"><td>Rarity</td>
             <td colspan="2"><select ng-model="search.rarity">
-                <option ng-repeat="o in rarityOptions" value="{{o}}">{{o}}</option></select></td>
+                <option ng-repeat="o in rarityOptions" value="{{o}}">{{o}}</option>
+            </select></td>
         </tr>
         <tr><td>Format</td>
             <td colspan="2"><label ng-repeat="o in formatOptions"><input type="radio" ng-model="search.format" value="{{o}}">{{o}}</label></td>
