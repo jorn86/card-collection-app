@@ -8,7 +8,7 @@ import org.hertsig.dto.SearchCard;
 import org.hertsig.query.QueryNode;
 import org.hertsig.query.QueryParser;
 import org.hertsig.query.QueryWithArguments;
-import org.hertsig.query.SqlQueryCreator;
+import org.hertsig.query.DbiQueryCreator;
 import org.hertsig.user.HttpRequestException;
 import org.parboiled.errors.ParsingException;
 import org.skife.jdbi.v2.Handle;
@@ -31,7 +31,7 @@ public class QueryExecutor {
     }
 
     public List<SearchCard> executeQuery(String query) {
-        QueryWithArguments parsedQuery = SqlQueryCreator.toPostgres(parse(query));
+        QueryWithArguments parsedQuery = DbiQueryCreator.toPostgres(parse(query));
         try (Handle handle = dbi.open()) {
             Query<Map<String, Object>> jdbiQuery = handle.createQuery(parsedQuery.query());
             JavaConversions.mapAsJavaMap(parsedQuery.values()).forEach(jdbiQuery::bind);

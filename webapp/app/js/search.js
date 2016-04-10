@@ -19,8 +19,8 @@ angular.module('card-app')
             format: 'All',
             rarity: null,
             ft: '',
+            layout: {},
             exclude: {
-                pc: true,
                 un: true
             }
         };
@@ -104,7 +104,7 @@ angular.module('card-app')
             }
             if (color($scope.search.c)) {
                 if ($scope.search.c.type === 'any') {
-                    var query = _.map(color($scope.search.c).split(''), function(c) { return "c>=" + c }).join(' or ');
+                    var query = _.map(color($scope.search.c).split(''), function(c) { return 'c>=' + c }).join(' or ');
                     parts.push('(' + query + ')');
                 }
                 else if ($scope.search.c.type === 'all') {
@@ -120,12 +120,22 @@ angular.module('card-app')
             if ($scope.search.c.amount.amount) {
                 parts.push('ca' + parseAmount($scope.search.c.amount));
             }
-            if ($scope.search.exclude.pc) {
-                parts.push('not:(t:plane or t:phenomenon)')
-            }
             if ($scope.search.exclude.un) {
                 parts.push('not:(e:unh or e:ug)')
             }
+            if (!$scope.search.layout.plane) {
+                parts.push('not:(l:plane)')
+            }
+            if (!$scope.search.layout.phenomenon) {
+                parts.push('not:(l:phenomenon)')
+            }
+            if (!$scope.search.layout.scheme) {
+                parts.push('not:(l:scheme)')
+            }
+            if (!$scope.search.layout.token) {
+                parts.push('not:(l:token)')
+            }
+
             return parts.join(' ');
         };
 

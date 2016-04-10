@@ -35,7 +35,7 @@ CREATE MATERIALIZED VIEW searchview AS (
         array(SELECT array_to_string(regexp_matches(toughness, '-?\d+', 'g'), '')) AS toughness
       FROM card
     )
-    SELECT card.name, card.normalizedname, card.fulltype, card.supertypes, card.types, card.subtypes, card.cost, card.cmc, card.loyalty,
+    SELECT card.name, card.normalizedname, card.fulltype, card.supertypes, card.types, card.subtypes, card.cost, card.cmc, card.loyalty, card.layout,
       cardcolors.*,
       (CASE WHEN ci_w THEN 1 ELSE 0 END + CASE WHEN ci_u THEN 1 ELSE 0 END + CASE WHEN ci_b THEN 1 ELSE 0 END + CASE WHEN ci_r THEN 1 ELSE 0 END + CASE WHEN ci_g THEN 1 ELSE 0 END) AS cia,
       (CASE WHEN c_w THEN 1 ELSE 0 END + CASE WHEN c_u THEN 1 ELSE 0 END + CASE WHEN c_b THEN 1 ELSE 0 END + CASE WHEN c_r THEN 1 ELSE 0 END + CASE WHEN c_g THEN 1 ELSE 0 END) AS ca,
@@ -45,7 +45,7 @@ CREATE MATERIALIZED VIEW searchview AS (
       replace(regexp_replace(card.text,'\(.+\)',''), card.name, '~') AS text,
       CASE WHEN array_length(numbers.power,1) > 0 THEN to_number(numbers.power[1], 'S99') WHEN card.power LIKE '%*%' THEN 0 ELSE NULL END AS power,
       CASE WHEN array_length(numbers.toughness,1) > 0 THEN to_number(numbers.toughness[1], 'S99') WHEN card.toughness LIKE '%*%' THEN 0 ELSE NULL END AS toughness,
-      array(SELECT format FROM legality WHERE cardid = card.id) AS formats,
+      array(SELECT format FROM legality WHERE cardid = card.id)::text[] AS formats,
       array(SELECT gatherercode FROM set WHERE id IN (SELECT setid FROM printing WHERE printing.cardid = card.id)) AS setcodes
     FROM card
       LEFT JOIN cardcolors ON cardcolors.id = card.id
@@ -53,5 +53,5 @@ CREATE MATERIALIZED VIEW searchview AS (
       LEFT JOIN latestprinting ON latestprinting.cardid = card.id
       LEFT JOIN card backcard ON card.id = backcard.doublefacefront LEFT JOIN latestprinting backprinting ON backprinting.cardid = backcard.id
       LEFT JOIN set ON latestprinting.setid = set.id
-    WHERE card.doublefacefront IS NULL AND card.splitcardparent IS NULL AND card.layout != 'token' AND card.layout != 'vanguard'
+    WHERE card.doublefacefront IS NULL AND card.splitcardparent IS NULL AND card.layout != 'vanguard'
 );
