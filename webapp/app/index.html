@@ -57,36 +57,8 @@
 </head>
 
 <body ng-controller="IndexController">
-
-    <div class="menubar" ng-controller="UserController">
-        <div class="menutitle"><h1>Card Collection App</h1></div>
-
-        <div class="menuitem" style="margin-left: 20px"><button ui-sref="app.search"><img src="img/search.svg" alt="Search" height="30px"></button></div>
-        <div class="menuitem"><button ui-sref="app.sets">Available sets</button></div>
-        <div class="menuitem"><button ui-sref="app.formats">Formats</button></div>
-
-        <div class="menuitem-right" ng-hide="userInfo">
-            <google-plus-signin clientid="1037739193811-rus02skk6058rm7k7bqf38trafthugdj" theme="dark" language="en"></google-plus-signin>
-        </div>
-        <div class="menuitem-right" ng-show="userInfo">
-            <img class="userimage" ng-src="{{userInfo.image}}">
-        </div>
-        <div class="menuitem-right" ng-show="userInfo">
-            <div class="grid-cell">{{userInfo.name}}</div>
-        </div>
-    </div>
-
+    <ng-include src="'partials/menubar.html'"></ng-include>
     <div class="content" ui-view>Landing page. Log in to get started.</div>
-
-    <div class="footer">
-        Card data by <a
-            href="https://mtgjson.com/" target="_blank">MtgJson</a> (<a
-            href="https://github.com/lsmoura/mtgjson" target="_blank">lsmoura</a>) / Mana and set symbols by <a
-            href="https://github.com/jninnes/mtgicons" target="_blank">mtgicons (jninnes)</a> / Icons made by <a
-            href="http://www.flaticon.com/authors/icomoon" title="Icomoon" target="_blank">Icomoon</a> and <a
-            href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a> from <a
-            href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a>, licensed by <a
-            href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>
-    </div>
+    <ng-include src="'partials/footer.html'"></ng-include>
 </body>
 </html>
