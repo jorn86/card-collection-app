@@ -106,16 +106,13 @@ angular.module('card-app')
         $scope.model = {query: $scope.originalQuery};
 
         $scope.results = {};
+        $scope.message = null;
         $scope.datamodel.getSearchResults($scope.originalQuery).then(function(result) {
             $scope.results.cards = result.data;
             $scope.update();
         }, function(err) {
-            console.log(err)
-            if (err.status === 400) {
+            if (err.status === 400 || err.status === 503) {
                 $scope.message = err.data;
-            }
-            else {
-                $scope.message = null;
             }
         });
 

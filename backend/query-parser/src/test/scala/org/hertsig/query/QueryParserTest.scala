@@ -29,19 +29,19 @@ class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
   @Test
   def testSingleNot() {
     val result = parser.parse("not:name")
-    assertEquals(result, QueryNode(List(NotConditionNode(NameConditionNode(StringNode("name"))))))
+    assertEquals(result, QueryNode(List(NotConditionNode(name("name")))))
   }
 
   @Test
   def testOr() {
     val result = parser.parse("(a or b)")
-    assertEquals(result, QueryNode(List(OrNode(List(NameConditionNode(StringNode("a")), NameConditionNode(StringNode("b")))))))
+    assertEquals(result, QueryNode(List(OrNode(List(name("a"), name("b"))))))
   }
 
   @Test
   def testNotOr() {
     val result = parser.parse("not:(a or b)")
-    assertEquals(result, QueryNode(List(NotConditionNode(OrNode(List(NameConditionNode(StringNode("a")), NameConditionNode(StringNode("b"))))))))
+    assertEquals(result, QueryNode(List(NotConditionNode(OrNode(List(name("a"), name("b")))))))
   }
 
   @Test
@@ -56,6 +56,9 @@ class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
     assertEquals(result, QueryNode(List(CmcConditionNode(CompareNode(">"), -1))))
   }
 
+  private def name(name: String): NameConditionNode = {
+    NameConditionNode(StringNode(name))
+  }
   private def color(color: String): ColorConditionNode = {
     ColorConditionNode(CompareNode("="), ColorNode(color))
   }

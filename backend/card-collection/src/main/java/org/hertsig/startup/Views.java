@@ -2,6 +2,7 @@ package org.hertsig.startup;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.CharStreams;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
@@ -16,13 +17,15 @@ import java.util.List;
 
 @Slf4j
 @Singleton
-class Views implements StartupAction {
+public class Views implements StartupAction {
     private static final List<String> NAMES = ImmutableList.of("latestprinting", "setstatistics", "searchview",
             "deckboardview", "inventoryview", "deckentryview");
     @Inject private DataSource dataSource;
+    @Getter private boolean running = false;
 
     @Override
     public void run() throws StartupActionException {
+        running = true;
         try (Connection connection = dataSource.getConnection()) {
             for (String name : NAMES) {
                 log.debug("Updating view {}", name);
@@ -44,7 +47,9 @@ class Views implements StartupAction {
             }
         }
         catch (SQLException | IOException e) {
+            running = false;
             throw new StartupActionException("Exception while updating views", e);
         }
+        running = false;
     }
 }
