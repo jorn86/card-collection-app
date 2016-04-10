@@ -14,6 +14,7 @@ CREATE OR REPLACE VIEW deckentryview AS (
     LEFT JOIN card ON card.id = deckrow.cardid
     LEFT JOIN printing ON printing.id = deckrow.printingid
     LEFT JOIN latestprinting ON latestprinting.cardid = deckrow.cardid
-    LEFT JOIN card backcard ON card.id = backcard.doublefacefront LEFT JOIN latestprinting backprinting ON backprinting.cardid = backcard.id
+    LEFT JOIN card backcard ON card.id = backcard.doublefacefront
+      LEFT JOIN latestprinting backprinting ON backprinting.cardid = backcard.id AND card.layout = 'double-faced'
     LEFT JOIN set ON coalesce(printing.setid, latestprinting.setid) = set.id
 );

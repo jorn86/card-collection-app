@@ -51,7 +51,7 @@ public interface ContentUpgradeDao extends AutoCloseable {
     void setParent(@Bind("card") int childId, @Bind("parent") int parentId);
 
     @SqlUpdate("UPDATE card SET doublefacefront = :front WHERE id = :back")
-    void setFlipFront(@Bind("front") int front, @Bind("back") int back);
+    void setDoubleFaceFront(@Bind("front") int front, @Bind("back") int back);
 
     // see http://stackoverflow.com/questions/1109061 for why this is wrong
     @SqlUpdate("UPDATE legality SET legality = :legality\\:\\:legalityoption WHERE cardid = :cardid AND \"format\" = :format\\:\\:format; " +
