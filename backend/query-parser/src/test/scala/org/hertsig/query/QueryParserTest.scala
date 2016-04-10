@@ -1,11 +1,9 @@
 package org.hertsig.query
 
-import org.junit.Ignore
-import org.parboiled.errors.{ParsingException, ParseError}
 import org.parboiled.scala.testing.ParboiledTest
 import org.scalatest.testng.TestNGSuiteLike
-import org.testng.annotations.Test
 import org.testng.Assert._
+import org.testng.annotations.Test
 
 class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
   val parser = new QueryParser()
@@ -28,38 +26,37 @@ class QueryParserTest extends ParboiledTest with TestNGSuiteLike {
     assertEquals(result, QueryNode(List(TypeConditionNode(StringNode("creature land")))))
   }
 
-  @Test(enabled = false)
-  @Ignore("Parboiled is being inconsistent")
-  def testAnd() {
-    val result = parser.parse("c=w (c=u c=b) c=r")
-    assertEquals(result, QueryNode(List(color("w"), SubconditionNode(not = false, AndNode(List(color("u"), color("b")))), color("r"))))
+  @Test
+  def testSingleNot() {
+    val result = parser.parse("not:name")
+    assertEquals(result, QueryNode(List(NotConditionNode(NameConditionNode(StringNode("name"))))))
   }
 
   @Test
   def testOr() {
-    val result = parser.parse("c=w (c=u or c=b) c=r")
-    assertEquals(result, QueryNode(List(color("w"), SubconditionNode(not = false, OrNode(List(color("u"), color("b")))), color("r"))))
+    val result = parser.parse("(a or b)")
+    assertEquals(result, QueryNode(List(OrNode(List(NameConditionNode(StringNode("a")), NameConditionNode(StringNode("b")))))))
   }
 
   @Test
-  def testNot() {
-    val result = parser.parse("not(c=w)")
-    assertEquals(result, QueryNode(List(SubconditionNode(not = true, OrNode(List(color("w")))))))
+  def testNotOr() {
+    val result = parser.parse("not:(a or b)")
+    assertEquals(result, QueryNode(List(NotConditionNode(OrNode(List(NameConditionNode(StringNode("a")), NameConditionNode(StringNode("b"))))))))
   }
 
   @Test
   def testPowerToughness() {
     val result = parser.parse("pow>4 tou<=3 t:creature")
-    assertEquals(result, QueryNode(List(PowerConditionNode(AmountTypeNode(">"), 4), ToughnessConditionNode(AmountTypeNode("<="), 3), TypeConditionNode(StringNode("creature")))))
+    assertEquals(result, QueryNode(List(PowerConditionNode(CompareNode(">"), 4), ToughnessConditionNode(CompareNode("<="), 3), TypeConditionNode(StringNode("creature")))))
   }
 
   @Test
   def testNegativeNumber() = {
     val result = parser.parse("cmc>-1")
-    assertEquals(result, QueryNode(List(CmcConditionNode(AmountTypeNode(">"), -1))))
+    assertEquals(result, QueryNode(List(CmcConditionNode(CompareNode(">"), -1))))
   }
 
   private def color(color: String): ColorConditionNode = {
-    ColorConditionNode(AmountTypeNode("="), ColorNode(color))
+    ColorConditionNode(CompareNode("="), ColorNode(color))
   }
 }

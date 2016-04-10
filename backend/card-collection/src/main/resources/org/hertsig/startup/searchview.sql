@@ -44,7 +44,9 @@ CREATE MATERIALIZED VIEW searchview AS (
       set.gatherercode AS setcode,
       replace(regexp_replace(card.text,'\(.+\)',''), card.name, '~') AS text,
       CASE WHEN array_length(numbers.power,1) > 0 THEN to_number(numbers.power[1], 'S99') WHEN card.power LIKE '%*%' THEN 0 ELSE NULL END AS power,
-      CASE WHEN array_length(numbers.toughness,1) > 0 THEN to_number(numbers.toughness[1], 'S99') WHEN card.toughness LIKE '%*%' THEN 0 ELSE NULL END AS toughness
+      CASE WHEN array_length(numbers.toughness,1) > 0 THEN to_number(numbers.toughness[1], 'S99') WHEN card.toughness LIKE '%*%' THEN 0 ELSE NULL END AS toughness,
+      array(SELECT format FROM legality WHERE cardid = card.id) AS formats,
+      array(SELECT gatherercode FROM set WHERE id IN (SELECT setid FROM printing WHERE printing.cardid = card.id)) AS setcodes
     FROM card
       LEFT JOIN cardcolors ON cardcolors.id = card.id
       LEFT JOIN numbers ON numbers.id = card.id

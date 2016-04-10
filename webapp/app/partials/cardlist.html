@@ -1,5 +1,7 @@
 <div>
-    <div class="nowrap">{{list.name}} ({{totalAmount(list.cards)}} cards / {{list.cards.length}} distinct)</div>
+    <div class="nowrap">{{list.name}} (<span
+            ng-show="list.cards[0].amount">{{totalAmount(list.cards)}} cards / {{list.cards.length}} distinct</span><span
+            ng-hide="list.cards[0].amount">{{list.cards.length}} results</span>)</div>
     <div style="float: right"><button ng-click="editBoard()">
         <img src="../img/edit.svg" alt="Edit board" height="16"></button></div>
     <form ng-submit="submitAdd()" style="padding-bottom: 2px">
