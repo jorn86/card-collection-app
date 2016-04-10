@@ -31,8 +31,8 @@
         </tr>
         <tr>
             <td rowspan="2">Mana cost</td>
-            <td><input type="text" ng-model="search.cost" size="40"></td>
-            <td width="460px">Add:
+            <td ng-hide="true"><input type="text" ng-model="search.cost" size="40"></td>
+            <td ng-hide="true" width="460px">Add:
                 <span ng-repeat="o in costOptions" class="pointer"><mana s="{{o}}" ng-click="addManaCost(o)"></mana> </span>
             </td>
         </tr>
@@ -50,9 +50,9 @@
         </tr>
         <tr><td>Creature</td>
             <td>Power <amount value="search.p"></amount>
-                <label><input type="checkbox" ng-model="search.p.star"> Contains *</label></td>
+                <label ng-hide="true"><input type="checkbox" ng-model="search.p.star"> Contains *</label></td>
             <td>Toughness <amount value="search.t"></amount>
-                <label><input type="checkbox" ng-model="search.t.star"> Contains *</label></td>
+                <label ng-hide="true"><input type="checkbox" ng-model="search.t.star"> Contains *</label></td>
         </tr>
         <tr><td>Planeswalker</td>
             <td>Starting loyalty&nbsp;<amount value="search.loyalty"></amount></td><td>&nbsp;</td>
@@ -64,20 +64,17 @@
         <tr><td>Format</td>
             <td colspan="2"><label ng-repeat="o in formatOptions"><input type="radio" ng-model="search.format" value="{{o}}">{{o}}</label></td>
         </tr>
-        <tr><td>Flavor text</td>
-            <td colspan="2"><input type="text" ng-model="search.ft" size="40"></td>
-        </tr>
         <tr><td>Special cards</td>
             <td colspan="2">
-                <label><input type="checkbox" ng-model="search.layout.plane">Plane</label>
-                <label><input type="checkbox" ng-model="search.layout.phenomenon">Phenomenon</label>
-                <label><input type="checkbox" ng-model="search.layout.scheme">Scheme</label>
-                <label><input type="checkbox" ng-model="search.layout.token">Token</label>
+                <label><input type="checkbox" ng-model="search.special.conspiracy">Conspiracy</label>
+                <label><input type="checkbox" ng-model="search.special.plane">Plane</label>
+                <label><input type="checkbox" ng-model="search.special.phenomenon">Phenomenon</label>
+                <label><input type="checkbox" ng-model="search.special.scheme">Scheme</label>
+                <label><input type="checkbox" ng-model="search.special.token">Token</label>
             </td>
         </tr>
         <tr><td>Exclude</td>
-            <td><label><input type="checkbox" ng-model="search.exclude.un">Unhinged & Unglued</label></td>
-            <td><label><input type="checkbox" ng-model="search.exclude.pc">Planes & Phenomenons</label></td>
+            <td colspan="2"><label><input type="checkbox" ng-model="search.exclude.un">Unhinged & Unglued</label></td>
         </tr>
         <tr><td style="border: 0"><input type="submit" value="Search"></td></tr>
     </table>

@@ -19,7 +19,7 @@ angular.module('card-app')
             format: 'All',
             rarity: null,
             ft: '',
-            layout: {},
+            special: {},
             exclude: {
                 un: true
             }
@@ -78,29 +78,11 @@ angular.module('card-app')
             if ($scope.search.types) {
                 parts.push(_.map($scope.search.types.split(/\s+/), function(type) { return 't:"' + type + '"'}));
             }
-            if ($scope.search.p.amount) {
-                parts.push('pow' + parseAmount($scope.search.p));
-            }
-            if ($scope.search.t.amount) {
-                parts.push('tou' + parseAmount($scope.search.t));
-            }
-            if ($scope.search.loyalty.amount) {
-                parts.push('loyalty' + parseAmount($scope.search.loyalty));
-            }
             if ($scope.search.cmc.amount) {
                 parts.push('cmc' + parseAmount($scope.search.cmc));
             }
-            if ($scope.search.format && $scope.search.format !== 'All') {
-                parts.push('f:' + $scope.search.format);
-            }
-            if ($scope.search.ft) {
-                parts.push('ft:"' + $scope.search.ft + '"');
-            }
-            if (color($scope.search.ci)) {
-                parts.push('ci=' + color($scope.search.ci));
-            }
             if ($scope.search.ci.amount.amount) {
-                parts.push('cia' + parseAmount($scope.search.ci.amount));
+                parts.push('ca' + parseAmount($scope.search.ci.amount));
             }
             if (color($scope.search.c)) {
                 if ($scope.search.c.type === 'any') {
@@ -120,20 +102,41 @@ angular.module('card-app')
             if ($scope.search.c.amount.amount) {
                 parts.push('ca' + parseAmount($scope.search.c.amount));
             }
-            if ($scope.search.exclude.un) {
-                parts.push('not:(e:unh or e:ug)')
+            if (color($scope.search.ci)) {
+                parts.push('ci=' + color($scope.search.ci));
             }
-            if (!$scope.search.layout.plane) {
+            if ($scope.search.p.amount) {
+                parts.push('pow' + parseAmount($scope.search.p));
+            }
+            if ($scope.search.t.amount) {
+                parts.push('tou' + parseAmount($scope.search.t));
+            }
+            if ($scope.search.loyalty.amount) {
+                parts.push('loyalty' + parseAmount($scope.search.loyalty));
+            }
+            if ($scope.search.rarity) {
+                parts.push('r:"' + $scope.search.rarity + '"');
+            }
+            if ($scope.search.format && $scope.search.format !== 'All') {
+                parts.push('f:' + $scope.search.format);
+            }
+            if (!$scope.search.special.conspiracy) {
+                parts.push('not:(t:conspiracy)')
+            }
+            if (!$scope.search.special.plane) {
                 parts.push('not:(l:plane)')
             }
-            if (!$scope.search.layout.phenomenon) {
+            if (!$scope.search.special.phenomenon) {
                 parts.push('not:(l:phenomenon)')
             }
-            if (!$scope.search.layout.scheme) {
+            if (!$scope.search.special.scheme) {
                 parts.push('not:(l:scheme)')
             }
-            if (!$scope.search.layout.token) {
+            if (!$scope.search.special.token) {
                 parts.push('not:(l:token)')
+            }
+            if ($scope.search.exclude.un) {
+                parts.push('not:(e:unh or e:ug)')
             }
 
             return parts.join(' ');

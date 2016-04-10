@@ -26,10 +26,10 @@ object DbiQueryCreator {
       case NameConditionNode(name) => "normalizedname ILIKE " + arg(values, "%" + escape(name) + "%")
       case OracleConditionNode(text) => "text ILIKE " + arg(values, "%" + escape(text) + "%")
       case EditionConditionNode(code) => arg(values, escape(code)) + " ILIKE ANY(setcodes)"
-      case FlavorTextConditionNode(text) => "flavortext ILIKE " + "%" + arg(values, "%" + escape(text) + "%")
       case TypeConditionNode(condition) => "fulltype ILIKE " + arg(values, '%' + escape(condition) + '%')
       case ColorConditionNode(condition, color) => parseColor(condition, color, "c_")
       case ColorIdentityConditionNode(condition, color) => parseColor(condition, color, "ci_")
+      case AmountOfColorsConditionNode(condition, amount) => s"ca ${condition.condition} $amount"
       case PowerConditionNode(condition, amount) => s"power ${condition.condition} $amount"
       case ToughnessConditionNode(condition, amount) => s"toughness ${condition.condition} $amount"
       case LoyaltyConditionNode(condition, amount) => s"loyalty ${condition.condition} $amount"
