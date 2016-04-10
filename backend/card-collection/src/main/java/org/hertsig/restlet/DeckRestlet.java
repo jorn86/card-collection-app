@@ -196,8 +196,8 @@ public class DeckRestlet {
     @Path("{deckId}/deckboximport")
     @Consumes("text/csv")
     public List<String> importFromDeckbox(@PathParam("deckId") UUID deckId, @Context HttpServletRequest request) throws IOException, ServletException {
-        checkUser();
-        try {
+        try (DeckDao dao = dbi.open(DeckDao.class)) {
+            getDeckForUser(dao, deckId);
             return deckboxImport.importCsv(deckId, request.getInputStream());
         }
         catch (IOException e) {
@@ -209,9 +209,8 @@ public class DeckRestlet {
     @PUT
     @Path("{deckId}")
     public Deck updateDeck(@PathParam("deckId") UUID deckId, Deck update) {
-        checkUser();
         try (DeckDao dao = dbi.open(DeckDao.class)) {
-            Deck deck = dao.getDeck(deckId);
+            Deck deck = getDeckForUser(dao, deckId);
             if (!Objects.equal(deck.getUserid(), userManager.getUserId())) {
                 throw new HttpRequestException(Response.Status.NOT_FOUND, "Deck with id " + deckId + " does not exist for you");
             }

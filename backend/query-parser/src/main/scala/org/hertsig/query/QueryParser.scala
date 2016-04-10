@@ -23,6 +23,7 @@ case class FormatConditionNode(format: String) extends ConditionNode
 case class ColorConditionNode(condition: CompareNode, color: ColorNode) extends ConditionNode
 case class ColorIdentityConditionNode(condition: CompareNode, color: ColorNode) extends ConditionNode
 case class TypeConditionNode(condition: StringNode) extends ConditionNode
+case class LayoutConditionNode(condition: StringNode) extends ConditionNode
 
 case class CompareNode(condition: String) extends AstNode
 case class StringNode(text: String) extends AstNode
@@ -45,6 +46,7 @@ class QueryParser extends Parser {
     ColorCondition |
     ColorIdentityCondition |
     FormatCondition |
+    LayoutCondition |
     NameCondition
   }
 
@@ -64,6 +66,7 @@ class QueryParser extends Parser {
   def ColorIdentityCondition: Rule1[ColorIdentityConditionNode] = rule { ignoreCase("ci") ~ AmountType ~ Color ~~> ColorIdentityConditionNode }
   def FormatCondition: Rule1[FormatConditionNode] = rule { ignoreCase("f:") ~
     (ignoreCase("Vintage") | ignoreCase("Legacy") | ignoreCase("Modern") | ignoreCase("Standard") | ignoreCase("Commander")) ~> FormatConditionNode }
+  def LayoutCondition: Rule1[LayoutConditionNode] = rule { ignoreCase("l:") ~ StringValue ~~> LayoutConditionNode }
 
   def OrSeparator: Rule0 = rule { oneOrMore(" ") ~ ignoreCase("or") ~ oneOrMore(" ") }
 

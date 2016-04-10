@@ -4,7 +4,7 @@ import com.google.common.escape.{Escaper, Escapers}
 
 import scala.collection.mutable
 
-object SqlQueryCreator {
+object DbiQueryCreator {
   val PREFIX: String = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, " +
     "multiverseid, rarity, multiverseidBack, setcode FROM searchview WHERE "
   private val LIKE_ESCAPER: Escaper = Escapers.builder.addEscape('_', "\\_").addEscape('%', "\\%").build
@@ -35,6 +35,7 @@ object SqlQueryCreator {
       case LoyaltyConditionNode(condition, amount) => s"loyalty ${condition.condition} $amount"
       case CmcConditionNode(condition, amount) => s"cmc ${condition.condition} $amount"
       case FormatConditionNode(format) => arg(values, format) + " ILIKE ANY(formats)"
+      case LayoutConditionNode(layout) => "layout ILIKE " + arg(values, escape(layout))
     }
   }
 
