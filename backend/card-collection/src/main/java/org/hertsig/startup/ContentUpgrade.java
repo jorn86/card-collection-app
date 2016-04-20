@@ -236,8 +236,14 @@ public class ContentUpgrade implements StartupAction {
                 Files.createDirectory(folder);
             }
             catch (IOException e) {
-                log.debug("No permission to write to file system, falling back to in memory", e);
-                inMemory = true;
+                folder = Paths.get("/tmp/cardcollection");
+                try {
+                    Files.createDirectory(folder);
+                }
+                catch (IOException ex) {
+                    log.debug("No permission to write to file system, falling back to in memory", e);
+                    inMemory = true;
+                }
             }
         }
 
