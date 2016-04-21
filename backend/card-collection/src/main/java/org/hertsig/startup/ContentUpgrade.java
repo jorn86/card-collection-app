@@ -197,7 +197,7 @@ public class ContentUpgrade implements StartupAction {
         Set set = dao.getSet(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
         if (set == null) {
             return dao.createSet(new Set(0, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
-                    fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type), fullSet.onlineOnly));
+                    fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type, fullSet.name), fullSet.onlineOnly));
         }
         if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {
             log.warn("Inconsistency: database {}; external {} {}", set, fullSet.code, fullSet.name, fullSet.releaseDate);
@@ -205,7 +205,11 @@ public class ContentUpgrade implements StartupAction {
         return set.getId();
     }
 
-    private int priority(String type) {
+    private int priority(String type, String name) {
+        if (type == null) {
+            log.warn("Set {} has no type", name);
+            return 4;
+        }
         switch (type) {
             case "core":
             case "expansion":
