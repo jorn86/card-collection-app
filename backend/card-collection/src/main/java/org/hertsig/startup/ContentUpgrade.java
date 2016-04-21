@@ -196,8 +196,18 @@ public class ContentUpgrade implements StartupAction {
     private int ensureSet(ContentUpgradeDao dao, FullSet fullSet) {
         Set set = dao.getSet(fullSet.gathererCode == null ? fullSet.code : fullSet.gathererCode);
         if (set == null) {
-            return dao.createSet(new Set(0, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
-                    fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type, fullSet.name), fullSet.onlineOnly));
+            if (fullSet.name.equalsIgnoreCase("Welcome Deck 2016")) {
+                log.warn("Hitting exception code for Welcome Deck 2016");
+                Calendar releaseDate = Calendar.getInstance();
+                releaseDate.setTimeInMillis(0);
+                releaseDate.set(2016, Calendar.MAY, 13);
+                return dao.createSet(new Set(0, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
+                        fullSet.name, releaseDate.getTime(), "", 4, false));
+            }
+            else {
+                return dao.createSet(new Set(0, coalesce(fullSet.gathererCode, fullSet.code), fullSet.code, fullSet.magicCardsInfoCode,
+                        fullSet.name, fullSet.releaseDate, fullSet.type, priority(fullSet.type), fullSet.onlineOnly));
+            }
         }
         if (!fullSet.code.equals(set.getCode()) || !fullSet.name.equals(set.getName()) || !fullSet.releaseDate.equals(set.getReleasedate())) {
             log.warn("Inconsistency: database {}; external {} {}", set, fullSet.code, fullSet.name, fullSet.releaseDate);
@@ -205,11 +215,7 @@ public class ContentUpgrade implements StartupAction {
         return set.getId();
     }
 
-    private int priority(String type, String name) {
-        if (type == null) {
-            log.warn("Set {} has no type", name);
-            return 4;
-        }
+    private int priority(String type) {
         switch (type) {
             case "core":
             case "expansion":
