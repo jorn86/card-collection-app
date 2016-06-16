@@ -16,14 +16,41 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
                 controller: 'DeckController',
                 templateUrl: 'partials/deck.html'
             })
-            .state('app.landhelper', {
-                url: 'helper/land',
-                controller: 'DeckHelperLandController',
-                templateUrl: 'partials/helper/land.html'
+
+            .state('app.helper', {
+                template: "<ui-view></ui-view>"
             })
-            .state('app.commanderhelper', {
+            .state('app.helper.basictypeland', {
+                url: 'helper/basictypeland',
+                controller: 'DeckHelperBasicTypeLandController',
+                templateUrl: 'partials/helper/mana.html'
+            })
+            .state('app.helper.manland', {
+                url: 'helper/manland',
+                controller: 'DeckHelperManLandController',
+                templateUrl: 'partials/helper/mana.html'
+            })
+            .state('app.helper.anycolorland', {
+                url: 'helper/basictypeland',
+                controller: 'DeckHelperAnyColorLandController',
+                templateUrl: 'partials/helper/mana.html'
+            })
+            .state('app.helper.colorlessfix', {
+                url: 'helper/colorlessfix',
+                controller: 'DeckHelperColorlessFixController',
+                templateUrl: 'partials/helper/mana.html'
+            })
+            .state('app.helper.nonbasicsearch', {
+                url: 'helper/nonbasicsearch',
+                controller: 'DeckHelperNonbasicSearchController',
+                templateUrl: 'partials/helper/mana.html'
+            })
+            .state('app.helper.sweepers', {
+                url: 'helper/sweepers',
+                templateUrl: 'partials/helper/sweepers.html'
+            })
+            .state('app.helper.commander', {
                 url: 'helper/commander',
-                controller: 'DeckHelperCommanderController',
                 templateUrl: 'partials/helper/commander.html'
             })
             .state('app.search', {

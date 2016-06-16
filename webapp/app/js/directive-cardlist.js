@@ -3,16 +3,17 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
-            scope: {list: '=', editable: '=', inventory: '=', showgroup: '=', showcount: '=', defaultgroup: '@', defaultorder: '@'},
+            scope: {list: '=', editable: '=', inventory: '=', showgroup: '=', showcount: '=', defaultgroup: '=', defaultorder: '='},
             controller: function($scope, $rootScope, $filter, ngDialog, sets) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
-                    if (card.type) {
-                        if (card.type.indexOf('Land') >= 0) {
+                    var type = card.type || card.fulltype;
+                    if (type) {
+                        if (type.indexOf('Land') >= 0) {
                             return 'Land';
                         }
                         for (var i = 0; i < types.length; i++) {
-                            if (card.type.indexOf(types[i]) >= 0) {
+                            if (type.indexOf(types[i]) >= 0) {
                                 return types[i];
                             }
                         }

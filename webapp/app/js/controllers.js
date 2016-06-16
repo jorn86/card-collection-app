@@ -125,7 +125,6 @@ angular.module('card-app')
         };
 
         $scope.search = function() {
-            console.log($scope.model.query)
             $state.go('app.searchresults', {query: $scope.model.query});
         };
     })
@@ -197,16 +196,50 @@ angular.module('card-app')
         };
     })
 
-    .controller('DeckHelperLandController', function($scope, $rootScope) {
+    .controller('DeckHelperBasicTypeLandController', function($scope, $rootScope) {
+        $scope.title = 'Basic land types';
+        $scope.results = {};
+        $rootScope.datamodel.getSearchResults('t:land (t:plains or t:island or t:swamp or t:mountain or t:forest)').then(function (results) {
+            $scope.results.cards = results.data;
+        });
+    })
+    .controller('DeckHelperAnyColorLandController', function($scope, $rootScope) {
+        $scope.title = 'Any color land';
+        $scope.results = {};
         $rootScope.datamodel.getSearchResults('t:land o:add o:mana (o:"any color" or o:"any one color")').then(function(results) {
-            $scope.anycolor.cards = results.data;
+            $scope.results.cards = results.data;
         });
-        $rootScope.datamodel.getSearchResults('t:land (t:plains or t:island or t:swamp or t:mountain or t:forest)').then(function(results) {
-            $scope.basictypes.cards = results.data;
-        });
+    })
+    .controller('DeckHelperManLandController', function($scope, $rootScope) {
+        $scope.title = 'Man land';
+        $scope.results = {};
         $rootScope.datamodel.getSearchResults('t:land o:"~ becomes a" o:creature').then(function(results) {
-            $scope.man.cards = results.data;
+            $scope.results.cards = results.data;
         });
+    })
+    .controller('DeckHelperColorlessFixController', function($scope, $rootScope) {
+        $scope.title = 'Colorless mana fixers';
+        $scope.results = {};
+        $rootScope.datamodel.getSearchResults('c=c o:add o:mana not:(t:land) (not:(ci=c) or o:"any color" or o:"any one color" or o:"choose a color") not:(t:plane) not:(t:conspiracy)').then(function(results) {
+            $scope.results.cards = results.data;
+        });
+    })
+    .controller('DeckHelperNonbasicSearchController', function($scope, $rootScope) {
+        $scope.title = 'Nonbasic land search';
+        $scope.results = {};
+        $rootScope.datamodel.getSearchResults('o:you o:search (o:nonbasic or not:(o:basic)) not:(o:"nonland card") (o:"land card" or o:"plains card" or o:"island card" or o:"swamp card" or o:"mountain card" or o:"forest card") (o:battlefield or o:hand) not:("Strata Scythe")').then(function(results) {
+            $scope.results.cards = results.data;
+        });
+    })
+    .controller('DeckHelperSweepersController', function($scope, $rootScope) {
+        $scope.types = ['Instant', 'Sorcery', 'Creature', 'Enchantment', 'Artifact', 'Planeswalker'];
+        $scope.results = {};
+        $scope.type = 'Sorcery';
+        $scope.$watch('type', function(type) {
+            $rootScope.datamodel.getSearchResults('t:' + type + ' (o:"destroy all" or o:"destroy each" or o:"exile all" or o:"exile each" or o:"deals X damage to each" or o:"deals X damage to all") not:(o:"exile all cards") not:(t:plane or t:phenomenon or t:scheme)').then(function(results) {
+                $scope.results.cards = results.data;
+            });
+        })
     })
     .controller('DeckHelperCommanderController', function($scope, $rootScope) {
         $scope.colors = {

@@ -1,0 +1,5 @@
+<div ng-controller="DeckHelperSweepersController">
+    <h2>Sweepers</h2>
+    <select ng-options="type for type in types" ng-model="type"></select>
+    <cardlist list="results" showgroup="true" defaultgroup="1"></cardlist>
+</div>
