@@ -3,7 +3,7 @@ angular.module('card-app')
         return {
             restrict: 'E',
             templateUrl: 'partials/cardlist.html',
-            scope: {list: '=', editable: '=', inventory: '=', showgroup: '=', showcount: '='},
+            scope: {list: '=', editable: '=', inventory: '=', showgroup: '=', showcount: '=', defaultgroup: '@', defaultorder: '@'},
             controller: function($scope, $rootScope, $filter, ngDialog, sets) {
                 var types = ['Creature', 'Instant', 'Sorcery', 'Artifact', 'Enchantment', 'Planeswalker', 'Land', 'Plane', 'Scheme', 'Other'];
                 var typeGrouping = function (card) {
@@ -81,8 +81,6 @@ angular.module('card-app')
                     }, {
                         name: 'None', group: noneGrouping, order: noneOrder
                     }],
-                    groupBy: $scope.inventory ? noneGrouping : typeGrouping,
-                    orderBy: $scope.inventory ? noneOrder : typeOrder,
 
                     sortingOptions: [
                         {name: 'Count', field: 'amount'},
@@ -96,14 +94,16 @@ angular.module('card-app')
                     allSelected: false
                 };
 
-                $scope.grid.currentGrouping = $scope.grid.groupingOptions[$scope.inventory ? 3 : 0];
+                $scope.grid.currentGrouping = $scope.grid.groupingOptions[$scope.defaultgroup || 0];
+                $scope.grid.groupBy = $scope.grid.currentGrouping.group;
+                $scope.grid.orderBy = $scope.grid.currentGrouping.order;
+
                 $scope.onGroupingChange = function () {
                     $scope.grid.orderBy = $scope.grid.currentGrouping.order;
                     $scope.grid.groupBy = $scope.grid.currentGrouping.group;
                 };
 
-                $scope.grid.currentSorting = $scope.grid.sortingOptions[$scope.inventory ? 1 : 4];
-
+                $scope.grid.currentSorting = $scope.grid.sortingOptions[$scope.defaultorder || 4];
                 $scope.updateAmount = function (data) {
                     var promise = $rootScope.datamodel.updateAmount($scope.list.id, data.id, data.amount);
                     if (data.amount == 0) {

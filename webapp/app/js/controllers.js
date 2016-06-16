@@ -197,8 +197,16 @@ angular.module('card-app')
         };
     })
 
-    .controller('DeckHelperLandController', function($scope) {
-        console.log($scope)
+    .controller('DeckHelperLandController', function($scope, $rootScope) {
+        $rootScope.datamodel.getSearchResults('t:land o:add o:mana (o:"any color" or o:"any one color")').then(function(results) {
+            $scope.anycolor.cards = results.data;
+        });
+        $rootScope.datamodel.getSearchResults('t:land (t:plains or t:island or t:swamp or t:mountain or t:forest)').then(function(results) {
+            $scope.basictypes.cards = results.data;
+        });
+        $rootScope.datamodel.getSearchResults('t:land o:"~ becomes a" o:creature').then(function(results) {
+            $scope.man.cards = results.data;
+        });
     })
     .controller('DeckHelperCommanderController', function($scope, $rootScope) {
         $scope.colors = {
@@ -222,7 +230,7 @@ angular.module('card-app')
             $scope.results = {};
             var colorQuery = '';
             if (cols === '') {
-                colorQuery = 'c:c'
+                colorQuery = 'c=c'
             }
             else if (cols === 'wubrg') {
                 colorQuery = 'ci=wubrg';
