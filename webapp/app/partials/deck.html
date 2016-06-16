@@ -9,7 +9,7 @@
         <div ng-repeat="warning in warnings">{{warning}}</div>
     </div>
     <div ng-repeat="board in deck.boards">
-        <cardlist list="board" editable="editable" inventory="inventory" showgroup="!inventory" showcount="true"></cardlist>
+        <cardlist list="board" editable="editable" inventory="inventory" showgroup="!inventory" showcount="true" defaultgroup="inventory ? 3 : 0"></cardlist>
     </div>
 </div>
 <div ng-hide="deck">Loading...</div>
