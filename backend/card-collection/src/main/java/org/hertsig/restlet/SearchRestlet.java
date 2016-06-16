@@ -5,6 +5,7 @@ import org.hertsig.dto.SearchCard;
 import org.hertsig.logic.QueryExecutor;
 import org.hertsig.startup.Views;
 import org.hertsig.user.HttpRequestException;
+import org.hertsig.user.UserManager;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -16,11 +17,13 @@ import java.util.List;
 @Path("search")
 @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 public class SearchRestlet {
+    private final UserManager userManager;
     private final QueryExecutor queryExecutor;
     private final Views views;
 
     @Inject
-    public SearchRestlet(QueryExecutor queryExecutor, Views views) {
+    public SearchRestlet(UserManager userManager, QueryExecutor queryExecutor, Views views) {
+        this.userManager = userManager;
         this.queryExecutor = queryExecutor;
         this.views = views;
     }
@@ -30,6 +33,6 @@ public class SearchRestlet {
         if (views.isRunning()) {
             throw new HttpRequestException(Response.Status.SERVICE_UNAVAILABLE, "Search view is updating. Please try again in a few minutes");
         }
-        return queryExecutor.executeQuery(query);
+        return queryExecutor.executeQuery(query, userManager.isAvailable() ? userManager.getUserId() : null);
     }
 }

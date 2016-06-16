@@ -5,14 +5,16 @@ import com.google.common.escape.{Escaper, Escapers}
 import scala.collection.mutable
 
 object DbiQueryCreator {
-  val PREFIX: String = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, " +
-    "multiverseid, rarity, multiverseidBack, setcode FROM searchview WHERE "
+  val SELECT: String = "SELECT id, name, fulltype, supertypes, types, subtypes, cost, cmc, text, power, toughness, loyalty, " +
+    "multiverseid, rarity, multiverseidBack, setcode"
+  val INVENTORY: String = ", (SELECT SUM(amount) FROM inventoryview WHERE :userid = userid AND cardid = searchview.id) AS inventorycount"
+  val FROM: String = " FROM searchview WHERE "
   private val LIKE_ESCAPER: Escaper = Escapers.builder.addEscape('_', "\\_").addEscape('%', "\\%").build
 
-  def toPostgres(node: QueryNode): QueryWithArguments = {
+  def toPostgres(node: QueryNode, withUser: Boolean): QueryWithArguments = {
     val values: mutable.Map[String, Object] = mutable.Map()
-    val query =  PREFIX + toPostgres(node.conditions, values)
-    QueryWithArguments(query, values)
+    val query: String = if (withUser) SELECT + INVENTORY + FROM else SELECT + FROM
+    QueryWithArguments(query + toPostgres(node.conditions, values), values)
   }
 
   private def toPostgres(nodes: List[ConditionNode], values: mutable.Map[String, Object]): String = {

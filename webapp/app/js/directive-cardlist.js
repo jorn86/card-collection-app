@@ -177,7 +177,7 @@ angular.module('card-app')
                     if (typeof page === 'number') {
                         $scope.page = page;
                     }
-                    if (!$scope.list.cards) return;
+                    if (!$scope.list || !$scope.list.cards) return;
 
                     var end = $scope.page * 100;
                     var cards = $filter('orderBy')($scope.list.cards, [$scope.grid.currentSorting.field, 'normalizedname'], false);

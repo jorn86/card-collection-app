@@ -182,13 +182,19 @@ angular.module('card-app')
         };
     })
 
-    .controller('FormatController', function($scope, $rootScope) {
-        $scope.formats = {};
-        _.forEach(['Commander', 'Legacy', 'Modern', 'Standard', 'Vintage'], function(f) {
-            $rootScope.datamodel.getFormat(f).then(function(result) {
-                $scope.formats[f] = result.data;
-            });
-        })
+    .directive('banlist', function($rootScope) {
+        return {
+            restrict: 'E',
+            scope: {name: '@'},
+            templateUrl: 'partials/banlist.html',
+            link: function(scope) {
+                scope.loading = true;
+                $rootScope.datamodel.getFormat(scope.name).then(function(result) {
+                    scope.loading = false;
+                    scope.format = result.data;
+                });
+            }
+        };
     })
 
     .controller('DeckHelperLandController', function($scope) {

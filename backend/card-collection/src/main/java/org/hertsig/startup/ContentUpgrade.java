@@ -118,7 +118,12 @@ public class ContentUpgrade implements StartupAction {
                     continue;
                 }
                 Card right = dao.getCard(splitCard.get(1));
-                dao.setDoubleFaceFront(first.getId(), right.getId());
+                if (right == null) {
+                    log.debug("Skipping double faced card {} because right side {} is missing", splitCard.get(0), splitCard.get(1));
+                }
+                else {
+                    dao.setDoubleFaceFront(first.getId(), right.getId());
+                }
             }
         }
     }
