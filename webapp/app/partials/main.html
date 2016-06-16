@@ -10,15 +10,19 @@
         <decktree node="decksForUser" readonly="false"></decktree>
     </div>
     <div>
-        <div class="tree pointer nowrap">
-            <img src="../img/tag.svg" height="16">Deck helpers
-            <div class="indent nowrap">
-                <div>
-                    <a ui-sref="app.landhelper" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Land</span></a>
+        <div class="tree pointer nowrap" ng-init="showHelpers = true">
+            <span ng-click="showHelpers = !showHelpers"><img src="../img/tag.svg" height="16"> Deck helpers</span>
+            <div class="indent nowrap" ng-show="showHelpers">
+                <div class="indent">
+                    <img src="../img/tag.svg" height="16"> Mana
+                    <div><a ui-sref="app.helper.basictypeland" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Basic land types</span></a></div>
+                    <div><a ui-sref="app.helper.anycolorland" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Any color land</span></a></div>
+                    <div><a ui-sref="app.helper.manland" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Manland</span></a></div>
+                    <div><a ui-sref="app.helper.colorlessfix" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Colorless mana fix</span></a></div>
+                    <div><a ui-sref="app.helper.nonbasicsearch" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Nonbasic land search</span></a></div>
                 </div>
-                <div>
-                    <a ui-sref="app.commanderhelper" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Commanders</span></a>
-                </div>
+                <div><a ui-sref="app.helper.commander" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Commanders</span></a></div>
+                <div><a ui-sref="app.helper.sweepers" ui-sref-active="deck-active"><img src="../img/search.svg" height="16"><span> Sweepers</span></a></div>
             </div>
         </div>
     </div>
