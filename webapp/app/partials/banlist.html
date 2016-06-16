@@ -1,0 +1,22 @@
+<h2>{{name}}</h2>
+<div ng-show="loading">Loading...</div>
+<div ng-show="!loading && format.length === 0">No banned or restricted cards</div>
+<table class="sets" cellspacing="0" ng-hide="loading || format.length === 0">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Legality</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="card in format">
+        <td linkcard>
+            <div class="inlinemtg" data-multiverseid="{{card.multiverseid}}" data-multiverseid-back="{{card.multiverseidBack}}"
+                 data-set="{{card.setcode}}" data-options="{{card.split ? 'rotate90' : ''}}">{{card.name}}</div>
+        </td>
+        <td>{{card.fulltype}}</td>
+        <td>{{card.legality}}</td>
+    </tr>
+    </tbody>
+</table>
