@@ -232,7 +232,7 @@ angular.module('card-app')
         });
     })
     .controller('DeckHelperSweepersController', function($scope, $rootScope) {
-        $scope.types = ['Instant', 'Sorcery', 'Creature', 'Enchantment', 'Artifact', 'Planeswalker'];
+        $scope.types = ['Artifact', 'Creature', 'Enchantment', 'Instant', 'Planeswalker', 'Sorcery'];
         $scope.results = {};
         $scope.type = 'Sorcery';
         $scope.$watch('type', function(type) {
@@ -241,14 +241,34 @@ angular.module('card-app')
             });
         })
     })
+    .controller('DeckHelperUtilityLandController', function($scope, $rootScope) {
+        $scope.colors = { w: false, u: false, b: false, r: false, g: false };
+        $scope.results = {};
+
+        var update = _.throttle(function() {
+            var identity = '';
+            for (var c in $scope.colors) {
+                if ($scope.colors.hasOwnProperty(c) && $scope.colors[c]) {
+                    identity += c;
+                }
+            }
+            if (identity === '') {
+                identity = 'c'
+            }
+
+            $rootScope.datamodel.getSearchResults('ci<=' + identity + ' t:land not:(o:"add {W}" or o:"add {U}" or o:"add {B}" or o:"add {R}" or o:"add {G}" or o:"mana of any color" or o:"mana of any one color" or o:search or t:plains or t:island or t:swamp or t:mountain or t:forest or t:urza)').then(function(results) {
+                $scope.results.cards = results.data;
+            });
+        }, 500);
+
+        $scope.$watch('colors.w', update);
+        $scope.$watch('colors.u', update);
+        $scope.$watch('colors.b', update);
+        $scope.$watch('colors.r', update);
+        $scope.$watch('colors.g', update);
+    })
     .controller('DeckHelperCommanderController', function($scope, $rootScope) {
-        $scope.colors = {
-            w: true,
-            u: true,
-            b: true,
-            r: true,
-            g: true
-        };
+        $scope.colors = { w: true, u: true, b: true, r: true, g: true };
 
         $scope.query = '';
 
