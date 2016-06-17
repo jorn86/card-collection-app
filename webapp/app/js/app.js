@@ -45,6 +45,11 @@ angular.module('card-app', ['ui.router', 'LiveSearch', 'a8m.group-by', 'a8m.to-a
                 controller: 'DeckHelperNonbasicSearchController',
                 templateUrl: 'partials/helper/mana.html'
             })
+            .state('app.helper.utilityland', {
+                url: 'helper/utilityland',
+                controller: 'DeckHelperUtilityLandController',
+                templateUrl: 'partials/helper/utilityland.html'
+            })
             .state('app.helper.sweepers', {
                 url: 'helper/sweepers',
                 templateUrl: 'partials/helper/sweepers.html'

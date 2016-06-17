@@ -78,7 +78,7 @@ class QueryParser extends Parser {
 
   @throws(classOf[ParsingException])
   def parse(input: String): QueryNode = {
-    val parsingResult = ReportingParseRunner(Query).run(input)
+    val parsingResult = ReportingParseRunner(Query).run(input.trim)
     parsingResult.result match {
       case Some(task) => task
       case None => throw new ParsingException("Invalid input:\n" + ErrorUtils.printParseErrors(parsingResult))

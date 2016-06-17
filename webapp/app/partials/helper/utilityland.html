@@ -1,0 +1,13 @@
+<div ng-controller="DeckHelperUtilityLandController">
+    <h2>Utility land</h2>
+    Lists lands you don't (just) play for the mana they produce, but for the other effect it has.
+    Check colors below to allow that color in the land's rules text
+    <div>Colors:
+        <label><input type="checkbox" ng-model="colors.w"><mana s="w"></label>
+        <label><input type="checkbox" ng-model="colors.u"><mana s="u"></label>
+        <label><input type="checkbox" ng-model="colors.b"><mana s="b"></label>
+        <label><input type="checkbox" ng-model="colors.r"><mana s="r"></label>
+        <label><input type="checkbox" ng-model="colors.g"><mana s="g"></label>
+    </div>
+    <cardlist list="results" showgroup="true" defaultgroup="2"></cardlist>
+</div>
